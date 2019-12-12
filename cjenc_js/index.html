@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CJ대한통운 건설부문</title>
+
+    <link rel="stylesheet" media="all" href="css/common.css" />
+
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+</head>
+<body>
+
+<div class="wrap">
+
+    <header class="clear"><!--on--> <!--show-->
+        <h1 class="logo">
+            <a href="">
+                <img src="images/logo.png" alt="CJ건설" class="logo_w"/>
+                <img src="images/logo_w.png" alt="CJ건설" class="logo_b"/>
+            </a> 
+        </h1>
+
+        <nav>
+            <ul class="gnb white clear">
+                <li>
+                    <a href="">소개</a>
+                    <div class="submenu_box">
+                        <ul>
+                            <li>
+                                <a href="">CEO인사말</a>
+                            </li>
+
+                            <li>
+                                <a href="">미션</a>
+                            </li>
+
+                            <li>
+                                <a href="">회사연혁</a>
+                            </li>
+
+                            <li>
+                                <a href="">조직도</a>
+                            </li>
+                        </ul>
+                    </div><!--.submenu_box-->
+                </li>
+
+                <li>
+                    <a href="">사업분야</a>
+                    <div class="submenu_box">
+                        <ul>
+                            <li>
+                                <a href="">건설</a>
+                            </li>
+
+                            <li>
+                                <a href="">부동산</a>
+                            </li>
+
+                            <li>
+                                <a href="">리조트</a>
+                            </li>
+                        </ul>
+                    </div><!--.submenu_box-->
+                </li>
+
+                <li>
+                    <a href="">지속가능경영</a>
+                    <div class="submenu_box">
+                        <ul>
+                            <li>
+                                <a href="">안전보건경영</a>
+                            </li>
+
+                            <li>
+                                <a href="">환경경영</a>
+                            </li>
+
+                            <li>
+                                <a href="">품질경영</a>
+                            </li>
+
+                            <li>
+                                <a href="">보유인증서</a>
+                            </li>
+                        </ul>
+                    </div><!--.submenu_box-->
+                </li>
+
+                <li>
+                    <a href="">홍보센터</a>
+                    <div class="submenu_box">
+                        <ul>
+                            <li>
+                                <a href="">회사소식</a>
+                            </li>
+
+                            <li>
+                                <a href="">투자정보</a>
+                            </li>
+
+                            <li>
+                                <a href="">IR자료(기존CJ건설)</a>
+                            </li>
+
+                            <li>
+                                <a href="">CI/BI</a>
+                            </li>
+
+                            <li>
+                                <a href="">e-brochure</a>
+                            </li>
+                        </ul>
+                    </div><!--.submenu_box-->
+                </li>
+
+                <li>
+                    <a href="">인재채용</a>
+                </li>
+
+                <li>
+                    <a href="">CJ대한통운</a>
+                </li>
+            </ul><!--.gnb-->
+            
+            <div class="btn_4">
+                <a href="">사이버감사실</a>
+                <a href="">담당자문의</a>
+                <a href="">상생경영</a>
+                <a href="">오시는길</a>
+            </div>
+        </nav>
+
+        <div class="lang white <!--click-->">
+            <a href="">KOR</a>
+            <ul>
+                <li class="lang_list">
+                    <a href="">KOR</a>
+                </li>
+                <li class="lang_list">
+                    <a href="">ENG</a>
+                </li>
+            </ul>
+        </div>
+
+        <a href="" class="nav_btn_open">메뉴버튼</a>
+        <a href="" class="nav_btn_close">메뉴닫기버튼</a>       
+        
+    </header>
+
+    <script>   
+        var htmlEl = document.querySelector('html');
+        var header = htmlEl.querySelector('header');
+        var gnb = header.querySelector('ul.gnb');
+        var lang = header.querySelector('div.lang');
+
+        pcScreen();
+        phoneScreen();
+
+        function pcScreen() {
+            //스크롤시 header 배경색 하얗게. + 글자색 변경
+            window.addEventListener('scroll', scrollWork);
+
+            function scrollWork() {
+                var top = htmlEl.scrollTop;
+                console.log(window.innerWidth);
+                if (window.innerWidth > 800) {
+                    if (top > 1000) {
+                        header.classList.add('bg');
+                        gnb.classList.add('black');
+                        lang.classList.add('black');
+                        gnb.classList.remove('white');
+                    }
+                    if (top < 1000) {
+                        header.classList.remove('bg');
+                        gnb.classList.remove('black');
+                        lang.classList.remove('black');
+                        gnb.classList.add('white');
+                    }
+                } else {
+                    if (top > 50) {
+                        header.classList.add('bg', 'on799');
+                    }
+                    if (top < 50) {
+                        header.classList.remove('bg', 'on799');
+                    }
+
+                }
+            }
+
+
+            //마우스오버시 header 전체 보이게함(서브메뉴보임+흰배경길어짐)
+            var menu = header.querySelectorAll('ul.gnb > li');
+
+            for(var i = 0; i < menu.length; i++) {
+                menu[i].addEventListener('mouseenter', enterWork);
+                menu[i].addEventListener('mouseleave', leaveWork);
+            }
+
+            function enterWork(e) {
+                var submenu = e.target.querySelector('div.submenu_box');
+                if(submenu) {
+                    header.classList.add('on', 'bg');
+                }
+                header.classList.add('bg');
+                gnb.classList.add('black');
+            }
+            function leaveWork(e) {
+                var submenu = e.target.querySelector('div.submenu_box');
+                var top = htmlEl.scrollTop;
+                if(submenu) {
+                    header.classList.remove('on', 'bg');
+                }
+                header.classList.remove('bg');
+                gnb.classList.remove('black');
+
+                if (top > 1000) {
+                    header.classList.add('bg');
+                }
+            }
+
+            // lang
+            // 만약에 click이 있으면 click을 지우고
+            // 만약에 click이 없으면 click을 넣어라
+            var langBtn = lang.querySelector('a');
+            langBtn.addEventListener('click', function(e){
+                e.preventDefault();
+                if (lang.classList.contains('click')) {
+                    lang.classList.remove('click');
+                } else {
+                    lang.classList.add('click');
+                }
+            });
+            
+        }
+        
+
+
+        function phoneScreen() {
+            //799px 이하인 폰화면에서 햄버거커튼 클릭시 메뉴창보이게함.
+            var navBtn799 = document.querySelector('a.nav_btn_open');    
+            navBtn799.addEventListener('click', openWork);
+
+            function openWork(e) {
+                e.preventDefault();
+                header.classList.add('on799', 'show');
+                htmlEl.style.overflow = 'hidden';
+                if (innerWidth > 799) {
+                    htmlEl.style.overflow = 'scroll';
+                }
+            }
+
+            //799px 이하인 폰화면에서 메뉴닫기버튼 클릭시 메뉴창닫음.
+            var closeBtn799 = document.querySelector('a.nav_btn_close');
+            closeBtn799.addEventListener('click', closeWork);
+
+            function closeWork(e) {
+                e.preventDefault();
+                header.classList.remove('on799', 'show');
+                htmlEl.style.overflow = 'scroll';
+                
+                closeBtn799.addEventListener('click', function() {
+                    var top = htmlEl.scrollTop;
+                    console.log(top);
+                    
+                    if (top > 50) {
+                        header.classList.add('on799');
+                    }
+                })
+                
+            }
+        }
+        
+            
+    </script>
+
+
+
+    <main>
+        <div class="intro white">
+            <div class="introSlider">
+                <div class="intro1">
+                    <video src="images/vod0.mp4"  loop autoplay muted></video>
+                    <div class="inner">
+                        <div class="img_text_box">
+                            <img src="images/roll1_txt.png" alt="NEW DREAM, WE BUILD"/>
+                            
+                            <span>Total Solution & Service를 제공하는<br/>
+                                    ONLYONE 종합부동산회사</span>
+                            <a href="">MORE</a>
+                        </div><!--.img_text_box-->
+                    </div><!--.inner-->
+                </div><!--.intro1-->
+
+                <div class="intro2">
+                    <video src="images/vod1.mp4" loop autoplay muted></video>
+                    <div class="inner">
+                        <div class="img_text_box">
+                            <ul class="intro_img_box clear">
+                                <li>
+                                    <img src="images/roll2_img1.png" alt="110,085.95m2"/>
+                                </li>
+                                <li>
+                                    <img src="images/roll2_img2.png" alt="국내 최초 3D 곡면 SUNSHADE"/>
+                                </li>
+                                <li>
+                                    <img src="images/roll2_img3.png" alt="CJ BLOSSOM 모양의 외형"/>
+                                </li>
+                            </ul>
+                            <img src="images/roll2_txt.png" alt="CJ BLOSSOM PARK"/>
+                            
+                            <span>세계적인 수준의 R&D 센터로서<br/>
+                                    유연한 커뮤니케이션을 지향한 공간설계</span>
+                            <a href="">MORE</a>
+                            </div><!--.img_text_box-->
+                    </div><!--.inner-->
+                </div><!--.intro2-->
+
+                <div class="intro3">
+                    <video src="images/vod2.mp4" loop autoplay muted></video>
+                    <div class="inner">
+                        <div class="img_text_box">
+                            <ul class="intro_img_box clear">
+                                <li>
+                                    <img src="images/roll3_img1.png" alt=""/>
+                                </li>
+                                <li>
+                                    <img src="images/roll3_img2.png" alt="MODERN & TRADITIONAL"/>
+                                </li>
+                                <li>
+                                    <img src="images/roll3_img3.png" alt="국내 최초 Timber Structure 공법 도입"/>
+                                </li>
+                            </ul>
+                            <img src="images/roll3_txt.png" alt="HAESLEY NINE BRIDGES CLUB HOUSE"/>
+                            
+                            <span>꽃이 피는 모습을 형상화한 고귀한 예술작품으로<br/>
+                                    전세계 유수의 건축대상 3곳에서 수상의 영애를 얻은 해슬리 나인브릿지 클럽하우스</span>
+                            <a href="">MORE</a>
+                        </div><!--.img_text_box-->
+                    </div><!--.inner-->
+                </div><!--.intro3-->
+
+                <div class="intro4">
+                    <video src="images/vod0.mp4" loop autoplay muted></video>
+                    <div class="inner">
+                        <div class="img_text_box">
+                            <ul class="intro_img_box clear">
+                                <li>
+                                    <img src="images/roll4_img1.png" alt="정환공정 및 연약지반 기초공법 적용"/>
+                                </li>
+                                <li>
+                                    <img src="images/roll4_img2.png" alt="사료용 필수 아미노산 메치오닌 생산"/>
+                                </li>
+                                <li>
+                                    <img src="images/roll4_img3.png" alt="세계 최초 친환경 Bio 발효 정제공정"/>
+                                </li>
+                            </ul>
+                            <img src="images/roll4_txt.png" alt="L-메치오닌 공장"/>
+                            
+                            <span>사료용 필수아미노산 L-메치오닌 연 10만톤 생산 규모<br/>
+                                    세계 최초 친환경 바이오 발효 공장</span>
+                            <a href="">MORE</a>
+                        </div><!--.img_text_box-->
+                    </div><!--.inner-->
+                </div><!--.intro4-->
+            </div><!--.introSlider-->
+
+            <div class="page_btn clear">
+                <div class="btn1"> <!--before이용해서 마우스스크롤이미지 넣어주기-->
+                    <a href="">회사소개</a>
+                    <a href="">CJ BLOSSOM PARK</a>
+                    <a href="">HAESLEY NINE BRIDGES CLUB HOUSE</a>
+                    <a href="">L-메치오닌 공장</a>
+                </div>
+
+                <div class="btn2">
+                    <a href="">일시정지</a>
+                    <a href="">재생</a>
+                </div>
+            </div><!--.page_btn-->
+   
+        </div><!--.intro-->
+
+        <script>
+        
+        introSlider();
+
+        function introSlider() {
+            // //799px이상에서만 video보이게함.
+            // if(window.innerWidth > 799) {
+            //     let intros = document.querySelectorAll('.introSlider > div');
+                
+            //     for(let i = 0; i < intros.length; i++) {
+            //         let videoBox = document.createElement('video');  
+            //         videoBox[i].src = `images/vod${i}.mp4`;
+            //         videoBox[i].muted = true;
+            //         videoBox[i].loop = true;
+            //         console.log(videoBox.src);
+            //         intros[i].appendChild(videoBox);  
+            //     }
+                             
+            // }
+            
+            videoRemove(window.innerWidth);
+            window.addEventListener('resize', function() {
+                videoRemove(window.innerWidth);
+            });
+            function videoRemove (w) {
+                let intros = document.querySelectorAll('.introSlider > div');
+                let videoBox = document.querySelectorAll('video');
+                if (window.innerWidth < 799) {
+                    for(let i = 0; i < intros.length; i++) {
+                        intros[i].removeChild(videoBox[i]);
+                    }
+                } 
+                // else {
+                //     for(let i = 0; i < intros.length; i++) {
+                //         intros[i].appendChild(videoBox[i]);
+                //     }
+                // }
+                
+            }
+
+
+            var introBoxes = document.querySelectorAll('.img_text_box');
+            //intro 4페이지 slider
+
+            $(document).ready(function() {
+                let introslide = $('.introSlider').bxSlider();
+
+                sliderSetting(window.innerWidth);
+                window.addEventListener('resize', function() {
+                    sliderSetting(window.innerWidth);
+                });
+
+                function sliderSetting(w) {
+                    if (window.innerWidth < 799) {
+                        introslide.reloadSlider({
+                            mode : 'fade',
+                            speed : 1000,
+                            infiniteLoop : true,
+                            auto : true,
+                            pause : 5000  
+                        });
+                    } else {
+                        introslide.reloadSlider({
+                            mode : 'fade',
+                            speed : 1000,
+                            infiniteLoop : true,
+                            auto : true,
+                            pause : 5000,
+                            onSlideAfter : function(){
+                                //video위에 있는 text 나타날때 효과.
+                                var num = this.getCurrentSlide();
+                                console.log(num);
+                                if (num === 4) {
+                                    num = 0;
+                                }
+                                for(var i = 0; i < introBoxes.length; i++) {
+                                    introBoxes[i].classList.remove('active');
+                                }
+                                introBoxes[num].classList.add('active');  
+                            },
+                            onSliderLoad : function() {
+                                //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
+                                introBoxes[0].classList.add('active');
+                            }    
+                        });
+                    }
+                }
+            })
+
+
+
+            // $(document).ready(function() {
+            //     let slider4 = $('.introSlider').bxSlider();
+
+            //     setting(window.innerHeight);
+
+            //     window.addEventListener('resize', function() {
+            //         setting(window.innerWidth);
+            //     });
+
+            //     function setting(w) {
+            //         if (w > 799) {
+            //             slider4.reloadSlider({
+            //                 mode : 'fade',
+            //                 speed : 1000,
+            //                 infiniteLoop : true,
+            //                 auto : true,
+            //                 pause : 5000,
+            //                 onSlideAfter : function(){
+            //                     //video위에 있는 text 나타날때 효과.
+            //                     var num = this.getCurrentSlide();
+            //                     console.log(num);
+            //                     if (num === 4) {
+            //                         num = 0;
+            //                     }
+            //                     for(var i = 0; i < introBoxes.length; i++) {
+            //                         introBoxes[i].classList.remove('active');
+            //                     }
+            //                     introBoxes[num].classList.add('active');  
+            //                 },
+            //                 onSliderLoad : function() {
+            //                     //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
+            //                     introBoxes[0].classList.add('active');
+            //                 }
+            //             });
+            //         } else {
+            //             slider4.reloadSlider({
+            //                 mode : 'fade',
+            //                 speed : 1000,
+            //                 infiniteLoop : true,
+            //                 auto : true,
+            //                 pause : 5000,
+            //             });
+            //         }
+            //     }   
+                
+                // $('.introSlider').bxSlider( {
+                //     mode : 'fade',
+                //     speed : 1000,
+                //     infiniteLoop : true,
+                //     auto : true,
+                //     pause : 5000,
+                //     onSlideAfter : function(){
+                //         //video위에 있는 text 나타날때 효과.
+                //         var num = this.getCurrentSlide();
+                //         console.log(num);
+                //         if (num === 4) {
+                //             num = 0;
+                //         }
+                //         for(var i = 0; i < introBoxes.length; i++) {
+                //             introBoxes[i].classList.remove('active');
+                //         }
+                //         introBoxes[num].classList.add('active');  
+                //     },
+                //     onSliderLoad : function() {
+                //         //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
+                //         introBoxes[0].classList.add('active');
+                //     }
+                // });
+            
+
+                // //799px 이하에서는 .active지우기.
+                // if(window.innerWidth < 799) {
+                //     for(var i = 0; i < introBoxes.length; i++) {
+                //         introBoxes[i].classList.remove('active');
+                //         console.log(introBoxes[i]);
+                        
+                //     }
+                // }
+
+            // })
+            
+
+
+            //2번째페이지가 상단에오면 intro내용 안보이게.
+            window.addEventListener('scroll', scrollWork_intro);
+            var introInners = document.querySelectorAll('div.inner');
+            var introBtn = document.querySelector('div.page_btn');
+            console.log(introInners);
+            console.log(introBtn);
+            
+            function scrollWork_intro() {
+                var top = htmlEl.scrollTop;
+                console.log(top);
+
+                if (top > 500) {
+                    for(var i = 0; i < introInners.length; i++) {
+                        introInners[i].style.opacity = '0';
+                        introInners[i].style.transition = 'all .5s ease-out';
+                        introBtn.style.opacity = '0';
+                    }
+                }
+                if (top < 500) {
+                    for (var i = 0; i < introInners.length; i++) {
+                        introInners[i].style.opacity = '1';
+                        introInners[i].style.transition = 'all .5s ease-out'
+                        introBtn.style.opacity = '1';
+                    }
+                }
+            }
+        }
+        
+        
+        
+        
+        </script>
+
+
+        <div class="business white">
+            <div class="inner">
+                <h2>Our Business</h2>
+                <p>차별화된 E&C역량으로 당신이 꿈꾸던 미래를 건설해 드립니다.</p>
+                <ul class="clear">
+                    <li>
+                        <img src="images/mainsection2_img1.jpg" alt=""/>
+                        <strong>건설</strong>
+                        <span>신뢰를 바탕으로 최초, 최고, 차별화된 공간문화를 창조합니다.</span>
+                        <span>오피스, 물류시설, 골프장, 리모델링에 이르기까지 최고의 공간가치를 창조하는 Global E&C Partner 입니다.</span>
+                        <a href="">MORE</a>
+                    </li>
+
+                    <li>
+                        <img src="images/mainsection2_img2.jpg" alt=""/>
+                        <strong>부동산</strong>
+                        <span>통합된 Solution으로 고객의 자산가치를 극대화합니다.</span>
+                        <span>개발, 자산운영, 공간 복합화 전문가 집단이 고객 부동산의 자산가치가 극대화될 수 있도록 최상의 종합부동산 서비스를 제공합니다.</span>
+                        <a href="">MORE</a>
+                    </li>
+
+                    <li>
+                        <img src="images/mainsection2_img3.jpg" alt=""/>
+                        <strong>리조트</strong>
+                        <span>국내 1등의 PRESTIGE 리조트 사업개발 및 운영 역량을 확보하고 있습니다. 국내 유일의 세계 100대 코스 클럽 나인브릿지, 최고의 Private Club 해슬리 나인브릿지는 CJ대한통운 건설부문을 대표하는 최고의 브랜드입니다.</span>
+                        <a href="">MORE</a>
+                    </li>
+                </ul>
+            </div><!--.inner-->
+        </div><!--.business-->
+
+        <div class="building black">
+            <div class="inner">
+                <h2>신뢰 위에 혁신을 짓는 사람들</h2>
+                <p>CJ대한통운 건설부문은 주거시설, 물류시설, 플랜트, 도로철도에 이르기까지<br/>
+                    최고의 공간가치를 창조합니다.</p>
+                <a href="">MORE</a>
+                <ul>
+                    <li class="blossompark">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building1.png" alt=""/>
+                                <img src="images/building1_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">CJ Blossom Park</strong>
+                                <strong class="bd_name2">CJ Blossom Park</strong>
+                                <span class="bd_content">국내 최초 3D 곡면 Sunshade, 세계 최고 10층 이상 고층 건축물에 Mullionless 커튼월을 적용한 교육/업무 시설</span>
+                            </div>
+                            <div class="popup">
+                                <!--<div class="photo_box">
+                                    <img src="images/20166161156229126.jpg" alt=""/>
+                                </div>--><!--.photo_box-->
+                                <!--<div class="text_box"></div>--><!--.text_box-->
+                            </div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="remodeling">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building2.png" alt=""/>
+                                <img src="images/building2_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">케레스타 리모델링</strong>
+                                <strong class="bd_name2">케레스타 리모델링</strong>
+                                <span class="bd_content">동대문 최초의 쇼핑몰이었던 구<br/>거평프레야 건물 B6 ~ 23F 구간을 전면 리모델링 한 상업시설</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="haesley">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building3.png" alt=""/>
+                                <img src="images/building3_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">헤슬리 나인브릿지 클럽하우스</strong>
+                                <strong class="bd_name2">헤슬리 나인브릿지 클럽하우스</strong>
+                                <span class="bd_content">자연에서 영감을 받은 디자인으로,<br/> 자연스러우면서도 기품이 느껴지는 클럽하우스</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="factory">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building4.png" alt=""/>
+                                <img src="images/building4_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">L-메치오닌 공장</strong>
+                                <strong class="bd_name2">L-메치오닌 공장</strong>
+                                <span class="bd_content"><span>친황경 바이오 공법으로 L-메치오닌을</span> 생산하는 세계 최초의 플랜트 시설</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="weddinghall">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building5.png" alt=""/>
+                                <img src="images/building5_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">위더스 웨딩홀</strong>
+                                <strong class="bd_name2">위더스 웨딩홀</strong>
+                                <span class="bd_content">2015 모범공사장 선정, 시공 내외적으로 모든것에 충실했던 CJ대한통운 건설부문의 성실함이 녹아있는 상업시설</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="club">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building6.png" alt=""/>
+                                <img src="images/building6_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name"><span>클럽 나인브릿지</span> '더 포럼'</strong>
+                                <strong class="bd_name2"><span>클럽 나인브릿지</span> '더 포럼'</strong>
+                                <span class="bd_content">2014 한국건축문화 우수상을 수상,<br/>자연과 상생할 수 있는 건축의 <br/>가능성을 보여준 교육/업무 시설</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+
+                    <li class="cj">
+                        <a href="">
+                            <div class="bd_img">
+                                <img src="images/building7.png" alt=""/>
+                                <img src="images/building7_over.png" alt=""/>
+                            </div>
+                            <div class="bd_text_box">
+                                <strong class="bd_name">CJ E&M Center</strong>
+                                <strong class="bd_name2">CJ E&M Center</strong>
+                                <span class="bd_content">멀티미디어요소를 적극 활용하여 종합 엔터테인먼트의 허브로써 역할을 강조하는 디자인이 돋보이는 업무 시설</span>
+                            </div>
+                            <div class="popup"></div><!--.popup--><!--건물크릭했을때뜨는창-->
+                        </a>
+                    </li>
+                </ul>
+            </div><!--.inner-->
+        </div><!--.building-->
+
+        <script>
+        
+        window.addEventListener('scroll', scrollWork_bd);
+
+        function scrollWork_bd() {
+            var top = htmlEl.scrollTop;
+            var buildings = htmlEl.querySelectorAll('div.building > div > ul > li')
+
+            for(var i = 0; i < buildings.length; i++) {
+
+                console.log(window.innerWidth);
+                if (window.innerWidth < 1281) {
+                    if (top > 1500) {
+                        buildings[i].classList.add('up');
+                    }
+                }
+
+                if (top > 1650) {
+                    buildings[i].classList.add('up');
+                }
+                if (top < 1350) {
+                    buildings[i].classList.remove('up');
+                }
+            }
+        }
+        
+        
+        </script>
+
+
+        <div class="vr_view clear white">
+            <div class="vr_inner"><!--background-image깔기-->
+                <a href=""><!--hover시에 배경 투명검정주기-->
+                    <span>CJ E&M Center</span>
+                    <img src="images/bt_vr.png" alt="360 vr view"/>
+                </a>
+            </div>
+
+            <div class="vr_inner"><!--background-image깔기-->
+                <a href=""><!--hover시에 배경 투명검정주기-->
+                    <span>Haesely Nine Bridges</span>
+                    <img src="images/bt_vr.png" alt="360 vr view"/>
+                </a>
+            </div>
+
+            <div class="vr_inner"><!--background-image깔기-->
+                <a href=""><!--hover시에 배경 투명검정주기-->
+                    <span>CJ Blossom Park</span>
+                    <img src="images/bt_vr.png" alt="360 vr view"/>
+                </a>
+            </div>
+
+            <span>360ºVR 영상을 통해 CJ대한통운 건설부문의 차별화된 공간문화, 현장감 넘치는 ONLYONE 건축물을 접할 수 있습니다.</span><!--띄워서배치하기-->
+        </div><!--.vr_view-->
+
+        <div class="news_link">
+            <div class="inner">
+                <div class="news_box">
+                    <strong>회사소식</strong>
+                    <a href="">MORE</a>
+                    <ul class="clear">
+                        <li>
+                            <a href="">
+                                <strong>19년 10월 수주 현황(마곡 C2-3BL 업무복합시설 신축공사)</strong>
+                                <span>강북삼성병원, 영남대의료원에 이은 의료시설에 대한 추가적인 Track record 확보를 통해 향후 의료시설 수주의 교두보 역할 기대됩니다.※ 마곡 C2-3BL 업무복합시설 신축공...</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <strong>2020년도 CJ대한통운 건설부문 외주 협력사 모집 공고</strong>
+                                <span>CJ대한통운 건설부문의 `20년도 협력사를 아래와 같이 공개모집 하오니 관심 있는 전문건설사의 많은 지원 바랍니다.□ 모집 공종 : 정규30개 공종 (첨부 모집공종 리스트 참조)□...</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <strong>19년 9월 수주 현황(삼성전자 기흥 여자기숙사 리모델링)</strong>
+                                <span>당 부문의 4대 특화사업 중 하나인 리모델링 사업에 대한 Track Record 추가 및 기술력을 확보하게 되었습니다. ※ 삼성전자 기흥 여자기숙사 리모델링 &n...</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--.news_box-->
+
+                <div class="site_link clear">
+                    <a href="https://www.ninebridges.co.kr/index.asp" target="blank">
+                        <span>클럽 나인브릿지 <span>웹사이트 </span>바로가기</span>
+                    </a>
+                    <a href="https://www.haesley.com:447/index.asp" target="blank">
+                        <span>해슬리 나인브릿지 <span>웹사이트 </span>바로가기</span>
+                    </a>
+                    <div class="link">
+                        <a href="">
+                            <span>e-brochure</span>
+                        </a>
+                        <a href="">
+                            <span>보유인증서</span>
+                        </a>
+                    </div>
+                </div><!--.site_link-->
+
+                <div class="plusinfo clear">
+                    <a href="">
+                        <span>사이버감사실</span>
+                    </a>
+                    <a href="">
+                        <span>상생경영</span>
+                    </a>
+                    <a href="">
+                        <span>담당자 문의</span>
+                    </a>
+                    <a href="">
+                        <span>오시는길</span>
+                    </a>
+                </div><!--.plusinfo-->
+
+                <img src="images/footer_emblem.png" alt="가족친화 우수기업"/>
+
+            </div><!--.inner-->
+        </div><!--.news_link-->
+    </main>
+
+    <footer>
+        <div class="inner">
+            <ul class="footer1 clear">
+                <li>
+                    <a href="">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="">법적고지</a>
+                </li>
+                <li>
+                    <a href="">이메일 무단수집거부</a>
+                </li>
+                <li>
+                    <a href="">사이트맵</a>
+                </li>
+            </ul><!--.footer1-->
+
+            <ul class="footer2">
+                <li>
+                    <a href="">전자조달시스템 바로가기</a>
+                </li>
+
+                <li>
+                    <a href="">CJ그룹 계열사 바로가기</a>
+                    <ul class="footer2_sub">
+                        <li>
+                            CJ그룹
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ주식회사</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            인프라
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ대한통운(건설)</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ올리브네트웍스(IT사업)</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            식품 & 식품서비스
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ제일제당(식품)</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ프레시웨이</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ푸드빌</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ엠디원</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            생명공학
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ제일제당(바이오))</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            신유통
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ ENM(오쇼핑)</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ대한통운</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ텔레닉스</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ올리브네트웍스(올리브영)</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            엔터테인먼트 & 미디어
+                            <ul class="footer2_sub_sub">
+                                <li>
+                                    <a href="">CJ ENM(E&M)</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ CGV</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ Hello</a>
+                                </li>
+                                <li>
+                                    <a href="">CJ 파워캐스트</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!--.footer2-->
+
+            <script>
+
+            // lang
+            // 만약에 click이 있으면 click을 지우고
+            // 만약에 click이 없으면 click을 넣어라
+            // var langBtn = lang.querySelector('a');
+            // langBtn.addEventListener('click', function(e){
+            //     e.preventDefault();
+            //     if (lang.classList.contains('click')) {
+            //         lang.classList.remove('click');
+            //     } else {
+            //         lang.classList.add('click');
+            //     }
+            // })
+
+
+            //footer의 'CJ그룹 계열사 바로가기' 버튼 클릭시.
+            var cjBtn = document.querySelector('ul.footer2 > li:nth-child(2)')
+            var cjBtnA = cjBtn.querySelector('a');
+
+            cjBtnA.addEventListener('click', function(e) {
+                e.preventDefault();
+                if(cjBtn.classList.contains('click')) {
+                    cjBtn.classList.remove('click');
+                } else {
+                    cjBtn.classList.add('click');
+                }
+            })
+
+
+            
+            // var cj_btn = document.querySelectorAll('ul.footer2 > li');
+            // console.log(cj_btn);
+            // var cj_sub = document.querySelector('ul.footer2_sub');
+            // console.log(cj_sub);
+            
+            // if(cj_sub) {
+            //     for(var i = 0; i < cj_btn.length; i++) {
+            //         cj_btn[i].addEventListener('click', function(e) {
+            //             e.preventDefault();
+            //             if (e.target.tagName === 'A') {
+            //                 cj_btn[i].classList.add('click');
+            //             }
+            //         });
+            //     }  
+            // }
+            
+            
+            </script>
+
+
+            <div class="footer3">
+                <span>서울시 서초구 남부순환로 2271 (방배동 1026-28) <span>우: 06703</span></span>
+                <span>대표자:박근희, 박근태, 김춘학</span>
+                <span>사업자번호:110-81-05034</span>
+                <span>대표번호:02-2017-1000</span>
+                <span>팩스번호:02-2017-1194</span>
+                <span>이메일:cjenc@cj.net</span>
+                <span>개인정보보호책임자:김민수</span>
+                <span>Copyright ⓒ 2016 CJ Engineering & Construction Corporation. All rights Reserved.</span>
+            </div><!--.footer3-->
+        </div><!--.inner-->
+        
+        
+        <a href="" class="top_btn">
+            <img src="images/top.png" alt="상단으로스크롤"/>
+        </a>
+
+
+        <div class="phone_btn <--click-->">
+            <a href="" class="phone_btn_show">사업분야</a>
+
+            <div class="phone_btn_sub">
+                <a href="">건설</a>
+
+                <a href="">리조트</a>
+
+                <a href="">부동산</a>
+
+                <a href="" class="close">닫기</a>
+            </div>
+        </div><!--.phone_btn-->
+        
+        <script>
+        
+        var btn799 = document.querySelector('div.phone_btn > a.phone_btn_show');
+        var btn400Sub = document.querySelector('div.phone_btn > div.phone_btn_sub');
+
+        //우측하단 '사업분야'버튼 클릭시 버튼 3개 보이게.
+        btn799.addEventListener('click', function(e) {
+            e.preventDefault();
+            btn799.parentNode.className = 'phone_btn click';
+            // classList.remove / add를 사용하는 것보다 className을 이용해서 더 간단하게 작성가능.
+            // btn799.parentNode.classList.remove('close');
+            // btn799.parentNode.classList.add('click');
+        });
+
+        //close btn 클릭시 버튼3개 안보이게.
+        var closeBtn = btn400Sub.querySelector('a.close');
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            btn799.parentNode.className = 'phone_btn close';
+            // btn799.parentNode.classList.remove('click');
+            // btn799.parentNode.classList.add('close');
+        });
+        
+        
+        </script>
+
+
+    </footer>
+
+
+
+    
+
+</div><!--.wrap-->
+    
+</body>
+</html>
