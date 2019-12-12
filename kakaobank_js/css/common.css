@@ -1,0 +1,364 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:100,300,400&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
+/* ---------------------reset------------------- */
+body {
+	font:normal 12px 'Noto Sans KR', Arial, Verdana, sans-serif;
+	line-height:1.3;
+	color:#000;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li{  list-style:none;  }
+ul, ol{  list-style:none;  }
+a{  text-decoration:none; color:#000;  }
+img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
+table{ width:100%; border-collapse:collapse; }
+strong, em{ font-style:normal; }
+
+/* -----------------------layout--------------------- */ 
+.wrap{ width:100%; min-width:1125px; } 
+header{	border-bottom:1px solid rgba(0,0, 0, .1); width:100%; min-width:1125px; height:80px; position:fixed; top:0; left:0; z-index:500; transition:all .5s ease; }
+main{ width:100%; background-color:#fff; /*position:relative;*/ } 
+footer{	width:100%; background-color:#eee; clear:both;   /* 굳이 main을 정신차리게 할 필요없이 footer만 main의 아래에 오게 하면 되게 때문에, main:after로 막내자식 만드는대신 footer에 clear를 준것. */ }
+footer > .inner{ width:1080px; height:160px; margin:0 auto;  }
+
+
+
+/* -----------------------common--------------------- */ 
+.clear:after{ content:''; display:block; clear:both; }
+main > *{ /*border:1px solid lime;*/ }
+main .inner{  /*border:1px solid red;*/ max-width:1080px; height:100%; margin:0 auto; position:relative; }
+main .text_btn{ /*border:1px solid red;*/ position:absolute; }
+main .text_btn > h3{ /*border:1px solid lime;*/ font-size:39px; font-weight:300; }
+main .text_btn > p{ /*border:1px solid blue;*/ margin-top:21px; font-size:15px; font-weight:200; line-height:23px; }
+main .text_btn > .btn_box{ /*border:1px solid yellow;*/ margin-top:40px; font-size:0; }
+main .text_btn > .btn_box > a{ line-height:50px; font-size:16px; text-align:center; display:inline-block; }
+main .text_btn > .btn_box > a.btn1{ border:1px solid #c2c2c2; border-radius:2px; width:256px;  }
+main .text_btn > .btn_box > a.btn2{ border:1px solid #c2c2c2; width:156px; }
+main .text_btn > .btn_box > a.btn4{ border:1px solid #c2c2c2; width:164px; }
+main .text_btn > .btn_box > a + a{ margin-left:6px; }
+main .text_btn > .btn_box > a:hover{ text-decoration:underline; }
+main .text_btn > .btn_box > a.btn_black:after{  content:''; width:6px; height:9px; margin:21px 0 0 8px; background:url('../images/home_arr.png') no-repeat; background-size:6px 9px;  display:inline-block; }
+main .text_btn > .btn_box > a.btn_white:after{  content:''; width:6px; height:9px; margin:21px 0 0 8px; background:url('../images/home_arr2.png') no-repeat; background-size:6px 9px;  display:inline-block; }
+.sub_brand > main  .inner > h4{  font-size:31px; font-weight:300; text-align:center; }
+.sub_brand > main  .inner > h4:after{ content:''; display:block; width:60px; height:1px; margin:30px auto 0; border-bottom:1px solid #000; }
+
+
+
+/* -----------------------header--------------------- */ 
+/*메뉴에마우스오버시 class='on'줌*/
+header.on{ background-color:#fff; transition:all .5s ease; } /* 메뉴마우스오버시배경색+글자색변경 */
+header.on > .logo_gnb > h1.logo > a{ background:url('../images/logo_black.svg') no-repeat; } 
+header.on > .logo_gnb > nav > ul.gnb > li > a{ color:#000; }
+header.on > .logo_gnb > nav > ul.gnb > li:hover:after{ content:''; display:block; border-bottom:2px solid #000; width:80px; height:2px; margin-top:-4px; }
+
+/*모든페이지 네비 공통*/
+header > .logo_gnb{ max-width:1080px; height:80px; margin:0 auto; }
+header > .logo_gnb > h1.logo{  float:left; }
+header > .logo_gnb > h1.logo > a { width:116px; height:20px; margin-top:30px;  background:url('../images/logo_white.svg'); font-size:0; display:block; }
+header > .logo_gnb > nav > ul.gnb{  float:right; }
+header > .logo_gnb > nav > ul.gnb > li{  width:100px; height:80px; margin:0 0px; float:left;  }
+header > .logo_gnb > nav > ul.gnb > li:hover > a{ border-bottom:2px solid black; text-decoration:underline; }
+header > .logo_gnb > nav > ul.gnb > li > a{  line-height:78px; display:block; font-size:15px; color:#fff; text-align:center; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box { width:100%; padding:60px 0; background-color:#fff; position:absolute; top:81px; left:0; text-align:center; display:none; }
+/* header > .logo_gnb > nav > ul.gnb > li:hover > .submenu_box{ display:block; } */
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box.active{ display:block; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul{  width:1080px; margin:0 auto; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li {  float:left;  }
+header > .logo_gnb > nav > ul.gnb > li.sub4 > .submenu_box > ul > li { width:25%; }
+header > .logo_gnb > nav > ul.gnb > li.sub5 > .submenu_box > ul > li { width:20%; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > a {  margin-bottom:20px; display:block; font-size:17px; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > a:hover{ text-decoration:underline; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > ul.sub_submenu { /*background-color:lightsalmon;*/ }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > ul.sub_submenu > li {/* border:1px solid lime; */}
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > ul.sub_submenu > li + li{ margin-top:24px; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > ul.sub_submenu > li > a {  font-size:14px; color:#444; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box > ul > li > ul.sub_submenu > li > a:hover {  text-decoration:underline; }
+header > .logo_gnb > nav > ul.gnb > li > .submenu_box  > ul > li > a > span.arrow{  width:10px; height:14px; background:url('../images/img_kabang_171010.png') no-repeat -310px -20px; margin-left:2px; display:inline-block; }
+
+/*sub페이지에서 기본 네비 css*/
+.sub{ background-color:#313955; }
+/*해당메뉴아래밑줄*/
+header.sub > .logo_gnb > nav > ul.gnb > li.nav_border:after{ content:''; display:block; border-bottom:2px solid #fff; width:100px; height:2px; margin-top:-2px; }
+header.on > .logo_gnb > nav > ul.gnb > li.nav_border:after{ content:''; display:block; border-bottom:2px solid #000; width:100px; height:2px; margin-top:-2px; }
+
+
+
+
+
+/* --------------------------------------<main>--------------------------------- */ 
+/* -----------------------.intro--------------------- */ 
+main > .intro{  width:100%; height:680px; background:#c94d4d url('../images/bg_main_3.jpg') no-repeat 100% 50%; background-size:cover; position:relative; }
+main > .intro > h2{  font-size:53px; color:#fff; text-align:center; position:absolute; top:228px; left:50%; margin:0 0 0 -186px; font-weight:100; }
+main > .intro > .app_box{ position:absolute; top:50%; left:50%; margin:80px 0 0 -232px; font-size:0;  font-family: 'Nanum Gothic', sans-serif; }
+main > .intro > .app_box > a{ border:1px solid rgba(255, 255, 255, .3); border-radius:5px; width:218px; margin:0 6px; padding:16px 0; font-size:20px; text-align:center; display:inline-block; flex:left; position:relative;  }
+/* main > .intro > .app_box > a:hover > span{  border-bottom:2px solid #fff; } */
+main > .intro > .app_box > a:hover > span:after{ content:''; display:block; height:2px; position:absolute; bottom:15px; border-bottom:2px solid #fff; }
+main > .intro > .app_box > a:nth-child(1):hover > span:after{ width:107px; right:35px; }
+main > .intro > .app_box > a:nth-child(2):hover > span:after{ width:90px; right:43px; }
+main > .intro > .app_box > a > span{ border-bottom:2px solid transparent; font-size:19px; font-family: 'Inter', sans-serif; font-weight:300; color:#fff; flex:left;}
+main > .intro > .app_box > a > span:before{  width:26px; height:28px; content:''; margin-right:18px; display:inline-block; vertical-align:bottom; border-bottom:none;  }
+main > .intro > .app_box > a > span.googleplay:before{ background:url('../images/img_kabang_171010.png') no-repeat -340px -290px; }
+main > .intro > .app_box > a > span.appstore:before{ background:url('../images/img_kabang_171010.png') no-repeat -370px -290px; }
+main > .intro > .submit_btn{ background-color:#ffde00; border-radius:5px; width:300px; padding:21px 22px; color:#000; position:absolute; right:31px; bottom:30px; font-size:0; box-shadow:0 2px 4px 0 rgba(0, 0, 0, .35); }
+main > .intro > .submit_btn > strong{  font-size:17px; vertical-align:top;  }
+main > .intro > .submit_btn > span{  vertical-align:middle; font-size:14px;   }
+main > .intro > .submit_btn > span.txt_bank:before{ border-left:1px solid #ccb200; height:13px; margin:0 14px;  content:''; display:inline-block; vertical-align:top; }
+main > .intro > .submit_btn > span.txt_bank:after{ width:10px; height:17px; margin-left:32px; margin-bottom:-4px; content:''; display:inline-block; background:url('../images/img_kabang_171010.png') no-repeat -330px -70px;  }
+
+
+/* -----------------------.mobile--------------------- */ 
+main > .mobile{  width:100%; height:750px; }
+main > .mobile > .inner{ max-width:900px; padding:0 90px;}
+main > .mobile > .inner > img{ width:456px; position:absolute; top:100px; }
+main > .mobile > .inner > .text_btn{ top:249px; right:90px; }
+main > .mobile > .inner > .text_btn > h3{  }
+main > .mobile > .inner > .text_btn > span{  }
+
+/* -----------------------.deposit--------------------- */ 
+main > .deposit{  width:100%; height:840px; background-color:#fafafa; overflow:hidden; }
+main > .deposit > .inner > .text_btn{ position:absolute; top:202px; left:113px; }
+main > .deposit > .inner > img.home_money_img{ width:460px; position:absolute; top:512px; left:113px; }
+main > .deposit > .inner > img.deposit_move_img{ width:460px; position:absolute; top:100px; right:-180px; opacity:0; }
+main > .deposit > .inner > img.scroll_move{ right:-40px; transition:all .8s ease-out; opacity:1; }
+
+/* -----------------------.bankbook--------------------- */ 
+main > .bankbook{  width:100%; height:800px; }
+main > .bankbook > .inner > img{ width:352px; position:absolute; top:130px; left:155px; }
+main > .bankbook > .inner > .text_btn{ position:absolute; top:250px; right:100px; }
+
+/* -----------------------.week26--------------------- */ 
+main > .week26{  width:100%; height:750px; background-color:#5c6775; }
+main > .week26 > .inner > .text_btn{ color:#fff; position:absolute; top:234px; left:140px; }
+main > .week26 > .inner > .text_btn > .btn_box > a{ color:#fff; }
+main > .week26 > .inner > img{ width:460px; position:absolute; top:160px; right:0; }
+
+/* -----------------------.wu--------------------- */ 
+main > .wu{  width:100%; height:750px; background:url('../images/home_map.png') no-repeat 100% 50%; overflow:hidden; }
+main > .wu > .inner > img{ width:455px; position:absolute; bottom:-300px; left:145px; opacity:0; }
+main > .wu > .inner > img.scroll_move{ bottom:0px; opacity:1; transition:all .8s ease-out; }
+main > .wu > .inner > .text_btn{ position:absolute; top:230px; right:58px; }
+
+/* -----------------------.loan--------------------- */ 
+.bgchange{ background-color:#333b58; } /* 스크롤내리면 배경하늘이 밤으로 바뀜 */
+main > .loan{  width:100%; height:930px; background-color:#559cde; position:relative; overflow:hidden; }
+main > .loan > .inner{ z-index:200; }
+main > .loan > .inner > .text_btn{ position:absolute; top:163px; left:50%; margin-left:-395px; }
+main > .loan > .inner > .text_btn > *{ color:#fff; text-align:center;}
+main > .loan > .inner > .text_btn > .btn_box{ width:682px; margin:40px auto 0;}
+main > .loan > .inner > .text_btn > .btn_box > a{ color:#fff;}
+main > .loan > .inner > img{ width:500px; position:absolute; bottom:0; left:50%; margin-left:-250px; }
+/* main > .loan > .inner > .sun{ content:''; width:110px; height:110px; border-radius:50%; background-color:#ffdc00; position:absolute; top:200px; left:92%; }
+main > .loan > .inner > .moon{  width:112px; height:112px; position:relative; top:200px; left:92%; display:none; } */
+main > .loan > .inner > .sun_moon{  width:112px; height:112px; position:relative; top:200px; left:92%; } 
+main > .loan > .inner > .sun_moon > *{ position:absolute;}
+main > .loan > .inner > .sun_moon > .moon{ content:''; width:110px; height:110px; background-color:#ffdc00; border-radius:50%; }
+main > .loan > .inner > .sun_moon > .moon.moon_white{ background-color:#fff; transition:all .2s ease-out; transition-delay:.5s; }
+main > .loan > .inner > .sun_moon > .moon_shadow{ content:''; width:112px; height:112px; background-color:#333b58; border-radius:50%; top:-75px; left:-70px; opacity:0; }
+main > .loan > .inner > .sun_moon > .moon_shadow.move{ top:-25px; left:-20px; transition:all .7s ease; transition-delay:.7s; opacity:1; }
+main > .loan > .inner > div.star{  width:4px; height:4px; background-color:#fff; border-radius:50%; position:absolute; opacity:0; }
+main > .loan > .inner > div.star.show{ opacity:1; transition:all .5s ease; transition-delay:1s; }
+main > .loan > .inner > div.star1{ top:30%; left:-15%; }
+main > .loan > .inner > div.star2{ top:10%; left:0%; }
+main > .loan > .inner > div.star3{ top:25%; left:-8%; }
+main > .loan > .inner > div.star4{ top:40%; right:-7%; }
+main > .loan > .inner > div.star5{ top:43%; right:18%; }
+main > .loan > .inner > div.star6{ top:73%; right:15%; }
+main > .loan > .inner > div.star7{ top:65%; left:5%; }
+main > .loan > .inner > div.star.twinkle{  animation-name:twinkle; animation-duration:1s; animation-timing-function:ease; animation-iteration-count:infinite; animation-direction:alternate;}
+@keyframes twinkle { 
+	0%{ transform:scale(.5, .5); opacity:0; }
+	100%{ transform:scale(1, 1); opacity:1; }
+ }
+ main > .loan > .inner > div.star1.twinkle{ animation-delay:.5s; }
+ main > .loan > .inner > div.star2.twinkle{ animation-delay:.8s; }
+ main > .loan > .inner > div.star3.twinkle{ animation-delay:1s; }
+ main > .loan > .inner > div.star4.twinkle{ animation-delay:.5s; }
+ main > .loan > .inner > div.star5.twinkle{ animation-duration:1.3s; }
+ main > .loan > .inner > div.star6.twinkle{ animation-duration:.7s; }
+/*scroll하면 배경색 체인지*/
+main > .loan > .scroll_bg{  width:100%; height:930px; background-color:#333b58; position:absolute; left:0; bottom:-930px;  }
+main > .loan > .scroll_bg.scroll_move{  bottom:0px; transition:all 1s ease-out; }
+
+/* -----------------------.checkcard--------------------- */ 
+main > .checkcard{  width:100%; height:1062px; }
+main > .checkcard > .inner > .text_btn{ position:absolute; top:163px; left:50%; margin-left:-270px; }
+main > .checkcard > .inner > .text_btn > *{ text-align:center;}
+main > .checkcard > .inner > .text_btn > .btn_box{ width:258px; margin:40px auto 0;}
+main > .checkcard > .inner > .card_box { 
+	position:absolute; 
+	top:400px; 
+	width:600px; 
+	height:550px; 
+	left:50%; 
+	transform:translateX(-50%); 
+}
+main > .checkcard > .inner > .card_box  ul{ 
+	margin:100px 0 ;
+}
+main > .checkcard > .inner > .card_box  ul > li { transition:all 0.5s ease}
+main > .checkcard > .inner > .card_box  ul > li.active {
+	transform: scale(1.17);
+	z-index: 1000;
+ }
+main > .checkcard > .inner > .card_box  ul > li > img {width:240px;}
+main > .checkcard > .inner > .card_box  ul > li:nth-child(1){  position:absolute; left:0; top:30px;  }
+/* main > .checkcard > .inner > .card_box > ul > li:nth-child(1) > img{ width:240px; }
+main > .checkcard > .inner > .card_box > ul > li:nth-child(2){ position:absolute; left:140px; z-index:10;  }
+main > .checkcard > .inner > .card_box > ul > li:nth-child(3){ position:absolute; left:300px; top:30px; }
+main > .checkcard > .inner > .card_box > ul > li:nth-child(3) > img{ width:240px; }
+main > .checkcard > .inner > .card_box > ul > li:nth-child(4){ position:absolute; display:none;  } */
+
+
+main > .checkcard > .inner > .card_box > .btn{ /*border:1px solid red;*/ width:100%; height:442px; font-size:0; position:relative; }
+main > .checkcard > .inner > .card_box > .btn > a{ /*border:1px solid blue;*/ width:38px; height:72px; display:block; position:absolute; }
+main > .checkcard > .inner > .card_box > .btn > a.prev{ background:url('../images/img-left.png') no-repeat; left:0; top:50%; margin-top:-37px; }
+main > .checkcard > .inner > .card_box > .btn > a.next{ background:url('../images/img-right.png') no-repeat;  right:0; top:50%; margin-top:-37px; }
+
+/*slider design*/
+.checkcard div.bx-wrapper{
+	border:none;  
+	box-shadow:none; 
+	background-color:transparent;
+
+}
+.checkcard div.bx-wrapper div.bx-viewport{
+	height:auto !important; 
+}
+.checkcard .bx-wrapper div.bx-controls-direction a{ width:38px; height:72px; font-size:0;  display:block; position:absolute;  z-index:0; }
+.checkcard .bx-wrapper div.bx-controls-direction a.bx-prev{ background:url('../images/img-left.png') no-repeat; left:-200px; top:280px; margin-top:-37px; }
+.checkcard .bx-wrapper div.bx-controls-direction a.bx-next{ background:url('../images/img-right.png') no-repeat;  right:-200px; top:280px; margin-top:-37px; }
+.checkcard div.bx-wrapper div.bx-pager{ display:none; }
+
+
+/* -----------------------.end--------------------- */ 
+main > .end{  width:100%; height:1048px; background-color:#f9f9f9; }
+main > .end > .inner > .text_btn{ position:absolute; top:163px; left:50%; margin-left:-190px; text-align:center; }
+main > .end > .inner > .text_btn:after{ border:1px solid black; content:''; width:100px; height:0; margin:50px auto; display:block; }
+main > .end > .inner > img{ width:1020px; position:absolute; top:450px; left:50%; margin-left:-510px; }
+main > .end > .inner > ul{ width:1020px; position:absolute; top:773px; left:50%; margin-left:-510px; }
+main > .end > .inner > ul > li{ width:255px; height:210px; float:left; text-align:center; }
+main > .end > .inner > ul > li > strong{ margin-bottom:17px; font-size:18px; font-weight:bold; display:block; }
+main > .end > .inner > ul > li > span{ line-height:24px; font-size:14px; font-weight:200; color:#666; display:block; }
+
+
+
+
+
+
+/* --------------------------------------<sub_brand>--------------------------------- */ 
+/* -----------------------.intro--------------------- */ 
+.sub_brand > main > .intro{  width:100%; height:533px; background:none;; position:relative; }
+.sub_brand > main > .intro > .text_btn{  position:absolute; top:244px; left:50%; margin-left:-283px; text-align:center;  }
+
+/* -----------------------.img_slide--------------------- */ 
+.sub_brand  main  .img_slide{  width:100%; height:460px; overflow:hidden; }
+.sub_brand  main  .img_slide  img{ width:100%; margin-top:-280px; }
+.sub_brand > main > .img_slide > img.show{ display:block; }
+/* slider design */
+div.bx-wrapper{ border:none; height:460px; box-shadow:none; }
+div.bx-wrapper .bx-viewport{ height:460px; overflow:hidden; }
+.bx-wrapper div.bx-controls-direction a{ display:none; }
+.bx-wrapper div.bx-pager{ display:none; }
+
+
+/* -----------------------.bank_history--------------------- */ 
+.sub_brand > main > .bank_history{  }
+.sub_brand > main > .bank_history > .inner{ max-width:620px; padding:80px 0 100px 0; }
+.sub_brand > main > .bank_history > .inner > .history_box{ /*border:1px solid red;*/ }
+.sub_brand > main > .bank_history > .inner > .history_box + .history_box{ margin-top:40px; }
+.sub_brand > main > .bank_history > .inner > .history_box > .history_year{ line-height:24px; font-size:24px; color:#333; float:left; }
+.sub_brand > main > .bank_history > .inner > .history_box > .history_content_box{ margin-left:42px; font-size:16px; font-weight:200; float:left; }
+.sub_brand > main > .bank_history > .inner > .history_box > .history_content_box > .history_content + .history_content{ margin-top:20px; }
+.sub_brand > main > .bank_history > .inner > .history_box > .history_content_box > .history_content > .history_month{ width:32px; color:#888; display:inline-block; }
+.sub_brand > main > .bank_history > .inner > .history_box > .history_content_box > .history_content > .history_month_content{ margin-left:30px; color:#333; }
+
+/* -----------------------.brand_video--------------------- */ 
+.sub_brand > main > .brand_video{ background-color:#fafafa; } 
+.sub_brand > main > .brand_video > .inner{  max-width:1086px; padding:105px 0; }
+.sub_brand > main > .brand_video > .inner > .video_slide{ height:380px; margin-top:63px; padding:0 60px; position:relative; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box{  height:283px; overflow:hidden; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video{  padding:3px 7px; float:left; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > *{ display:block; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a{ width:306px; height:176px; position:relative; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > img{ width:100%; }
+/* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > strong{ color:#fff; font-size:11px; font-weight:300; position:absolute; top:15px; left:20px; } */
+/* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > span{ width:30px; height:40px; font-size:0; background:url(../images/img_kabang_171010.png) no-repeat -178px -90px; background-size:215px 190px; display:block; position:absolute; top:50%; left:50%; margin:-20px 0 0 -15px; } */
+/* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > strong{ margin:20px 0 8px; font-size:18px; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > p{ line-height:24px; font-size:13px; font-weight:200; color:#888; } */
+/* .sub_brand > main > .brand_video > .inner > .video_slide > a{ width:40px; height:48px; font-size:0;  display:block; position:absolute; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .prev{ background:url('../images/btn-arrow-l.png') no-repeat; left:0; top:65px; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .next{ background:url('../images/btn-arrow-r.png') no-repeat; right:0; top:65px; } */
+/* .sub_brand > main > .brand_video > .inner > .video_slide > .page_btn{  margin-top:72px; font-size:0; position:absolute; bottom:0; left:50%; margin-left:-97px; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .page_btn > a{ width:8px; height:8px; padding:8px; display:inline-block; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .page_btn > a > span{ background-color:#000; border-radius:50%; width:6px; height:6px; opacity:.25; display:inline-block; }
+.sub_brand > main > .brand_video > .inner > .video_slide > .page_btn > a:hover > span{ opacity:1; } */
+
+/*slider design*/
+.brand_video div.bx-wrapper{ border:none; background-color:transparent; box-shadow:none; }
+.brand_video .bx-wrapper div.bx-controls-direction a{ width:40px; height:48px; font-size:0;  display:block; position:absolute; z-index:0; }
+.brand_video .bx-wrapper div.bx-controls-direction a.bx-prev{ background:url('../images/btn-arrow-l.png') no-repeat; left:-70px; top:80px; }
+.brand_video .bx-wrapper div.bx-controls-direction a.bx-next{ background:url('../images/btn-arrow-r.png') no-repeat; right:-70px; top:80px; }
+.brand_video div.video > a > strong{ color:#fff; font-size:11px; font-weight:300; position:absolute; top:-5px; left:20px; }
+.brand_video div.video > a > span{ width:30px; height:40px; font-size:0; background:url(../images/img_kabang_171010.png) no-repeat -178px -90px; background-size:215px 190px; display:block; position:absolute; top:90px; left:160px; margin:-20px 0 0 -15px; }
+.brand_video div.video strong{ margin:20px 0 8px; font-size:20px; display:inline-block; }
+.brand_video div.video p{ line-height:24px; font-size:13px; font-weight:200; color:#888; }
+.brand_video .bx-wrapper div.bx-pager{ bottom:-60px; }
+.brand_video .bx-wrapper div.bx-pager-item{ margin:0 5px; }
+.brand_video .bx-wrapper div.bx-pager.bx-default-pager a{ width:6px; height:6px; }
+.brand_video .bx-wrapper .bx-pager.bx-default-pager a{ background-color:rgba(216, 216, 216); }
+
+
+/* -----------------------.bank_bi--------------------- */ 
+.sub_brand > main > .bank_bi > .inner{ max-width:1080px; height:610px; padding:100px 0 150px; position:relative; }
+.sub_brand > main > .bank_bi > .inner > img{ width:460px; position:absolute; top:172px; left:0; right:0; margin:0 auto; }
+.sub_brand > main > .bank_bi > .inner > .bi_text{ border-bottom:1px solid #e1e1e1; margin-top:330px; text-align:center; }
+.sub_brand > main > .bank_bi > .inner > .bi_text > strong{ margin-bottom:8px; font-size:22px; font-weight:400; display:block; }
+.sub_brand > main > .bank_bi > .inner > .bi_text > p{  margin-bottom:80px; font-size:13px; font-weight:200; color:#333; }
+.sub_brand > main > .bank_bi > .inner > .bi_btn{ margin-top:50px; text-align:center;   font-size:0; }
+.sub_brand > main > .bank_bi > .inner > .bi_btn > a{ border:1px solid #dcdcdc; background-color:#fafafa; width:298px; padding:17px 0; font-size:13px; color:#666; display:inline-block;  }
+.sub_brand > main > .bank_bi > .inner > .bi_btn > a:hover{ text-decoration:underline;  }
+.sub_brand > main > .bank_bi > .inner > .bi_btn > a + a{ margin-left:20px; }
+
+
+
+
+
+
+/* --------------------------------------<footer>--------------------------------- */ 
+footer > .inner > .footer_info{ /*border:1px solid red;*/ padding:37px 0 12px; }
+footer > .inner > .footer_info > li{ /*border:1px solid blue;*/ float:left; }
+footer > .inner > .footer_info > li + li:before{ border-left:1px solid #d8d8d8; content:''; font-size:5px; margin:3px 15px; }
+footer > .inner > .footer_info > li > a{ color:#666; }
+footer > .inner > .footer_info > li > a.bold{ color:#000; font-weight:bold; }
+footer > .inner > .info_copyright{ /*border:1px solid red;*/ font-size:0; }
+footer > .inner > .info_copyright > *{ font-size:12px; }
+footer > .inner > .info_copyright > strong{ /*border:1px solid blue;*/ font-weight:400; }
+footer > .inner > .info_copyright > em{ /*border:1px solid blue;*/ margin:0 19px 0 6px; color:#888; }
+footer > .inner > .info_copyright > span{ /*border:1px solid blue;*/ color:#888; font-size:10px; }
+footer > .inner > .footer_bottom{ /*border:1px solid lime;*/ padding:20px 33px 0 0; font-size:0; }
+footer > .inner > .footer_bottom > .webaccessibility{ float:left; }
+footer > .inner > .footer_bottom > .webaccessibility > a{ /*border:1px solid blue;*/ font-size:13px; color:#666; font-weight:bold; vertical-align:middle;}
+footer > .inner > .footer_bottom > .webaccessibility > a > img{ /*border:1px solid blue;*/ width:48px; height:32px; margin-right:8px; vertical-align:middle; }
+footer > .inner > .footer_bottom > .sns{ /*border:1px solid red;*/ float:right; }
+footer > .inner > .footer_bottom > .sns > li{ /*border:1px solid blue;*/ float:left; }
+footer > .inner > .footer_bottom > .sns > li+ li{ margin-left:20px; }
+footer > .inner > .footer_bottom > .sns > li > a{ /*border:1px solid blue;*/ height:20px; margin:0 auto; float:left; }
+footer > .inner > .footer_bottom > .sns > li > a.facebook{ width:10px; background:url('../images/img_kabang_171010.png') no-repeat; background-position:-120px -360px; }
+footer > .inner > .footer_bottom > .sns > li > a.n_blog{ width:12px; background:url('../images/img_kabang_171010.png') no-repeat; background-position:-140px -360px; }
+footer > .inner > .footer_bottom > .sns > li > a.n_post{ width:14px; background:url('../images/img_kabang_171010.png') no-repeat; background-position:-389px -360px; }
+footer > .inner > .footer_bottom > .sns > li > a.youtube{ width:23px; background:url('../images/img_kabang_171010.png') no-repeat; background-position:-160px -359px; }
+
+
+
+
+
+
