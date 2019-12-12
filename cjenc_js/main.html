@@ -406,26 +406,30 @@
             //     }
                              
             // }
+
+
+
+            // //css로 하는게 낫다....
+            // videoRemove(window.innerWidth);
+            // window.addEventListener('resize', function() {
+            //     if (window.innerWidth < 799) {
+            //         videoRemove(window.innerWidth);
+            //     }
+            // });
             
-            videoRemove(window.innerWidth);
-            window.addEventListener('resize', function() {
-                videoRemove(window.innerWidth);
-            });
-            function videoRemove (w) {
-                let intros = document.querySelectorAll('.introSlider > div');
-                let videoBox = document.querySelectorAll('video');
-                if (window.innerWidth < 799) {
-                    for(let i = 0; i < intros.length; i++) {
-                        intros[i].removeChild(videoBox[i]);
-                    }
-                } 
-                // else {
-                //     for(let i = 0; i < intros.length; i++) {
-                //         intros[i].appendChild(videoBox[i]);
-                //     }
-                // }
-                
-            }
+           
+            // function videoRemove (w) {
+            //     let intros = document.querySelectorAll('.introSlider > div');
+            //     let videoBox = document.querySelectorAll('video');
+            //     if (window.innerWidth < 799) {
+            //             for (let i = 0; i < videoBox.length; i++) {
+            //                 if (videoBox[i]) { //배열은 if문이라도 for문 속에서 줘야함.
+            //                     videoBox[i].remove();
+            //                 }
+            //             }
+    
+            //     }   
+            // }
 
 
             var introBoxes = document.querySelectorAll('.img_text_box');
