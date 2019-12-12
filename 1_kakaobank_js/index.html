@@ -12,29 +12,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
 </head>
 <body>
 
-<div class="wrap sub_brand">
+<div class="wrap">
 
-    <header class="sub">
+    <header>
         <div class="logo_gnb">
             <h1 class="logo">
-                <a href="index.html">kakao bank</a>
+                <a href="">
+                    <!-- <img src="images/logo_white.svg" alt="kakaobank"/> -->
+                </a>
             </h1>
 
             <nav class="clear">
                 <ul class="gnb">
-                    <li class="sub5 nav_border">
-                        <a href="" class="link">은행소개</a>
-                        <div class="submenu_box <!--active-->">
+                    <li class="sub5">
+                        <a href="sub_brand.html" class="link">은행소개</a>
+                        <div class="submenu_box ">
                             <ul class="clear">
                                 <li>
-                                    <a href="">카카오뱅크</a>
+                                    <a href="sub_brand.html">카카오뱅크</a>
                                     <ul class="sub_submenu">
                                         <li>
-                                            <a href="">브랜드</a>
+                                            <a href="sub_brand.html">브랜드</a>
                                         </li>
                                         <li>
                                             <a href="">주주사 소개</a>
@@ -276,12 +277,12 @@
     </header>
 
     <script>
-    window.addEventListener('scroll', scrollWork);
+    window.addEventListener('scroll', scrollHeaderBg);
     var htmlEl = document.querySelector('html');
     var header = htmlEl.querySelector('header');
     
     //스크롤시 header 배경색, 글씨색 변경
-    function scrollWork() {
+    function scrollHeaderBg() {
         var top = htmlEl.scrollTop;
         // console.log(top);
         if (top > 50) {
@@ -292,6 +293,7 @@
             header.classList.remove('on');
         }
     }
+
 
     //메뉴에 마우스오버시 header 배경색, 글씨색 변경
     var liEls = htmlEl.querySelectorAll('.submenu_box');
@@ -356,309 +358,348 @@
 
     
     </script>
-    
+
 
     <main>
         <div class="intro">
-            <div class="text_btn">
-                <h3>일상에서 더 쉽게, 더 자주 이용하는<br/>나만의 은행</h3>
-                <p>카카오뱅크는 사람과 은행의 만남이 더 쉽게, 더 자주 일어나야 한다고 믿습니다.<br/>
-                    사용자 중심의 혁신적인 기술을 통해 일상 속 어떤 순간에서도 유용한 나만의 은행.<br/>
-                    카카오뱅크는 또 하나의 은행이 아닌 '은행의 새로운 시작' 입니다.</p>
-            </div> 
-        </div><!--.into닫음-->
+                <h2>같지만 다른 은행 <br/>카카오뱅크</h2>
+                <div class="app_box clear">
+                    <a href="">
+                        <span class="storename googleplay">Google Play</span>
+                    </a>
+                    <a href="">
+                        <span class="storename appstore">App Store</span>
+                    </a>
+                </div>
+                <a href="" class="submit_btn">
+                    <strong>서류제출하기</strong>
+                    <span class="txt_bank">카카오뱅크 모바일대출</span>
+                </a>
+        </div><!--.intro닫음-->
+
+        <div class="mobile">
+            <div class="inner">
+                <img src="images/home_phone_1_20170821.png" alt=""/>
+                <div class="text_btn">
+                    <h3>모바일로 더 손쉬운 <br/>계좌개설, 간편한 이체</h3>
+                    <p>공인인증서, OTP 없이 계좌 개설이 간편합니다.<br/>
+                        여러 건의 이체도 몇 번의 터치로 손쉽게 보낼 수 있습니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn1 btn_black">
+                            카카오뱅크 입출금통장
+                        </a>
+                    </div>
+                </div>
+            </div>   
+        </div><!--.mobile닫음-->
         
-        <div class="img_slide">
-                <img src="images/img_1_20180109.jpg" alt="" class="show"/>
-                <img src="images/img_2_20180109.jpg" alt=""/>
-                <img src="images/img_3_20180109.jpg" alt=""/>
-                <img src="images/img_4_20180109.jpg" alt=""/>
-        </div><!--.img_slide닫음-->
+        <div class="deposit">
+            <div class="inner">
+                <div class="text_btn">
+                    <h3>우대조건 없이<br/>합리적인 예금과 적금</h3>
+                    <p>기대했던 금리와 다르게 복잡한 우대조건에 실망한 적이 있었나요?<br/>
+                        카카오뱅크의 예금, 적금은 숨겨진 우대조건 없이 누구에게나 편리하고 합리적입니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn2 btn_black">
+                            정기예금
+                        </a>
+                        <a href="" class="btn2 btn_black">
+                            자유적금
+                        </a>
+                    </div>
+                </div>
+                <img src="images/home_money.png" class="home_money_img" alt="적은 금액부터 큰 금액까지, 짧은 기간부터 긴 기간까지, 누구에게나 합리적인"/>
+                <img src="images/home_phone_3_20190612.png" alt="" class="deposit_move_img"/>
+            </div>
+        </div><!--.deposit닫음-->
 
         <script>
-        //얘는 그냥 슬라이딩되는 것이기 때문에 직접 함수를 짜는게 더 나음. 기본적으로 fade기능을 주고 배열로 돌려서 사라질때마다 transform을 적용되게 하면 살짝옆으로 넘어가면서 페이드되게 할 수 있음.
-        $(document).ready( function() {
-            var option = {
-                mode : 'fade',
-                maxSlides : 1,
-                pagerType : 'full',
-                slideHeight : 460,
-                speed : 900,
-                auto : true,
-                pause : 2400
+        
+        var depositImg = document.querySelector('img.deposit_move_img');
+        // console.log(depositImg);
+
+        window.addEventListener('scroll', scrollWork_deposit);
+
+        function scrollWork_deposit() {
+            var top = htmlEl.scrollTop;
+            // console.log(top);
+
+            if (top > 800) {
+                depositImg.classList.add('scroll_move');
             }
-            $('.img_slide').bxSlider( option );
-        } );
+            if (top > 2115 || top < 670) {
+                depositImg.classList.remove('scroll_move');
+            }
+        }
         
         </script>
 
 
-        <div class="bank_history">
+        <div class="bankbook">
             <div class="inner">
-                <div class="history_box clear">
-                    <span class="history_year">2018</span>
-
-                    <div class="history_content_box">
-                        <div class="history_content">
-                            <span class="history_month">12월</span>
-                            <span class="history_month_content">금융감독원 ‘보이스피싱 예방 감사장’ 2년 연속 수상</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">12월</span>
-                            <span class="history_month_content">‘모임통장 서비스’ 출시</span>
-                        </div>
-                        
-                        <div class="history_content">
-                            <span class="history_month">11월</span>
-                            <span class="history_month_content">‘내 신용정보’ 서비스 시작</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">7월</span>
-                            <span class="history_month_content">카카오뱅크 출범 1년 (수신 8.6조 ・ 여신 7조원 기록)</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">6월</span>
-                            <span class="history_month_content">'26주적금' 출시</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">3월</span>
-                            <span class="history_month_content">아시안뱅커 '최우수 디지털뱅크' 수상</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">2월</span>
-                            <span class="history_month_content">'Fast Company' 세계 50대 혁신기업 선정</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">1월</span>
-                            <span class="history_month_content">'전월세보증금' 대출 출시</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">1월</span>
-                            <span class="history_month_content">500만 계좌 돌파</span>
-                        </div>
+                <img src="images/home_moim_20190612.png" alt=""/>
+                <div class="text_btn">
+                    <h3>함께 쓰고 같이 보는<br/>모임통장</h3>
+                    <p>카카오톡 친구를 바로 모임통장으로 초대하고<br/>
+                            친구들과 함께 잔액과 입출금 현황을 확인할 수 있습니다.<br/>
+                            재미있는 메시지 카드로 회비 입금 요청도 해보세요.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn1 btn_black">
+                            모임통장
+                        </a>
                     </div>
-
-                </div><!--.history_box닫음-->
-
-                <div class="history_box clear">
-                    <span class="history_year">2017</span>
-
-                    <div class="history_content_box">
-                        <div class="history_content">
-                            <span class="history_month">12월</span>
-                            <span class="history_month_content">애플 앱스토어 '올해의 인기 무료앱' 선정</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">12월</span>
-                            <span class="history_month_content">구글플레이 '2017 올해를 빛낸 앱' 혁신적인 앱 부문 최우수상 수상</span>
-                        </div>
-                        
-                        <div class="history_content">
-                            <span class="history_month">7월</span>
-                            <span class="history_month_content">100만 계좌 돌파</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">7월</span>
-                            <span class="history_month_content">카카오뱅크 영업 개시</span>
-                        </div>
-
-                        <div class="history_content">
-                            <span class="history_month">4월</span>
-                            <span class="history_month_content">은행업 본인가</span>
-                        </div>
-                    </div>
-                </div><!--.history_box닫음-->
-
-                <div class="history_box clear">
-                    <span class="history_year">2016</span>
-
-                    <div class="history_content_box">
-                        <div class="history_content">
-                            <span class="history_month">1월</span>
-                            <span class="history_month_content">한국카카오 주식회사(카카오뱅크 준비법인) 설립</span>
-                        </div>
-                    </div>
-                </div><!--.history_box닫음-->
-
-                <div class="history_box clear">
-                    <span class="history_year">2015</span>
-
-                    <div class="history_content_box">
-                        <div class="history_content">
-                            <span class="history_month">11월</span>
-                            <span class="history_month_content">은행업 예비인가</span>
-                        </div>
-                    </div>
-                </div><!--.history_box닫음-->
+                </div>
             </div>
-        </div><!--.bank_histroy닫음-->
+        </div><!--.bankbook닫음-->
 
-
-        <div class="brand_video">
+        <div class="week26">
             <div class="inner">
-                <h4>브랜드 영상</h4>
+                <div class="text_btn">
+                    <h3>함께 도전해서<br/>재미있는 26주적금</h3>
+                    <p>26주동안 변화하는 재미에 빠져있는 사이<br/>
+                            어느덧 만기 달성 경험을 맛보게 됩니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn1 btn_white">
+                            26주적금
+                        </a>
+                    </div>
+                </div>
+                <img src="images/home_26week_20190612.png" alt=""/>
+            </div>
+        </div><!--.week26닫음-->
 
-                <div class="video_slide">
-                    <div class="slide_box clear">
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_11.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 광고 볼 시간에</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 은행 상담편</strong>
-                            <p>광고 볼 시간에. 카카오뱅크 은행 상담<br/>언제 어디서나 카톡으로 은행 상담</p>
-                        </div>
+        <div class="wu">
+            <div class="inner">
+                <img src="images/home_phone_2v2.png" alt=""/>
+                <div class="text_btn">
+                    <h3>해외계좌송금과<br/>WU빠른해외송금을<br/>더 쉽고, 저렴하게</h3>
+                    <p>해외계좌송금이 가능한 22개국을 포함하여<br/>
+                            전세계 200여개국으로<br/>
+                            WU빠른해외송금이 가능합니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn1 btn_black">
+                            해외송금
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div><!--.wu닫음-->
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_10.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 광고 볼 시간에</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 전월세보증금 대출편</strong>
-                            <p>광고 볼 시간에. 카카오뱅크 전세대출 신청<br/>서류제출도 모바일로 간편하게</p>
-                        </div>
+        <script>
+        
+        var wuImg = document.querySelector('div.wu > div > img');
+        console.log(wuImg);
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_09.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 광고 볼 시간에</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># ATM 출금편</strong>
-                            <p>광고 볼 시간에. ATM 출금<br/>전국 은행 및 편의점 ATM 수수료 0원</p>
-                        </div>
+        window.addEventListener('scroll', scrollWork_wu);
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_08.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 광고 볼 시간에</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 자유적금편</strong>
-                            <p>광고 볼 시간에. 카카오뱅크 적금 가입<br/>기간도 금액도 내 맘대로 자유적금</p>
-                        </div>
+        function scrollWork_wu() {
+            var top = htmlEl.scrollTop;
+            console.log(top);
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_12.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 같은 것을 다르게</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 회전목마편</strong>
-                            <p>5초에 한명씩, 1년만에 630만명<br/>카카오뱅크 어떻게 한거야?</p>
-                        </div>
+            if (top > 3200) {
+                wuImg.classList.add('scroll_move');
+            }
+            if (top > 4500 || top < 2912) {
+                wuImg.classList.remove('scroll_move')
+            }
+            
+        }
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_13.png" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 같은 것을 다르게</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 기차편</strong>
-                            <p>공인인증서 없애기, 간편 로그인<br/>여러 개의 앱을 하나로, 앱 UI를 심플하게<br/>카카오뱅크 어떻게 한거야?</p>
-                        </div>
+        </script>
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_07_20180109.jpg" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 같지만 다른 은행</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 간편 이체편</strong>
-                            <p>광고 볼 시간에. ATM 출금<br/>전국 은행 및 편의점 ATM 수수료 0원</p>
-                        </div>
+        <div class="loan">
+            <div class="inner">
+                <div class="text_btn">
+                    <h3>복잡한 서류 제출을 간편하게, 내가 원하는 시간에</h3>
+                    <p>이사 날짜가 주말이나 공휴일이어도 전월세보증금 대출을 신청할 수 있습니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn4 btn_white">
+                            마이너스 통장대출
+                        </a>
+                        <a href="" class="btn4 btn_white">
+                            신용대출
+                        </a>
+                        <a href="" class="btn4 btn_white">
+                            개인사업자 대출
+                        </a>
+                        <a href="" class="btn4 btn_white">
+                            전월세보증금 대출
+                        </a>
+                    </div>
+                </div>
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_02.jpg" alt=""/>
-                                <strong>[카카오뱅크 TV-CF] 같지만 다른 은행</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># 아무때나 계좌개설편</strong>
-                            <p>24시간 365일 아무때나 계좌 개설이 가능한 은행<br/>같지만 다른 은행 카카오뱅크</p>
-                        </div>
+                <img src="images/home_phone_4_20181015.png" alt=""/>
+                
+                <!-- <div class="sun"></div> -->
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_06_20180109.jpg" alt=""/>
-                                <strong>브랜드 소개 - 사람편</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># People in kakaobank</strong>
-                            <p>권위적이지 않고누구나 쉽게 이용할 수 있는 은행.<br/>카카오뱅크 사람들은 세상에 없던 은행을 만들어 나갑니다.</p>
-                        </div>
+                <div class="sun_moon">
+                    <div class="moon"></div>
+                    <div class="moon_shadow"></div>
+                </div>
 
-                        <div class="video">
-                            <a href="">
-                                <img src="images/brand_movie_01.jpg" alt=""/>
-                                <strong>브랜드 소개 - 심볼편</strong>
-                                <span>동영상 재생</span>
-                            </a>
-                            <strong># Kakaobank 브랜드 영상</strong>
-                            <p>은행을 의미하는 B, 그리고 은행의 중심에 서있는 나 (I)<br/>카카오뱅크의 심볼을 통해 내가 중심이 되는<br/>"은행의 새로운 시작"을 이야기합니다.</p>
-                        </div>
-                    </div><!--.slide_box닫음-->
+                <div class="star star1"></div>
+                <div class="star star2"></div>
+                <div class="star star3"></div>
+                <div class="star star4"></div>
+                <div class="star star5"></div>
+                <div class="star star6"></div>
+                <div class="star star7"></div>
+            </div>
+            <div class="scroll_bg"></div>
+        </div><!--.loan닫음-->
 
-                    
+        <script>
+        
+        var loan = document.querySelector('div.loan');
+        var loan_bg = loan.querySelector('div.scroll_bg');
+        var sunMoon = loan.querySelector('div.sun_moon > .moon');
+        var moonShadow = loan.querySelector('div.moon_shadow');
+        var stars = loan.querySelectorAll('div.star');
+        console.log(loan);
+        console.log(loan_bg);
+        console.log(sunMoon);
+        console.log(moonShadow);
+        console.log(stars);
 
-                    <!-- <a href="" class="prev">prev</a>
-                    <a href="" class="next">next</a>
+        window.addEventListener('scroll', scrollWork_loan);
 
-                    <div class="page_btn">
-                        <a href=""><span>1</span></a>
-                        <a href=""><span>2</span></a>
-                        <a href=""><span>3</span></a>
-                        <a href=""><span>4</span></a>
-                        <a href=""><span>5</span></a>
-                        <a href=""><span>6</span></a>
-                        <a href=""><span>7</span></a>
-                        <a href=""><span>8</span></a>
+        function scrollWork_loan() {
+            var top = htmlEl.scrollTop;
+            
+            if (top > 4220) {
+                loan_bg.classList.add('scroll_move');
+                sunMoon.classList.add('moon_white');
+                moonShadow.classList.add('move');
+                for(var i = 0; i < stars.length; i++) {
+                    stars[i].classList.add('show', 'twinkle');
+                }
+            }
+            if (top > 5420 || top < 3692) {
+                loan_bg.classList.remove('scroll_move');
+                sunMoon.classList.remove('moon_white');
+                moonShadow.classList.remove('move');
+                for(var i = 0; i < stars.length; i++) {
+                    stars[i].classList.remove('show', 'twinkle');
+                }
+            }
+            
+        }
+        
+        
+        </script>
+
+
+        <div class="checkcard">
+            <div class="inner">
+                <div class="text_btn">
+                    <h3>프렌즈 체크카드,<br/>내가 고르는 선택의 즐거움</h3>
+                    <p>프렌즈 디자인부터 멋스러운 블랙 컬러 카드까지 원하는 디자인과 기능을 선택할 수 있습니다.</p>
+                    <div class="btn_box">
+                        <a href="" class="btn1 btn_black">
+                            카카오뱅크 프렌즈 체크카드
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card_box">
+                    <ul class="clear">
+                        <li>
+                            <img src="images/home_checkcard_1.png" alt=""/>
+                        </li>
+                        <li>
+                            <img src="images/home_checkcard_2.png" alt=""/>
+                        </li>
+                        <li>
+                            <img src="images/home_checkcard_3.png" alt=""/>
+                        </li>
+                        <li>
+                            <img src="images/home_checkcard_4.png" alt=""/>
+                        </li>
+                    </ul>
+                    <!-- <div class="btn">
+                        <a href="" class="prev">이전</a>
+                        <a href="" class="next">다음</a>
                     </div> -->
-                </div><!--.video_slide 닫음-->
+                </div>
             </div>
-        </div><!--.brand_video닫음-->
+        </div><!--.checkcard닫음-->
 
-    <script>
-
+        <script>
+        
         $(document).ready( function() {
-            var option = {
+            var slideLis = document.querySelectorAll('.card_box > ul > li');
+            var imgs = document.querySelectorAll('.card_box img')  
+            var num;
+            var bigImg;
+            
+         
+            $('.card_box > ul').bxSlider( {
+                minSlides : 3,
                 maxSlides : 3,
-                slideWidth : 306,
-                infiniteLoop : false,
-                slideMargin : 16,
+                slideWidth : 280,
+                slideMargin : 0,
                 moveSlides : 1,
-            };
-            $('.slide_box').bxSlider( option );
-        } );
-                        
-    </script>   
+                infiniteLoop : true,
+                onSlideBefore : function(/*oldIndex, newIndex*/){
+                    // console.log(oldIndex, newIndex)
+                    num = this.getCurrentSlide() + 1;
+                    // console.log(this.getCurrentSlide())
+
+                    if (num === 4) {
+                        num = 0
+                    }
+                    
+                    for (var i = 0; i < slideLis.length; i++) {
+                        slideLis[i].classList.remove('active');
+                    }
+                    console.log(num);
+                    slideLis[num].classList.add('active');
+                },
+                onSliderLoad: function() {
+                    // for (var i = 0; i < slideLis.length; i++) {
+                    //     slideLis[i].style.width = '240px';
+                    //     slideLis[i + 1].style.marginLeft = '-70px';
+                    // }
+                    slideLis[1].classList.add('active');
+                }
+            });
+        });
+        
+        </script>
 
 
-        <div class="bank_bi">
+        <div class="end">
             <div class="inner">
-                <h4>BI소개</h4>
-                <img src="images/img_brand_bi.png" alt="kakao bank 로고"/>
-                <div class="bi_text">
-                    <strong>Symbol & Wordmark</strong>
-                    <p>내가 ( I ) 중심이 되는 은행 (B)을 형상화한 심볼과 고객중심 DNA를 반영한 워드마크</p>
+                <div class="text_btn">
+                    <h3>IT 기술로 카카오뱅크를<br/>만들어 갑니다.</h3>
                 </div>
-                <div class="bi_btn">
-                    <a href="">GUIDE 파일 다운로드</a>
-                    <a href="">AI 파일 다운로드</a>
-                </div>
+                <img src="images/home_it.png" alt=""/>
+                <ul>
+                    <li>
+                        <strong>간결하고, 유려하게</strong>
+                        <span>작은 모바일 화면에 적합하도록<br/>
+                                복잡함을 덜어낸<br/>
+                                유려하고 친화적인 UX</span>
+                    </li>
+
+                    <li>
+                        <strong>간편한 인증, 철저한 보안</strong>
+                        <span>지문, 비밀번호로 간편한 인증<br/>
+                                IT 기술의 강력한 보안 검증과<br/>
+                                데이터 암호화</span>
+                    </li>
+
+                    <li></li>
+
+                    <li>
+                        <strong>Mobile First, One App</strong>
+                        <span>모바일에서 뱅킹이 더 쉽고 편리하게<br/>
+                                여러 앱을 설치할 필요 없이<br/>
+                                하나의 앱으로</span>
+                    </li>
+                </ul>
             </div>
-        </div><!--.bank_bi닫음-->
+        </div><!--.end닫음-->
     </main>
 
     <footer>

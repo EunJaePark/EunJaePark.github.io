@@ -261,8 +261,9 @@ main > .end > .inner > ul > li > span{ line-height:24px; font-size:14px; font-we
 
 /* -----------------------.img_slide--------------------- */ 
 .sub_brand  main  .img_slide{  width:100%; height:460px; overflow:hidden; }
-.sub_brand  main  .img_slide  img{ width:100%; margin-top:-280px; }
-.sub_brand > main > .img_slide > img.show{ display:block; }
+/* .sub_brand  main  .img_slide  img{ width:100%; margin-top:-280px; } */
+.sub_brand  main  .img_slide > div.bgBox{ width:100%; height:100%; background-size:100%; float:left; }
+/* .sub_brand > main > .img_slide > img.show{ display:block; } */
 /* slider design */
 div.bx-wrapper{ border:none; height:460px; box-shadow:none; }
 div.bx-wrapper .bx-viewport{ height:460px; overflow:hidden; }
@@ -285,11 +286,11 @@ div.bx-wrapper .bx-viewport{ height:460px; overflow:hidden; }
 .sub_brand > main > .brand_video{ background-color:#fafafa; } 
 .sub_brand > main > .brand_video > .inner{  max-width:1086px; padding:105px 0; }
 .sub_brand > main > .brand_video > .inner > .video_slide{ height:380px; margin-top:63px; padding:0 60px; position:relative; }
-.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box{  height:283px; overflow:hidden; }
-.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video{  padding:3px 7px; float:left; }
-.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > *{ display:block; }
-.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a{ width:306px; height:176px; position:relative; }
-.sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > img{ width:100%; }
+.sub_brand > main > .brand_video > .inner > .video_slide  .slide_box{  height:283px; overflow:hidden; }
+.sub_brand > main > .brand_video > .inner > .video_slide  .slide_box > .video{  padding:3px 7px; float:left; }
+.sub_brand > main > .brand_video > .inner > .video_slide  .slide_box > .video > *{ display:block; }
+.sub_brand > main > .brand_video > .inner > .video_slide  .slide_box > .video > a{  width:306px; height:176px; position:relative; }
+/* .sub_brand > main > .brand_video > .inner > .video_slide  .slide_box > .video > a > img{ width:100%; } */
 /* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > strong{ color:#fff; font-size:11px; font-weight:300; position:absolute; top:15px; left:20px; } */
 /* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > a > span{ width:30px; height:40px; font-size:0; background:url(../images/img_kabang_171010.png) no-repeat -178px -90px; background-size:215px 190px; display:block; position:absolute; top:50%; left:50%; margin:-20px 0 0 -15px; } */
 /* .sub_brand > main > .brand_video > .inner > .video_slide > .slide_box > .video > strong{ margin:20px 0 8px; font-size:18px; }
