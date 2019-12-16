@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,500,700&display=swap');
+
+/* ---------------------reset------------------- */
+body {
+	font:normal 12px 'Noto Sans KR', Arial, Verdana, sans-serif;
+	line-height:1.6;
+	color:#4c4c4c;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li{  list-style:none;  }
+ul, ol{  list-style:none;  }
+a{  text-decoration:none; color:#4c4c4c;  }
+img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
+table{ width:100%; border-collapse:collapse; }
+strong, em{ font-style:normal; }
