@@ -169,7 +169,7 @@
 
             function scrollWork() {
                 var top = htmlEl.scrollTop;
-                console.log(window.innerWidth);
+                // console.log(window.innerWidth);
                 if (window.innerWidth > 800) {
                     if (top > 1000) {
                         header.classList.add('bg');
@@ -267,7 +267,6 @@
                 
                 closeBtn799.addEventListener('click', function() {
                     var top = htmlEl.scrollTop;
-                    console.log(top);
                     
                     if (top > 50) {
                         header.classList.add('on799');
@@ -465,7 +464,7 @@
                             onSlideAfter : function(){
                                 //video위에 있는 text 나타날때 효과.
                                 var num = this.getCurrentSlide();
-                                console.log(num);
+                                // console.log(num);
                                 if (num === 4) {
                                     num = 0;
                                 }
@@ -569,50 +568,84 @@
 
 
             //2번째페이지가 상단에오면 intro내용 안보이게.
-            window.addEventListener('scroll', scrollWork_intro);
-            var introInners = document.querySelectorAll('div.inner');
-            var introBtn = document.querySelector('div.page_btn');
-            console.log(introInners);
-            console.log(introBtn);
+            window.addEventListener('scroll', scrollWork_intro);                
+            var intro = document.querySelector('.intro');
+            // var introInners = document.querySelectorAll('div.inner');
+            // var introBtn = document.querySelector('div.page_btn');
+            // var introSlider = document.querySelector('.intro > div ');
+            
             
             function scrollWork_intro() {
                 var top = htmlEl.scrollTop;
-                console.log(top);
 
                 if (top > 500) {
-                    for(var i = 0; i < introInners.length; i++) {
-                        introInners[i].style.opacity = '0';
-                        introInners[i].style.transition = 'all .5s ease-out';
-                        introBtn.style.opacity = '0';
-                    }
+                    intro.classList.add('scroll');
+                    // for(var i = 0; i < introInners.length; i++) {
+                    //     // introInners[i].style.opacity = '0';
+                    //     // introInners[i].style.transition = 'all .5s ease-out';
+                    //     // introBtn.style.opacity = '0';
+                    //     // intro.style.opacity = '0';
+                    // }
                 }
                 if (top < 500) {
-                    for (var i = 0; i < introInners.length; i++) {
-                        introInners[i].style.opacity = '1';
-                        introInners[i].style.transition = 'all .5s ease-out'
-                        introBtn.style.opacity = '1';
-                    }
+                    intro.classList.remove('scroll');
+                    // for (var i = 0; i < introInners.length; i++) {                       
+                    //     // introInners[i].style.opacity = '1';
+                    //     // introInners[i].style.transition = 'all .5s ease-out'
+                    //     // introBtn.style.opacity = '1';
+                    //     // intro.style.opacity = '1';
+                    // }
                 }
+                // introSlider.style.opacity = '1';
             }
         }
         
 
         //intro에서 마우스스크롤하면 2번째 페이지로 스크롤되게.
         function pageScroll() {
-            var windowHeight;
-            $('body').ready(function() {
-                windowHeight = $(window).height();
-                console.log(windowHeight);          
-            });
+            var business = document.querySelector('div.business');
+            // console.log(business.offsetTop);
+            
+            
 
-            if(htmlEl.scrollTop === 0) {
-                window.addEventListener('scroll', function() {
-                    window.ScrollTo({
-                        top: 500,
-                        // behavior: smooth
-                    });
-                });
-            }
+            console.log($(business).offset().top);
+            
+
+
+            
+            // lastScroll = 0;
+            
+            // if(htmlEl.scrollTop === 0) {
+            //     window.addEventListener('scroll', function() {
+            //         if(lastScroll < window.pageYOffset) {
+            //             var windowHeight;
+            //             $('body').ready(function() {
+            //                 windowHeight = $(window).height();
+            //                 console.log(windowHeight);
+            //                 window.scrollBy({
+            //                 top: windowHeight,
+            //                 behaviro: 'smooth'
+            //             });          
+            //             });
+                        
+            //         } else {
+            //             // window.scrollBy(0, auto);
+            //         }
+            //         lastScroll = window.pageYOffset;
+            //         // console.log(window.pageYOffset);
+            //     });
+            // }
+            
+            
+
+            // if(htmlEl.scrollTop === 0) {
+            //     window.addEventListener('scroll', function() {
+            //         // window.ScrollTo({
+            //         //     top: 500,
+            //         //     // behavior: smooth
+            //         // });
+            //     });
+            // }
         }
         
         

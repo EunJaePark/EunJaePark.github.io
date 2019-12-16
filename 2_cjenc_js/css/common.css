@@ -194,6 +194,11 @@ main .intro .inner > .img_text_box{  width:57.742782%; min-width:610px; position
 .intro .bx-wrapper .bx-controls-auto a.bx-start.active{ background:url('../images/play_bt_on.png') no-repeat; background-size:cover; }
 .intro .bx-wrapper .bx-controls-auto a.bx-stop.active{ background:url('../images/stop_bt_on.png') no-repeat; background-size:cover; }
 
+.intro .inner{ transition:all .5s ease-out; }
+.intro.scroll .inner{ opacity:0; }
+.intro.scroll div.bx-controls.bx-has-controls-auto.bx-has-pager{ opacity:0; }
+
+
 /*----2 .business----*/
 .business{ background-color:rgba(0, 0, 0, 0.6); width:100%; height:100vh; position:relative; top:1000px;  }
 .business > .inner{ width:1100px; padding-top:130px;  }
