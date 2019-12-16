@@ -390,6 +390,7 @@
         <script>
         
         introSlider();
+        pageScroll();
 
         function introSlider() {
             // //799px이상에서만 video보이게함.
@@ -450,7 +451,8 @@
                             speed : 1000,
                             infiniteLoop : true,
                             auto : true,
-                            pause : 5000  
+                            pause : 5000,
+                            autoControls : true
                         });
                     } else {
                         introslide.reloadSlider({
@@ -459,6 +461,7 @@
                             infiniteLoop : true,
                             auto : true,
                             pause : 5000,
+                            autoControls : true,
                             onSlideAfter : function(){
                                 //video위에 있는 text 나타날때 효과.
                                 var num = this.getCurrentSlide();
@@ -593,6 +596,24 @@
             }
         }
         
+
+        //intro에서 마우스스크롤하면 2번째 페이지로 스크롤되게.
+        function pageScroll() {
+            var windowHeight;
+            $('body').ready(function() {
+                windowHeight = $(window).height();
+                console.log(windowHeight);          
+            });
+
+            if(htmlEl.scrollTop === 0) {
+                window.addEventListener('scroll', function() {
+                    window.ScrollTo({
+                        top: 500,
+                        // behavior: smooth
+                    });
+                });
+            }
+        }
         
         
         
@@ -1052,6 +1073,21 @@
             <img src="images/top.png" alt="상단으로스크롤"/>
         </a>
 
+        <script>
+        
+        //top버튼 클릭시 상단으로 스크롤이동.
+        let topBtn = document.querySelector('.top_btn');
+
+        topBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top : 0,
+                behavior : 'smooth'
+            });
+        });
+        
+        </script>
+
 
         <div class="phone_btn <--click-->">
             <a href="" class="phone_btn_show">사업분야</a>
@@ -1095,7 +1131,6 @@
 
 
     </footer>
-
 
 
     

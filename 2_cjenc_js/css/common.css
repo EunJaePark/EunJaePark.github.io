@@ -182,12 +182,17 @@ main .intro .inner > .img_text_box{  width:57.742782%; min-width:610px; position
 /*slider design*/
 .intro div.bx-wrapper{ border:none; height:100vh; box-shadow:none; }
 .intro div.bx-wrapper div.bx-viewport{ height:100vh !important; }
-.intro div.bx-wrapper div.bx-pager{ bottom:30px; margin:5px 10px 0 0; position:absolute;  }
-.intro div.bx-wrapper div.bx-pager-item a{ width:13px; height:13px; margin:5px 10px 0 0; border-radius:50%; background-color:#808080; box-shadow:1px 1px 2px rgba(0, 0, 0, .5) inset; display:inline-block; }
+.intro div.bx-wrapper div.bx-pager{ margin:-38px 10px 0 0px; left:0; bottom:0; }
+.intro div.bx-wrapper div.bx-pager-item a{ width:13px; height:13px; margin:5px 10px 0 0; border-radius:50%; background-color:#808080; box-shadow:1px 1px 2px rgba(43, 17, 17, 0.5) inset; display:inline-block; }
 .intro div.bx-wrapper div.bx-pager-item a:hover{ background-color:#808080; }
 .intro .bx-wrapper div.bx-pager.bx-default-pager a.active{ background-color:#fff; }
+.intro div.bx-controls.bx-has-controls-auto.bx-has-pager{ width:120px; margin-top:-30px; position:fixed; left:50%; bottom:30px; transform:translateX(-50%); }
 .intro div.bx-wrapper div.bx-controls-direction{ display:none; }
-
+.intro .bx-wrapper div.bx-controls-auto{ bottom:-3px; right:0; }
+.intro .bx-wrapper .bx-controls-auto a.bx-start{ width:18px; height:18px; margin:0; font-size:0; background:url('../images/play_bt_off.png') no-repeat; background-size:cover; position:absolute; bottom:0px; left:28px; }
+.intro .bx-wrapper .bx-controls-auto a.bx-stop{ width:18px; height:18px; margin:0; font-size:0; background:url('../images/stop_bt_off.png') no-repeat; background-size:cover; position:absolute; bottom:0px; left:10px; }
+.intro .bx-wrapper .bx-controls-auto a.bx-start.active{ background:url('../images/play_bt_on.png') no-repeat; background-size:cover; }
+.intro .bx-wrapper .bx-controls-auto a.bx-stop.active{ background:url('../images/stop_bt_on.png') no-repeat; background-size:cover; }
 
 /*----2 .business----*/
 .business{ background-color:rgba(0, 0, 0, 0.6); width:100%; height:100vh; position:relative; top:1000px;  }
@@ -528,6 +533,10 @@ footer > .inner > .footer3 > span:nth-child(7):before{ width:2px; height:11px; c
 	/* .intro > .intro1 > .inner > .img_text_box > a{ border:1px solid #fff; line-height:33px; margin-left:calc(50% + -50px); padding:0 30px; font-size:14px; font-weight:300; background-color:rgba(0, 0, 0, 0.1);  display:inline-block; } */
 	/*하단 page_btn*/
 	/* .intro > .page_btn{ bottom:0; } */
+
+	/*slider design*/
+	.intro div.bx-controls.bx-has-controls-auto.bx-has-pager{ height:100px; top:380px;}
+
 
 	/*----2 .business----*/
 	.business{ height:auto; padding-bottom:20px; top:480px; background-color:#fff; }
