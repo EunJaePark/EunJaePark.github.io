@@ -602,11 +602,8 @@
         
 
         //intro에서 마우스스크롤하면 2번째 페이지로 스크롤되게.
-        function pageScroll() {
-            var business = document.querySelector('div.business');
-            // console.log(business.offsetTop);            
-
-
+        function pageScroll() {           
+            
             
             // lastScroll = 0;
             
@@ -678,6 +675,42 @@
                 </ul>
             </div><!--.inner-->
         </div><!--.business-->
+
+        <script>
+        pageScroll();
+        function pageScroll() {
+            var business = document.querySelector('.business');
+            console.log(business);            
+
+            var height = 0;
+            var rect = business.getBoundingClientRect();
+            if(rect.height){
+                height = rect.height;
+            } else {
+                height = rect.bottom - rect.height;
+            }
+            
+            
+            if(htmlEl.scrollTop < 20) {
+                window.addEventListener('scroll', function() {
+                    console.log(height);
+                    window.scrollTo({
+                        top: height,
+                        behavior: 'smooth'
+                    });
+                });
+                
+            }
+        }
+            
+        //https://icoon22.tistory.com/231
+        //현재페이지 높이 구하기
+
+        //수업에는 교재따라하기
+        //알아서 동영상따라하기
+        //책예습
+        </script>
+
 
         <div class="building black">
             <div class="inner">
