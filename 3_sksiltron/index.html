@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sk siltron</title>
+
+    <link rel="stylesheet" media="all" href="css/common.css" />
+</head>
+<body>
+
+<div class="wrap">
+    
+    <header>
+        <ul class="util_nav eng">
+            <li>
+                <a href="">i-Pro</a>
+            </li>
+            <li>
+                <a href="">e-Sales</a>
+            </li>
+            <li>
+                <a href="">Recruit</a>
+            </li>
+        </ul>
+
+        <h1 class="logo">
+            <a href="">
+                <img src="images/h1_siltron.png" alt="sk실트론"/>
+            </a>
+        </h1>
+
+        <a class="lang eng" href="">KOR</a>
+        <ul class="lang_other eng">
+            <li><a href="">KOR</a></li>
+            <li><a href="">ENG</a></li>
+            <li><a href="">CHN</a></li>
+        </ul>
+
+        <a class="gnbBtn" href="">메뉴보기</a>
+    </header>
+
+    <script>
+    
+    let header = document.querySelector('header');
+    let lang = document.querySelector('.lang');
+    let langOther = document.querySelector('.lang_other');
+
+    lang.addEventListener('mouseover', langOtherShow);
+    lang.addEventListener('mouseout', langOtherHide);
+    function langOtherShow() {
+        header.style.overflow = 'visible';
+        langOther.classList.add('active');
+    }
+    function langOtherHide() {
+        langOther.classList.remove('active');
+        header.style.transitionDelay = '10s';
+        header.style.overflow = 'hidden';
+    }
+    
+    </script>
+
+
+
+    <main>
+        <div class="intro">
+            <video src="images/SK_Siltron_900p.mp4" autoplay loop muted></video>
+
+            <div class="text_box">
+                <img src="images/img_movie.png" alt="SK siltron"/>
+                <span>대한민국 반도체가 시작되는 곳</span>
+                <a href="">홍보영상 바로가기</a>
+            </div>
+
+            <a class="scrollBtn eng" href="">SCROLL</a>
+        </div>
+
+        <div class="other_main_contents">
+            <div class="worldclass"> 
+                <h2 class="eng">THE WORLD CLASS WAFER</h2>
+                <span class="h2Text">SK실트론은 세계 최고 수준의 기술력을 기반으로 차세대 반도체 기술혁신을 이끌어 갑니다</span>
+                <ul class="clear">
+                    <li>
+                        <strong class="eng">Polished Wafer</strong>
+                        <span class="eng">DRAM, Flash memory, LCD driver</span>
+                        <a href="">Polished Wafer 바로가기</a>
+                    </li>
+
+                    <li>
+                        <strong class="eng">Epitaxial Wafer</strong>
+                        <span class="eng">Micro-processor, Image Sensor, Power device</span>
+                        <a href="">Epitaxial Wafer 바로가기</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="journey">
+                <h2 class="eng">JOURNEY OF WAFER</h2>
+                <span class="h2Text">반도체로 만들어가는 더 행복한 세상, 그 시작에 SK실트론이 있습니다</span>
+
+                <div class="moveBox1">
+                    <img src="images/img_main0201.png" alt="" />
+                    <img src="images/img_main0202.png" alt="" />
+                    <img src="images/img_main0203.png" alt="" />
+                    <img src="images/img_main0204.png" alt="" />
+                    <img src="images/img_main0205.png" alt="" />
+                </div>
+
+                <div class="moveBox2">
+                    <img src="images/img_main0206.png" alt="" />
+                    <span>반도체칩</span>
+                    <img src="images/img_main0207.png" alt="" />
+                    <span>칩웨이퍼</span>
+                    <img src="images/img_main0208.png" alt="" />
+                    <span>실리콘웨이퍼</span>
+                    <img src="images/img_main0209.png" alt="" />
+                </div>
+            </div>
+
+            <div class="highlights">
+                <h2 class="eng">COMPANY HIGHLIGHTS</h2>
+                <ul class="slider">
+                    <li>
+                        <a href="">
+                            <strong>1</strong>  
+                            <span>대한민국 <br/> '국가핵심기술'지정</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <strong>2</strong>  
+                            <span>Global <br/> TOP Tanker</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <strong>3</strong>  
+                            <span>차세대 반도체 <br/> 기술혁신 Leader</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="">바로가기</a>
+            </div>
+
+            <div class="people">
+                <div class="inner">
+                    <h2 class="eng">PEOPLE</h2>
+                    <img alt=""/>
+                    <div></div>
+                    <div></div>
+                    <a href=""></a>
+                </div>
+            </div>
+
+            <div class="network">
+                <h2 class="eng">GLOBAL NETWORK</h2>
+                <ul>
+                    <li>법인 </li>
+                    <li>지사</li>
+                    <li>사무소</li>
+                </ul>
+
+                <div class="map">
+                    <div class="office_box">
+                        <span>미국법인</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 San Jose</span>
+                        </div>
+                    </div>
+
+                    <div class="office_box">
+                        <span>달라스 사무소</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 Dallas</span>
+                        </div>
+                    </div>
+
+                    <div class="office_box">
+                        <span>유럽사무소</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 Paris</span>
+                        </div>
+                    </div>
+
+                    <div class="office_box">
+                        <span>상해법인</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 Sanghai</span>
+                        </div>
+                    </div>
+
+                    <div class="office_box">
+                        <span>대만지사</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 Hsinchu</span>
+                        </div>
+                    </div>
+
+                    <div class="office_box">
+                        <span>일본법인</span>
+                        <div class="office_photo">
+                            <img src="" alt=""/>
+                            <span>도시 Nagoya</span>
+                        </div>
+                    </div>
+                </div><!--.map-->
+
+                <ul class="corp">
+                    <li>
+                        <img src="images/customer01.png" alt="samsung electronics"/>
+                    </li>
+                    <li>
+                        <img src="images/customer02.png" alt="sk hynix"/>
+                    </li>
+                    <li>
+                        <img src="images/customer05.png" alt="tsmc"/>
+                    </li>
+                    <li>
+                        <img src="images/customer04.png" alt="micron"/>
+                    </li>
+                    <li>
+                        <img src="images/customer06.png" alt="toshiba"/>
+                    </li>
+                    <li>
+                        <img src="images/customer07.png" alt="texas instruments"/>
+                    </li>
+                </ul>
+            </div><!--.network-->
+        </div><!--.other_main_contents-->
+    </main>
+
+    <footer>
+        <ul>
+            <li>
+                <a href="">윤리경영제보</a>
+            </li>
+            <li>
+                <a href="">방문예약시스템</a>
+            </li>
+            <li>
+                <a href="">협력업체등록</a>
+            </li>
+            <li>
+                <a href="">협력회사고충처리</a>
+            </li>
+            <li>
+                <a href="">CI Download</a>
+            </li>
+        </ul>
+
+        <span>Copyright(c) 2019 SK siltron Co.,Ltd. All Rights Reserved.</span>
+
+        <a class="family_site" href="">FAMILY SITE</a>
+    </footer>
+
+</div><!--.wrap-->   
+
+</body>
+</html>
