@@ -110,13 +110,29 @@ header li a{ font-weight:600; }
 /* 2. journey */
 .journey{ background:url('../images/bg_main02.png') no-repeat 0 100%; background-size:100%; }
 .journey > .moveBox1{ outline:1px solid lime; width:100%; height:86px; margin-top:60px; display:inline-block; position:relative; }
-.journey > .moveBox1:before{ content:''; display:block; width:100%; height:0; border-top:1px solid #cdcdcd; position:absolute; top:50%; transform:translateY(-50%); }
-.journey > .moveBox1 > img{ position:absolute; }
-.journey > .moveBox1 > img:nth-child(1){ left:25%; transform:translateX(-25%); }
-.journey > .moveBox1 > img:nth-child(2){ left:37%; transform:translateX(-37%); }
-.journey > .moveBox1 > img:nth-child(3){ left:50%; transform:translateX(-50%); }
-.journey > .moveBox1 > img:nth-child(4){ right:35%; transform:translateX(-35%); }
-.journey > .moveBox1 > img:nth-child(5){ right:25%; transform:translateX(-25%); }
+
+.journey > .moveBox1:before{ content:''; display:block; width:0; height:1px; background-color:#cdcdcd; position:absolute; top:50%; transform:translateY(-50%); transition:all .7s ease-out; }
+.journey > .moveBox1 > img{ position:absolute; transition:all .7s ease-out; }
+.journey > .moveBox1 > img:nth-child(1){ left:20%; transform:translate(-20%); opacity:0; }
+.journey > .moveBox1 > img:nth-child(2){ left:32%; transform:translateX(-32%); opacity:0; }
+.journey > .moveBox1 > img:nth-child(3){ left:50%; transform:translate(-50%, 100px); opacity:0; }
+.journey > .moveBox1 > img:nth-child(4){ right:20%; transform:translateX(-20%); opacity:0; }
+.journey > .moveBox1 > img:nth-child(5){ right:32%; transform:translateX(-32%); opacity:0;}
+
+
+
+
+
+.journey.scroll > .moveBox1:before{ content:''; display:block; width:100%; height:1pz; background-color:#cdcdcd;  transform:translateY(-50%); }
+.journey.scroll > .moveBox1 > img{ opacity:1; }
+.journey.scroll > .moveBox1 > img:nth-child(1){ left:25%; transform:translateX(-25%); }
+.journey.scroll > .moveBox1 > img:nth-child(2){ left:37%; transform:translateX(-37%); }
+.journey.scroll > .moveBox1 > img:nth-child(3){ left:50%; transform:translateX(-50%); }
+.journey.scroll > .moveBox1 > img:nth-child(4){ right:35%; transform:translateX(-35%); }
+.journey.scroll > .moveBox1 > img:nth-child(5){ right:25%; transform:translateX(-25%); }
+
+
+
 
 .journey > .moveBox2{ outline:1px solid peru; width:48.21428571429%/*810px*/; min-width:810px; height:355px; margin-top:30px; position:relative; left:50%; transform:translateX(-50%); }
 .journey > .moveBox2 > *{ position:absolute; }

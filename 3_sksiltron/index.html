@@ -127,6 +127,22 @@
                 </div>
             </div>
 
+            <script>
+            
+            let journey = document.querySelector('.journey');
+            window.addEventListener('scroll', function() {
+                console.log(htmlEl.scrollTop);
+                if (htmlEl.scrollTop > 1220) {
+                    journey.classList.add('scroll');
+                }
+            });
+            
+            
+            
+            </script>
+
+
+
             <div class="highlights">
                 <h2 class="eng">COMPANY HIGHLIGHTS</h2>
                 <ul class="slider">
