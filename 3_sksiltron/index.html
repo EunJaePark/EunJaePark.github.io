@@ -43,6 +43,7 @@
 
     <script>
     
+    let htmlEl = document.querySelector('html');
     let header = document.querySelector('header');
     let lang = document.querySelector('.lang');
     let langOther = document.querySelector('.lang_other');
@@ -58,6 +59,14 @@
         header.style.transitionDelay = '10s';
         header.style.overflow = 'hidden';
     }
+
+    window.addEventListener('scroll', function() {
+        if (htmlEl.scrollTop > 90) {
+            header.classList.add('scroll');
+        } else {
+            header.classList.remove('scroll');
+        }
+    });
     
     </script>
 
@@ -99,24 +108,42 @@
                 <h2 class="eng">JOURNEY OF WAFER</h2>
                 <span class="h2Text">반도체로 만들어가는 더 행복한 세상, 그 시작에 SK실트론이 있습니다</span>
 
-                <div class="moveBox1">
-                    <img src="images/img_main0201.png" alt="" />
-                    <img src="images/img_main0202.png" alt="" />
-                    <img src="images/img_main0203.png" alt="" />
-                    <img src="images/img_main0204.png" alt="" />
-                    <img src="images/img_main0205.png" alt="" />
-                </div>
+                <div class="moveSizeBox">
+                    <div class="moveBox1">
+                        <img src="images/img_main0201.png" alt="" />
+                        <img src="images/img_main0202.png" alt="" />
+                        <img src="images/img_main0203.png" alt="" />
+                        <img src="images/img_main0204.png" alt="" />
+                        <img src="images/img_main0205.png" alt="" />
+                    </div>
 
-                <div class="moveBox2">
-                    <img src="images/img_main0206.png" alt="" />
-                    <span>반도체칩</span>
-                    <img src="images/img_main0207.png" alt="" />
-                    <span>칩웨이퍼</span>
-                    <img src="images/img_main0208.png" alt="" />
-                    <span>실리콘웨이퍼</span>
-                    <img src="images/img_main0209.png" alt="" />
-                </div>
+                    <div class="moveBox2">
+                        <img src="images/img_main0206.png" alt="" />
+                        <span>반도체칩</span>
+                        <img src="images/img_main0207.png" alt="" />
+                        <span>칩웨이퍼</span>
+                        <img src="images/img_main0208.png" alt="" />
+                        <span>실리콘웨이퍼</span>
+                        <img src="images/img_main0209.png" alt="" />
+                    </div>
+                </div><!--.moveSizeBox-->
             </div>
+
+            <script>
+            
+            let journey = document.querySelector('.journey');
+            window.addEventListener('scroll', function() {
+                console.log(htmlEl.scrollTop);
+                if (htmlEl.scrollTop > 1220) {
+                    journey.classList.add('scroll');
+                }
+            });
+            
+            
+            
+            </script>
+
+
 
             <div class="highlights">
                 <h2 class="eng">COMPANY HIGHLIGHTS</h2>
@@ -145,18 +172,24 @@
             </div>
 
             <div class="people">
+                <h2 class="eng">PEOPLE</h2>
                 <div class="inner">
-                    <h2 class="eng">PEOPLE</h2>
-                    <img alt=""/>
-                    <div></div>
-                    <div></div>
-                    <a href=""></a>
+                    <img src="images/img_main0304.png" alt=""/>
+                    <div class="orange">
+                        <img src="images/img_main0301.png" alt="" />
+                        <span class="eng">Challenge, Synergy, Innovation</span>
+                    </div>
+                    <div class="red">
+                            <img src="images/img_main0302.png" alt="" />
+                            <img class="skmark" src="images/img_main0303.png" alt="" />
+                    </div>
+                    <a href="">온라인 입사지원</a>
                 </div>
             </div>
 
             <div class="network">
                 <h2 class="eng">GLOBAL NETWORK</h2>
-                <ul>
+                <ul class="maptext">
                     <li>법인 </li>
                     <li>지사</li>
                     <li>사무소</li>
@@ -164,51 +197,63 @@
 
                 <div class="map">
                     <div class="office_box">
-                        <span>미국법인</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 San Jose</span>
-                        </div>
+                        <a href="#">
+                            <span>미국법인</span>
+                            <div class="office_photo">
+                                <img src="images/img_usa.jpg" alt=""/>
+                                <span>도시 San Jose</span>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="office_box">
-                        <span>달라스 사무소</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 Dallas</span>
-                        </div>
+                        <a href="">
+                            <span>달라스 사무소</span>
+                            <div class="office_photo">
+                                <img src="images/img_dallas.jpg" alt=""/>
+                                <span>도시 Dallas</span>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="office_box">
-                        <span>유럽사무소</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 Paris</span>
-                        </div>
+                        <a href="">
+                            <span>유럽사무소</span>
+                            <div class="office_photo">
+                                <img src="images/img_eu.jpg" alt=""/>
+                                <span>도시 Paris</span>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="office_box">
-                        <span>상해법인</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 Sanghai</span>
-                        </div>
+                        <a href="">
+                            <span>상해법인</span>
+                            <div class="office_photo">
+                                <img src="images/img_shanghai.jpg" alt=""/>
+                                <span>도시 Sanghai</span>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="office_box">
-                        <span>대만지사</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 Hsinchu</span>
-                        </div>
+                        <a href="">
+                            <span>대만지사</span>
+                            <div class="office_photo">
+                                <img src="images/img_taiwan.jpg" alt=""/>
+                                <span>도시 Hsinchu</span>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="office_box">
-                        <span>일본법인</span>
-                        <div class="office_photo">
-                            <img src="" alt=""/>
-                            <span>도시 Nagoya</span>
-                        </div>
+                        <a href="">
+                            <span>일본법인</span>
+                            <div class="office_photo">
+                                <img src="images/img_japan.jpg" alt=""/>
+                                <span>도시 Nagoya</span>
+                            </div>
+                        </a>
                     </div>
                 </div><!--.map-->
 
@@ -237,7 +282,7 @@
     </main>
 
     <footer>
-        <ul>
+        <ul class="clear">
             <li>
                 <a href="">윤리경영제보</a>
             </li>
