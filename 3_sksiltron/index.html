@@ -197,65 +197,71 @@
 
                 <div class="map">
                     <div class="office_box">
-                        <a href="#">
-                            <span>미국법인</span>
-                            <div class="office_photo">
-                                <img src="images/img_usa.jpg" alt=""/>
-                                <span>도시 San Jose</span>
-                            </div>
-                        </a>
+                        <span>미국법인</span>
+                        <div class="office_photo">
+                            <img src="images/img_usa.jpg" alt=""/>
+                            <span>도시 San Jose</span>
+                        </div>
                     </div>
 
                     <div class="office_box">
-                        <a href="">
-                            <span>달라스 사무소</span>
-                            <div class="office_photo">
-                                <img src="images/img_dallas.jpg" alt=""/>
-                                <span>도시 Dallas</span>
-                            </div>
-                        </a>
+                        <span>달라스 사무소</span>
+                        <div class="office_photo">
+                            <img src="images/img_dallas.jpg" alt=""/>
+                            <span>도시 Dallas</span>
+                        </div>
                     </div>
 
                     <div class="office_box">
-                        <a href="">
-                            <span>유럽사무소</span>
-                            <div class="office_photo">
-                                <img src="images/img_eu.jpg" alt=""/>
-                                <span>도시 Paris</span>
-                            </div>
-                        </a>
+                        <span>유럽사무소</span>
+                        <div class="office_photo">
+                            <img src="images/img_eu.jpg" alt=""/>
+                            <span>도시 Paris</span>
+                        </div>
                     </div>
 
                     <div class="office_box">
-                        <a href="">
-                            <span>상해법인</span>
-                            <div class="office_photo">
-                                <img src="images/img_shanghai.jpg" alt=""/>
-                                <span>도시 Sanghai</span>
-                            </div>
-                        </a>
+                        <span>상해법인</span>
+                        <div class="office_photo">
+                            <img src="images/img_shanghai.jpg" alt=""/>
+                            <span>도시 Sanghai</span>
+                        </div>
                     </div>
 
                     <div class="office_box">
-                        <a href="">
-                            <span>대만지사</span>
-                            <div class="office_photo">
-                                <img src="images/img_taiwan.jpg" alt=""/>
-                                <span>도시 Hsinchu</span>
-                            </div>
-                        </a>
+                        <span>대만지사</span>
+                        <div class="office_photo">
+                            <img src="images/img_taiwan.jpg" alt=""/>
+                            <span>도시 Hsinchu</span>
+                        </div>
                     </div>
 
                     <div class="office_box">
-                        <a href="">
-                            <span>일본법인</span>
-                            <div class="office_photo">
-                                <img src="images/img_japan.jpg" alt=""/>
-                                <span>도시 Nagoya</span>
-                            </div>
-                        </a>
+                        <span>일본법인</span>
+                        <div class="office_photo">
+                            <img src="images/img_japan.jpg" alt=""/>
+                            <span>도시 Nagoya</span>
+                        </div>
                     </div>
                 </div><!--.map-->
+
+                <script>
+                
+                let officeCountry = document.querySelectorAll('.office_box > span');
+                let officePhoto = document.querySelectorAll('.office_photo');
+
+                for(let i = 0; i < officeCountry.length; i++) {
+                    officeCountry[i].addEventListener('mouseenter', function() {
+                        officePhoto[i].classList.add('show');
+                    }); 
+                    officeCountry[i].addEventListener('mouseleave', function() {
+                        officePhoto[i].classList.remove('show');
+                    });
+                }
+                
+                
+                </script>
+
 
                 <ul class="corp">
                     <li>
