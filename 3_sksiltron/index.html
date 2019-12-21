@@ -149,22 +149,16 @@
                 <h2 class="eng">COMPANY HIGHLIGHTS</h2>
                 <ul class="slider">
                     <li>
-                        <a href="">
-                            <strong>1</strong>  
-                            <span>대한민국 <br/> '국가핵심기술'지정</span>
-                        </a>
+                        <strong>1</strong>  
+                        <span>대한민국 <br/> '국가핵심기술'지정</span>
                     </li>
                     <li>
-                        <a href="">
-                            <strong>2</strong>  
-                            <span>Global <br/> TOP Tanker</span>
-                        </a>
+                        <strong>2</strong>  
+                        <span>Global <br/> TOP Tanker</span>
                     </li>
                     <li>
-                        <a href="">
-                            <strong>3</strong>  
-                            <span>차세대 반도체 <br/> 기술혁신 Leader</span>
-                        </a>
+                        <strong>3</strong>  
+                        <span>차세대 반도체 <br/> 기술혁신 Leader</span>
                     </li>
                 </ul>
 
@@ -186,6 +180,19 @@
                     <a href="">온라인 입사지원</a>
                 </div>
             </div>
+
+            <script>
+            
+            let people = document.querySelector('.people');
+
+            window.addEventListener('scroll', function() {
+                if(htmlEl.scrollTop > 2400) {
+                    people.classList.add('scroll');
+                }
+            });
+            
+            </script>
+
 
             <div class="network">
                 <h2 class="eng">GLOBAL NETWORK</h2>
