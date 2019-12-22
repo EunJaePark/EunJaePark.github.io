@@ -315,8 +315,115 @@
 
         <span>Copyright(c) 2019 SK siltron Co.,Ltd. All Rights Reserved.</span>
 
-        <a class="family_site" href="">FAMILY SITE</a>
+        
+        <a class="family_site" href="">FAMILY SITE</a> 
+        <div class="siteList clear">
+           <a href="" class="closeBtn">FAMILY SITE</a>
+           <a href="" class="sk">SK</a>
+           <ul>
+               <li>
+                   <a href="">SK 이노베이션</a>
+               </li>
+               <li>
+                   <a href="">SK 에너지</a>
+               </li>
+               <li>
+                   <a href="">SK 종합화학</a>
+               </li>
+               <li>
+                   <a href="">SK 루브리컨츠</a>
+               </li>
+               <li>
+                   <a href="">SK 케미칼</a>
+               </li>
+               <li>
+                   <a href="">SKC</a>
+               </li>
+               <li>
+                   <a href="">SK E&S</a>
+               </li>
+               <li>
+                   <a href="">SK 가스</a>
+               </li>
+           </ul>
+           <ul>
+               <li>
+                   <a href="">SK 텔레콤</a>
+               </li>
+               <li>
+                   <a href="">SK 브로드밴드</a>
+               </li>
+               <li>
+                   <a href="">SK 하이닉스</a>
+               </li>
+               <li>
+                   <a href="">SK 머티리얼즈</a>
+               </li>
+           </ul>
+           <ul>
+               <li>
+                   <a href="">SK 네트웍스</a>
+               </li>
+               <li>
+                   <a href="">SK 건설</a>
+               </li>
+           </ul>
+        </div>
+        
     </footer>
+
+    <script>
+    
+    let footer = document.querySelector('footer');
+    let siteBtn = document.querySelector('.family_site');
+    let siteList = document.querySelector('.siteList');
+    let closeBtn = siteList.querySelector('.closeBtn');
+    let siteLis = siteList.querySelectorAll('li');
+    
+    familySiteShow();
+    familySiteLink();
+
+    function familySiteShow() {
+        siteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            footer.style.overflow = 'visible';
+            siteBtn.style.opacity = '0';
+            siteBtn.classList.remove('delay');
+            siteList.classList.add('show');
+        });
+
+        closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            footer.style.overflow = 'hidden';
+            siteBtn.style.opacity = '1';
+            siteBtn.classList.add('delay');
+            siteList.classList.remove('show');
+        });
+    }
+
+    function familySiteLink() {
+        for(let i = 0; i < siteLis.length; i++) {
+            siteLis[i].addEventListener('mouseenter', function() {
+                siteLis[i].classList.add('on');   
+            });
+            siteLis[i].addEventListener('mouseleave', function() {
+                siteLis[i].classList.remove('on');
+            });
+        }
+
+        let sk = siteList.querySelector('.sk');
+        sk.addEventListener('mouseenter', function() {
+            sk.style.color = '#000';
+        });
+        sk.addEventListener('mouseleave', function() {
+            sk.style.color = '#666';
+        });
+    }
+    
+
+    
+    </script>
+
 
 </div><!--.wrap-->   
 

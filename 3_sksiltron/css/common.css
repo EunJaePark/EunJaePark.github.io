@@ -27,9 +27,9 @@ strong, em{ font-style:normal; }
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:1200px; }
 header{ background-color:#fff; width:calc(100% + -96px); height:60px; padding:0 48px; position:fixed; top:0; left:0; overflow:hidden; z-index:1000; }
-main{ background-color:#fff; }
+main{ background-color:#fff; padding-bottom:100vh; }
 main > *{ outline:2px solid orange; }
-footer{ background-color:#fff; padding:40px 50px 50px; position:relative; bottom:-100vh; }
+footer{ background-color:#fff; padding:40px 50px 50px; position:relative; bottom:0/*-100vh*/; overflow:hidden; }
 
 
 /* ---------------------common------------------- */
@@ -138,7 +138,7 @@ header li a{ font-weight:600; }
 .journey > .moveSizeBox > .moveBox2 > span{ font-size:16px; z-index:20; }
 .journey > .moveSizeBox > .moveBox2 > span:nth-child(2){ left:-100px; top:70px; transition-delay:3.3s;}
 .journey > .moveSizeBox > .moveBox2 > span:nth-child(4){ right:-100px; top:180px; transition-delay:3.7s;}
-.journey > .moveSizeBox > .moveBox2 > span:nth-child(6){ left:-100px; bottom:55px;  transition-delay:3.8s;}
+.journey > .moveSizeBox > .moveBox2 > span:nth-child(6){ left:-100px; bottom:55px;  transition-delay:4s;}
 /*script scroll*/
 .journey.scroll > .moveSizeBox > .moveBox2 > *{ position:absolute; opacity:1; }
 .journey.scroll > .moveSizeBox > .moveBox2 > img:nth-child(3){ top:45px; }
@@ -250,7 +250,22 @@ footer > ul > li > a:hover:after{ width:100%; }
 
 footer > span{ font-size:14px; }
 
-footer > .family_site{ border-bottom:1px solid #d5d5d5; padding:0 50px 5px 0; font-size:14px; color:#666; background:url('../images/familysite.png') no-repeat right 6px; float:right; }
+footer > .family_site{ border-bottom:1px solid #d5d5d5; padding:0 50px 5px 0; font-size:14px; color:#666; background:url('../images/familysite.png') no-repeat right 6px; float:right; transition:all .3s ease-out; }
+footer > .siteList{ border:1px solid #000; width:456px; padding:10px 20px; background-color:#fff; position:absolute; right:50px; bottom:-250px; opacity:0; transition:all .5s ease-out; }
+footer > .siteList > *{ float:left; font-size:14px; }
+footer > .siteList > .closeBtn{ width:100%; margin-bottom:10px; color:#000; background:url('../images/familysite.png') no-repeat right -25px }
+footer > .siteList > .sk{ width:100px; color:#666; }
+footer > .siteList > ul{ width:26%; }
+footer > .siteList > ul > li{ margin:2px 0; padding-left:13px; }
+footer > .siteList > ul > li:before{ content:''; display:inline-block; width:8px; height:3px; background-color:#fff; margin:0 5px 3px 0; }
+footer > .siteList > ul > li > a{ color:#666; }
+/* script show */
+footer > .family_site.delay{ transition-delay:.5s; }
+footer > .siteList.show{ bottom:30px; opacity:1; transition-delay:.3s; }
+/* script link-mouseenter */
+footer > .siteList > ul > li.on:before{ background-color:#000;}
+footer > .siteList > ul > li.on > a{ color:#000;}
+
 
 
 
