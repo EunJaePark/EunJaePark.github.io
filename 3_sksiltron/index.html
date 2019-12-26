@@ -47,7 +47,7 @@
                 <ul class="main">
                     <li>
                         <a href="">Company</a>
-                        <ul class="clear">
+                        <ul class="main_sub clear">
                             <li>
                                 <a href="">기업개요</a>
                             </li>
@@ -168,8 +168,7 @@
                 // header.style.overflow = 'visible';
                 langBox.classList.add('active'); 
                 openedLang = langOther;
-            }
-            
+            }  
         }
 
         function langOtherHide(e) {
@@ -202,20 +201,40 @@
         });
     }
 
+
     function gnbBoxScript() {
         let gnbBoxLis = document.querySelectorAll('.gnbBox .main > li');  
 
         for(let i = 0; i < gnbBoxLis.length; i++) {
-            gnbBoxLis[i].addEventListener('mouseenter', showSub);
-            gnbBoxLis[i].addEventListener('mouseleave', hideSub);
+            gnbBoxLis[i].addEventListener('mouseover', showSub);
+            gnbBoxLis[i].addEventListener('mouseout', hideSub);
         }
         
         function showSub(e) {
-            e.target.classList.add('show');
+            if (e.target.tagName === 'A') {
+                e.target.parentNode.classList.add('show');   
+            }            
         }
 
         function hideSub(e) {
-            e.target.classList.remove('show');
+            if (!check(e.relatedTarget)) {
+                for(let i = 0; i < gnbBoxLis.length; i++) {
+                    gnbBoxLis[i].classList.remove('show'); 
+                }
+            }
+            
+            function check(moved) {
+                while(moved.tagName !== 'BODY') {
+                    for(let i = 0; i < gnbBoxLis.length; i++) {
+                        if(gnbBoxLis[i] === moved) {
+                            return true;
+                        }
+                    }
+                    moved = moved.parentNode;
+                }
+                return false;
+            }
+            
         }
     }
     
