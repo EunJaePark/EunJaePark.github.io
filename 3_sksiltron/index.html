@@ -140,6 +140,12 @@
                         <a href="">CI Download</a>
                     </li>
                 </ul>
+
+                <div class="bgImg">
+                    <img src="images/bg_navi01.png" alt=""/>
+                    <img src="images/bg_navi02.png" alt=""/>
+                    <img src="images/bg_navi03.png" alt=""/>
+                </div><!--.bgImg-->
             </div><!--.inner-->
         </div><!--.gnbBox-->
     </header>
@@ -203,8 +209,21 @@
 
 
     function gnbBoxScript() {
-        let gnbBoxLis = document.querySelectorAll('.gnbBox .main > li');  
+        let gnbBtn = document.querySelector('.gnbBtn');
+        let gnbBoxLis = document.querySelectorAll('.gnbBox .main > li'); 
 
+        /*gnbBtn버튼 클릭시 메뉴창 오픈*/
+        gnbBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if(header.classList !== 'gnbOpen') {
+                header.classList.add('gnbOpen');
+            } else {
+                header.classList.remove('gnbOpen');
+            }
+            
+        }); 
+
+        /*gnbBox의 메뉴에 마우스오버시 sub메뉴 보이게함.*/
         for(let i = 0; i < gnbBoxLis.length; i++) {
             gnbBoxLis[i].addEventListener('mouseover', showSub);
             gnbBoxLis[i].addEventListener('mouseout', hideSub);
