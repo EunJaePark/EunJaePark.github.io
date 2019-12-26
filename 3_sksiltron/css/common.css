@@ -54,20 +54,22 @@ header li a{ font-weight:600; }
 
 .logo{ top:14px; left:50%; transform:translateX(-50%); }
 
-.lang{ width:50px; right:100px;  }
-.lang:before{ content:''; display:inline-block;  border:5px solid #666; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:5px solid transparent; position:absolute; right:0; top:7px; }
-.lang:after{ content:''; display:block; width:12px; height:0; border-top:2px solid #666;  transition:all .6s ease-out; }
-.lang:hover{ color:#000; }
-.lang:hover:before{ border-top:5px solid #000; }
-.lang:hover:after{ width:100%; border-top:2px solid #000; }
+.langBox{  width:50px; right:100px; z-index:100;  }
+.langBox > .lang:before{ content:''; display:inline-block;  border:5px solid #666; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:5px solid transparent;  position:absolute; right:0; top:7px; }
+.langBox > .lang:after{ content:''; display:block; width:12px; height:0; border-top:2px solid #666;  transition:all .6s ease-out; }
+.langBox:hover > .lang{ color:#000; }
+.langBox:hover > .lang:before{ border-top:5px solid #000; }
+.langBox:hover > .lang:after{ width:100%; border-top:2px solid #000; }
 
-.lang_other{ border:1px solid #000; height:0; padding:0 18px; background-color:#fff; top:60px; right:82px; overflow:hidden; transition:all .5s ease-out; }
-.lang_other.active{ height:75px; padding:25px 18px;  }
-.lang_other > li{ font-size:0; }
-.lang_other > li > a{ outline:1px solid lime; line-height:25px; font-size:12px; color:#868585; display:block; }
-.lang_other > li > a:after{ content:''; display:inline-block; width:9px; height:3px; margin:0 0 3px 15px; background-color:#000; opacity:0; }
-.lang_other > li > a:hover{ color:#000; }
-.lang_other > li > a:hover:after{ opacity:1; }
+.langBox > .lang_other{ border:1px solid #000; height:0; padding:0 15px; background-color:#fff; position:absolute; top:40px; left:-17px; overflow:hidden; transition:all .4s ease-out;  }
+.langBox > .lang_other > li{ font-size:0; }
+.langBox > .lang_other > li > a{  width:50px; line-height:25px; font-size:12px; color:#868585; display:inline-block; }
+.langBox > .lang_other > li > a:after{ content:''; display:inline-block; width:10px; height:3px; margin:0 0 3px 11px; background-color:#000; opacity:0; }
+.langBox > .lang_other > li > a:hover{ color:#000; }
+.langBox > .lang_other > li > a:hover:after{ opacity:1; }
+/*script active*/
+.langBox.active{ height:100px;  }
+.langBox.active > .lang_other{ height:75px; padding:15px;  }
 
 .gnbBtn{ font-size:0; top:25px; right:0; }
 .gnbBtn:before{ content:''; display:block; width:37px; height:3px; background-color:#000; }

@@ -31,12 +31,15 @@
             </a>
         </h1>
 
-        <a class="lang eng" href="">KOR</a>
-        <ul class="lang_other eng">
-            <li><a href="">KOR</a></li>
-            <li><a href="">ENG</a></li>
-            <li><a href="">CHN</a></li>
-        </ul>
+        <div class="langBox">
+            <a class="lang eng" href="">KOR</a>
+            <ul class="lang_other eng">
+                <li><a href="">KOR</a></li>
+                <li><a href="">ENG</a></li>
+                <li><a href="">CHN</a></li>
+            </ul>
+        </div>
+        
 
         <a class="gnbBtn" href="">메뉴보기</a>
     </header>
@@ -45,19 +48,44 @@
     
     let htmlEl = document.querySelector('html');
     let header = document.querySelector('header');
-    let lang = document.querySelector('.lang');
+    let langBox = document.querySelector('.langBox');
     let langOther = document.querySelector('.lang_other');
+    let langOtherA = langOther.querySelectorAll('a');
 
-    lang.addEventListener('mouseover', langOtherShow);
-    lang.addEventListener('mouseout', langOtherHide);
-    function langOtherShow() {
-        header.style.overflow = 'visible';
-        langOther.classList.add('active');
+    langBox.addEventListener('mouseover', langOtherShow);
+    langBox.addEventListener('mouseout', langOtherHide);
+
+    let openedLang;
+        
+    function langOtherShow(e) {
+        var langOther = e.target.parentNode.querySelector('.lang_other');
+
+        if (langOther) {
+            header.style.overflow = 'visible';
+            langBox.classList.add('active'); 
+            openedLang = langOther;
+        }
+        
     }
-    function langOtherHide() {
-        langOther.classList.remove('active');
-        header.style.transitionDelay = '10s';
-        header.style.overflow = 'hidden';
+    function langOtherHide(e) {
+        var oldLang = openedLang;
+
+        if (!check(e.relatedTarget)) {
+           langBox.classList.remove('active');
+            header.style.transitionDelay = '10s';
+            header.style.overflow = 'hidden'; 
+        }
+
+        function check(moved) {
+            while(moved.tagName !== 'HTML') {
+                if (langBox === moved) {
+                    return true;
+                }
+                moved = moved.parentNode;                  
+            }
+            return false;
+        }
+        
     }
 
     window.addEventListener('scroll', function() {
