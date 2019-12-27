@@ -217,8 +217,10 @@
             e.preventDefault();
             if(header.classList === 'gnbOpen') {
                 header.classList.remove('gnbOpen');
+                htmlEl.style.overflow = 'scroll';
             } else {
                 header.classList.add('gnbOpen');
+                htmlEl.style.overflow = 'hidden';
             }
             
         }); 
@@ -275,6 +277,22 @@
             <a class="scrollBtn eng" href="">SCROLL</a>
         </div>
 
+        <script>
+        
+        let scrollBtn = document.querySelector('.scrollBtn');
+
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top : 500,
+                behavior : 'smooth'
+            });
+        });
+        
+        </script>
+
+
+
         <div class="other_main_contents">
             <div class="worldclass"> 
                 <h2 class="eng">THE WORLD CLASS WAFER</h2>
@@ -327,6 +345,7 @@
                     journey.classList.add('scroll');
                 }
             });
+
             
             
             
