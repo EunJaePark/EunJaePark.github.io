@@ -323,7 +323,6 @@
             
             let journey = document.querySelector('.journey');
             window.addEventListener('scroll', function() {
-                console.log(htmlEl.scrollTop);
                 if (htmlEl.scrollTop > 1100) {
                     journey.classList.add('scroll');
                 }
@@ -373,26 +372,35 @@
 
                 for(let i = 0; i < hightLightsLis.length; i++) {
                     hightLightsLis[i].addEventListener('mouseover', showBg);
-                    hightLightsLis[i].addEventListener('mouseout', hideBg);
+                    // hightLightsLis[i].addEventListener('mouseout', hideBg);
 
-                    function showBg(e) {
+                    function showBg() {
                         remove();
-                        e.target.classList.add('show');
+                        hightLightsLis[i].classList.add('show');
                         highLightsSlider.style.background = `url('images/hightlights0${i + 1}.jpg') no-repeat`;
                         highLightsSlider.style.backgroundSize = 'cover';
                     }
 
-                    function hideBg() {
-                        remove();
-                    }
+                    // function hideBg(e) {
+                    //     if (!check(e.relatedTarget)) {
+                    //         remove();
+                    //     }
+                        
+                    //     function check(moved) {
+                    //         while (moved.tagName !== 'HTML') {
+                    //             if (htmlEl === moved) {
+                    //                 return true;
+                    //             }
+                    //             moved = moved.parentNode;
+                    //         }
+                    //         return false;
+                    //     }
+                    // }
 
-                    function remove(e) {
-                        // if(e.relatedTarget.className === 'highlights_textbox') {
+                    function remove() {
                             for(let i = 0; i < hightLightsLis.length; i++) {
                                 hightLightsLis[i].classList.remove('show');
-                            }
-                        // }
-                        
+                            }                       
                     }
                 }
             }

@@ -28,7 +28,6 @@ strong, em{ font-style:normal; }
 .wrap{ width:100%; min-width:1200px; }
 header{ background-color:#fff; width:calc(100% + -96px); height:60px; padding:0 48px; position:fixed; top:0; left:0; /*overflow:hidden;*/ z-index:1000; }
 main{ background-color:#fff; padding-bottom:100vh; }
-main > *{ outline:2px solid orange; }
 footer{ background-color:#fff; padding:40px 50px 50px; position:relative; bottom:0/*-100vh*/; overflow:hidden;*/ }
 
 
