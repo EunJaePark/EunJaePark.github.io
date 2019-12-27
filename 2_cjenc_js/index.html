@@ -205,18 +205,18 @@
 
             function enterWork(e) {
                 var submenu = e.target.querySelector('div.submenu_box');
-                if(submenu) {
+                // if(submenu) {
                     header.classList.add('on', 'bg');
-                }
+                // }
                 header.classList.add('bg');
                 gnb.classList.add('black');
             }
             function leaveWork(e) {
                 var submenu = e.target.querySelector('div.submenu_box');
                 var top = htmlEl.scrollTop;
-                if(submenu) {
+                // if(submenu) {
                     header.classList.remove('on', 'bg');
-                }
+                // }
                 header.classList.remove('bg');
                 gnb.classList.remove('black');
 
@@ -1059,7 +1059,10 @@
 
         topBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollTo(0, 0);
+            window.scrollTo({
+                top : 0,
+                behavior : 'smooth'
+            });
         });
         
         </script>
