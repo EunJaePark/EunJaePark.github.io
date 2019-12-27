@@ -215,10 +215,10 @@
         /*gnbBtn버튼 클릭시 메뉴창 오픈*/
         gnbBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            if(header.classList !== 'gnbOpen') {
-                header.classList.add('gnbOpen');
-            } else {
+            if(header.classList === 'gnbOpen') {
                 header.classList.remove('gnbOpen');
+            } else {
+                header.classList.add('gnbOpen');
             }
             
         }); 
@@ -324,7 +324,7 @@
             let journey = document.querySelector('.journey');
             window.addEventListener('scroll', function() {
                 console.log(htmlEl.scrollTop);
-                if (htmlEl.scrollTop > 1220) {
+                if (htmlEl.scrollTop > 1100) {
                     journey.classList.add('scroll');
                 }
             });
