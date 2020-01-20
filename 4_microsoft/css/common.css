@@ -1,0 +1,79 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&display=swap');
+
+/* ---------------------reset------------------- */
+body {
+	font:normal 15px 'Open Sans', sans-serif;
+	line-height:1.6;
+	color:#000;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li{  list-style:none;  }
+ul, ol{  list-style:none;  }
+a{  text-decoration:none; color:#000;  }
+img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
+table{ width:100%; border-collapse:collapse; }
+strong, em{ font-style:normal; }
+button{ border:none; padding:0; background:none; cursor:pointer; }
+
+
+
+/* ---------------------layout------------------- */
+.wrap{ }
+header{ outline:1px solid lime; padding:0 94px; }
+main{ background-color:lightgoldenrodyellow; }
+footer{ background-color:lightpink; }
+
+
+
+/* ---------------------common------------------- */
+.clear:after{ content:''; display:block; clear:both; }
+
+
+/* ---------------------header--------------------- */
+header > * { outline:1px solid red; float:left;}
+header a{ font-size:12px; font-weight:400; }
+
+header > h1{ margin-right:30px; }
+header > h1 img{ width:110px; padding:10px 0; }
+
+header > ul{  }
+header > ul > li{ outline:1px solid blue; float:left; position:relative; } 
+header > ul > li + li{ margin-left:22px; } 
+header > ul > li:hover:after{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; bottom:9px; } 
+header > ul > li > a{ background-color:lightgray; padding:16px 0 10px; display:inline-block; } 
+
+
+header > div{ margin-right:44px; float:right; }
+header > div *{ font-size:13px; }
+header > div > *{ outline:1px solid blue; border-bottom:2px solid transparent; float:left; position:relative; }
+header > div > *:hover:before{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; left:0; bottom:9px; }
+header > div > .searchBtn:hover:before{ bottom:8px; }
+header > div > .loginBtn:hover:before{ border-bottom:none; }
+
+header > div > *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
+header > div > .navBtn{ margin-right:54px; padding:13px 0 11px; }
+header > div > .navBtn:after{ width:12px; height:100%; background:url('../images/arrow_down.png') no-repeat right; background-size:12px 6px; right:-19px; }
+header > div > .searchBtn{ margin-right:70px;  padding:14px 0 11px; }
+header > div > .searchBtn:after{ width:18px; height:100%; background:url('../images/search.png') no-repeat right; background-size:18px; right:-25px;}
+header > div > .cartBtn{ margin-right:52px;  padding:13px 0 11px;  }
+header > div > .cartBtn:after{ width:20px; height:100%; background:url('../images/cart.png') no-repeat right; background-size:20px; right:-27px; }
+header > div > .loginBtn{  padding:13px 0 11px; }
+header > div > .loginBtn:after{ width:33px; height:33px; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-43px; top:50%; transform:translateY(-50%); }
+
+
+
+/* ---------------------main--------------------- */
+
+
+
+/* ---------------------footer--------------------- */
+
+
