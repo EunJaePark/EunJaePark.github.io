@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 
 /* ---------------------reset------------------- */
 body {
@@ -27,7 +27,7 @@ button{ border:none; padding:0; background:none; cursor:pointer; }
 
 /* ---------------------layout------------------- */
 .wrap{ }
-header{ outline:1px solid lime; padding:0 94px; }
+header{ outline:1px solid lime; padding:0 5.59523809524%/*94px*/; }
 main{ background-color:lightgoldenrodyellow; }
 footer{ background-color:lightpink; }
 
@@ -35,6 +35,33 @@ footer{ background-color:lightpink; }
 
 /* ---------------------common------------------- */
 .clear:after{ content:''; display:block; clear:both; }
+/*1intro, 3store*/
+.textBox{ background-color:orange;  position:absolute; left:93px; top:50%; transform:translateY(-50%); }
+.textBox h2{ outline:1px solid lime; font-size:46px; font-weight:700; }
+.textBox span{ outline:1px solid lime; margin:10px 0 25px; display:block; }
+.textBox div{ outline:1px solid red; display:inline-block; }
+.textBox div > button{ outline:1px solid lime; padding:10px 40px 10px 20px; font-size:17px; font-weight:600; display:inline-block; position:relative; }
+.textBox div > button.white{ background-color:transparent; color:#000; }
+.textBox div > button.black{ background-color:#000; color:#fff; }
+.textBox div > button:after{ outline:1px solid lime; content:''; display:inline-block; width:10px; height:17px; background:url('../images/arrow_right.png') no-repeat; position:absolute; right:20px; bottom:12px; transition:all .3s ease-out; }
+.textBox div > button.black:after{ background:url('../images/arrow_r_white.png') no-repeat;}
+.textBox div > button > span{ margin:0; position:relative; transition:all .3s ease-out; }.textBox div > button:hover:after{ transform:translateX(5px); }
+.textBox div > button:hover > span{ transform:translateX(-5px); }
+.textBox div > button.white:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #000; position:absolute; bottom:0; }
+.textBox div > button.black:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #fff; position:absolute; bottom:0; }
+/*2product, 4company*/
+.col2-box{ outline:4px solid darkmagenta; width:91.36904761905%/*1511+24px*/; position:relative; left:50%; transform:translateX(-50%); }
+.col2-box > ul{ outline:2px solid red; width:50%/*767.5px*/;  float:left; }
+.col2-box > ul > li{ outline:1px solid darkcyan; width:47.03583061889%/*767.5/(385-24)*/; margin:0 1.58835208471%/*(1511/2)/12px*/; float:left; }
+.col2-box > ul > li > a{ background-color:lightpink; width:100%; display:inline-block; }
+.col2-box > ul > li > a > *{ display:block; }
+.col2-box > ul > li > a > img{ width:100%; margin-bottom:40px; }
+.col2-box > ul > li > a > strong{ outline:1px solid lime; font-size:20px; }
+.col2-box > ul > li > a > span{ outline:1px solid lime; }
+.col2-box > ul > li > a > span.link{ outline:1px solid lime; margin-top:10px; color:#005da6; font-weight:600; display:inline; position:relative; transition:all .3s ease-out; }
+.col2-box > ul > li > a > span.link:after{ content:''; display:block; width:7px; height:100%; padding-left:30px; background:url('../images/arrow_r_blue.png') no-repeat right; background-size:7px 14px; position:absolute; right:-15px; top:0;  transition:all .3s ease-out; }
+.col2-box > ul > li > a > span.link:hover:before{ content:''; display:block; width:100%; border-bottom:2px solid #005da6; position:absolute; bottom:-2px; }
+.col2-box > ul > li > a > span.link:hover:after{ right:-23px; }
 
 
 /* ---------------------header--------------------- */
@@ -71,9 +98,41 @@ header > div > .loginBtn:after{ width:33px; height:33px; background:url('../imag
 
 
 /* ---------------------main--------------------- */
+/*1 intro*/
+.intro{ background-color:lightseagreen; margin-top:10px;  }
+.intro > .introSlideBox{ outline:1px solid red; width:89.94047619048%/*1511px*/; position:relative; left:50%; transform:translateX(-50%); }
+.intro > .introSlideBox > .slide { position:relative; }
+.intro > .introSlideBox > .slide > a{ outline:2px solid blue; }
+.intro > .introSlideBox > .slide > a > img{ width:100%; }
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > h2,
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ width:195px; }
+
+
+/*2 product*/
+.product{ outline:3px solid pink; padding:50px 0; }
+
+
+/*3 store*/
+.store{  }
+.store > .textBox{ display:none; }
+
+
+/*4 company*/
+.company{ padding:50px 0; }
+.company > h3{ margin-bottom:10px; padding:0 4.98812351544%/*84px*/; font-size:25px; font-weight:600; }
+.company > .follow{ outline:1px solid red; margin-top:60px; padding:0 4.98812351544%/*84px*/; }
+.company > .follow > span{ color:#00000099; }
+.company > .follow > .snsBtn{ outline:1px solid lime; display:inline-block; }
+.company > .follow > .snsBtn > a{  width:28px; height:28px; margin-left:16px; font-size:0; display:inline-block; }
+.company > .follow > .snsBtn > a.facebook{ background:url('../images/facebook.svg') no-repeat; }
+.company > .follow > .snsBtn > a.twitter{ background:url('../images/twitter.svg') no-repeat; }
+
 
 
 
 /* ---------------------footer--------------------- */
+
 
 
