@@ -28,8 +28,8 @@ button{ border:none; padding:0; background:none; cursor:pointer; }
 /* ---------------------layout------------------- */
 .wrap{ }
 header{ outline:1px solid lime; padding:0 5.59523809524%/*94px*/; }
-main{ background-color:lightgoldenrodyellow; }
-footer{ background-color:lightpink; }
+main{  }
+footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
 
 
 
@@ -99,7 +99,7 @@ header > div > .loginBtn:after{ width:33px; height:33px; background:url('../imag
 
 /* ---------------------main--------------------- */
 /*1 intro*/
-.intro{ background-color:lightseagreen; margin-top:10px;  }
+.intro{ margin-top:10px;  }
 .intro > .introSlideBox{ outline:1px solid red; width:89.94047619048%/*1511px*/; position:relative; left:50%; transform:translateX(-50%); }
 .intro > .introSlideBox > .slide { position:relative; }
 .intro > .introSlideBox > .slide > a{ outline:2px solid blue; }
@@ -108,6 +108,9 @@ header > div > .loginBtn:after{ width:33px; height:33px; background:url('../imag
 .intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > h2,
 .intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
 .intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ width:195px; }
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button:nth-child(2):after{ right:40px; }
+.intro > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button > span{ display:inline-block; }
+
 
 
 /*2 product*/
@@ -115,24 +118,47 @@ header > div > .loginBtn:after{ width:33px; height:33px; background:url('../imag
 
 
 /*3 store*/
-.store{  }
-.store > .textBox{ display:none; }
+.store{ outline:1px solid red; width:89.94047619048%/*1511px*/; position:relative; left:50%; transform:translateX(-50%); }
+.store > a > img{ width:100%; }
 
 
 /*4 company*/
 .company{ padding:50px 0; }
 .company > h3{ margin-bottom:10px; padding:0 4.98812351544%/*84px*/; font-size:25px; font-weight:600; }
 .company > .follow{ outline:1px solid red; margin-top:60px; padding:0 4.98812351544%/*84px*/; }
-.company > .follow > span{ color:#00000099; }
+.company > .follow > span{ color:#00000099; display:inline-block; transform:translateY(-8px); }
 .company > .follow > .snsBtn{ outline:1px solid lime; display:inline-block; }
-.company > .follow > .snsBtn > a{  width:28px; height:28px; margin-left:16px; font-size:0; display:inline-block; }
-.company > .follow > .snsBtn > a.facebook{ background:url('../images/facebook.svg') no-repeat; }
-.company > .follow > .snsBtn > a.twitter{ background:url('../images/twitter.svg') no-repeat; }
+.company > .follow > .snsBtn > li{ margin-left:16px; float:left; }
+.company > .follow > .snsBtn > li > a{ width:28px; height:28px; font-size:0; display:block; }
+.company > .follow > .snsBtn > li > a:hover:after{ content:''; display:block; width:28px; height:28px; background-color:rgba(0, 0, 0, .2); }
+.company > .follow > .snsBtn > li.facebook > a{ background:url('../images/facebook.svg') no-repeat; }
+.company > .follow > .snsBtn > li.twitter > a{ background:url('../images/twitter.svg') no-repeat; }
+
 
 
 
 
 /* ---------------------footer--------------------- */
+.footerNav{ background-color:lightcoral; }
+.footerNav > li{ background-color:lightgoldenrodyellow; width:16.6666666%; font-weight:700; color:#616161; float:left; }
+.footerNav > li > ul{ outline:1px solid red; }
+.footerNav > li > ul > li{ outline:1px solid lime; margin:10px 0; }
+.footerNav > li > ul > li > a{ font-size:11px; font-weight:400; color:#616161; position:relative; }
+.footerNav > li > ul > li > a:hover{ color:#000; }
+.footerNav > li > ul > li > a:hover:after{ content:''; display:block; border-bottom:1px solid #000; width:100%; color:#000; position:absolute; bottom:1px; }
 
+
+.footerUtil{ background-color:lightskyblue; padding:40px 0 25px; font-size:11px; color:#616161; } 
+.footerUtil a{ font-size:11px; color:#616161; } 
+
+.footerUtil > a.lang{ outline:1px solid lime; float:left; position:relative; left:33px; }
+.footerUtil > a.lang:hover:before{ content:''; display:block; width:100%; border-bottom:1px solid #616161; position:absolute; bottom:1px; }
+.footerUtil > a.lang:after{ content:''; display:block; width:23px; height:23px; padding-right:30px;  background:url('../images/earth.svg') no-repeat; background-size:23px; position:absolute;left:-33px; top:-2px; }
+
+.footerUtil > ul{ outline:1px solid lime; float:right; }
+.footerUtil > ul > li{ outline:1px solid red; padding:0 13px;  float:left; }
+.footerUtil > ul > li > a{ position:relative; }
+.footerUtil > ul > li > a:hover{ color:#000; }
+.footerUtil > ul > li > a:hover:before{ content:''; display:block; width:100%; border-bottom:1px solid #000; position:absolute; bottom:1px; }
 
 
