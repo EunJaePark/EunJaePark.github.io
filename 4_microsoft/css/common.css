@@ -163,7 +163,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 .footerNav > li{ background-color:lightgoldenrodyellow; width:16.6666666%; font-weight:700; color:#616161; float:left; }
 .footerNav > li > ul{ outline:1px solid red; }
 .footerNav > li > ul > li{ outline:1px solid lime; margin:10px 0; }
-.footerNav > li > ul > li > a{ font-size:11px; font-weight:400; color:#616161; position:relative; }
+.footerNav > li > ul > li > a{ font-size:11px; font-weight:400; color:#616161; }
 .footerNav > li > ul > li > a:hover{ color:#000; text-decoration:underline; }
 
 
@@ -176,7 +176,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 .footerUtil > ul{ outline:1px solid lime; float:right; }
 .footerUtil > ul > li{ outline:1px solid red; padding:0 13px;  float:left; }
-.footerUtil > ul > li > a{ position:relative; }
+.footerUtil > ul > li > a{  }
 .footerUtil > ul > li > a:hover{ color:#000; text-decoration:underline; }
 
 
