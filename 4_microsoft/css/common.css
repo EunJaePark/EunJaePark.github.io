@@ -50,18 +50,18 @@ footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
 .textBox div > button.white:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #000; position:absolute; bottom:0; }
 .textBox div > button.black:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #fff; position:absolute; bottom:0; }
 /*2product, 4company*/
-.col2-box{ outline:4px solid darkmagenta; width:91.36904761905%/*1511+24px*/; position:relative; left:50%; transform:translateX(-50%); }
-.col2-box > ul{ outline:2px solid red; width:50%/*767.5px*/;  float:left; }
-.col2-box > ul > li{ outline:1px solid darkcyan; width:47.03583061889%/*767.5/(385-24)*/; margin:0 1.58835208471%/*(1511/2)/12px*/; float:left; }
-.col2-box > ul > li > a{ background-color:lightpink; width:100%; display:inline-block; }
-.col2-box > ul > li > a > *{ display:block; }
-.col2-box > ul > li > a > img{ width:100%; margin-bottom:40px; }
-.col2-box > ul > li > a > strong{ outline:1px solid lime; font-size:20px; }
-.col2-box > ul > li > a > span{ outline:1px solid lime; }
-.col2-box > ul > li > a > span.link{ outline:1px solid lime; margin-top:10px; color:#005da6; font-weight:600; display:inline; position:relative; transition:all .3s ease-out; }
-.col2-box > ul > li > a > span.link:after{ content:''; display:block; width:7px; height:100%; padding-left:30px; background:url('../images/arrow_r_blue.png') no-repeat right; background-size:7px 14px; position:absolute; right:-15px; top:0;  transition:all .3s ease-out; }
-.col2-box > ul > li > a > span.link:hover:before{ content:''; display:block; width:100%; border-bottom:2px solid #005da6; position:absolute; bottom:-2px; }
-.col2-box > ul > li > a > span.link:hover:after{ right:-23px; }
+.col4-box{ outline:4px solid darkmagenta; width:91.36904761905%/*1511+24px*/; position:relative; left:50%; transform:translateX(-50%); }
+.col4-box > ul{ outline:2px solid red; width:100%;  float:left; }
+.col4-box > ul > li{ outline:1px solid darkcyan; width:calc(25% + -24px); margin:0 0.78175895765%/*(1511+24)/12px*/; float:left; }
+.col4-box > ul > li > a{ background-color:lightpink; width:100%; display:inline-block; }
+.col4-box > ul > li > a > *{ display:block; }
+.col4-box > ul > li > a > img{ width:100%; margin-bottom:40px; }
+.col4-box > ul > li > a > strong{ outline:1px solid lime; font-size:20px; }
+.col4-box > ul > li > a > span{ outline:1px solid lime; }
+.col4-box > ul > li > a > span.link{ outline:1px solid lime; margin-top:10px; color:#005da6; font-weight:600; display:inline; position:relative; transition:all .3s ease-out; }
+.col4-box > ul > li > a > span.link:after{ content:''; display:block; width:7px; height:100%; padding-left:30px; background:url('../images/arrow_r_blue.png') no-repeat right; background-size:7px 14px; position:absolute; right:-15px; top:0;  transition:all .3s ease-out; }
+.col4-box > ul > li > a > span.link:hover:before{ content:''; display:block; width:100%; border-bottom:2px solid #005da6; position:absolute; bottom:-2px; }
+.col4-box > ul > li > a > span.link:hover:after{ right:-23px; }
 
 
 /* ---------------------header--------------------- */
