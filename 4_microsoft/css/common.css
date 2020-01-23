@@ -26,7 +26,7 @@ button{ border:none; padding:0; background:none; cursor:pointer; }
 
 
 /* ---------------------layout------------------- */
-.wrap{ }
+.wrap{ width:100%; min-width:320px; }
 header{ outline:1px solid lime; margin:0 5.59523809524%/*94px*/; }
 main{  }
 main .inner{ width:89.94047619048%/*1511px*/; margin:0 auto; }
@@ -52,8 +52,8 @@ footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
 .textBox div > button.black:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #fff; position:absolute; bottom:0; }
 /*2product, 4company*/
 .col4-box{ outline:4px solid darkmagenta; /*width:91.36904761905%/*1511+24px;*/ position:relative; left:50%; transform:translateX(-50%); }
-.col4-box > ul{ outline:1px solid lightblue; width:calc(100% + 24px); transform:translateX(-12px); float:left; }
-.col4-box > ul > li{ outline:1px solid darkcyan; width:calc(25% + -24px); margin:0 12px; /*width:calc(25% + -24px); margin:0 0.78175895765%/*(1511+24)/12px;*/ float:left; }
+.col4-box > ul{ outline:1px solid lightblue; width:50%; margin-bottom:50px; float:left; }
+.col4-box > ul > li{ outline:1px solid darkcyan; width:calc(50% + -24px); margin:0 12px; /*width:calc(25% + -24px); margin:0 0.78175895765%/*(1511+24)/12px;*/ float:left; }
 .col4-box > ul > li > a{ background-color:lightpink; width:100%; display:inline-block; }
 .col4-box > ul > li > a > *{ display:block; }
 .col4-box > ul > li > a > img{ width:100%; margin-bottom:40px; }
@@ -93,15 +93,15 @@ header > div > .navBtn > button{ background-color:rgba(0, 0, 0, .3); padding:13p
 header > div > .navBtn > button:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:18px; }
 header > div > .navBtn > button:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
 header > div > .navBtn > button:hover:after{ border-color:#000; }
-header > div > .searchBtn{ margin-right:70px;  padding:14px 0 11px; }
+header > div > .searchBtn{ line-height:48px; margin-right:70px;  /*padding:14px 0 11px;*/ }
 header > div > .searchBtn:after{ width:18px; height:100%; background:url('../images/search.png') no-repeat right; background-size:18px; right:-25px;}
-header > div > .cartBtn{ margin-right:52px;  padding:13px 0 11px;  }
+header > div > .cartBtn{ line-height:48px; margin-right:52px;  /*padding:13px 0 11px;*/  }
 header > div > .cartBtn:after{ width:20px; height:100%; background:url('../images/cart.png') no-repeat right; background-size:20px; right:-27px; }
-header > div > .loginBtn{  padding:13px 0 11px; }
-header > div > .loginBtn:after{ width:33px; height:33px; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-43px; top:50%; transform:translateY(-50%); }
+header > div > .loginBtn{ line-height:48px;  /*padding:13px 0 11px;*/ }
+header > div > .loginBtn:after{ width:33px; height:100%; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-41px; top:50%; transform:translateY(-50%); }
 
 /*nav*/
-header .navBtn > nav{ background-color:lightpink; position:absolute; top:46px; right:30px; z-index:100; }
+header .navBtn > nav{ background-color:lightpink; position:absolute; top:46px; right:30px; z-index:100; display:; }
 header .navBtn > nav > ul{ outline:2px solid red; padding-bottom:45px;  }
 header .navBtn > nav > ul > li.mainMenu{ outline:1px solid blue; height:320px; float:left; }
 header .navBtn > nav > ul > li.mainMenu > span{ padding:18px 24px; display:inline-block; } /* 왼쪽 padding 주기위해서 따로 span으로 감싸줌. ul.subMenu에서 따로 좌측 padding을 주기위함. */
@@ -125,6 +125,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 .intro > .inner > .introSlideBox > .slide { position:relative; }
 .intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; }
 .intro > .inner > .introSlideBox > .slide > a > img{ width:100%; }
+
 .intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
 .intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > h2,
 .intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
@@ -136,6 +137,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 /*2 product*/
 .product{ outline:3px solid pink; padding:50px 0; }
+.product > .inner{ width:calc(89.94047619048% + 24px)/*1511px+24px*/; }
 
 
 /*3 store*/
@@ -145,8 +147,10 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 /*4 company*/
 .company{ padding:50px 0; }
+.company > .inner{ width:calc(89.94047619048% + 24px)/*1511px+24px*/; }
+
 .company > .inner > h3{ margin-bottom:10px; padding:0 4.98812351544%/*84px*/; font-size:25px; font-weight:600; }
-.company > .inner > .follow{ outline:1px solid red; margin-top:60px; padding:0 4.98812351544%/*84px*/; }
+.company > .inner > .follow{ outline:1px solid red; /*margin-top:60px;*/ /*padding:0 4.98812351544%/*84px*/; }
 .company > .inner > .follow > span{ color:#00000099; display:inline-block; transform:translateY(-8px); }
 .company > .inner > .follow > .snsBtn{ outline:1px solid lime; display:inline-block; }
 .company > .inner > .follow > .snsBtn > li{ margin-left:16px; float:left; }
@@ -161,7 +165,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 /* ---------------------footer--------------------- */
 .footerNav{ background-color:lightcoral; }
-.footerNav > li{ background-color:lightgoldenrodyellow; width:16.6666666%; font-weight:700; color:#616161; float:left; }
+.footerNav > li{ background-color:lightgoldenrodyellow; width:16.6666666%; margin-top:36px; font-weight:700; color:#616161; float:left; }
 .footerNav > li > ul{ outline:1px solid red; }
 .footerNav > li > ul > li{ outline:1px solid lime; margin:10px 0; }
 .footerNav > li > ul > li > a{ font-size:11px; font-weight:400; color:#616161; }
@@ -179,6 +183,60 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 .footerUtil > ul > li{ outline:1px solid red; padding:0 13px;  float:left; }
 .footerUtil > ul > li > a{  }
 .footerUtil > ul > li > a:hover{ color:#000; text-decoration:underline; }
+
+
+
+@media screen and ( max-width:1400px ) { /* header 우측글자삭제/ 1,2-h2폰트크기조정 */
+	/* ---------------------common--------------------- */
+	.textBox h2{ font-size:24px; }
+
+	/* ---------------------header--------------------- */
+	header > div > .searchBtn, 
+	header > div > .cartBtn, 
+	header > div > .loginBtn{  font-size:0;  }
+	header > div > .searchBtn{ margin-right:45px; }
+	header > div > .cartBtn{ margin-right:45px; }
+	/*nav*/
+	header .navBtn > nav{ width:1025px; left:50%; transform:translateX(-50%); }
+
+}
+
+@media screen and ( max-width:1083px ) {
+	/* ---------------------common--------------------- */
+	.col4-box > ul{ width:calc(100% + 24px); margin-bottom:60px; transform:translateX(-12px); }
+	.col4-box > ul > li{ width:calc(50% + -24px); } 
+
+	/* ---------------------header--------------------- */
+	/*nav*/
+	header .navBtn > nav{ width:820px; }
+
+	/* ---------------------main--------------------- */
+	/*1 intro*/
+	.intro > .inner{ width:100%; }
+	/*2 product*/
+	.product > .inner{ width:89.94047619048%/*1511px*/; }
+	/*3 store*/
+	.store > .inner{ width:100%; }
+	/*4 company*/
+	.company > .inner{ width:89.94047619048%/*1511px*/; }
+
+	/* ---------------------footer--------------------- */
+	footer{ padding:0 12px; }
+
+	.footerNav > li{ width:33.33%; max-width:326px; min-height:238px; } 
+
+	.footerUtil{ padding:40px 24px 25px; }
+
+}
+
+/*860px부터 햄버거메뉴탭으로 변경됨.*/
+@media screen and ( max-width:860px ) {
+
+}
+
+@media screen and ( max-width:767px ) {
+
+}
 
 
 
