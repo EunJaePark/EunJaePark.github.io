@@ -89,8 +89,8 @@ header > div > .loginBtn:hover:before{ border-bottom:none; }
 header > div > *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
 header > div > .navBtn{ margin-right:54px; position:static;/*nav배치위함*/ }
 header > div > .navBtn:hover:before{ border:none; }/*위에서 hover시에 before주기로 한 것(header > div > *:hover:before) 지우기. button에서 줄것이기 때문. (.navBtn의 position을 static로 줬기 때문에 전체화면을 기준으로 border가 생기기 때문에 button에 주는 것임)*/
-header > div > .navBtn > button{ background-color:rgba(0, 0, 0, .3); padding:13px 15px 14px 0; position:relative; }
-header > div > .navBtn > button:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:18px; }
+header > div > .navBtn > button{ background-color:rgba(0, 0, 0, .3); height:50px; padding:0 15px 0; position:relative; }
+header > div > .navBtn > button:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:23px; }
 header > div > .navBtn > button:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
 header > div > .navBtn > button:hover:after{ border-color:#000; }
 header > div > .searchBtn{ line-height:48px; margin-right:70px;  /*padding:14px 0 11px;*/ }
@@ -101,7 +101,8 @@ header > div > .loginBtn{ line-height:48px;  /*padding:13px 0 11px;*/ }
 header > div > .loginBtn:after{ width:33px; height:100%; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-41px; top:50%; transform:translateY(-50%); }
 
 /*nav*/
-header .navBtn > nav{ background-color:lightpink; position:absolute; top:46px; right:30px; z-index:100; display:; }
+header .hamBtn{ display:none; }
+header .navBtn > nav{ background-color:lightpink; position:absolute; top:50px; right:30px; display:;  z-index:100; }
 header .navBtn > nav > ul{ outline:2px solid red; padding-bottom:45px;  }
 header .navBtn > nav > ul > li.mainMenu{ outline:1px solid blue; height:320px; float:left; }
 header .navBtn > nav > ul > li.mainMenu > span{ padding:18px 24px; display:inline-block; } /* 왼쪽 padding 주기위해서 따로 span으로 감싸줌. ul.subMenu에서 따로 좌측 padding을 주기위함. */
@@ -120,7 +121,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 /* ---------------------main--------------------- */
 /*1 intro*/
-.intro{ margin-top:10px;  }
+.intro{   }
 .intro > .inner > .introSlideBox{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); }
 .intro > .inner > .introSlideBox > .slide { position:relative; }
 .intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; }
@@ -201,7 +202,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 }
 
-@media screen and ( max-width:1083px ) {
+@media screen and ( max-width:1082px ) {
 	/* ---------------------common--------------------- */
 	.col4-box > ul{ width:calc(100% + 24px); margin-bottom:60px; transform:translateX(-12px); }
 	.col4-box > ul > li{ width:calc(50% + -24px); } 
@@ -231,10 +232,49 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 /*860px부터 햄버거메뉴탭으로 변경됨.*/
 @media screen and ( max-width:860px ) {
+	/* ---------------------header--------------------- */
+	header{ width:100%; margin:0; }
+	header > h1{ position:absolute; left:50%; transform:translateX(-50%); }
+
+	header > ul{ background-color:#f2f2f2; width:100%; position:absolute; top:50px; overflow:hidden; z-index:100; }
+	header > ul > li{ border-bottom:1px solid #e6e6e6; width:100%; }
+	header > ul > li + li{ margin-left:0; } 
+	header > ul > li:hover:after{ display:none; }
+	header > ul > li > a{ width:100%; padding:13px 0 13px 16px; font-size:15px; } 
+
+	header > div{ margin-right:60px; }
+	header > div > .searchBtn{ position:absolute; left:70px; }
+
+	/*nav*/
+	header button.hamBtn{ display:block; width:60px; height:50px; font-size:0; background:url('../images/hamburger_icon.png') no-repeat 50%; background-size:20px; }
+	header > div > .navBtn > button.menuBtn{ display:none; }
+	header .navBtn > nav{ width:100%; top:305px; overflow:hidden; }
+	header .navBtn > nav > ul{ border-bottom:1px solid #000; padding-bottom:50px;  }
+	header .navBtn > nav > ul > li.mainMenu{ width:100%; height:auto; font-size:15px; }
+	header .navBtn > nav > ul > li.mainMenu > span{ width:100%; padding:13px 0 13px 16px; font-size:15px; cursor:pointer; position:relative; }
+	header .navBtn > nav > ul > li.mainMenu > span:after{content:''; display:inline-block; width:13px; height:10px; background:url('../images/arrow_down.png') no-repeat; background-size:13px; position:absolute; right:35px; top:22px; }
+
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{ padding-left:30px; }
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{ width:100%; padding:13px 0 13px 16px; font-size:15px; }
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a:hover{text-decoration:none;}
+
+	header .navBtn > nav > ul > li.sitemap{ line-height:50px; }
+	header .navBtn > nav > ul > li.sitemap > a{ width:100%; padding-left:16px;  font-size:15px; text-align:left; }
+	header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:none; }
+	header .navBtn > nav > ul > li.sitemap > a:before{ display:none;  }
+
+	/*script( header.nmenuShow )*/
+	header.menuShow{  }
+	
+	
 
 }
 
 @media screen and ( max-width:767px ) {
+
+}
+
+@media screen and ( max-width:540px ) {
 
 }
 
