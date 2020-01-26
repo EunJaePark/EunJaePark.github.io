@@ -176,9 +176,10 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 .footerUtil{ background-color:lightskyblue; padding:40px 0 25px; font-size:11px; color:#616161; } 
 .footerUtil a{ font-size:11px; color:#616161; } 
 
-.footerUtil > a.lang{ outline:1px solid lime; float:left; position:relative; left:33px; }
-.footerUtil > a.lang:hover{ text-decoration:underline; }
-.footerUtil > a.lang:after{ content:''; display:block; width:23px; height:23px; padding-right:30px;  background:url('../images/earth.svg') no-repeat; background-size:23px; position:absolute;left:-33px; top:-2px; }
+.footerUtil > .lang{ float:left; display:inline-block; }
+.footerUtil > .lang > a{ outline:1px solid lime;  display:inline-block;position:relative; left:33px;}
+.footerUtil > .lang > a:hover{ text-decoration:underline; }
+.footerUtil > .lang > a:before{ content:''; display:inline-block; width:23px; height:23px; padding-right:30px;  background:url('../images/earth.svg') no-repeat; background-size:23px; position:absolute;left:-33px; top:-2px; }
 
 .footerUtil > ul{ outline:1px solid lime; float:right; }
 .footerUtil > ul > li{ outline:1px solid red; padding:0 13px;  float:left; }
@@ -226,7 +227,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 
 	.footerNav > li{ width:33.33%; max-width:326px; min-height:238px; } 
 
-	.footerUtil{ padding:40px 24px 25px; }
+	.footerUtil{ padding:40px 24px 25px; } 
 
 }
 
@@ -271,8 +272,12 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 }
 
 @media screen and ( max-width:767px ) {
+	/* ---------------------footer--------------------- */
+	.footerUtil > a.lang{ outline:1px solid lime; float:left; position:relative; left:33px; display:block; }
 
-}
+	.footerUtil > .lang{ width:100%;  margin-bottom:20px; }
+	.footerUtil > ul{ float:left; }
+	.footerUtil > ul > li{ padding:0 4px; }
 
 @media screen and ( max-width:540px ) {
 
