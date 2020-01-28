@@ -124,7 +124,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 .intro{   }
 .intro > .inner > .introSlideBox{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); }
 .intro > .inner > .introSlideBox > .slide { position:relative; }
-.intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; display:inline-block; }
+.intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; }
 .intro > .inner > .introSlideBox > .slide > a > img{ width:100%; }
 
 .intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
