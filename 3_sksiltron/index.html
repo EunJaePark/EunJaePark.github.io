@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" media="all" href="css/common.css" />
     <!-- <script src="js/main.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -520,15 +521,19 @@
 
 //--------------main--------------
 //intro
-    let scrollBtn = document.querySelector('.scrollBtn');
+    let scrollBtn = document.querySelector('.scrollBtn');  
+    let otherMain = document.querySelector('.other_main_contents');;
+    
+    let otherMainTop = $(otherMain).offset().top;
 
     scrollBtn.addEventListener('click', function(e) {
         e.preventDefault();
         window.scrollTo({
-            top : 500,
+            top : otherMainTop,
             behavior : 'smooth'
-        });
-    });
+        });            
+    }); 
+    
 
 
 //journey
