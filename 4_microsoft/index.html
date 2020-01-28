@@ -492,11 +492,11 @@
 
 <script>
 
-//.intro bg - width별로 바꿈
+//1 .intro, 3 .sotre bgImg - width별로 바꿈
 console.log(window.innerWidth);
 
-introBg();
-function introBg() {
+bgChange();
+function bgChange() {
     let slideImg = document.querySelectorAll('.introSlideBox > .slide img');
     let storeImg = document.querySelector('.store img');
     for(let i = 0; i < slideImg.length; i++) {
