@@ -489,5 +489,39 @@
         </footer>
     </div>
     
+
+<script>
+
+//.intro bg - width별로 바꿈
+console.log(window.innerWidth);
+
+introBg();
+function introBg() {
+    let slideImg = document.querySelectorAll('.introSlideBox > .slide img');
+    let storeImg = document.querySelector('.store img');
+    if(window.innerWidth > 1082) {
+        for(let i = 0; i < slideImg.length; i++) {
+            slideImg[i].src = 'images/intro_bg' + [i + 1] + '.webp';
+        }
+        storeImg.src = 'images/store_bg.webp';
+    } 
+    if(window.innerWidth < 1082) {
+        for(let i = 0; i < slideImg.length; i++) {
+            slideImg[i].src = 'images/intro_bg' + [i + 1] + '_1082.webp';
+        }
+        storeImg.src = 'images/store_bg_1082.webp';
+    } 
+    if(window.innerWidth < 767) {
+        for(let i = 0; i < slideImg.length; i++) {
+            slideImg[i].src = 'images/intro_bg' + [i + 1] + '_767.webp';
+        }
+        storeImg.src = 'images/store_bg_767.webp';
+    }
+}
+
+
+</script>
+
+
 </body>
 </html>
