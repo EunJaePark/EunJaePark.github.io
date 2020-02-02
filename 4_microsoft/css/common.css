@@ -27,7 +27,7 @@ button{ border:none; padding:0; background:none; cursor:pointer; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:320px; }
-header{ outline:1px solid lime; margin:0 5.59523809524%/*94px*/; }
+header{ outline:1px solid lime; margin:0 5.59523809524%/*94px*/; position:relative; }
 main{  }
 main .inner{ width:89.94047619048%/*1511px*/; margin:0 auto; }
 footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
@@ -72,7 +72,7 @@ header a{ font-size:12px; font-weight:400; }
 header > h1{ margin-right:30px; }
 header > h1 img{ width:110px; padding:10px 0; }
 
-header > ul{ display:none; }
+header > ul{  }
 header > ul > li{ outline:1px solid blue; float:left; position:relative; } 
 header > ul > li + li{ margin-left:22px; } 
 header > ul > li:hover:after{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; bottom:9px; } 
@@ -89,16 +89,17 @@ header > div > .loginBtn:hover:before{ border-bottom:none; }
 header > div > *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
 header > div > .navBtn{ margin-right:54px; position:static;/*nav배치위함*/ }
 header > div > .navBtn:hover:before{ border:none; }/*위에서 hover시에 before주기로 한 것(header > div > *:hover:before) 지우기. button에서 줄것이기 때문. (.navBtn의 position을 static로 줬기 때문에 전체화면을 기준으로 border가 생기기 때문에 button에 주는 것임)*/
-header > div > .navBtn > button{ background-color:rgba(0, 0, 0, .3); height:50px; padding:0 15px 0; position:relative; }
-header > div > .navBtn > button:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:23px; }
-header > div > .navBtn > button:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
-header > div > .navBtn > button:hover:after{ border-color:#000; }
+header > div > .navBtn > button.menuBtn{ background-color:rgba(0, 0, 0, .3); height:50px; padding:0 15px 0; position:relative; }
+header > div > .navBtn > button.menuBtn:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:23px; }
+header > div > .navBtn > button.menuBtn:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
+header > div > .navBtn > button.menuBtn:hover:after{ border-color:#000; }
 header > div > .searchBtn{ line-height:48px; margin-right:70px;  /*padding:14px 0 11px;*/ }
 header > div > .searchBtn:after{ width:18px; height:100%; background:url('../images/search.png') no-repeat right; background-size:18px; right:-25px;}
 header > div > .cartBtn{ line-height:48px; margin-right:52px;  /*padding:13px 0 11px;*/  }
 header > div > .cartBtn:after{ width:20px; height:100%; background:url('../images/cart.png') no-repeat right; background-size:20px; right:-27px; }
 header > div > .loginBtn{ line-height:48px;  /*padding:13px 0 11px;*/ }
 header > div > .loginBtn:after{ width:33px; height:100%; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-41px; top:50%; transform:translateY(-50%); }
+
 
 /*nav*/
 header .hamBtn{ display:none; }
@@ -116,6 +117,9 @@ header .navBtn > nav > ul > li.sitemap > a{ outline:1px solid red; height:100%; 
 header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:underline; }
 header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; content:''; display:block; width:8px; height:16px;  background:url('../images/arrow_right.png') no-repeat right; background-size:8px; position:absolute; top:11px; right:40px; }
 
+/* 860px 이상 : navBtn.on - 메뉴버튼 클릭시 class */
+header.menuShow > div > .navBtn > button.menuBtn{ background-color:#f2f2f2; }
+header.menuShow > div > .navBtn > nav{ display:block; }
 
 
 
@@ -237,7 +241,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 	header{ width:100%; margin:0; }
 	header > h1{ position:absolute; left:50%; transform:translateX(-50%); }
 
-	header > ul{ background-color:#f2f2f2; width:100%; position:absolute; top:50px; overflow:hidden; z-index:100; }
+	header > ul{ background-color:#f2f2f2; width:100%; position:absolute; top:50px; overflow:hidden; z-index:100; display:none; }
 	header > ul > li{ border-bottom:1px solid #e6e6e6; width:100%; }
 	header > ul > li + li{ margin-left:0; } 
 	header > ul > li:hover:after{ display:none; }
@@ -255,6 +259,7 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 	header .navBtn > nav > ul > li.mainMenu > span{ width:100%; padding:13px 0 13px 16px; font-size:15px; cursor:pointer; position:relative; }
 	header .navBtn > nav > ul > li.mainMenu > span:after{content:''; display:inline-block; width:13px; height:10px; background:url('../images/arrow_down.png') no-repeat; background-size:13px; position:absolute; right:35px; top:22px; }
 
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu{ display:none; }
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{ padding-left:30px; }
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{ width:100%; padding:13px 0 13px 16px; font-size:15px; }
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a:hover{text-decoration:none;}
@@ -264,8 +269,16 @@ header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; cont
 	header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:none; }
 	header .navBtn > nav > ul > li.sitemap > a:before{ display:none;  }
 
-	/*script( header.nmenuShow )*/
-	header.menuShow{  }
+
+	/*.hamBtn클릭후 메뉴창 열렸을 때, hamBtn이미지 변경.*/
+	header.menuShow button.hamBtn{ background:url('../images/closeBtn.png') no-repeat 50%; background-size:16px; }
+	/* 860px 이하 : .menuShow - 메뉴버튼 클릭시 class */
+	header.menuShow > ul{ display:block; }
+	/* .mainMenu 클릭시 .subMenu 보임. + mainMenu > span:after 이미지 변경 */
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu.subShow{ display:block; }
+	header .navBtn > nav > ul > li.mainMenu > span.imgChange:after{ background:url('../images/arrow_up.png') no-repeat; background-size:13px; }
+
+
 	
 	/* ---------------------main--------------------- */
 	/*1 intro*/
