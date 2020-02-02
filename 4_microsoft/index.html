@@ -8,6 +8,11 @@
 
     <link rel="stylesheet" media="all" href="css/common.css" />
 
+    <!--bx slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
 </head>
 <body>
 
@@ -177,7 +182,7 @@
                             <a href="">
                                 <img src="images/intro_bg1.webp" alt=""/>
                                 <div class="textBox">
-                                    <h2>새로운 Surface 7</h2>
+                                    <h2>새로운 Surface Pro 7</h2>
                                     <span>초경량의 다재다능함</span>
                                     <div>
                                         <button class="black"><span>지금 쇼핑하기</span></button>
@@ -719,6 +724,29 @@ function bgChange() {
             }
         }
    } 
+    
+}
+
+
+
+
+//---------bx slider---------
+introSlider();
+function introSlider() {
+    $(document).ready(function() {
+        var opt = {
+            speed: 100,
+            auto: true,
+            infiniteLoop: true,
+            pause: 3500,
+            autoControls: true
+        }
+        $('.introSlideBox').bxSlider(opt);
+    })
+    
+    let stopBtn = document.querySelector('a.bx-stop');
+    let startBtn = document.querySelector('a.bx-start');
+    console.log(stopBtn);
     
 }
 

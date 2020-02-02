@@ -126,17 +126,44 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 /* ---------------------main--------------------- */
 /*1 intro*/
 .intro{   }
-.intro > .inner > .introSlideBox{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); }
-.intro > .inner > .introSlideBox > .slide { position:relative; }
-.intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; }
-.intro > .inner > .introSlideBox > .slide > a > img{ width:100%; }
+.intro > .inner > div.bx-wrapper{ border:none; box-shadow:none; }
+/* .intro > .inner > .introSlideBox{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); } */
+.intro > .inner  .introSlideBox > .slide { position:relative; }
+/* .intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; } */
+.intro > .inner  .introSlideBox > .slide > a > img{ width:100%; }
 
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > h2,
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ width:195px; }
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button:nth-child(2):after{ right:40px; }
-.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button > span{ display:inline-block; }
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox{ left:50%; transform:translateX(-50%); }
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > h2,
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > span{ text-align:center; }
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > div > button{ width:195px; }
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > div > button:nth-child(3):after{ right:40px; }
+.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > div > button > span{ display:inline-block; }
+
+/*bxslider 좌우넘김버튼*/
+
+.intro .bx-wrapper a.bx-prev,
+.intro .bx-wrapper a.bx-next{ background:none; border:1px solid #ddd; width:42px; height:42px; background-color:rgba(255, 255, 255, .5); border-radius:50%; display:none; }
+.intro .bx-wrapper:hover a.bx-prev,
+.intro .bx-wrapper:hover a.bx-next{ display:block; }
+.intro .bx-wrapper a.bx-prev:after{ content:''; display:block; width:10px; height:18px;  background:url('../images/arrow_left.png') no-repeat; background-size:10px; position:absolute; top:50%; left:47%; transform:translate(-50%, -50%); }
+.intro .bx-wrapper a.bx-next:after{ content:''; display:block; width:10px; height:18px;  background:url('../images/arrow_right.png') no-repeat; background-size:10px; position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); }
+.intro .bx-wrapper a.bx-prev:hover,
+.intro .bx-wrapper a.bx-next:hover{ box-shadow:0px 4px 4px rgba(0, 0, 0, .2); }
+
+/*bxslider 하단 페이지표시 원*/
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-pager{ outline:1px solid lime; width:50%; transform:translateY(-55px); }
+.bx-wrapper div.bx-pager-item{ position:absolute; right:10px; bottom:0; }
+.bx-wrapper div.bx-pager-item:first-child{ right:30px; }
+.bx-wrapper div.bx-pager.bx-default-pager a{ border:1px solid #000; width:5px; height:5px; background-color:transparent;  }
+/* bxslider 하단 잃시정지버튼 */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-controls-auto{ outline:1px solid orangered; width:50%; transform:translateY(-55px);  }
+.bx-wrapper .bx-controls-auto div.bx-controls-auto-item{ width:36px; height:35px; position:absolute; left:20px; bottom:-15px; }
+.bx-wrapper .bx-controls-auto div.bx-controls-auto-item:first-child{ display:none; /*start버튼 처음에는 안보이게 해둠.*/ }
+.bx-wrapper .bx-controls-auto div.bx-controls-auto-item:hover{ background-color:#000; }
+.bx-wrapper .bx-controls-auto a.bx-stop{ width:100%; height:100%; background:url('../images/stopicon_b.png') no-repeat 10px; background-size:6px; }
+.bx-wrapper .bx-controls-auto a.bx-start{ width:100%; height:100%; background:url('../images/starticon_b.png') no-repeat 10px 9px; background-size:10px; }
+.bx-wrapper .bx-controls-auto div.bx-controls-auto-item:hover a.bx-stop{ background:url('../images/stopicon_white.png') no-repeat 10px; }
+.bx-wrapper .bx-controls-auto div.bx-controls-auto-item:hover a.bx-start{ background:url('../images/starticon_white.png') no-repeat 10px 9px; background-size:10px; }
 
 
 
@@ -282,7 +309,7 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	
 	/* ---------------------main--------------------- */
 	/*1 intro*/
-	.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ transform:translateX(30%); display:block; }
+	.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > div > button{ transform:translateX(30%); display:block; }
 
 	/*3 store*/
 	.store .textBox{ width:335px; }
@@ -300,8 +327,8 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	
 	/* ---------------------main--------------------- */
 	/*1 intro*/
-	.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox{ transform:translateX(0); }
-	.intro > .inner > .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ display:inline-block; transform:translateX(0);  }
+	.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox{ transform:translateX(0%); }
+	.intro > .inner  .introSlideBox > .slide:nth-child(3) > a > .textBox > div > button{ display:inline-block; transform:translateX(0);  }
 
 	/*3 store*/
 	.store .textBox{ width:100%; }
