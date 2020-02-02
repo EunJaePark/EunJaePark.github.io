@@ -27,7 +27,7 @@ button{ border:none; padding:0; background:none; cursor:pointer; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:320px; }
-header{ outline:1px solid lime; margin:0 5.59523809524%/*94px*/; position:relative; }
+header{  margin:0 5.59523809524%/*94px*/; position:relative; }
 main{  }
 main .inner{ width:89.94047619048%/*1511px*/; margin:0 auto; }
 footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
@@ -37,51 +37,51 @@ footer{ background-color:#f2f2f2; padding:0 5%/*84px*/; }
 /* ---------------------common------------------- */
 .clear:after{ content:''; display:block; clear:both; }
 /*1intro, 3store*/
-.textBox{ background-color:orange;  position:absolute; left:93px; top:50%; transform:translateY(-50%); }
-.textBox h2{ outline:1px solid lime; font-size:46px; font-weight:700; }
-.textBox span{ outline:1px solid lime; margin:10px 0 25px; display:block; }
-.textBox div{ outline:1px solid red; width:100%; display:inline-block; }
-.textBox div > button{ outline:1px solid lime; padding:10px 40px 10px 20px; font-size:17px; font-weight:600; display:inline-block; position:relative; }
+.textBox{   position:absolute; left:93px; top:50%; transform:translateY(-50%); }
+.textBox h2{  font-size:46px; font-weight:700; }
+.textBox span{  margin:10px 0 25px; display:block; }
+.textBox div{  width:100%; display:inline-block; }
+.textBox div > button{  padding:10px 40px 10px 20px; font-size:17px; font-weight:600; display:inline-block; position:relative; }
 .textBox div > button.white{ background-color:transparent; color:#000; }
 .textBox div > button.black{ background-color:#000; color:#fff; }
-.textBox div > button:after{ outline:1px solid lime; content:''; display:inline-block; width:10px; height:17px; background:url('../images/arrow_right.png') no-repeat; position:absolute; right:20px; bottom:12px; transition:all .3s ease-out; }
+.textBox div > button:after{  content:''; display:inline-block; width:10px; height:17px; background:url('../images/arrow_right.png') no-repeat; position:absolute; right:20px; bottom:12px; transition:all .3s ease-out; }
 .textBox div > button.black:after{ background:url('../images/arrow_r_white.png') no-repeat;}
 .textBox div > button > span{ margin:0; position:relative; transition:all .3s ease-out; }.textBox div > button:hover:after{ transform:translateX(5px); }
 .textBox div > button:hover > span{ transform:translateX(-5px); }
 .textBox div > button.white:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #000; position:absolute; bottom:0; }
 .textBox div > button.black:hover > span:before{ content:''; display:block; width:100%; border-bottom:2px solid #fff; position:absolute; bottom:0; }
 /*2product, 4company*/
-.col4-box{ outline:4px solid darkmagenta; /*width:91.36904761905%/*1511+24px;*/ position:relative; left:50%; transform:translateX(-50%); }
-.col4-box > ul{ outline:1px solid lightblue; width:50%; margin-bottom:50px; float:left; }
-.col4-box > ul > li{ outline:1px solid darkcyan; width:calc(50% + -24px); margin:0 12px; /*width:calc(25% + -24px); margin:0 0.78175895765%/*(1511+24)/12px;*/ float:left; }
-.col4-box > ul > li > a{ background-color:lightpink; width:100%; display:inline-block; }
+.col4-box{  /*width:91.36904761905%/*1511+24px;*/ position:relative; left:50%; transform:translateX(-50%); }
+.col4-box > ul{  width:50%; margin-bottom:50px; float:left; }
+.col4-box > ul > li{  width:calc(50% + -24px); margin:0 12px; /*width:calc(25% + -24px); margin:0 0.78175895765%/*(1511+24)/12px;*/ float:left; }
+.col4-box > ul > li > a{  width:100%; display:inline-block; }
 .col4-box > ul > li > a > *{ display:block; }
 .col4-box > ul > li > a > img{ width:100%; margin-bottom:40px; }
-.col4-box > ul > li > a > strong{ outline:1px solid lime; font-size:20px; }
-.col4-box > ul > li > a > span{ outline:1px solid lime; }
-.col4-box > ul > li > a > span.link{ outline:1px solid lime; margin-top:10px; color:#005da6; font-weight:600; display:inline-block; position:relative; transition:all .3s ease-out; }
+.col4-box > ul > li > a > strong{  font-size:20px; }
+.col4-box > ul > li > a > span{  }
+.col4-box > ul > li > a > span.link{  margin-top:10px; color:#005da6; font-weight:600; display:inline-block; position:relative; transition:all .3s ease-out; }
 .col4-box > ul > li > a > span.link:after{ content:''; display:block; width:7px; height:100%; padding-left:30px; background:url('../images/arrow_r_blue.png') no-repeat right; background-size:7px 14px; position:absolute; right:-15px; top:0;  transition:all .3s ease-out; }
 .col4-box > ul > li > a > span.link:hover:before{ content:''; display:block; width:100%; border-bottom:2px solid #005da6; position:absolute; bottom:-2px; }
 .col4-box > ul > li > a > span.link:hover:after{ right:-23px; }
 
 
 /* ---------------------header--------------------- */
-header > * { outline:1px solid red; float:left;}
+header > * {  float:left;}
 header a{ font-size:12px; font-weight:400; }
 
 header > h1{ margin-right:30px; }
 header > h1 img{ width:110px; padding:10px 0; }
 
 header > ul{  }
-header > ul > li{ outline:1px solid blue; float:left; position:relative; } 
+header > ul > li{  float:left; position:relative; } 
 header > ul > li + li{ margin-left:22px; } 
 header > ul > li:hover:after{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; bottom:9px; } 
-header > ul > li > a{ background-color:lightgray; padding:16px 0 10px; display:inline-block; } 
+header > ul > li > a{  padding:16px 0 10px; display:inline-block; } 
 
 
 header > div{ margin-right:44px; float:right; }
 header > div *{ font-size:13px; }
-header > div > *{ outline:1px solid blue; border-bottom:2px solid transparent; float:left; position:relative; }
+header > div > *{  border-bottom:2px solid transparent; float:left; position:relative; }
 header > div > *:hover:before{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; left:0; bottom:9px; }
 header > div > .searchBtn:hover:before{ bottom:8px; }
 header > div > .loginBtn:hover:before{ border-bottom:none; }
@@ -89,7 +89,7 @@ header > div > .loginBtn:hover:before{ border-bottom:none; }
 header > div > *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
 header > div > .navBtn{ margin-right:54px; position:static;/*nav배치위함*/ }
 header > div > .navBtn:hover:before{ border:none; }/*위에서 hover시에 before주기로 한 것(header > div > *:hover:before) 지우기. button에서 줄것이기 때문. (.navBtn의 position을 static로 줬기 때문에 전체화면을 기준으로 border가 생기기 때문에 button에 주는 것임)*/
-header > div > .navBtn > button.menuBtn{ background-color:rgba(0, 0, 0, .3); height:50px; padding:0 15px 0; position:relative; }
+header > div > .navBtn > button.menuBtn{  height:50px; padding:0 15px 0; position:relative; }
 header > div > .navBtn > button.menuBtn:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:23px; }
 header > div > .navBtn > button.menuBtn:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
 header > div > .navBtn > button.menuBtn:hover:after{ border-color:#000; }
@@ -103,19 +103,19 @@ header > div > .loginBtn:after{ width:33px; height:100%; background:url('../imag
 
 /*nav*/
 header .hamBtn{ display:none; }
-header .navBtn > nav{ background-color:lightpink; position:absolute; top:50px; right:30px; display:none;  z-index:100; }
-header .navBtn > nav > ul{ outline:2px solid red; padding-bottom:45px; }
-header .navBtn > nav > ul > li.mainMenu{ outline:1px solid blue; height:320px; float:left; }
-header .navBtn > nav > ul > li.mainMenu > span{ padding:18px 24px; display:inline-block; } /* 왼쪽 padding 주기위해서 따로 span으로 감싸줌. ul.subMenu에서 따로 좌측 padding을 주기위함. */
-header .navBtn > nav > ul > li.mainMenu > ul.subMenu{ background-color:lightgoldenrodyellow; }
-header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{ outline:1px solid orange; }
-header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{ outline:1px solid blue;  width:171px/*195px-24*/; padding:12px 0 12px 24px; display:inline-block; }
+header .navBtn > nav{ background-color:#f2f2f2; position:absolute; top:50px; right:30px; display:none;  z-index:100; }
+header .navBtn > nav > ul{ border:1px solid #e6e6e6; border-bottom:2px solid #000; padding-bottom:45px; }
+header .navBtn > nav > ul > li.mainMenu{  height:320px; float:left; }
+header .navBtn > nav > ul > li.mainMenu > span{ padding:18px 24px; font-weight:700; display:inline-block; } /* 왼쪽 padding 주기위해서 따로 span으로 감싸줌. ul.subMenu에서 따로 좌측 padding을 주기위함. */
+header .navBtn > nav > ul > li.mainMenu > ul.subMenu{  }
+header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{  }
+header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{   width:171px/*195px-24*/; padding:12px 0 12px 24px; display:inline-block; }
 header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a:hover{text-decoration:underline;}
 
-header .navBtn > nav > ul > li.sitemap{ background-color:#e6e6e6; width:100%; line-height:38px; text-align:center; display:inline-block; position:absolute; left:0; bottom:0; }
-header .navBtn > nav > ul > li.sitemap > a{ outline:1px solid red; height:100%; padding:0 53px 0 40px; display:inline-block; position:relative; }
+header .navBtn > nav > ul > li.sitemap{ background-color:#e6e6e6; width:100%; line-height:38px; text-align:center; display:inline-block; position:absolute; left:0; bottom:2px; }
+header .navBtn > nav > ul > li.sitemap > a{  height:100%; padding:0 53px 0 40px; display:inline-block; position:relative; }
 header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:underline; }
-header .navBtn > nav > ul > li.sitemap > a:before{ outline:1px solid green; content:''; display:block; width:8px; height:16px;  background:url('../images/arrow_right.png') no-repeat right; background-size:8px; position:absolute; top:11px; right:40px; }
+header .navBtn > nav > ul > li.sitemap > a:before{  content:''; display:block; width:8px; height:16px;  background:url('../images/arrow_right.png') no-repeat right; background-size:8px; position:absolute; top:11px; right:40px; }
 
 /* 860px 이상 : navBtn.on - 메뉴버튼 클릭시 class */
 header.menuShow > div > .navBtn > button.menuBtn{ background-color:#f2f2f2; }
@@ -151,12 +151,12 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 .intro .bx-wrapper a.bx-next:hover{ box-shadow:0px 4px 4px rgba(0, 0, 0, .2); }
 
 /*bxslider 하단 페이지표시 원*/
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-pager{ outline:1px solid lime; width:50%; transform:translateY(-55px); }
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-pager{  width:50%; transform:translateY(-55px); }
 .bx-wrapper div.bx-pager-item{ position:absolute; right:10px; bottom:0; }
 .bx-wrapper div.bx-pager-item:first-child{ right:30px; }
 .bx-wrapper div.bx-pager.bx-default-pager a{ border:1px solid #000; width:5px; height:5px; background-color:transparent;  }
 /* bxslider 하단 잃시정지버튼 */
-.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-controls-auto{ outline:1px solid orangered; width:50%; transform:translateY(-55px);  }
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager div.bx-controls-auto{  width:50%; transform:translateY(-55px);  }
 .bx-wrapper .bx-controls-auto div.bx-controls-auto-item{ width:36px; height:35px; position:absolute; left:20px; bottom:-15px; }
 .bx-wrapper .bx-controls-auto div.bx-controls-auto-item:first-child{ display:none; /*start버튼 처음에는 안보이게 해둠.*/ }
 .bx-wrapper .bx-controls-auto div.bx-controls-auto-item:hover{ background-color:#000; }
@@ -168,12 +168,12 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 
 
 /*2 product*/
-.product{ outline:3px solid pink; padding:50px 0; }
+.product{  padding:50px 0; }
 .product > .inner{ width:calc(89.94047619048% + 24px)/*1511px+24px*/; }
 
 
 /*3 store*/
-.store{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); }
+.store{  position:relative; left:50%; transform:translateX(-50%); }
 .store > .inner > a > img{ width:100%; }
 
 
@@ -182,9 +182,9 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 .company > .inner{ width:calc(89.94047619048% + 24px)/*1511px+24px*/; }
 
 .company > .inner > h3{ margin-bottom:10px; padding:0 4.98812351544%/*84px*/; font-size:25px; font-weight:600; }
-.company > .inner > .follow{ outline:1px solid red; /*margin-top:60px;*/ /*padding:0 4.98812351544%/*84px*/; }
+.company > .inner > .follow{  /*margin-top:60px;*/ /*padding:0 4.98812351544%/*84px*/; }
 .company > .inner > .follow > span{ color:#00000099; display:inline-block; transform:translateY(-8px); }
-.company > .inner > .follow > .snsBtn{ outline:1px solid lime; display:inline-block; }
+.company > .inner > .follow > .snsBtn{  display:inline-block; }
 .company > .inner > .follow > .snsBtn > li{ margin-left:16px; float:left; }
 .company > .inner > .follow > .snsBtn > li > a{ width:28px; height:28px; font-size:0; display:block; }
 .company > .inner > .follow > .snsBtn > li > a:hover:after{ content:''; display:block; width:28px; height:28px; background-color:rgba(0, 0, 0, .2); }
@@ -196,24 +196,24 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 
 
 /* ---------------------footer--------------------- */
-.footerNav{ background-color:lightcoral; }
-.footerNav > li{ background-color:lightgoldenrodyellow; width:16.6666666%; margin-top:36px; font-weight:700; color:#616161; float:left; }
-.footerNav > li > ul{ outline:1px solid red; }
-.footerNav > li > ul > li{ outline:1px solid lime; margin:10px 0; }
+.footerNav{  }
+.footerNav > li{  width:16.6666666%; margin-top:36px; font-weight:700; color:#616161; float:left; }
+.footerNav > li > ul{  }
+.footerNav > li > ul > li{  margin:10px 0; }
 .footerNav > li > ul > li > a{ font-size:11px; font-weight:400; color:#616161; }
 .footerNav > li > ul > li > a:hover{ color:#000; text-decoration:underline; }
 
 
-.footerUtil{ background-color:lightskyblue; padding:40px 0 25px; font-size:11px; color:#616161; } 
+.footerUtil{  padding:40px 0 25px; font-size:11px; color:#616161; } 
 .footerUtil a{ font-size:11px; color:#616161; } 
 
 .footerUtil > .lang{ float:left; display:inline-block; }
-.footerUtil > .lang > a{ outline:1px solid lime;  display:inline-block;position:relative; left:33px;}
+.footerUtil > .lang > a{   display:inline-block;position:relative; left:33px;}
 .footerUtil > .lang > a:hover{ text-decoration:underline; }
 .footerUtil > .lang > a:before{ content:''; display:inline-block; width:23px; height:23px; padding-right:30px;  background:url('../images/earth.svg') no-repeat; background-size:23px; position:absolute;left:-33px; top:-2px; }
 
-.footerUtil > ul{ outline:1px solid lime; float:right; }
-.footerUtil > ul > li{ outline:1px solid red; padding:0 13px;  float:left; }
+.footerUtil > ul{  float:right; }
+.footerUtil > ul > li{  padding:0 13px;  float:left; }
 .footerUtil > ul > li > a{  }
 .footerUtil > ul > li > a:hover{ color:#000; text-decoration:underline; }
 
@@ -281,17 +281,19 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	header button.hamBtn{ display:block; width:60px; height:50px; font-size:0; background:url('../images/hamburger_icon.png') no-repeat 50%; background-size:20px; }
 	header > div > .navBtn > button.menuBtn{ display:none; }
 	header .navBtn > nav{ width:100%; top:305px; overflow:hidden; }
-	header .navBtn > nav > ul{ border-bottom:1px solid #000; padding-bottom:50px;  }
-	header .navBtn > nav > ul > li.mainMenu{ width:100%; height:auto; font-size:15px; }
-	header .navBtn > nav > ul > li.mainMenu > span{ width:100%; padding:13px 0 13px 16px; font-size:15px; cursor:pointer; position:relative; }
+	header .navBtn > nav > ul{ border:none; border-bottom:1px solid #000; padding-bottom:50px;  }
+	header .navBtn > nav > ul > li.mainMenu{ border-bottom:1px solid #e6e6e6; width:100%; height:auto; font-size:15px; }
+	header .navBtn > nav > ul > li.mainMenu > span{ width:100%; padding:13px 0 13px 16px; font-size:15px; font-weight:500; cursor:pointer; position:relative; }
 	header .navBtn > nav > ul > li.mainMenu > span:after{content:''; display:inline-block; width:13px; height:10px; background:url('../images/arrow_down.png') no-repeat; background-size:13px; position:absolute; right:35px; top:22px; }
 
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu{ display:none; }
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{ padding-left:30px; }
-	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{ width:100%; padding:13px 0 13px 16px; font-size:15px; }
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li:first-child{ border-top:1px solid #e6e6e6; }
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{ border-bottom:1px solid #e6e6e6; width:100%; padding:13px 0 13px 16px; font-size:15px; }
+	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li:last-child > a{ border-bottom:none; }
 	header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a:hover{text-decoration:none;}
 
-	header .navBtn > nav > ul > li.sitemap{ line-height:50px; }
+	header .navBtn > nav > ul > li.sitemap{ border-top:1px solid #e6e6e6; background-color:#f2f2f2; line-height:50px; }
 	header .navBtn > nav > ul > li.sitemap > a{ width:100%; padding-left:16px;  font-size:15px; text-align:left; }
 	header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:none; }
 	header .navBtn > nav > ul > li.sitemap > a:before{ display:none;  }
@@ -320,7 +322,7 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 @media screen and ( max-width:767px ) {
 	/* ---------------------common------------------- */
 	/*1intro, 3store*/
-	.textBox{ width:100%; height:280px; padding-top:50px; transform:translateY(0px); position:static;  }
+	.textBox{  background-color:#e6e6e6; width:100%; height:280px; padding-top:50px; transform:translateY(0px); position:static;  }
 	.textBox > *{ display:block; text-align:center; }
 	.textBox h2{ padding-top:60px; font-size:20px; }
 	.textBox div > button{ font-size:15px; }
