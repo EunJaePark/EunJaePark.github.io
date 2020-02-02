@@ -669,10 +669,34 @@ function menuScript(e) {
     searchClose.style.color = '#666';
     searchClose.style.fontSize = '13px';
     searchClose.style.textAlign = 'center';
+    searchClose.style.backgroundColor = '#fff';
     searchClose.style.position = 'absolute';
     searchClose.style.cursor = 'pointer';
-    
-    
+
+    //1-2. 860px 이하일 경우에는 검색창 스타일 변경.
+    window.addEventListener('resize', function () {
+        search860();
+    });
+    function search860() {
+        if(window.innerWidth < 860) {
+            searchClose.textContent = '';
+
+            searchBox.style.width = 'calc(100% + -70px)';
+            searchBox.style.left = '60px';
+
+            searchText.style.width = 'calc(100% + -30px)';
+            searchText.style.margin = '9px 0 0 0';
+            searchText.style.left = '20px';
+
+            searchIcon.style.right = '30px';
+            
+            searchClose.style.width = '60px';
+            searchClose.style.background = "url('images/close_arrow.png') no-repeat 7px 5px";
+            searchClose.style.backgroundSize = "100%";
+            searchClose.style.left = '-70px';
+        }
+    }
+      
     //2. searchBtn클릭 = 검색창 뜸.
     let searchBtn = document.querySelector('.searchBtn');
     searchBtn.addEventListener('click', function() {
@@ -746,7 +770,7 @@ function introSlider() {
     
     let stopBtn = document.querySelector('a.bx-stop');
     let startBtn = document.querySelector('a.bx-start');
-    console.log(stopBtn);
+    // console.log(stopBtn);
     
 }
 
