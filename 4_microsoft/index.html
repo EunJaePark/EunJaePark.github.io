@@ -519,7 +519,7 @@ function menuScript(e) {
     //         header.className = 'clear';
     //     }   
     // });
-
+ 
     // //.wrap를 클릭하면 nav박스 닫히게함.(header부분클릭은 제외)
     // wrap.addEventListener('click', function (e) {
     //     //mainMenu를 클릭할 경우 nav박스 닫히지 않음.
@@ -541,7 +541,12 @@ function menuScript(e) {
     //     }
     // });
 
-        
+    
+    // ****************************************************************************
+    // ****************************************************************************
+    
+    // 이부분 질문드려요! 
+    // header를 제외한 모든 부분 클릭 시 메뉴박스가 닫히게 만들어야 합니다.
     wrap.addEventListener('click', function(e) {
         //header.menuShow = (.menuBtn 클릭시 nav 보임. + navBtn 배경색 바뀜.)
         //860px 이하에서는 .hamBtn버튼 클릭시 nav + header > ul 보이게 함.
@@ -550,26 +555,27 @@ function menuScript(e) {
         }
 
         //header를 제외한 다른 곳 클릭시 nav박스 닫히게함.
-        // if(check()) {
-        //     header.classList.remove('menuShow');
-        // }
-        // function check() {
-        //     while(target.parentNode.tagName !== 'HTML') {
-        //         if(target.parentNode.tagName === 'HEADER') {
-        //             return false;
-        //         }
-        //         if(target.parentNode.tagName === 'NAV' ) {
-        //             return true;
-        //             if(target.tagName === 'SPAN') {
-        //                 return false;
-        //             }
-        //         } 
-        //         target.parentNode = target.parentNode.parentNode;
-        //     }
-        //     return true;
-        // }
+        if(check()) {
+            header.classList.remove('menuShow');
+        }
+        function check(e) {
+            while(e.target.parentNode.tagName !== 'HTML') {
+                if(e.target.parentNode.tagName === 'HEADER') {
+                    return false;
+                }
+                if(e.target.parentNode.tagName === 'NAV' ) {
+                    return true;
+                    if(te.arget.tagName === 'SPAN') {
+                        return true;
+                    }
+                } 
+                e.target.parentNode = e.target.parentNode.parentNode;
+            }
+            return false;
+        }
         
-        
+    // ****************************************************************************
+    // ****************************************************************************
 
         
         // if(e.target.parentNode.parentNode === header) { 
@@ -624,6 +630,7 @@ function menuScript(e) {
 
     
     //-----searchBtn 클릭시 검색창 뜨도록.-----
+    //html,css로 다시 만들기.
     //1. 검색창 태그 생성.
     var searchBox = document.createElement('div.searchBox');
     var searchText = document.createElement('input');
@@ -694,6 +701,25 @@ function menuScript(e) {
             searchClose.style.background = "url('images/close_arrow.png') no-repeat 7px 5px";
             searchClose.style.backgroundSize = "100%";
             searchClose.style.left = '-70px';
+
+            //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
+            searchBox.style.display = 'none';
+        } else {
+            searchClose.textContent = '취소';
+
+            searchBox.style.width = 'alc(100% + -100px)';
+            searchBox.style.left = '110px';
+
+            searchText.style.width = 'calc(100% + -30px + -100px)';
+            searchText.style.margin = '9px 0 0 30px';
+            searchText.style.left = '';
+
+            searchIcon.style.right = '90px';
+            
+            searchClose.style.width = '70px';
+            searchClose.style.background = "#fff";
+            searchClose.style.backgroundSize = "0";
+            searchClose.style.left = '';
         }
     }
       
@@ -708,12 +734,12 @@ function menuScript(e) {
            searchBox.style.display = 'none';
        }); 
     
-    //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
-    window.addEventListener('resize', function() {
-        if (window.innerWidth < 860) {
-            searchBox.style.display = 'none';
-        }      
-    });
+    // //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
+    // window.addEventListener('resize', function() {
+    //     if (window.innerWidth < 860) {
+    //         // searchBox.style.display = 'none';
+    //     }      
+    // });
     
 
 }
