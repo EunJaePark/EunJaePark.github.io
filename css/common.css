@@ -161,6 +161,7 @@ main:after{ content:''; display:block; width:1px; height:100vh; border-left:1px 
 	section > .inner{ padding:50px 6.25%; }
 
 	/* ---------------------main--------------------- */
+	main:after{ right:5%; }
 	/*-----section_nav-----*/	
 	.section_nav{ width:87.5%/*calc(100% + -12.5%)*/; padding:0 6.25%;  }
 
