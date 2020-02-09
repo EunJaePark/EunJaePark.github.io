@@ -1,5 +1,6 @@
+
 //----------header------------
-    window.addEventListener('scroll', scrollHeaderBg);
+window.addEventListener('scroll', scrollHeaderBg);
     var htmlEl = document.querySelector('html');
     var header = htmlEl.querySelector('header');
         
@@ -180,3 +181,4 @@
             }
         });
     });
+
