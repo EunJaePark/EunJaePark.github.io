@@ -74,7 +74,7 @@ button > sup{ font-size:1.1rem; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover{ background-color:#eab931; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover:after{ content:'→'; padding-left:5px; }
 /*script용 css*/
-.works  .portfolio_list > div.show > button > span{ font-size:2.5rem; font-weight:600; text-decoration:none; }
+.works  .portfolio_list > div.show > button > span{ font-size:2.5rem; font-weight:600; text-decoration:none; background-color:#eab931; }
 .works  .portfolio_list > div.show > button > sup{ display:none; }
 .works  .portfolio_list > div.show > .portfolio_content{ display:block; }
 
