@@ -148,7 +148,7 @@ main:after{ content:''; display:block; width:1px; height:100vh; border-left:1px 
 	.skills  ul{  margin-left:0; }
 
 	/*-----top_btn-----*/
-	.top_btn{ position:static; margin:0 0 50px 18.75%; display:inline-block; }
+	.top_btn{ background-color:#eab931; margin:0 0 50px 18.75%; position:static; display:inline-block; }
 
 	
 }
