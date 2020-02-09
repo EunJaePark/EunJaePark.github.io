@@ -1,9 +1,10 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,500,600&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,500,600&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap');
 
 /* ---------------------reset------------------- */
 body {
-	font:normal 15px 'Noto Sans KR', Arial, Verdana, sans-serif;
+	font:normal 15px 'Source Sans Pro', sans-serif, Arial, Verdana;
 	font-weight:400;
 	line-height:1.6;
 	color:#000;
@@ -38,18 +39,18 @@ section  .inner{   padding:130px 8.13008130081%/*1230/100px*/; }
 section  .inner .portfolio_list{  margin-left:30px; }
 button > span{ font-size:1.3rem; text-decoration: underline; text-align:left; }
 button > sup{ font-size:1.1rem; }
-.text_box{ width:100%; max-width:480px; margin:10px 0 30px; }
-.text_box > span{  line-height:1.8rem; font-size:1.1rem; font-weight:300; display:block; }
+.text_box{  margin:10px 0 30px; }
+.text_box > span{  line-height:1.8rem; font-size:1.1rem;  display:block; }
 .text_box > span:after{ content:'-'; display:block; font-size:2rem;  }
 .text_box > span + span{ margin-top:px; }
-.text_box > span > strong{ font-weight:400; }
+.text_box > span > strong{ font-weight:700; }
 
 
 /* ---------------------header--------------------- */
-.title{  font-weight:600; font-size:1.3rem;  }
+.title{  font-weight:600; font-size:1.4rem;  }
 .title > a{ background-color:#eab931; }
 .content{  margin-top:100px; }
-.content > p{  margin-bottom:15px; font-weight:500; font-size:1.1rem; }
+.content > p{  margin-bottom:15px; font-weight:500; font-size:1.2rem; }
 
 /* ---------------------main--------------------- */
 /*-----section_nav-----*/
@@ -69,7 +70,7 @@ button > sup{ font-size:1.1rem; }
 .works  .portfolio_list > div > .portfolio_content > .siteImg > img{ width:100%; margin:50px auto 70px; display:block; }
 
 .works  .portfolio_list > div > .portfolio_content > .code_box > li{  margin:5px 0; display:block; }
-.works  .portfolio_list > div > .portfolio_content > .code_box > li > a{ font-size:1.1rem; text-decoration:underline; }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li > a{ font-size:1.2rem; text-decoration:underline; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:after{ content:''; display:inline-block;  }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover{ background-color:#eab931; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover:after{ content:'→'; padding-left:5px; }
