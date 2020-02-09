@@ -53,6 +53,7 @@ button > sup{ font-size:1.1rem; }
 .content > p{  margin-bottom:15px; font-weight:500; font-size:1.2rem; }
 
 /* ---------------------main--------------------- */
+main:after{ content:''; display:block; width:1px; height:100vh; border-left:1px solid #000; position:fixed; top:0; right:7%; }
 /*-----section_nav-----*/
 .section_nav{  background-color:#fff; width:91.8699187%/*100%-(8.13008130081%)*/; padding:80px 0 100px 8.13008130081%/*1230/100px*/;  position:fixed; }
 .section_nav > li{ margin-right:30px; display:inline;  }
