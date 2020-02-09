@@ -69,7 +69,6 @@ main:after{ content:''; display:block; width:1px; height:100vh; border-left:1px 
 .works  .portfolio_list > div > .portfolio_content > .siteImg{  width:100%; padding:80px 0 50px; display:block; }
 .works  .portfolio_list > div > .portfolio_content > .siteImg > .imgTitle{  font-size:1.3rem; }
 .works  .portfolio_list > div > .portfolio_content > .siteImg > img{ width:100%; margin:50px auto 70px; display:block; }
-
 .works  .portfolio_list > div > .portfolio_content > .code_box > li{  margin:5px 0; display:block; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a{ font-size:1.2rem; text-decoration:underline; }
 .works  .portfolio_list > div > .portfolio_content > .code_box > li > a:after{ content:''; display:inline-block;  }
