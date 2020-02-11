@@ -81,21 +81,25 @@ header > ul > li > a{  padding:16px 0 10px; display:inline-block; }
 
 header > div{ margin-right:44px; float:right; }
 header > div *{ font-size:13px; }
-header > div > *{  border-bottom:2px solid transparent; float:left; position:relative; }
-header > div > *:hover:before{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; left:0; bottom:9px; }
-header > div > .searchBtn:hover:before{ bottom:8px; }
-header > div > .loginBtn:hover:before{ border-bottom:none; }
+header > div > *{ float:left; position:relative; }
 
-header > div > *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
+header > div  *:after{ content:''; display:inline-block; padding-left:7px; cursor:pointer; position:absolute; bottom:0px; }
 header > div > .navBtn{ margin-right:54px; position:static;/*nav배치위함*/ }
-header > div > .navBtn:hover:before{ border:none; }/*위에서 hover시에 before주기로 한 것(header > div > *:hover:before) 지우기. button에서 줄것이기 때문. (.navBtn의 position을 static로 줬기 때문에 전체화면을 기준으로 border가 생기기 때문에 button에 주는 것임)*/
-header > div > .navBtn > button.menuBtn{  height:50px; padding:0 15px 0; position:relative; }
-header > div > .navBtn > button.menuBtn:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:0; top:23px; }
-header > div > .navBtn > button.menuBtn:after{ content:''; display:block; width:100%; border-bottom:2px solid transparent; }
+header > div > .navBtn > button.menuBtn{  height:50px; padding:0 20px; position:relative; }
+header > div > .navBtn > button.menuBtn:before{ content:''; display:block; width:12px; height:6px; background:url('../images/arrow_down.png') no-repeat; background-size:12px 6px; position:absolute; right:5px; top:23px; }
+header > div > .navBtn > button.menuBtn:after{ content:''; display:block; width:calc(100% + -33px); border-bottom:2px solid transparent; position:absolute; left:13px; bottom:12px; }
 header > div > .navBtn > button.menuBtn:hover:after{ border-color:#000; }
-header > div > .searchBtn{ line-height:48px; margin-right:70px;  /*padding:14px 0 11px;*/ }
-header > div > .searchBtn:after{ width:18px; height:100%; background:url('../images/search.png') no-repeat right; background-size:18px; right:-25px;}
+header > div > .searchBox{  margin-right:70px; position:static; }
+header > div > .searchBox > .searchBtn{  line-height:48px; position:relative; }
+header > div > .searchBox > .searchBtn:hover:before{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; left:0; bottom:12px; }
+header > div > .searchBox > .searchBtn:after{ width:18px; height:100%; background:url('../images/search.png') no-repeat right; background-size:18px; right:-23px;}
+header > div > .searchBox > .search_box{ background-color:#fff; width:calc(100% + -110px); height:100%; position:absolute; top:0; right:0; z-index:100; display:none; }
+header > div > .searchBox > .search_box > .searchTextBox{ border:2px solid #000; width:78.27380952381%/*1680/1315*/; margin:9px 0 0 30px; position:absolute; right:125px; }
+header > div > .searchBox > .search_box > .searchTextBox > input{ border:none; width:calc(100% + -50px); line-height:30px; padding:0 10px; }
+header > div > .searchBox > .search_box > .searchTextBox > .searchIcon{  width:30px; height:32px; background:url('../images/search.png') no-repeat 0 7px; background-size:19px; position:absolute; top:0; right:0; }
+header > div > .searchBox > .search_box > .searchClose{  width:70px; height:100%; color:#666; position:absolute; right:50px; }
 header > div > .cartBtn{ line-height:48px; margin-right:52px;  /*padding:13px 0 11px;*/  }
+header > div > .cartBtn:hover:before{ content:''; display:block; width:100%; height:0; border-bottom:2px solid #000; position:absolute; left:0; bottom:12px; }
 header > div > .cartBtn:after{ width:20px; height:100%; background:url('../images/cart.png') no-repeat right; background-size:20px; right:-27px; }
 header > div > .loginBtn{ line-height:48px;  /*padding:13px 0 11px;*/ }
 header > div > .loginBtn:after{ width:33px; height:100%; background:url('../images/login.svg') no-repeat right; background-size:33px; right:-41px; top:50%; transform:translateY(-50%); }
@@ -103,8 +107,8 @@ header > div > .loginBtn:after{ width:33px; height:100%; background:url('../imag
 
 /*nav*/
 header .hamBtn{ display:none; }
-header .navBtn > nav{ background-color:#f2f2f2; position:absolute; top:50px; right:30px; display:none;  z-index:100; }
-header .navBtn > nav > ul{ border:1px solid #e6e6e6; border-bottom:2px solid #000; padding-bottom:45px; }
+header .navBtn > nav{ border-bottom:2px solid #000; background-color:#f2f2f2; position:absolute; top:50px; right:30px; display:none;  z-index:100; }
+header .navBtn > nav > ul{ /*border:1px solid #e6e6e6;*/ padding-bottom:45px; }
 header .navBtn > nav > ul > li.mainMenu{  height:320px; float:left; }
 header .navBtn > nav > ul > li.mainMenu > span{ padding:18px 24px; font-weight:700; display:inline-block; } /* 왼쪽 padding 주기위해서 따로 span으로 감싸줌. ul.subMenu에서 따로 좌측 padding을 주기위함. */
 header .navBtn > nav > ul > li.mainMenu > ul.subMenu{  }
@@ -112,7 +116,7 @@ header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li{  }
 header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a{   width:171px/*195px-24*/; padding:12px 0 12px 24px; display:inline-block; }
 header .navBtn > nav > ul > li.mainMenu > ul.subMenu > li > a:hover{text-decoration:underline;}
 
-header .navBtn > nav > ul > li.sitemap{ background-color:#e6e6e6; width:100%; line-height:38px; text-align:center; display:inline-block; position:absolute; left:0; bottom:2px; }
+header .navBtn > nav > ul > li.sitemap{ background-color:#e6e6e6; width:100%; line-height:38px; text-align:center; display:inline-block; position:absolute; left:0; bottom:0px; }
 header .navBtn > nav > ul > li.sitemap > a{  height:100%; padding:0 53px 0 40px; display:inline-block; position:relative; }
 header .navBtn > nav > ul > li.sitemap > a:hover{ text-decoration:underline; }
 header .navBtn > nav > ul > li.sitemap > a:before{  content:''; display:block; width:8px; height:16px;  background:url('../images/arrow_right.png') no-repeat right; background-size:8px; position:absolute; top:11px; right:40px; }
@@ -224,10 +228,10 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	.textBox h2{ font-size:24px; }
 
 	/* ---------------------header--------------------- */
-	header > div > .searchBtn, 
+	header > div > .searchBox > .searchBtn, 
 	header > div > .cartBtn, 
 	header > div > .loginBtn{  font-size:0;  }
-	header > div > .searchBtn{ margin-right:45px; }
+	header > div > .searchBox{ margin-right:45px; }
 	header > div > .cartBtn{ margin-right:45px; }
 	/*nav*/
 	header .navBtn > nav{ width:1025px; left:50%; transform:translateX(-50%); }
@@ -274,8 +278,19 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	header > ul > li:hover:after{ display:none; }
 	header > ul > li > a{ width:100%; padding:13px 0 13px 16px; font-size:15px; } 
 
-	header > div{ margin-right:60px; }
-	header > div > .searchBtn{ position:absolute; left:70px; }
+	header > div{ margin-right:0px; }
+	header > div > .searchBox > .searchBtn{ position:absolute; left:70px; }
+	header > div > .searchBox > .searchBtn:after{  left:0px; }
+	header > div > .searchBox > .search_box{ width:calc(100% + -60px); left:60px;  }
+	header > div > .searchBox > .search_box > .searchTextBox{  width:calc(100% + -20px); height:30px; margin:7px 0 0 0; left:10px; }
+	header > div > .searchBox > .search_box > .searchTextBox > input{ width:calc(100% + -50px); padding:0 10px; position:absolute; right:0; }
+	header > div > .searchBox > .search_box > .searchTextBox > .searchIcon{ background-size:18px; background-position:5px 6px; left:0px; }
+
+	header > div > .searchBox > .search_box > .searchClose{ width:60px; font-size:0; background:url('../images/close_arrow.png') no-repeat 0px 5px; background-size:100%; position:absolute; left:-60px; }
+
+	header > div > .cartBtn{ line-height:48px; margin-right:52px;  /*padding:13px 0 11px;*/  }
+	header > div > .cartBtn:after,
+	header > div > .loginBtn:after{ right:-80px; }
 
 	/*nav*/
 	header button.hamBtn{ display:block; width:60px; height:50px; font-size:0; background:url('../images/hamburger_icon.png') no-repeat 50%; background-size:20px; }

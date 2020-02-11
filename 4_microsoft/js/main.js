@@ -7,8 +7,8 @@ menuScript();
 function menuScript(e) {
     let header = document.querySelector('header');
     // let navBtn = document.querySelector('.navBtn');
-    let menuBtn = document.querySelector('.menuBtn');
-    let navBox = document.querySelector('nav');
+    // let menuBtn = document.querySelector('.menuBtn');
+    // let navBox = document.querySelector('nav');
     // let hamBtn = document.querySelector('.hamBtn');
     let mainMenu = document.querySelectorAll('li.mainMenu > span');
     let subMenu = document.querySelectorAll('ul.subMenu');
@@ -39,36 +39,52 @@ function menuScript(e) {
      
     });
 
+
+    //-----searchBtn 클릭시 검색창 뜨도록.-----
+    //html,css로 다시 만들기.
+    //1. 검색창 태그 생성.
+    var search_box = document.querySelector('.search_box');
+    var searchClose = document.querySelector('.searchClose');  
+     
+    // searchBtn클릭 = 검색창 뜸.
+    let searchBtn = document.querySelector('.searchBtn');
+    searchBtn.addEventListener('click', function() {
+        if(header.classList.contains('menuShow')) {
+            header.classList.remove('menuShow')
+        }
+        return search_box.style.display = 'block';        
+    });
+
+    searchClose.addEventListener('click', function() {
+        search_box.style.display = 'none';
+    });
+
+
+    // -----menu, search 공통-----
     //main, footer의 여백을 클릭할 경우, nav박스, search박스 닫히게함.
     main.addEventListener('click', function() {
         if(header.classList.contains('menuShow')) {
             header.classList.remove('menuShow'); 
-        } else if(searchBox.style.display === 'block') {
-            searchBox.style.display = 'none';
+        } else if(search_box.style.display === 'block') {
+            search_box.style.display = 'none';
         }
     });
     footer.addEventListener('click', function() {
         if(header.classList.contains('menuShow')) {
             header.classList.remove('menuShow');
-        } else if(searchBox.style.display === 'block') {
-            searchBox.style.display = 'none';
+        } else if(search_box.style.display === 'block') {
+            search_box.style.display = 'none';
         }
     });
-
     
-
-    
-
-
 
     //860px 이하일 경우 열렸던 nav 안보이게함.
     window.addEventListener('resize', function() {
         if (window.innerWidth < 860) {
             header.className = 'clear';
-        }
-        
+            search_box.style.display = 'none';
+        }           
     });
-
 
     //860px이하 - .mainMenu클릭시 .subMenu 보이게함.
     for(let i = 0; i < mainMenu.length; i++) {
@@ -85,113 +101,12 @@ function menuScript(e) {
     
 
     
-    //-----searchBtn 클릭시 검색창 뜨도록.-----
-    //html,css로 다시 만들기.
-    //1. 검색창 태그 생성.
-    var searchBox = document.createElement('div.searchBox');
-    var searchText = document.createElement('input');
-    var searchIcon = document.createElement('div.searchIcon');
-    var searchClose = document.createElement('button.searchClose');  
 
-    header.appendChild(searchBox);
-    searchBox.appendChild(searchText);
-    searchBox.appendChild(searchIcon);
-    searchBox.appendChild(searchClose);
-    searchText.type = 'text';
-    searchText.placeholder = 'Microsoft.com 검색';
-    searchClose.textContent = '취소';
-
-
-    searchBox.style.display = 'none';
-    searchBox.style.position = 'absolute';
-    searchBox.style.left = '110px';
-    searchBox.style.width = 'calc(100% + -100px)'; //left
-    searchBox.style.height = '100%';
-    searchBox.style.backgroundColor = '#fff';
-
-    searchText.style.border = '2px solid #000';
-    searchText.style.width = 'calc(100% + -30px + -100px)'; //margin,우측closebtn
-    searchText.style.margin = '9px 0 0 30px';
-    searchText.style.padding = '7px 10px';  
-    searchText.style.fontSize = '13px';
-
-    searchIcon.style.width = '19px';
-    searchIcon.style.height = '19px';
-    searchIcon.style.background = "url('images/search.png') no-repeat";
-    searchIcon.style.backgroundSize = "19px";
-    searchIcon.style.position = 'absolute';
-    searchIcon.style.right = '90px';
-    searchIcon.style.top = '17px';
-    searchIcon.style.top = '17px';
-    searchIcon.style.cursor = 'pointer';
-
-    searchClose.style.width = '70px';
-    searchClose.style.height = '100%';
-    searchClose.style.marginLeft = '5px';
-    searchClose.style.paddingTop = '15px';
-    searchClose.style.color = '#666';
-    searchClose.style.fontSize = '13px';
-    searchClose.style.textAlign = 'center';
-    searchClose.style.backgroundColor = '#fff';
-    searchClose.style.position = 'absolute';
-    searchClose.style.cursor = 'pointer';
-
-    //1-2. 860px 이하일 경우에는 검색창 스타일 변경.
-    window.addEventListener('resize', function () {
-        search860();
-    });
-    function search860() {
-        if(window.innerWidth < 860) {
-            searchClose.textContent = '';
-
-            searchBox.style.width = 'calc(100% + -70px)';
-            searchBox.style.left = '60px';
-
-            searchText.style.width = 'calc(100% + -30px)';
-            searchText.style.margin = '9px 0 0 0';
-            searchText.style.left = '20px';
-
-            searchIcon.style.right = '30px';
-            
-            searchClose.style.width = '60px';
-            searchClose.style.background = "url('images/close_arrow.png') no-repeat 7px 5px";
-            searchClose.style.backgroundSize = "100%";
-            searchClose.style.left = '-70px';
-
-            //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
-            searchBox.style.display = 'none';
-        } else {
-            searchClose.textContent = '취소';
-
-            searchBox.style.width = 'alc(100% + -100px)';
-            searchBox.style.left = '110px';
-
-            searchText.style.width = 'calc(100% + -30px + -100px)';
-            searchText.style.margin = '9px 0 0 30px';
-            searchText.style.left = '';
-
-            searchIcon.style.right = '90px';
-            
-            searchClose.style.width = '70px';
-            searchClose.style.background = "#fff";
-            searchClose.style.backgroundSize = "0";
-            searchClose.style.left = '';
-        }
-    }
-      
-    //2. searchBtn클릭 = 검색창 뜸.
-    let searchBtn = document.querySelector('.searchBtn');
-    searchBtn.addEventListener('click', function() {
-        if(header.classList.contains('menuShow')) {
-            header.classList.remove('menuShow')
-        }
-        return searchBox.style.display = 'block';        
-    });
 
     //3. searchBox를 제외한 곳을 클릭하면 검색창 닫히게함.
-       searchClose.addEventListener('click', function() {
-           searchBox.style.display = 'none';
-       }); 
+    //    searchClose.addEventListener('click', function() {
+    //        search_box.style.display = 'none';
+    //    }); 
     
     // //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
     // window.addEventListener('resize', function() {
