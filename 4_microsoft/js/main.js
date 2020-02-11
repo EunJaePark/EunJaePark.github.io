@@ -12,88 +12,50 @@ function menuScript(e) {
     // let hamBtn = document.querySelector('.hamBtn');
     let mainMenu = document.querySelectorAll('li.mainMenu > span');
     let subMenu = document.querySelectorAll('ul.subMenu');
+    let main = document.querySelector('main');
+    let footer = document.querySelector('footer');
     
 
-    // //.menuBtn 클릭시 nav 보임. + navBtn 배경색 바뀜.
-    // menuBtn.addEventListener('click', function() { 
-    //     if (header.className === 'clear') {
-    //         header.className = 'clear menuShow'; 
-    //     } else {
-    //         header.className = 'clear';
-    //     }   
-    // });
- 
-    // //.wrap를 클릭하면 nav박스 닫히게함.(header부분클릭은 제외)
-    // wrap.addEventListener('click', function (e) {
-    //     //mainMenu를 클릭할 경우 nav박스 닫히지 않음.
-    //     if(e.target === mainMenu) {
-    //         return;
-    //     }
-    //     if(!check()) {
-    //         header.className = 'clear';
-    //     }
-    //     function check() {
-    //         while(e.target.parentNode.tagName !== 'HTML') {
-    //             //header의 자식일 경우 nav박스 닫히지않음.
-    //             if(e.target.parentNode.tagName === 'header') {
-    //                 return true;
-    //             }
-    //             e.target.parentNode = e.target.parentNode.parentNode;
-    //         }
-    //         return false;
-    //     }
-    // });
+    // eulsoo 20200206
+    // 전 복잡하게 생각안하구 그냥 main에 리스너 걸고 여기안에서 감지 되는 클릭에
+    // 메뉴를 닫았습니다. 제생각는 리스너를 wrap에 걸어서 모든 걸 하기에는 너무 복잡할 것 같아요
+    // 그냥 menuBtn에 리스너 걸어서 열고 닫고 하고, main에 걸어서 닫게 하는 방식으로
+    // 수정 하시는게 수월할 것 같아요~
 
-    
-    // ****************************************************************************
-    // ****************************************************************************
-    
-    // 이부분 질문드려요! 
     // header를 제외한 모든 부분 클릭 시 메뉴박스가 닫히게 만들어야 합니다.
-    wrap.addEventListener('click', function(e) {
-        //header.menuShow = (.menuBtn 클릭시 nav 보임. + navBtn 배경색 바뀜.)
+    header.addEventListener('click', function(e) {
         //860px 이하에서는 .hamBtn버튼 클릭시 nav + header > ul 보이게 함.
         if(e.target.classList.contains('menuBtn') || e.target.classList.contains('hamBtn')) {
             menuOpenClose();
         }
-
-        //header를 제외한 다른 곳 클릭시 nav박스 닫히게함.
-        if(check()) {
-            header.classList.remove('menuShow');
-        }
-        function check(e) {
-            while(e.target.parentNode.tagName !== 'HTML') {
-                if(e.target.parentNode.tagName === 'HEADER') {
-                    return false;
-                }
-                if(e.target.parentNode.tagName === 'NAV' ) {
-                    return true;
-                    if(te.arget.tagName === 'SPAN') {
-                        return true;
-                    }
-                } 
-                e.target.parentNode = e.target.parentNode.parentNode;
-            }
-            return false;
-        }
         
-    // ****************************************************************************
-    // ****************************************************************************
-
-        
-        // if(e.target.parentNode.parentNode === header) { 
-        //     return; 
-        // }
-        // else { header.classList.remove('menuShow'); } 
-
         function menuOpenClose() {
             if(header.classList.contains('menuShow')) {
                 header.classList.remove('menuShow');
             } else {
                 header.classList.add('menuShow');
-            }
+        }
+    }
+     
+    });
+
+    //main, footer의 여백을 클릭할 경우, nav박스, search박스 닫히게함.
+    main.addEventListener('click', function() {
+        if(header.classList.contains('menuShow')) {
+            header.classList.remove('menuShow'); 
+        } else if(searchBox.style.display === 'block') {
+            searchBox.style.display = 'none';
         }
     });
+    footer.addEventListener('click', function() {
+        if(header.classList.contains('menuShow')) {
+            header.classList.remove('menuShow');
+        } else if(searchBox.style.display === 'block') {
+            searchBox.style.display = 'none';
+        }
+    });
+
+    
 
     
 
@@ -107,15 +69,6 @@ function menuScript(e) {
         
     });
 
-    // //860px 이하에서는 .hamBtn버튼 클릭시 nav + header > ul 보이게 함.
-    // hamBtn.addEventListener('click', function () {
-    //     menuOpenClose();
-    //     // if(header.className === 'clear') {
-    //     // header.className = 'clear menuShow';  
-    //     // } else {
-    //     //     header.className = 'clear';  
-    //     // }   
-    // });
 
     //860px이하 - .mainMenu클릭시 .subMenu 보이게함.
     for(let i = 0; i < mainMenu.length; i++) {
@@ -229,7 +182,10 @@ function menuScript(e) {
     //2. searchBtn클릭 = 검색창 뜸.
     let searchBtn = document.querySelector('.searchBtn');
     searchBtn.addEventListener('click', function() {
-           searchBox.style.display = 'block';        
+        if(header.classList.contains('menuShow')) {
+            header.classList.remove('menuShow')
+        }
+        return searchBox.style.display = 'block';        
     });
 
     //3. searchBox를 제외한 곳을 클릭하면 검색창 닫히게함.
