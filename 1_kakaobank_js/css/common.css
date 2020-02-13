@@ -260,15 +260,19 @@ main > .end > .inner > ul > li > span{ line-height:24px; font-size:14px; font-we
 .sub_brand > main > .intro > .text_btn{  position:absolute; top:244px; left:50%; margin-left:-283px; text-align:center;  }
 
 /* -----------------------.img_slide--------------------- */ 
-.sub_brand  main  .img_slide{  width:100%; height:460px; overflow:hidden; }
+/* 이거되살려야함bx슬라이더쓰려면 .sub_brand  main  .img_slide{  width:100%; height:460px; overflow:hidden; } */
 /* .sub_brand  main  .img_slide  img{ width:100%; margin-top:-280px; } */
-.sub_brand  main  .img_slide > div.bgBox{ width:100%; height:100%; background-size:100%; float:left; }
+/*  이거되살려야함bx슬라이더쓰려면  .sub_brand  main  .img_slide > div.bgBox{ width:100%; height:100%; background-size:100%; float:left; } */
 /* .sub_brand > main > .img_slide > img.show{ display:block; } */
 /* slider design */
-div.bx-wrapper{ border:none; height:460px; box-shadow:none; }
+/*  이거되살려야함bx슬라이더쓰려면  div.bx-wrapper{ border:none; height:460px; box-shadow:none; }
 div.bx-wrapper .bx-viewport{ height:460px; overflow:hidden; }
 .bx-wrapper div.bx-controls-direction a{ display:none; }
-.bx-wrapper div.bx-pager{ display:none; }
+.bx-wrapper div.bx-pager{ display:none; } */
+
+.sub_brand > main > .img_slide{ width:100%; height:460px; position:relative; overflow:hidden; }
+.sub_brand  main  .img_slide > div.bgBox{ width:100%; height:100%; background-size:100%; position:absolute; top:0; opacity:0; transition:all .5s ease-out; }
+.sub_brand > main > .img_slide > div.bgBox.show{ opacity:1; background-position-x:-50px !important; }
 
 
 /* -----------------------.bank_history--------------------- */ 

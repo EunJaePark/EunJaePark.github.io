@@ -1,5 +1,5 @@
 //------------header------------
-    window.addEventListener('scroll', scrollHeaderBg);
+window.addEventListener('scroll', scrollHeaderBg);
     var htmlEl = document.querySelector('html');
     var header = htmlEl.querySelector('header');
 
@@ -74,27 +74,40 @@
 
 
 //------------main------------
-//img_slide
+//.img_slide 배경이미지 추가.
     let bgBoxes = document.querySelectorAll('.img_slide > .bgBox');
             
     for(let i = 0; i < bgBoxes.length; i++) {
         //bgBox에 bgImage주기.
-        bgBoxes[i].style.background = `url('images/img_${i + 1}_20180109.jpg') no-repeat 0 -180px`;
-        bgBoxes[i].style.backgroundSize = `cover`;
+        bgBoxes[i].style.background = `url('images/img_${i + 1}_20180109.jpg') no-repeat -0px -220px`;
+        bgBoxes[i].style.backgroundSize = `105%`;
     }
 
-    $(document).ready( function() {
-        var option = {
-            mode : 'fade',
-            maxSlides : 1,
-            pagerType : 'full',
-            slideHeight : 460,
-            speed : 900,
-            auto : true,
-            pause : 2400
+//.img_slide slider(바닐라js)
+    let SHOW_CLASS = 'show';
+    let firstSlide = document.querySelector('.bgBox:first-child');
+    function slide() {
+        let currentSlide = document.querySelector(`.${SHOW_CLASS}`);
+        if(currentSlide) {         
+            window.setTimeout(function() {
+                currentSlide.classList.remove(SHOW_CLASS);
+            }, 800);
+            let nextSlider = currentSlide.nextElementSibling;
+            if(nextSlider) {              
+                nextSlider.classList.add(SHOW_CLASS);
+            } else {
+                firstSlide.classList.add(SHOW_CLASS);
+            }
+        } else{
+            firstSlide.classList.add(SHOW_CLASS);
         }
-        $('.img_slide').bxSlider( option );
-    } );
+        
+        
+    }
+    slide();
+    setInterval(slide, 2500);
+
+    
 
 
 //brand_video
