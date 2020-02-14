@@ -86,15 +86,15 @@ window.addEventListener('scroll', scrollHeaderBg);
 //.img_slide slider(바닐라js)
     let SHOW_CLASS = 'show';
     let firstSlide = document.querySelector('.bgBox:first-child');
-    function imgSlide() {
+    function slide() {
         let currentSlide = document.querySelector(`.${SHOW_CLASS}`);
         if(currentSlide) {         
             window.setTimeout(function() {
                 currentSlide.classList.remove(SHOW_CLASS);
             }, 800);
-            let nextSlide = currentSlide.nextElementSibling;
-            if(nextSlide) {              
-                nextSlide.classList.add(SHOW_CLASS);
+            let nextSlider = currentSlide.nextElementSibling;
+            if(nextSlider) {              
+                nextSlider.classList.add(SHOW_CLASS);
             } else {
                 firstSlide.classList.add(SHOW_CLASS);
             }
@@ -104,10 +104,10 @@ window.addEventListener('scroll', scrollHeaderBg);
         
         
     }
-    imgSlide();
-    setInterval(imgSlide, 2500);
+    slide();
+    setInterval(slide, 2500);
 
-    // 마지막 슬라이드에서 처음슬라이드로 넘어갈 때, 배경이미지 움직임이 반대로 작동....
+    // 마지막 슬라이드에서 처음슬라이드로 넘어갈 때, 배경이미지 움직임이 반대로 작동.
 
     
 
@@ -119,41 +119,13 @@ window.addEventListener('scroll', scrollHeaderBg);
         videoImg[i].style.background = `url('images/brand_movie_${i + 1}.jpg') no-repeat`;
     }
 
-    //video slider(바닐라js)
-    let prevBtn = document.querySelector('.prev');
-    prevBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        videoSlide();
-    });
-
-    let SHOWVIDEO_CLASS = 'show';
-    let firstVideo = document.querySelector('.video:nth-child(4)');
-    function videoSlide() {
-        let currentSlide = document.querySelector(`${SHOWVIDEO_CLASS}`);
-        if(currentSlide) {
-            currentSlide.classList.remove(SHOWVIDEO_CLASS);
-            currentSlide.style.display = 'none';
-            let nextSlide = currentSlide.nextElementSibling;
-            if(nextSlide) {
-                nextSlide.classList.add(SHOWVIDEO_CLASS);
-            } else {
-                firstVideo.classList.add(SHOWVIDEO_CLASS);
-            }
-        } else{
-            firstVideo.classList.add(SHOWVIDEO_CLASS);
-        }
-    }
-    // videoSlide();
-
-
-
-    // $(document).ready( function() {
-    //     var option = {
-    //         maxSlides : 3,
-    //         slideWidth : 306,
-    //         infiniteLoop : false,
-    //         slideMargin : 16,
-    //         moveSlides : 1,
-    //     };
-    //     $('.slide_box').bxSlider( option );
-    // } );
+    $(document).ready( function() {
+        var option = {
+            maxSlides : 3,
+            slideWidth : 306,
+            infiniteLoop : false,
+            slideMargin : 16,
+            moveSlides : 1,
+        };
+        $('.slide_box').bxSlider( option );
+    } );

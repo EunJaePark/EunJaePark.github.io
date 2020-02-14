@@ -157,20 +157,20 @@ function bgChange() {
 //---------bx slider---------
 introSlider();
 function introSlider() {
-    $(document).ready(function() {
-        var opt = {
-            speed: 100,
-            auto: true,
-            infiniteLoop: true,
-            pause: 3500,
-            autoControls: true
-        }
-        $('.introSlideBox').bxSlider(opt);
-    })
+//     $(document).ready(function() {
+//         var opt = {
+//             speed: 100,
+//             auto: true,
+//             infiniteLoop: true,
+//             pause: 3500,
+//             autoControls: true
+//         }
+//         $('.introSlideBox').bxSlider(opt);
+//     })
     
-    let stopBtn = document.querySelector('a.bx-stop');
-    let startBtn = document.querySelector('a.bx-start');
-    // console.log(stopBtn);
+//     let stopBtn = document.querySelector('a.bx-stop');
+//     let startBtn = document.querySelector('a.bx-start');
+//     // console.log(stopBtn);
     
 }
 

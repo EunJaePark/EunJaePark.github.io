@@ -9,9 +9,9 @@
     <link rel="stylesheet" media="all" href="css/common.css" />
 
     <!--bx slider-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> -->
 
 </head>
 <body>
@@ -187,7 +187,7 @@
         <main>
             <div class="intro">
                 <div class="inner">
-                    <div class="introSlideBox">
+                    <div class="introSlideBox clear">
                         <div class="slide">
                             <a href="">
                                 <img src="images/intro_bg1.webp" alt=""/>
@@ -213,7 +213,19 @@
                                     </div>
                                 </div><!--.textBox-->
                             </a>
-                        </div><!--.slide-->  
+                        </div><!--.slide--> 
+
+                        <div class="prevNextBtn">
+                            <button class="prev">이전페이지</button>
+                            <button class="next">다음페이지</button>
+                        </div><!--.prevNextBtn-->
+
+                        <ul class="pageNumStop clear">
+                            <li class="pageNum"></li>
+                            <li class="pageNum"></li>
+                            <li class="stop">||</li>
+                            <li class="play">></li>
+                        </ul>
                     </div><!--.introSlideBox-->
                 </div><!--.inner-->
             </div><!--.intro-->
