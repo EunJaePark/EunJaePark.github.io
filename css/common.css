@@ -51,7 +51,7 @@ header > nav{ width:25%; float:right;  }
 header > nav > .section_nav{ outline:1px solid red; }
 header > nav > .section_nav > li{ outline:1px solid blue; width:50%; float:left; }
 header > nav > .section_nav > li > button{  margin:15px 0 0 30px; font-size:20px; color:#fff; }
-header > .port_nav{ position:absolute; bottom:-50px; right:70px;}
+header > .port_nav{ position:absolute; bottom:-20px; right:70px; opacity:0; transition:all .3s ease-out; }
 header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
 
 
@@ -135,7 +135,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 
 
 /* ---------------------footer--------------------- */
-.top_btn{ position:absolute; bottom:30px; right:25px; }
+.top_btn{ position:absolute; bottom:0px; right:25px; opacity:0; transition:all .5s ease-out; }
 .top_btn > span:last-child{ font-size:11px; font-weight:900; transform:rotate(90deg); display:block; }
 .top_btn > span:first-child{ font-size:22px; font-weight:300; transform:translateY(-7px); display:inline-block; animation:arrowMove 1s ease infinite; }
 
