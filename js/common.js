@@ -12,21 +12,21 @@ let footer = document.querySelector('footer');
 let topBtn = document.querySelector('.top_btn');
 
 
-// ******resize 체크.******
+// ******resize될때마다 height값 찾기.******
 let portfolio = document.querySelector('.portfolio');
 let portListBox = document.querySelectorAll('.portListBox');
 let contentHeight;
 resize();
 function resize() {
-    let checksize;  
+    let sizeCheck;  
 
     resizeCheck();
 
     window.addEventListener('resize', resizeWork);
 
     function resizeWork() {
-        clearTimeout(checksize);
-        checksize = setTimeout(function() {
+        clearTimeout(sizeCheck);
+        sizeCheck = setTimeout(function() {
             resizeCheck();
         }, 100);
     }
@@ -44,7 +44,7 @@ function resize() {
 }
 console.log(portfolio.offsetTop);
 
-// ******resize 체크.끝******
+// ******resize끝******
 
 
 // //페이지 접속하면 intro 글자 나오게함.
@@ -67,6 +67,45 @@ console.log(portfolio.offsetTop);
 //     }); 
 // }
 
+
+//nav .intro, .portfolio클릭시 해당 위치로 스크롤.
+let navBtn = document.querySelectorAll('nav button');
+console.log(navBtn);
+
+for(let i = 0; i < navBtn.length; i++) {
+    navBtn[i].addEventListener('click', function(e) {
+        //.intro
+        if(e.target.classList.contains('introBtn')) {
+            console.log('intro');
+            console.log(e.target.num);
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            introReset();
+        //.portfolio
+        } else if(e.target.classList.contains('portBtn')) {
+            console.log('prot');
+            window.scrollTo({
+                top: contentHeight,
+                behavior: 'smooth'
+            });
+            console.log(document.body.scrollTop);
+            
+            if(document.body.scrollTop >= contentHeight) {
+                setTimeout(function() {
+                    portNav.style.opacity = '1';
+                    portNav.style.bottom = '-50px';
+                    topBtn.style.opacity = '1';
+                    topBtn.style.bottom = '30px';
+                }, 500)
+            }
+            //.portfolio부분에서 포폴Btn클릭해서 스크롤시 topBtn이랑 portBtn에 조건걸어줬는데 안됌...ㅠ..... intro에서 한번 스크롤 한 뒤에 눌럿을떄만 뜨게 하려고 하는 건데 조건걸면 안나옴. 조건 안걸면 처음 로딩창에서 페이지는 스크롤되지도 않는데 버튼만 나타남,.....
+        }
+            
+    });
+}
 
 
 //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함.
@@ -218,6 +257,17 @@ let introReset = function() {
 }
 
 
+// top_btn클릭시 화면 상단으로 스크롤되게 함.
+topBtn.addEventListener('click', function(e) { 
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+    introReset();
+});
+
+
 
 //포폴 img, text에 마웃스오버시 img바뀌게함.
 let imgTitle = document.querySelectorAll('.imgTitle > a');
@@ -236,21 +286,12 @@ for(let i = 0; i < imgTitle.length; i++) {
 
 
 
-// top_btn클릭시 화면 상단으로 스크롤되게 함.
-topBtn.addEventListener('click', function(e) { 
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-    introReset();
-});
 
 
 
 
 
-
+// ================수정 전 버전 js=========================
 // //.secion_nav button클릭 시 해당 section 보이게함.
 // sectionNavJs();
 // function sectionNavJs() {  

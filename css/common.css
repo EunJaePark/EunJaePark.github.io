@@ -64,6 +64,8 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .intro > .inner > .title_box > .title{  font-size:100px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); transition:all .8s ease; }
 .intro > .inner > .title_box > .title > span{   font-weight:900;  display:block; }
 .intro > .inner > .title_box > .title > span:last-child:after{ content:''; display:inline-block; border-radius:50%; width:50px; height:50px; margin-left:30px; background-color:#FF9D0D; }
+.intro > .inner > .title_box > .title > span > strong{ position:relative;}
+.intro > .inner > .title_box > .title > span > strong:after{ content:''; display:block; width:110%; height:25px; background-color:#1c1b208a; position:absolute; bottom:10px; left:-10px; transition:all .3s ease-out; z-index:-1; }
 
 
 .intro > .inner > .aboutMe{  width:50%; position:absolute; right:-10%; top:50%; transform:translate(-5%, -50%); opacity:0; transition:all .5s ease-out; }
@@ -71,7 +73,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#FF9D0D; display:inline-block; }
 .intro > .inner > .aboutMe > li > span{  margin:10px 0; font-size:20px; font-weight:300; display:block;  }
 .intro > .inner > .aboutMe > li > span > strong{ font-weight:300; position:relative; }
-.intro > .inner > .aboutMe > li > span > strong:after{ content:''; display:inline-block; width:100%; height:8px; background-color:rgba(0, 0, 0, .3); position:absolute; left:0; bottom:6px; }
+.intro > .inner > .aboutMe > li > span > strong:after{ content:''; display:inline-block; width:100%; height:9px; background-color:rgba(0, 0, 0, .3); position:absolute; left:0; bottom:3px; }
 
 .intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:60px; left:calc(50% + -30px); transform:translateX(-50%); transition:all .5s ease; z-index:300; }
 .intro > .inner > .scrollBtn > button > span{ font-size:10px; font-weight:900; display:block; transform:rotate(-90deg); }
