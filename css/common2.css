@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,500,600&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap');
+
+/* ---------------------reset------------------- */
+body {
+	font:normal 15px 'Source Sans Pro', sans-serif, Arial, Verdana;
+	font-weight:400;
+	line-height:1.6;
+	color:#000;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li{  list-style:none;  }
+ul, ol{  list-style:none;  }
+a{  text-decoration:none; color:#000;  }
+img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
+table{ width:100%; border-collapse:collapse; }
+strong, em{ font-style:normal; }
+button{ border:none; padding:0; background-color:transparent; cursor:pointer;  }
+
+
+/* ---------------------layout------------------- */
+.wrap{ width:100%; min-width:314px; }
+header{  width:17.85714285714%/*1680/300px*/; height:100vh; padding:80px 50px;  position:fixed;  }
+main{  width:calc(79.16666666667% + -100px)/*(1680/1330px)-100px*/; height:;  margin-left:calc(17.85714285714% + 100px); /*padding:80px 100px;*/ }
+
+/* ---------------------common--------------------- */
+.clean:after{ content:''; display:block; clear:both; }
+section{   display:none; padding-top:106px; }
+section.show{ display:block; }
+section  .inner{   padding:130px 8.13008130081%/*1230/100px*/; }
+section  .inner .portfolio_list{  margin-left:30px; }
+button > span{ font-size:1.3rem; text-decoration: underline; text-align:left; }
+button > sup{ font-size:1.1rem; }
+.text_box{  margin:10px 0 30px; }
+.text_box > span{  line-height:1.8rem; font-size:1.1rem;  display:block; }
+.text_box > span:after{ content:'-'; display:block; font-size:2rem;  }
+.text_box > span + span{ margin-top:px; }
+.text_box > span > strong{ font-weight:700; }
+
+
+/* ---------------------header--------------------- */
+.title{  font-weight:600; font-size:1.4rem;  }
+.title > a{ background-color:#eab931; }
+.content{  margin-top:100px; }
+.content > p{  margin-bottom:15px; font-weight:500; font-size:1.2rem; }
+
+/* ---------------------main--------------------- */
+main:after{ content:''; display:block; width:1px; height:100vh; border-left:1px solid #000; position:fixed; top:0; right:7%; }
+/*-----section_nav-----*/
+.section_nav{  background-color:#fff; width:91.8699187%/*100%-(8.13008130081%)*/; padding:80px 0 100px 8.13008130081%/*1230/100px*/;  position:fixed; }
+.section_nav > li{ margin-right:30px; display:inline;  }
+.section_nav > li > button{  font-size:1.3rem; color:#aaa; }
+.section_nav > li > button.show{ color:#000; text-decoration:underline; }
+
+
+/*-----works-----*/
+.works  .portfolio_list > div{  margin:0 0 30px; }
+.works  .portfolio_list > div > .portfolio_content{  display:none; }
+.works  .portfolio_list > div > .portfolio_content > a{  margin:70px 0 30px; font-size:1.4rem; text-decoration:underline; display:inline-block; }
+.works  .portfolio_list > div > .portfolio_content > a:hover{  background-color:#eab931; }
+.works  .portfolio_list > div > .portfolio_content > .siteImg{  width:100%; padding:80px 0 50px; display:block; }
+.works  .portfolio_list > div > .portfolio_content > .siteImg > .imgTitle{  font-size:1.3rem; }
+.works  .portfolio_list > div > .portfolio_content > .siteImg > img{ width:100%; margin:50px auto 70px; display:block; }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li{  margin:5px 0; display:block; }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li > a{ font-size:1.2rem; text-decoration:underline; }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li > a:after{ content:''; display:inline-block;  }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover{ background-color:#eab931; }
+.works  .portfolio_list > div > .portfolio_content > .code_box > li > a:hover:after{ content:'→'; padding-left:5px; }
+/*script용 css*/
+.works  .portfolio_list > div.show > button > span{ font-size:2.5rem; font-weight:600; text-decoration:none; background-color:#eab931; }
+.works  .portfolio_list > div.show > button > sup{ display:none; }
+.works  .portfolio_list > div.show > .portfolio_content{ display:block; }
+
+
+/*-----skills-----*/
+.skills  ul{  margin-left:30px; }
+.skills  ul > li{  margin:0 0 30px; }
+.skills  ul > li > .text_box{ margin-top:30px; display:none; }
+/*script용 css*/
+.skills  ul > li.show > .text_box{ display:block; }
+
+
+
+/*-----top_btn-----*/
+.top_btn{ position:fixed; bottom:80px; left:50px; }
+.top_btn:hover{ background-color:#eab931; }
+
+
+
+
+/* ------------------------------------------------------ */
+/* ---------------------kakaobank.html------------------- */
+.kakaobank h2{ font-size:1.5rem; }
+
+@media screen and (max-width:1610px) {
+	/*-----works-----*/	
+	/*script용 css*/
+	/* .works  .portfolio_list > div.show > button{ font-size:2rem } */
+	.works  .portfolio_list > div.show > button > span{ display:block; }
+}
+
+@media screen and (max-width:920px) {
+	/*-----works-----*/	
+	.works  .portfolio_list > div:nth-child(2) > button > span:first-child{ display:block; }
+}
+
+@media screen and (max-width:800px) {
+	/* ---------------------layout------------------- */
+	header{ width:62.5%/*calc(100% + -37.5%)*/; height:auto; padding:40px 18.75%/*800/150px*/; background-color:#fff; color:#000; position:static;  }
+	main{ width:100%; margin-left:0; }
+	
+
+	/* ---------------------common--------------------- */
+	section{ padding-top:0px; }
+	section > .inner{ padding:70px 18.75%; }
+	section > .inner .portfolio_list{  margin-left:0; }
+	button > span{ font-size:1.2rem; }
+	.text_box > span{  line-height:1.2rem; font-size:1rem  }
+	.text_box > span + span{ margin-top:10px; }
+
+	
+	/* ---------------------header--------------------- */
+	.title{ margin-bottom:10px; font-weight:600; font-size:1.1rem;  }
+	.content{  margin-top:0px; }
+	.content > p{ margin-bottom:5px; font-weight:400; font-size:1rem; }
+
+
+	/* ---------------------main--------------------- */
+	/*-----section_nav-----*/
+	.section_nav{ width:62.5%/*calc(100% + -37.5%)*/; padding:80px 18.75% 0; position:static; }
+	.section_nav > li{ margin-right:20px;  }
+	.section_nav > li > button{ font-size:1.1rem; }
+
+	/*-----works-----*/
+	.works  .portfolio_list > div > .portfolio_content > a{ font-size:1.1rem; }
+	/*script용 css*/
+	/* .works  .portfolio_list > div.show > button > span{ font-size:2.5rem; } */
+
+	/*-----skills-----*/
+	.skills  ul{  margin-left:0; }
+
+	/*-----top_btn-----*/
+	.top_btn{ background-color:#eab931; margin:0 0 50px 18.75%; position:static; display:inline-block; }
+
+	
+}
+
+@media screen and (max-width:450px) {
+	/* ---------------------layout------------------- */
+	header{ width:87.5%/*calc(100% + -12.5%)*/; padding:40px 6.25%/*800/50px*/;;  }
+
+	/* ---------------------common--------------------- */
+	section > .inner{ padding:50px 6.25%; }
+
+	/* ---------------------main--------------------- */
+	main:after{ right:5%; }
+	/*-----section_nav-----*/	
+	.section_nav{ width:87.5%/*calc(100% + -12.5%)*/; padding:0 6.25%;  }
+
+	/*-----top_btn-----*/
+	.top_btn{ margin:0 0 50px 6.25%;}
+}

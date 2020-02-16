@@ -7,308 +7,283 @@
     <title>PARK EUNJAE PORTFOLIO</title>
     
     <link rel="stylesheet" media="all" href="css/common.css" />
-    <!--fontawesome-->
-    <script src="https://kit.fontawesome.com/aa7a88800a.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="wrap">
-
-        <header>
+        <header>          
             <h1 class="title">
-                <a href="">PARK EUNJAE <br/> PORTFOLIO</a>
+                <a href="">PARK EUN JAE</a>
             </h1>
 
-            <div class="content">
+            <nav>
+                <ul class="section_nav clean">
+                    <li class="show">
+                        <button class="show">Intro</button>
+                    </li>
+                    <li>
+                        <button>Portfolio</button>
+                    </li>
+                </ul><!--.section_nav-->
+            </nav>
+
+            <div class="port_nav">
+                <button>1 카카오뱅크</button>
+                <button>2 CJ 건설</button>
+                <button>3 SK 실트론</button>
+                <button>4 마이크로소프</button>
+            </div><!--.port_nav-->
+
+            <!-- <div class="content">
                 <p>design0728@naver.com</p>
                 <p>010 6314 1371</p>
-            </div>
+            </div> -->
         </header>
         
-        <main class="clean">
-            <ul class="section_nav">
-                <li class="show">
-                    <button class="show">Works</button>
-                </li>
-                <li>
-                    <button>Skills</button>
-                </li>
-            </ul><!--.section_nav-->
-
-            <section class="works show">
+        <main>
+            <section class="intro">
                 <div class="inner">
-                    
+                    <div class="title_box">
+                        <div class="title">
+                            <span>안녕하세요</span> <span>박은재입니다</span>
+                        </div>                      
+                    </div>
 
+                    <ul class="aboutMe">
+                        <li>
+                            <strong>HTML, CSS, Javascript </strong>
+                            <span><strong>웹표준</strong>과 <strong>웹접근성</strong>을 준수하여 <strong>반응형 웹사이트</strong>를 제작하며, <strong>크로스 브라우징</strong>에 대해 이해하고 있습니다.</span>
+                            <span><strong>css 방법론</strong>을 이해하고 있습니다.</span>
+                            <span><strong>바닐라 자바스크립트</strong>로 코드를 구성합니다.</span>
+                            <span>자바스크립트 라이브러리인 <strong>jQuery</strong>를 사용할 수 있습니다.</span>
+                            <span>자바스크립트 프레임워크인 <strong>Vue</strong>를 공부하고 있습니다.</span>
+                        </li>
+                        <li>
+                            <strong>Photoshop, Illustrator</strong>
+                            <span><strong>Photoshop</strong>과 <strong>Illustrator</strong>를 이용해 간단한 작업을 할 수 있습니다.</span>
+                        </li>
+                    </ul>   
+                    
+                    <div class="scrollBtn">
+                        <button>
+                            <span>Scroll</span>
+                            <span>&darr;</span>
+                        </button>
+                    </div>
+                </div><!--.inner-->
+            </section>
+            
+            <section class="portfolio">
+                <div class="inner">
                     <div class="portfolio_list">
-                        <div>
-                            <button href="1_kakaobank_js/index.html">
-                                <span>1 kakaobank</span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button>
-                            
-                            <div class="portfolio_content">
-                                <a href="1_kakaobank_js/index.html" target="blank">Website →</a>
+                        <div class="portListBox">                         
+                            <div class="portfolio_content clean">
+                                <!-- <a href="1_kakaobank_js/index.html" target="blank">Website →</a> -->
+
+                                <div class="imgTitle">
+                                    <a href="./1_kakaobank_js/index.html" class="siteImg" target="blank">
+                                        <span>Go <sub> &rarr;</sub></span> 
+                                        <img src="images/kakao_crop_b.png" alt="" class="site"/>
+                                    </a>
+                                </div><!--.imgTitle-->
+                                
+                                <div class="text_box">
+                                    <h2>kakao<br/>bank</h2>
+                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
+                                    <strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.
+                                    <strong>Javascript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
+                                    <span class="page">1 Main page + 1 Sub page</span>
+                                    
+                                    <ul class="code_box">
+                                        <strong>Source link</strong>
+                                        <li>
+                                            <span class="html">HTML</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/index.html" target="blank">index.html</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <span class="css">CSS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/css/common.css" target="blank">common.css</a>
+                                        </li>
+
+                                        <li>
+                                            <span class="js">JS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <span class="js">JS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/sub.js" target="blank">sub.js</a>
+                                        </li>                                  
+                                    </ul>
+
+                                    <div class="layout">
+                                        <span class="imgTitle">Layout sketch 보기</span>
+                                        <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
+                                    </div> 
+                                </div><!--.text_box-->
+
+                                
+                            </div>
+                        </div><!--.portListBox-->
+                        
+                        <div class="portListBox">
+                            <div class="portfolio_content clean">
+                                <!-- <a href="2_cjenc_js/index.html" target="blank">Website →</a> -->
+
+                                <div class="imgTitle">
+                                    <a href="./2_cjenc_js/index.html" class="siteImg" target="blank">
+                                        <span>Go <sub> &rarr;</sub></span> 
+                                        <img src="images/cj_crop_b.png" alt="" class="site"/>
+                                    </a>
+                                </div><!--.imgTitle-->
 
                                 <div class="text_box">
-                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.</span>
-                                    <span><strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.</span>
-                                    <span><strong>Javascript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
-                                    <span>Main page + Sub page</span>
-                                </div>
-
-                                <ul class="code_box">
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/index.html" target="blank">index.html</a>
-                                    </li>
+                                    <h2>CJ<br/>enc</h2>
+                                    <span></spans><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
+                                    <strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.
+                                    <strong>Javascript</strong>와 <strong>jQuery</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
+                                    <span class="page">1 Main page</span>
                                     
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/css/common.css" target="blank">common.css</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/sub.js" target="blank">sub.js</a>
-                                    </li>                                  
-                                </ul>
-
-                                <div class="siteImg">
-                                    <span class="imgTitle">01. Layout sketch</span>
-                                    <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
-                                    <span class="imgTitle">02. Website Screenshot</span>
-                                    <img src="images/site_kakao.png" alt="" class="site"/>
-                                </div> 
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <button href="2_cjenc_js/index.html">
-                                <span>2 CJ Engineering </span><span>& Construction Corporation.</span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button> 
-                            
-                            <div class="portfolio_content">
-                                <a href="2_cjenc_js/index.html" target="blank">Website →</a>
-
-                                    <div class="text_box">
-                                        <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.</span>
-                                        <span><strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.</span>
-                                        <span><strong>Javascript</strong>와 <strong>jQuery</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
-                                        <span>Main page</span>
-                                    </div>   
-
                                     <ul class="code_box">
+                                        <strong>Source link</strong>
                                         <li>
+                                            <span class="html">HTML</span>
                                             <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/index.html" target="blank">index.html</a>
                                         </li>
                                         
                                         <li>
+                                            <span class="css">CSS</span>
                                             <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/css/common.css" target="blank">common.css</a>
                                         </li>
     
                                         <li>
+                                            <span class="js">JS</span>
                                             <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/js/main.js" target="blank">main.js</a>
                                         </li>                                 
                                     </ul>
 
-                                    <div class="siteImg">
-                                        <span class="imgTitle">01. Layout sketch</span>
+                                    <div class="layout">
+                                        <span class="imgTitle">Layout sketch 보기</span>
                                         <img src="images/layoutBg_cj.png" alt="" class="layout"/>
-                                        <span class="imgTitle">02. Website Screenshot</span>
-                                        <img src="images/site_cj.png" alt="" class="site"/>
                                     </div> 
+                                </div><!--.text_box--> 
+
+                                    
                             </div>
-                        </div>
+                        </div><!--.portListBox-->
                         
-                        <div>
-                            <button href="3_sksiltron/index.html" >
-                                <span>3 sk siltron</span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button>
-                            
-                            <div class="portfolio_content">
-                                <a href="3_sksiltron/index.html" target="blank">Website →</a>
+                        <div class="portListBox">
+                            <div class="portfolio_content clean">
+
+                                <div class="imgTitle">
+                                    <a href="./3_sksiltron/index.html" class="siteImg" target="blank">
+                                        <span>Go <sub> &rarr;</sub></span> 
+                                        <img src="images/sk_crop_b.png" alt="" class="site"/>
+                                    </a>
+                                </div><!--.imgTitle-->
 
                                 <div class="text_box">
-                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.</span>
-                                    <span><strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.</span>
-                                    <span><strong>Javascript</strong>와 <strong>jQuery</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
-                                    <span>Main page</span>
-                                </div>
-
-
-                                <ul class="code_box">
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/index.html" target="blank">index.html</a>
-                                    </li>
+                                    <h2>SK<br/>siltron</h2>
+                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
+                                    <strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.
+                                    <strong>Javascript</strong>와 <strong>jQuery</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
+                                    <span class="page">1 Main page</span>
                                     
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/css/common.css" target="blank">common.css</a>
-                                    </li>
+                                    <ul class="code_box">
+                                        <strong>Source link</strong>
+                                        <li>
+                                            <span class="html">HTML</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/index.html" target="blank">index.html</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <span class="css">CSS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/css/common.css" target="blank">common.css</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/js/main.js" target="blank">main.js</a>
-                                    </li>                                 
-                                </ul>
+                                        <li>
+                                            <span class="js">JS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/js/main.js" target="blank">main.js</a>
+                                        </li>                                 
+                                    </ul>
 
-                                <div class="siteImg">
-                                    <span class="imgTitle">01. Layout sketch</span>
-                                    <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
-                                    <span class="imgTitle">02. Website Screenshot</span>
-                                    <img src="images/site_sk.png" alt="" class="site"/>
-                                </div> 
+                                    <div class="layout">
+                                        <span class="imgTitle">Layout sketch 보기</span>
+                                        <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
+                                    </div> 
+                                </div><!--.text_box-->
+
+
+                                
                             </div>
-                        </div>
+                        </div><!--.portListBox-->
                         
-                        <div>
-                            <button href="4_microsoft/index.html">
-                                <span>4 microsoft</span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button>
-                            
-                            <div class="portfolio_content">
-                                <a href="4_microsoft/index.html" target="blank">Website →</a>
+                        <div class="portListBox">
+                            <div class="portfolio_content clean">
+
+                                <div class="imgTitle">
+                                    <a href="./4_microsoft/index.html" class="siteImg" target="blank">
+                                        <span>Go <sub> &rarr;</sub></span> 
+                                        <img src="images/microsoft_crop_b.png" alt="" class="site"/>
+                                    </a>
+                                </div><!--.imgTitle-->
 
                                 <div class="text_box">
-                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.</span>
-                                    <span><strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.</span>
-                                    <span><strong>Javascript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
-                                    <span>Main page</span>
-                                </div>  
-
-                                <ul class="code_box">
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/index.html" target="blank">index.html</a>
-                                    </li>
+                                    <h2>micro<br/>soft</h2>
+                                    <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
+                                    <strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.
+                                    <strong>Javascript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
+                                    <span class="page">1 Main page</span>
                                     
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/css/common.css" target="blank">common.css</a>
-                                    </li>
+                                    <ul class="code_box">
+                                        <strong>Source link</strong>
+                                        <li>
+                                            <span class="html">HTML</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/index.html" target="blank">index.html</a>
+                                        </li>
+                                        
+                                        <li>
+                                            <span class="css">CSS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/css/common.css" target="blank">common.css</a>
+                                        </li>
 
-                                    <li>
-                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
-                                    </li>                                 
-                                </ul>
+                                        <li>
+                                            <span class="js">JS</span>
+                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
+                                        </li>                                 
+                                    </ul>
 
-                                <div class="siteImg">
-                                    <span class="imgTitle">01. Layout sketch</span>
-                                    <img src="images/layoutBg_Microsoft.png" alt="" class="layout"/>
-                                    <span class="imgTitle">02. Website Screenshot</span>
-                                    <img src="images/site_micro.png" alt="" class="site"/>
-                                </div> 
+                                    <div class="layout">
+                                        <span class="imgTitle">Layout sketch 보기</span>
+                                        <img src="images/layoutBg_Microsoft.png" alt="" class="layout"/>
+                                    </div> 
+                                </div><!--.text_box-->
+
+                                
                             </div>
-                        </div>                  
+                        </div><!--.portListBox-->                  
                     </div><!--.portfolio_list-->
                 </div><!--.inner-->
             </section>
 
-            <section class="skills">
-                <div class="inner">
-                    <ul>
-                        <li>
-                            <button>
-                                <span>HTML, CSS, Javascript </span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button>
+            
 
-                            <div class="text_box">
-                                <span><strong>웹표준</strong>과 <strong>웹접근성</strong>을 준수하여 <strong>반응형</strong> 웹사이트를 제작합니다.</span>
-                                <span><strong>css 방법론</strong>을 이해하고 있습니다.</span>
-                                <span><strong>바닐라 코딩</strong>으로 코드를 구성합니다.</span>
-                                <span><strong>jQuery</strong>를 이용합니다.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <button>
-                                <span>Vue </span>
-                                <sup> <i class="fas fa-ellipsis-h"></i></sup>
-                            </button>
-                            <div class="text_box">
-                                <span>Vuetify</span>
-                            </div>
-                        </li>
-                        <li>
-                            <button>
-                                <span>Photoshop, Illustrator</span>
-                            </button>
-                        </li>
-                    </ul>               
-                </div><!--.inner-->
-            </section>
-
-            <a href="" class="top_btn">
-                go to the top
-            </a>
+            
 
         </main>
+
+        <footer>
+            <a href="" class="top_btn">
+                <span>↑</span>
+                <span>top</span>
+            </a>
+        </footer>
 
     </div><!--.wrap-->
     
     
-<script>
-//.secion_nav button클릭 시 해당 section 보이게함.
-sectionNavJs();
-function sectionNavJs() {  
-    let sectionNavBtn = document.querySelectorAll('.section_nav button');
-    let section = document.querySelectorAll('section');    
+<script src="./js/common.js"></script>
 
-	for (var i = 0; i < sectionNavBtn.length; i++) {
-        sectionNavBtn[i].addEventListener('click', function (num) {  
-            return function () {  
-                console.log(num);
-                for(let j = 0; j < sectionNavBtn.length; j++) {  
-                    sectionNavBtn[j].classList.remove('show'); 
-                    section[j].classList.remove('show'); 
-                }
-                sectionNavBtn[num].classList.add('show');
-                section[num].classList.add('show');
-            }
-	    } (i));
-	}
-}
-
-//section 속 button 클릭시 하단 내용 보이게함.
-sectionBtnJs();
-function sectionBtnJs() {
-    let sectionBtn = document.querySelectorAll('section button > span');
-    let portfolioBox = document.querySelectorAll('.portfolio_list > div');
-
-    for(let i = 0; i < sectionBtn.length; i++) {
-        sectionBtn[i].addEventListener('click', function(e) {
-            let parentTag = e.target.parentNode.parentNode;  
-            let nextConts = e.target.parentNode.parentNode.children[1];  
-
-            if( nextConts ) {
-                if( !parentTag.classList.contains('show') ) {
-                    // portfolioBox[i].classList.remove('show');
-                    parentTag.classList.add('show');
-                } else  {
-                    parentTag.classList.remove('show');
-                } 
-            }    
-                
-        });
-    }
-}
-
-
-// top_btn클릭시 화면 상단으로 스크롤되게 함.
-let topBtn = document.querySelector('.top_btn');
-
-topBtn.addEventListener('click', function(e) { 
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-});
-
-
-
-
-
-
-</script>
 </body>
 </html>
