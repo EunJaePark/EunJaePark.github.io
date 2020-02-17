@@ -146,88 +146,101 @@ for(let i = 0; i < portListBox.length; i++) {
     }); 
 }
 
-//해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
-window.addEventListener('scroll', function() {
-    if(window) {
-        
+
+//895px 이상에서 적용.
+window.addEventListener('load', function() {
+    if(window.innerWidth > 895) {
+        pcMouseWheel()
     }
 });
 
+window.addEventListener('resize', function() {
+    if(window.innerWidth > 895) {
+        console.log('895보다 크다##');
+        pcMouseWheel()
+    }  else{
+        console.log('895보다 작아졌따!!!!!!!!!!!!!!!');
+        !pcMouseWheel();
+    }
+});
 
+pcMouseWheel();
 //intro에서 마우스휠하면 intro의 title 스타일 변경되게(아래로 스트롤은 안됌)
-intro.addEventListener('mousewheel', function(e) {
-    if(e.wheelDelta < 0 && htmlEl.scrollTop === 0) {
-        main.style.width = '100%'; 
-        main.style.margin = '0'; 
-        scrollBtn.style.opacity = '0';       
-        scrollBtn.style.bottom= '20px';
-        footer.style.height = '0';      
-        setTimeout(function() {          
-            introTitle.style.width = '100%';
-            introTitleText.style.left = '200px';          
-        },500);
-        setTimeout(function() {           
-            scrollBtn.style.left = '25px';  
-            scrollBtn.style.color = '#1c1b20'; 
-            aboutMe.style.opacity = '1'; 
-            aboutMe.style.right = '5%'; 
-        },900);
-        setTimeout(function() {          
-            main.style.position = 'static';
-            scrollBtn.style.opacity = '1'; 
-            scrollBtn.style.position = 'fixed'; 
-            scrollBtn.style.bottom = '30px'; 
-            
-        },1700);
-    } else if(e.wheelDelta < 0 && main.style.width === '100%') {
-        window.scrollTo({
-            top: contentHeight,
-            behavior: 'smooth',
-        });
-        setTimeout(function() {
-            portNav.style.opacity = '1';
-            portNav.style.bottom = '-50px';
-            topBtn.style.opacity = '1';
-            topBtn.style.bottom = '30px';
-        }, 1500)
-    }
-    else if(e.wheelDelta > 0 && intro.scrollTop >= 0) {
-        scrollBtn.style.opacity = '0';       
-        scrollBtn.style.bottom= '35px';
-        aboutMe.style.opacity = '0'; 
-        aboutMe.style.right = '-10%'; 
-        setTimeout(function() {
-            introTitle.style.width = '50%';
-            introTitleText.style.left = '50%';
-            scrollBtn.style.color = '#1c1b20'; 
-            scrollBtn.style.left = 'calc(50% + -30px)'; 
-        },500);
-        setTimeout(function() {
-            main.style.width = 'calc(100% + -110px)'; 
-            main.style.margin = '0 55px'; 
-            scrollBtn.style.opacity = '1'; 
-            scrollBtn.style.bottom = '60px'; 
-            footer.style.height = '55px'; 
-        },900);
-        setTimeout(function() {          
-            main.style.position = 'fixed';                     
-        },1700);
-    }                        
-});
-
-// portfolio중 첫번째에서 스크롤위로 올리면 intro의 title 스타일 원래대로 돌아오게.                   
-portFirst.addEventListener('mousewheel', function(e) {
-    console.log(e.wheelDelta);
-    console.log(portFirst.scrollTop);
+function pcMouseWheel() {
+    intro.addEventListener('mousewheel', function(e) {
+        if(e.wheelDelta < 0 && htmlEl.scrollTop === 0) {
+            main.style.width = '100%'; 
+            main.style.margin = '0'; 
+            scrollBtn.style.opacity = '0';       
+            scrollBtn.style.bottom= '20px';
+            footer.style.height = '0';      
+            setTimeout(function() {          
+                introTitle.style.width = '100%';
+                introTitleText.style.left = '200px';          
+            },500);
+            setTimeout(function() {           
+                scrollBtn.style.left = '25px';  
+                scrollBtn.style.color = '#1c1b20'; 
+                aboutMe.style.opacity = '1'; 
+                aboutMe.style.right = '5%'; 
+            },900);
+            setTimeout(function() {          
+                main.style.position = 'static';
+                scrollBtn.style.opacity = '1'; 
+                scrollBtn.style.position = 'fixed'; 
+                scrollBtn.style.bottom = '30px'; 
+                    
+            },1700);
+        } else if(e.wheelDelta < 0 && main.style.width === '100%') {
+            window.scrollTo({
+                top: contentHeight,
+                behavior: 'smooth',
+            });
+            setTimeout(function() {
+                portNav.style.opacity = '1';
+                portNav.style.bottom = '-50px';
+                topBtn.style.opacity = '1';
+                topBtn.style.bottom = '30px';
+            }, 1500)
+        }
+        else if(e.wheelDelta > 0 && intro.scrollTop >= 0) {
+            scrollBtn.style.opacity = '0';       
+            scrollBtn.style.bottom= '35px';
+            aboutMe.style.opacity = '0'; 
+            aboutMe.style.right = '-10%'; 
+            setTimeout(function() {
+                introTitle.style.width = '50%';
+                introTitleText.style.left = '50%';
+                scrollBtn.style.color = '#1c1b20'; 
+                scrollBtn.style.left = 'calc(50% + -30px)'; 
+            },500);
+            setTimeout(function() {
+                main.style.width = 'calc(100% + -110px)'; 
+                main.style.margin = '0 55px'; 
+                scrollBtn.style.opacity = '1'; 
+                scrollBtn.style.bottom = '60px'; 
+                footer.style.height = '55px'; 
+            },900);
+            setTimeout(function() {          
+                main.style.position = 'fixed';                     
+            },1700);
+        }                        
+    });
     
-    if(portFirst.scrollTop === 0 && e.wheelDelta > 3) {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });    
-        introReset();
-    }                     
-});
+     // portfolio중 첫번째에서 스크롤위로 올리면 intro의 title 스타일 원래대로 돌아오게.                
+    portFirst.addEventListener('mousewheel', function(e) {
+        console.log(e.wheelDelta);
+        console.log(portFirst.scrollTop);
+            
+        if(portFirst.scrollTop === 0 && e.wheelDelta > 3) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });   
+            introReset();
+        }                     
+    });
+
 //topBtn버튼에서도 써야해서 따로 선언해줌.
 let introReset = function() {
     portNav.style.opacity = '0';
@@ -264,10 +277,12 @@ topBtn.addEventListener('click', function(e) {
         top: 0,
         behavior: 'smooth',
     });
-    introReset();
+    if(window.innerWidth > 895) {
+       introReset(); 
+    } 
 });
 
-
+} //pcMouseWheel() 끝.
 
 //포폴 img, text에 마웃스오버시 img바뀌게함.
 let imgTitle = document.querySelectorAll('.imgTitle > a');
