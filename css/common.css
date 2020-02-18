@@ -181,7 +181,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	/* ---------------------main--------------------- */
 	main{ position:static; width:100%; margin:0; }
 	/* ---intro--- */
-	.intro{ height:100vh; padding:100px 0; }
+	.intro{ height:100vh; padding:50px 0; }
 	.intro > .inner > .title_box > .title{  font-size:50px; left:50px; top:100px; transform:translate(0, 0); }
 	.intro > .inner > .title_box > .title > span > strong:after{ height:18px; bottom:3px;left:-5px; }
 	.intro > .inner > .aboutMe{ width:calc(100% + -100px); left:50%; top:300px; transform:translate(-50%, 0); opacity:1; }
@@ -191,7 +191,6 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ transform:translateY(0); }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:calc(50% + -100px); top:620px; left:100%; transform:translateX(calc(-100% + -50px)); }
 	.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .imgTitle{ margin-left:-50px; }
-	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ top:-150px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ text-align:right; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ width:calc(100% + -100px); position:static; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ position:static; }
@@ -212,6 +211,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	.intro > .inner > .title_box > .title{  font-size:40px; }
 	.intro > .inner > .scrollBtn{ left:0px; }
 	/* ----portfolio--- */
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ top:-120px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ display:none; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ width:calc(100% + -60px); padding:30px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ position:static; }
@@ -231,6 +231,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 @media screen and (max-width:540px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
+	.intro{ padding:0; }
 	.intro > .inner > .title_box > .title{  font-size:30px; }
 	.intro > .inner > .title_box > .title > span > strong:after{ height:15px; bottom:3px;left:-5px; }
 	.intro > .inner > .aboutMe > li > strong{ font-size:17px; }
