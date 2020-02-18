@@ -48,76 +48,35 @@ console.log(portfolio.offsetTop);
 // ******resize끝******
 
 
-// ******현재스크롤위치******
-function getScrollXY() {
-    var scrOfX = 0, scrOfY = 0;
-    if( typeof( window.pageYOffset ) == 'number' ) {
-    //Netscape compliant
-    scrOfY = window.pageYOffset;
-    scrOfX = window.pageXOffset;
-    } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
-    //DOM compliant
-    scrOfY = document.body.scrollTop;
-    scrOfX = document.body.scrollLeft;
-    } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
-    //IE6 standards compliant mode
-    scrOfY = document.documentElement.scrollTop;
-    scrOfX = document.documentElement.scrollLeft;
-    }    
-    return { x:scrOfX, y:scrOfY };
-}    
-var currentScroll = getScrollXY();
-currentScroll.x // X 좌표
-currentScroll.y // Y 좌표
-// ******현재스크롤위치 끝.******
+// // ******현재스크롤위치******
+// function getScrollXY() {
+//     var scrOfX = 0, scrOfY = 0;
+//     if( typeof( window.pageYOffset ) == 'number' ) {
+//     //Netscape compliant
+//     scrOfY = window.pageYOffset;
+//     scrOfX = window.pageXOffset;
+//     } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+//     //DOM compliant
+//     scrOfY = document.body.scrollTop;
+//     scrOfX = document.body.scrollLeft;
+//     } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+//     //IE6 standards compliant mode
+//     scrOfY = document.documentElement.scrollTop;
+//     scrOfX = document.documentElement.scrollLeft;
+//     }    
+//     return { x:scrOfX, y:scrOfY };
+// }    
+// var currentScroll = getScrollXY();
+// currentScroll.x // X 좌표
+// currentScroll.y // Y 좌표
+// // ******현재스크롤위치 끝.******
 
 
-
-
-let portNavBtn = document.querySelectorAll('.port_nav > button');
-for(let i = 0; i < portNavBtn.length; i++) {
-    //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
-    portNavBtn[i].addEventListener('click', function() {
-        window.scrollTo({          
-            top: contentHeight * (i + 1) + (110 * i),
-            behavior: 'smooth',
-        });
-        console.log(contentHeight * (i + 1));  
-        for(let i = 0; i < portNavBtn.length; i++) {
-            portNavBtn[i].style.backgroundColor = 'transparent';
-        }
-        portNavBtn[i].style.backgroundColor = '#000';    
-    });
-
-    //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
-    window.addEventListener('scroll', function() {
-       console.log(window.scrollY);
-       console.log(document.body.clientHeight);
-
-       if(currentScroll.y > (contentHeight * [i])) {
-           for(let i = 0; i < portNavBtn.length; i++) {
-                for(let i = 0; i < portNavBtn.length; i++) {
-                    portNavBtn[i].style.backgroundColor = 'transparent';
-                }
-                portNavBtn[i].style.backgroundColor = '#000';
-            }
-       }
-    }); 
-}
-
-for(let i = 0; i < portListBox.length; i++) {
-   
-}
-
-
-//895px 이상에서 적용.
+//895px 이상에서 적용. //895px 이하에서 적용.
 window.addEventListener('load', function() {
     if(window.innerWidth > 895) {
         pcMouseWheel()
     }
-});
-//895px 이하에서 적용.
-window.addEventListener('load', function() {
     if(window.innerWidth < 895) {
         phoneScript()
     }
@@ -134,32 +93,11 @@ window.addEventListener('resize', function() {
 });
 
 // pcMouseWheel();
-//intro에서 마우스휠하면 intro의 title 스타일 변경되게(아래로 스트롤은 안됌)
 function pcMouseWheel() {
+    //intro에서 마우스휠하면 intro의 title 스타일 변경되게(아래로 스트롤은 안됌)
     intro.addEventListener('mousewheel', function(e) {
         if(e.wheelDelta < 0 && htmlEl.scrollTop === 0) {
-            main.style.width = '100%'; 
-            main.style.margin = '0'; 
-            scrollBtn.style.opacity = '0';       
-            scrollBtn.style.bottom= '20px';
-            footer.style.height = '0';      
-            setTimeout(function() {          
-                introTitle.style.width = '100%';
-                introTitleText.style.left = '200px';          
-            },500);
-            setTimeout(function() {           
-                scrollBtn.style.left = '25px';  
-                scrollBtn.style.color = '#1c1b20'; 
-                aboutMe.style.opacity = '1'; 
-                aboutMe.style.right = '5%'; 
-            },900);
-            setTimeout(function() {          
-                main.style.position = 'static';
-                scrollBtn.style.opacity = '1'; 
-                scrollBtn.style.position = 'fixed'; 
-                scrollBtn.style.bottom = '30px'; 
-                    
-            },1700);
+            scrollStyle();
         } else if(e.wheelDelta < 0 && main.style.width === '100%') {
             window.scrollTo({
                 top: contentHeight,
@@ -199,6 +137,8 @@ function pcMouseWheel() {
     //nav .intro, .portfolio클릭시 해당 위치로 스크롤.
     for(let i = 0; i < navBtn.length; i++) {
         navBtn[i].addEventListener('click', function(e) {
+            //먼저, main의 position을 static으로 바꿔줘야함.
+            main.style.position = 'static';
             //.intro
             if(e.target.classList.contains('introBtn')) {
                 console.log('intro');
@@ -212,6 +152,14 @@ function pcMouseWheel() {
             //.portfolio
             } else if(e.target.classList.contains('portBtn')) {
                 console.log('prot');
+                scrollStyle();
+                setTimeout(function() {
+                    portNav.style.opacity = '1';
+                    portNav.style.bottom = '-50px';
+                    topBtn.style.opacity = '1';
+                    topBtn.style.bottom = '30px';
+                }, 1000)
+                portNavBtn[0].style.backgroundColor = '#000';  
                 window.scrollTo({
                     top: contentHeight,
                     behavior: 'smooth'
@@ -231,6 +179,59 @@ function pcMouseWheel() {
                 
         });
     }
+
+    let portNavBtn = document.querySelectorAll('.port_nav > button');
+    for(let i = 0; i < portNavBtn.length; i++) {
+        //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
+        portNavBtn[i].addEventListener('click', function() {
+            window.scrollTo({          
+                top: contentHeight * (i + 1) + (110 * i),
+                behavior: 'smooth',
+            });
+            console.log(contentHeight * (i + 1));  
+            for(let i = 0; i < portNavBtn.length; i++) {
+                portNavBtn[i].style.backgroundColor = 'transparent';
+            }
+            portNavBtn[i].style.backgroundColor = '#000';    
+        });
+
+        //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
+        window.addEventListener('scroll', function() {
+            let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
+            let colorRemove = function() {
+                for(let i = 0; i < portNavBtn.length; i++) {
+                    portNavBtn[i].style.backgroundColor = 'transparent';
+                }
+            }
+            for(let i = 0; i < portNavBtn.length; i++) {  
+                if(scrollValue > (contentHeight * 1)) {
+                    colorRemove();          
+                    portNavBtn[0].style.backgroundColor = '#000';           
+                }  
+                if(scrollValue > (contentHeight * 2)) {
+                    colorRemove();             
+                    portNavBtn[1].style.backgroundColor = '#000';
+                } 
+                if(scrollValue > (contentHeight * 3)) {
+                    colorRemove();             
+                    portNavBtn[2].style.backgroundColor = '#000';
+                }
+                if(scrollValue > (contentHeight * 4)) {
+                    colorRemove();             
+                    portNavBtn[3].style.backgroundColor = '#000';
+                }
+            }
+            // if(scrollValue > (contentHeight * [i + 1])) {
+            //    for(let i = 0; i < portNavBtn.length; i++) {
+            //         for(let i = 0; i < portNavBtn.length; i++) {
+            //             portNavBtn[i].style.backgroundColor = 'transparent';
+            //         }
+            //         portNavBtn[i].style.backgroundColor = '#000';
+            //     }
+            // }
+        }); 
+    }
+
     // portfolio중 첫번째에서 스크롤위로 올리면 intro의 title 스타일 원래대로 돌아오게.     
     portFirst.addEventListener('mousewheel', function(e) {
         console.log(e.wheelDelta);
@@ -244,6 +245,32 @@ function pcMouseWheel() {
             introReset();
         }                     
     });
+
+    //'intro에서 scroll했을 때, 테두리 등의 style변경'하는 함수 선언.(여기저기에 쓸것임.)
+    let scrollStyle = function() {
+        main.style.width = '100%'; 
+        main.style.margin = '0'; 
+        scrollBtn.style.opacity = '0';       
+        scrollBtn.style.bottom= '20px';
+        footer.style.height = '0';      
+        setTimeout(function() {          
+            introTitle.style.width = '100%';
+            introTitleText.style.left = '200px';          
+        },500);
+        setTimeout(function() {           
+            scrollBtn.style.left = '25px';  
+            scrollBtn.style.color = '#1c1b20'; 
+            aboutMe.style.opacity = '1'; 
+            aboutMe.style.right = '5%'; 
+        },900);
+        setTimeout(function() {          
+            main.style.position = 'static';
+            scrollBtn.style.opacity = '1'; 
+            scrollBtn.style.position = 'fixed'; 
+            scrollBtn.style.bottom = '30px'; 
+                
+        },1700);
+    }
 
     //topBtn버튼에서도 써야해서 따로 선언해줌.
     let introReset = function() {
@@ -273,7 +300,6 @@ function pcMouseWheel() {
         },2100);
     }
 
-
     // top_btn클릭시 화면 상단으로 스크롤되게 함.
     topBtn.addEventListener('click', function(e) { 
         e.preventDefault();
@@ -286,20 +312,36 @@ function pcMouseWheel() {
         } 
     });
 
+    //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.  
+    window.addEventListener('scroll', function() {
+        let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
+        if(scrollValue > (contentHeight * 4)) {     
+            scrollBtn.style.opacity = '0';
+        } else {
+            scrollBtn.style.opacity = '1';
+        }
+    });
+    
 } //pcMouseWheel() 끝.
+
+
 
 // phoneScript();
 function phoneScript() { 
     window.addEventListener('scroll', function() {
-        //.portfolio부분 시작되면 top_btn보이게 함.  
-        if(currentScroll.y > contentHeight) {
+        let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
+
+        //.portfolio부분 시작되면 top_btn보이게 함. 
+        // if(currentScroll.y > contentHeight) {
+        if(scrollValue > contentHeight) {
             topBtn.classList.add('show');
         } else {
             topBtn.classList.remove('show');
         }
 
         //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.
-        if(currentScroll.y > (contentHeight * 3)) {
+        // if(currentScroll.y > (contentHeight * 3)) {       
+        if(scrollValue > (contentHeight * 2.8)) {
             scrollBtn.classList.add('hide');
         } else {
             scrollBtn.classList.remove('hide');
@@ -325,7 +367,8 @@ function phoneScript() {
         }
 
         //.top_btn 누르면 top으로 스크롤.
-        topBtn.addEventListener('click', function() {
+        topBtn.addEventListener('click', function(e) {
+            e.preventDefault();
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth',
