@@ -27,7 +27,7 @@ button{ border:none; padding:0; background-color:transparent; cursor:pointer;  }
 
 
 /* ---------------------layout------------------- */
-.wrap{ width:100%; min-width:314px; background-color:#000;  }
+.wrap{ width:100%; min-width:320px; background-color:#000;  }
 header{ background-color:#1c1b20; width:calc(100% + -110px); height:55px; padding:0 55px; position:fixed; left:0; top:0; z-index:200; }
 main{ width:calc(100% + -110px); margin:0 55px; background-color:#f8f8f8; overflow:hidden; position:fixed; left:0; transition:all .5s ease-out; }
 footer{ width:100%; height:55px; background-color:#1c1b20; position:fixed; bottom:0; transition:all .5s ease-out; }
@@ -75,7 +75,8 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .intro > .inner > .aboutMe > li > span > strong{ font-weight:300; position:relative; }
 .intro > .inner > .aboutMe > li > span > strong:after{ content:''; display:inline-block; width:100%; height:9px; background-color:rgba(0, 0, 0, .3); position:absolute; left:0; bottom:3px; }
 
-.intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:60px; left:calc(50% + -30px); transform:translateX(-50%); transition:all .5s ease; z-index:300; }
+.intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:60px; left:calc(50% + -30px); transform:translateX(-50%); transition:all .5s ease; z-index:300;  }
+.intro > .inner > .scrollBtn > button{ cursor:default; }
 .intro > .inner > .scrollBtn > button > span{ font-size:10px; font-weight:900; display:block; transform:rotate(-90deg); }
 .intro > .inner > .scrollBtn > button > span:last-child{ padding-top:15px; font-size:18px; font-weight:300; transform:translateY(-7px);   animation:arrowMove 1s ease infinite; }
 
@@ -156,10 +157,11 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner > .title_box > .title{  font-size:70px; }
+	.intro > .inner > .title_box > .title > span > strong:after{ height:25px; bottom:3px;left:-5px; }
 	/* ----portfolio--- */
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ width:calc(500px + -100px); left:calc(45% + 100px);  }
 	.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .text_box{ left:calc(45% + -450px); }
-	.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2{ font-size:100px; }
+	.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2{ font-size:100px; line-height:100px; }
 }
 
 @media screen and (max-width:1010px) {
@@ -175,8 +177,14 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	/* ---------------------main--------------------- */
 	main{ position:static; width:100%; margin:0; }
 	/* ---intro--- */
-	.intro > .inner > .title_box > .title{  font-size:50px; }
+	.intro{ height:100vh; padding:100px 0; }
+	.intro > .inner > .title_box > .title{  font-size:50px; left:50px; top:100px; transform:translate(0, 0); }
+	.intro > .inner > .title_box > .title > span > strong:after{ height:18px; bottom:3px;left:-5px; }
+	.intro > .inner > .aboutMe{ width:calc(100% + -100px); left:50%; top:300px; transform:translate(-50%, 0); opacity:1; }
+	.intro > .inner > .scrollBtn{ top:80px; left:20px; transform:translateX(0); position:fixed; }
 	/* ----portfolio--- */
+	.portfolio > .inner > .portfolio_list > .portListBox{  height:auto; padding:55px; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ transform:translateY(0); }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:calc(50% + -100px); top:620px; left:100%; transform:translateX(calc(-100% + -50px)); }
 	.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .imgTitle{ margin-left:-50px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ text-align:right; }
@@ -186,15 +194,25 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 
 	/* ---------------------footer--------------------- */
 	footer{ height:0; }
+	.top_btn{ bottom:-60px; }
+
+	/* scroll시 javascript용  */
+	.intro > .inner > .scrollBtn.hide{ opacity:0; top:0; }
+	.top_btn.show{ opacity:1; bottom:30px; }
 }
 
 @media screen and (max-width:790px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner > .title_box > .title{  font-size:40px; }
+	.intro > .inner > .scrollBtn{ left:0px; }
 	/* ----portfolio--- */
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ display:none; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ width:calc(100% + -60px); padding:30px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ position:static; }
+
+	/* ---------------------footer--------------------- */
+	.top_btn{ right:7px; }
 }
 
 @media screen and (max-width:570px) {
@@ -203,4 +221,26 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	.intro > .inner > .title_box > .title{  font-size:40px; }
 	/* ----portfolio--- */
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ top:80px; }
+}
+
+@media screen and (max-width:540px) {
+	/* ---------------------main--------------------- */
+	/* ---intro--- */
+	.intro > .inner > .title_box > .title{  font-size:30px; }
+	.intro > .inner > .title_box > .title > span > strong:after{ height:15px; bottom:3px;left:-5px; }
+	.intro > .inner > .aboutMe > li > strong{ font-size:15px; }
+	.intro > .inner > .aboutMe > li > span{ font-size:15px; }
+	/* ----portfolio--- */
+	.portfolio > .inner > .portfolio_list > .portListBox{ padding:50px 0; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ top:80px; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ top:0; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ font-size:75px; line-height:75px; }
+}
+
+
+@media screen and (max-width:500px) {
+	/* ---------------------main--------------------- */
+	/* ----portfolio--- */
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ font-size:30px; }
+	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ font-size:60px; line-height:60px; }
 }
