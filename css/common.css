@@ -24,6 +24,7 @@ img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없�
 table{ width:100%; border-collapse:collapse; }
 strong, em{ font-style:normal; }
 button{ border:none; padding:0; background-color:transparent; cursor:pointer;  }
+button:focus{ outline:none; }
 
 
 /* ---------------------layout------------------- */
@@ -48,8 +49,7 @@ footer{ width:100%; height:55px; background-color:#1c1b20; position:fixed; botto
 header > .title{ padding-top:15px; font-weight:400; color:#fff; float:left; }
 header > .title > a{ color:#fff; }
 header > nav{ width:25%; float:right;  }
-header > nav > .section_nav{ outline:1px solid red; }
-header > nav > .section_nav > li{ outline:1px solid blue; width:50%; float:left; }
+header > nav > .section_nav > li{  width:50%; float:left; }
 header > nav > .section_nav > li > button{  margin:15px 0 0 30px; font-size:20px; color:#fff; }
 header > .port_nav{ position:absolute; bottom:-20px; right:70px; opacity:0; transition:all .3s ease-out; }
 header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
@@ -97,7 +97,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg{ width:100%; height:100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; display:block; }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(2) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(3) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/site_sk_siltron.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(4) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/microsoft_entire_or.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(4) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  }
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ width:100%; transition:all .6s ease-out; }
 
