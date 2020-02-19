@@ -100,22 +100,6 @@ function menuScript(e) {
     }
     
 
-    
-
-
-    //3. searchBox를 제외한 곳을 클릭하면 검색창 닫히게함.
-    //    searchClose.addEventListener('click', function() {
-    //        search_box.style.display = 'none';
-    //    }); 
-    
-    // //4. 860px 이하일 경우 열렸던 searchBox 안보이게함.
-    // window.addEventListener('resize', function() {
-    //     if (window.innerWidth < 860) {
-    //         // searchBox.style.display = 'none';
-    //     }      
-    // });
-    
-
 }
 
 
@@ -154,23 +138,114 @@ function bgChange() {
 
 
 
-//---------bx slider---------
-introSlider();
-function introSlider() {
-//     $(document).ready(function() {
-//         var opt = {
-//             speed: 100,
-//             auto: true,
-//             infiniteLoop: true,
-//             pause: 3500,
-//             autoControls: true
-//         }
-//         $('.introSlideBox').bxSlider(opt);
-//     })
-    
-//     let stopBtn = document.querySelector('a.bx-stop');
-//     let startBtn = document.querySelector('a.bx-start');
-//     // console.log(stopBtn);
-    
+//---------.introSlideBox에 height값을 slide의 height값으로 주기.----------
+let introSlideBox = document.querySelector('.introSlideBox');
+let slide = document.querySelectorAll('.slide');
+window.addEventListener('resize', function() {
+    slideHeight();
+});
+slideHeight();
+function slideHeight() {
+    for(let i = 0; i < slide.length; i++) {
+        console.log(slide[i].clientHeight);
+        let slideHeight = slide[i].clientHeight;
+        introSlideBox.style.height = `${slideHeight}px`;
+    }
 }
+
+
+
+
+//----------.intro slider-----------
+let firstSlide = document.querySelector('.slide:first-child');
+let pageNum = document.querySelectorAll('.pageNum');
+let slides = document.querySelectorAll('.slide');
+
+function slideJs() {
+    let currentSlide = document.querySelector('.slide.show');
+    if(currentSlide) {
+        currentSlide.classList.remove('show');
+        let nextSlide = currentSlide.nextElementSibling;
+        if(nextSlide) {
+            nextSlide.classList.add('show');
+        } else {
+            firstSlide.classList.add('show');
+        }
+    } else {
+        firstSlide.classList.add('show');
+    }
+    slideCircle();
+}
+slideJs();
+// let set = window.setInterval(slideJs, 2000);
+
+//prev, next버튼 클릭시 슬라이드 넘어가게함.
+let prevBtn = document.querySelector('.prev');
+let nextBtn = document.querySelector('.next');
+
+prevBtn.addEventListener('click', function() {
+    let currentSlide = document.querySelector('.slide.show');
+    let lastSlide = document.querySelector('.slide:last-child');
+    if(currentSlide) {
+        currentSlide.classList.remove('show');
+        let prevSlide = currentSlide.nextElementSibling;
+        if(prevSlide) {
+            prevSlide.classList.add('show');
+        } else {
+            lastSlide.classList.add('show');
+        }
+    } else {
+        lastSlide.classList.add('show');
+    }
+    slideCircle();
+});
+
+nextBtn.addEventListener('click', function() {
+    slideJs();
+});
+
+
+//슬라이드 하단 페이지표시 원과 slide번호 맞춰 이어줌.
+function slideCircle() {
+    for(let i = 0; i < slides.length; i++) {
+        pageNum[i].classList.remove('on');
+        if(slides[i].classList.contains('show')) {
+            pageNum[i].classList.add('on');
+        }
+    }
+}
+//슬라이드 하단 원 클릭시 해당 슬라이드로 넘어가게함.
+for(let i = 0; i < pageNum.length; i++) {
+    pageNum[i].addEventListener('click', function() {
+        for(let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('show');
+        }
+        slides[i].classList.add('show');
+        slideCircle();
+    });
+}
+
+
+
+
+
+// //---------bx slider---------
+// introSlider();
+// function introSlider() {
+// //     $(document).ready(function() {
+// //         var opt = {
+// //             speed: 100,
+// //             auto: true,
+// //             infiniteLoop: true,
+// //             pause: 3500,
+// //             autoControls: true
+// //         }
+// //         $('.introSlideBox').bxSlider(opt);
+// //     })
+    
+// //     let stopBtn = document.querySelector('a.bx-stop');
+// //     let startBtn = document.querySelector('a.bx-start');
+// //     // console.log(stopBtn);
+    
+// }
 

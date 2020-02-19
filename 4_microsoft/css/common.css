@@ -131,8 +131,9 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 /*1 intro*/
 .intro{   }
 /* .intro > .inner > div.bx-wrapper{ border:none; box-shadow:none; } */
-.intro > .inner > .introSlideBox{ outline:1px solid red; position:relative; left:50%; transform:translateX(-50%); }
-.intro > .inner  .introSlideBox > .slide { position:relative; top:0; }
+.intro > .inner > .introSlideBox{ outline:1px solid red; width:100%;  position:relative; left:50%; transform:translateX(-50%); overflow:hidden; }
+.intro > .inner  .introSlideBox > .slide { position:absolute; top:0; }
+.intro > .inner  .introSlideBox > .slide.show { z-index:1; opacity:1;  }
 /* .intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; } */
 .intro > .inner  .introSlideBox > .slide > a > img{ width:100%; }
 
@@ -143,7 +144,7 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 .intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button:nth-child(2):after{ right:40px; }
 .intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button > span{ display:inline-block; }
 /*좌우넘김버튼*/
-.intro > .inner  .introSlideBox > .prevNextBtn{ outline:1px solid red; width:100%; height:42px; position:absolute; top:50%; transform:translateY(-50%); display:none; }
+.intro > .inner  .introSlideBox > .prevNextBtn{ outline:1px solid red; width:100%; height:42px; position:absolute; top:50%; transform:translateY(-50%); display:none; z-index:20; }
 .intro > .inner  .introSlideBox:hover > .prevNextBtn{ display:block; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button{ border:1px solid #ddd; border-radius:50%; width:42px; height:42px; background-color:rgba(255, 255, 255, .5); font-size:0; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button:hover{ box-shadow:0px 4px 4px rgba(0, 0, 0, .2); }
@@ -152,7 +153,7 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button.next{ position:absolute; right:0; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button.next:after{ content:''; display:block; width:10px; height:18px;  background:url('../images/arrow_right.png') no-repeat; background-size:10px; position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); }
 /*하단 페이지표시 원*/
-.intro > .inner  .introSlideBox > .pageNumStop{ outline:1px solid blue; position:absolute; bottom:15px; left:50%; transform:translateX(-50%); }
+.intro > .inner  .introSlideBox > .pageNumStop{ outline:1px solid blue; position:absolute; bottom:15px; left:50%; transform:translateX(-50%); z-index:20; }
 .intro > .inner  .introSlideBox > .pageNumStop > *{ float:left; cursor:pointer; }
 .intro > .inner  .introSlideBox > .pageNumStop > li.pageNum{ border:1px solid #000; border-radius:50%; width:5px; height:5px; margin:0 5px; transform:translateY(13px); }
 .intro > .inner  .introSlideBox > .pageNumStop > li.pageNum:hover{ background-color:rgba(0, 0, 0, .3); }
