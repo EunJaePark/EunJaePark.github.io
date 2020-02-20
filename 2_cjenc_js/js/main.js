@@ -145,8 +145,8 @@ function phoneScreen() {
 
 //------------main------------
 //1 intro
-introSlider();
-function introSlider() { 
+introScript();
+function introScript() { 
     let SHOW_CLASS = 'show';
     let slide = document.querySelectorAll('.introSlider > div');
     let firstSlide = document.querySelector('.introSlider > div:first-child');
@@ -215,17 +215,17 @@ function introSlider() {
     //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
     function circleBtn() {
         for(let i = 0; i < pageCircle.length; i++) {
-        pageCircle[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            for(let i = 0; i < slide.length; i ++) {
-                slide[i].classList.remove('show');
-                introTextBox[i].classList.remove(SHOW_CLASS);
-            }
-            slide[i].classList.add('show');
-            introTextBox[i].classList.add(SHOW_CLASS);
-            slideCircle();
-        });
-    }
+            pageCircle[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                for(let i = 0; i < slide.length; i ++) {
+                    slide[i].classList.remove('show');
+                    introTextBox[i].classList.remove(SHOW_CLASS);
+                }
+                slide[i].classList.add('show');
+                introTextBox[i].classList.add(SHOW_CLASS);
+                slideCircle();
+            });
+        }
     }
     
 
@@ -265,62 +265,17 @@ function introSlider() {
             }
         }
     }
-    
-
-
-    //intro 4페이지 slider
-    // $(document).ready(function() {
-    //     let introslide = $('.introSlider').bxSlider();
-
-    //     sliderSetting(window.innerWidth);
-    //     window.addEventListener('resize', function() {
-    //         sliderSetting(window.innerWidth);
-    //     });
-
-    //     function sliderSetting() {
-    //         if (window.innerWidth < 799) {
-    //             introslide.reloadSlider({
-    //                 mode : 'fade',
-    //                 speed : 1000,
-    //                 infiniteLoop : true,
-    //                 auto : true,
-    //                 pause : 5000  
-    //             });
-    //         } else {
-    //             introslide.reloadSlider({
-    //                 mode : 'fade',
-    //                 speed : 1000,
-    //                 infiniteLoop : true,
-    //                 auto : true,
-    //                 pause : 5000,
-    //                 onSlideAfter : function(){
-    //                     //video위에 있는 text 나타날때 효과.
-    //                     var num = this.getCurrentSlide();
-    //                     console.log(num);
-    //                     if (num === 4) {
-    //                         num = 0;
-    //                     }
-    //                     for(var i = 0; i < introTextBox.length; i++) {
-    //                         introTextBox[i].classList.remove('active');
-    //                     }
-    //                     introTextBox[num].classList.add('active');  
-    //                 },
-    //                 onSliderLoad : function() {
-    //                     //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
-    //                     introTextBox[0].classList.add('active');
-    //                 }    
-    //             });
-    //         }
-    //     }
-    // })
+      
 
 
     //pc화면에서 intro에서 아래로 스크롤시 2번쨰페이지(business)로 한번에 스크롤되게.
+    //resize될 때, 799px 이상에서만 적용되도록.
     window.addEventListener('resize', function() {
          if(window.innerWidth > 799) {
             intromouse();
         }
     })
+    //기본 로딩되었을 때, 799px 이상에서만 적용되도록.
     if(window.innerWidth > 799) {
         intromouse();
     }
@@ -368,11 +323,13 @@ function introSlider() {
 //2 business
 //pc화면에서 business에서 위로 스크롤시 1번쨰페이지(intro)로 한번에 스크롤되게.
 let business = document.querySelector('.business');
+//resize될 때, 799px 이상에서만 적용되도록.
 window.addEventListener('resize', function() {
     if(window.innerWidth > 799) {
        businessmouse();
-   }
+    }
 })
+//기본 로딩되었을 때, 799px 이상에서만 적용되도록.
 if(window.innerWidth > 799) {
     businessmouse();
 }
@@ -417,48 +374,50 @@ function scrollWork_bd() {
 
 
 //------------footer------------
-//footer의 'CJ그룹 계열사 바로가기' 버튼 클릭시.
-var cjBtn = document.querySelector('ul.footer2 > li:nth-child(2)')
-var cjBtnA = cjBtn.querySelector('a');
+footer();
+function footer() {
+    //footer의 'CJ그룹 계열사 바로가기' 버튼 클릭시.
+    var cjBtn = document.querySelector('ul.footer2 > li:nth-child(2)')
+    var cjBtnA = cjBtn.querySelector('a');
 
-cjBtnA.addEventListener('click', function(e) {
-    e.preventDefault();
-    if(cjBtn.classList.contains('click')) {
-        cjBtn.classList.remove('click');
-    } else {
-        cjBtn.classList.add('click');
-    }
-})
+    cjBtnA.addEventListener('click', function(e) {
+        e.preventDefault();
+        if(cjBtn.classList.contains('click')) {
+            cjBtn.classList.remove('click');
+        } else {
+            cjBtn.classList.add('click');
+        }
+    })
 
 
-//top버튼 클릭시 상단으로 스크롤이동.
-let topBtn = document.querySelector('.top_btn');
+    //top버튼 클릭시 상단으로 스크롤이동.
+    let topBtn = document.querySelector('.top_btn');
 
-topBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-        top : 0,
-        behavior : 'smooth'
+    topBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top : 0,
+            behavior : 'smooth'
+        });
     });
-});
 
 
-//799px일때 우측하단버튼
-var btn799 = document.querySelector('div.phone_btn > a.phone_btn_show');
-var btn400Sub = document.querySelector('div.phone_btn > div.phone_btn_sub');
+    //799px일때 우측하단버튼
+    var btn799 = document.querySelector('div.phone_btn > a.phone_btn_show');
+    var btn400Sub = document.querySelector('div.phone_btn > div.phone_btn_sub');
 
-//우측하단 '사업분야'버튼 클릭시 버튼 3개 보이게.
-btn799.addEventListener('click', function(e) {
-    e.preventDefault();
-    btn799.parentNode.className = 'phone_btn click';
-});
+    //우측하단 '사업분야'버튼 클릭시 버튼 3개 보이게.
+    btn799.addEventListener('click', function(e) {
+        e.preventDefault();
+        btn799.parentNode.className = 'phone_btn click';
+    });
 
-//close btn 클릭시 버튼3개 안보이게.
-var closeBtn = btn400Sub.querySelector('a.close');
-closeBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    btn799.parentNode.className = 'phone_btn close';
-});
+    //close btn 클릭시 버튼3개 안보이게.
+    var closeBtn = btn400Sub.querySelector('a.close');
+    closeBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        btn799.parentNode.className = 'phone_btn close';
+    });
     
-
+}
 
