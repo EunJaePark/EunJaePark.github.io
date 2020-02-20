@@ -16,7 +16,7 @@ let topBtn = document.querySelector('.top_btn');
 // ******(100vh일때)resize될때마다 height값 찾기.******
 let portfolio = document.querySelector('.portfolio');
 let portListBox = document.querySelectorAll('.portListBox');
-let contentHeight;
+let vhHeight;
 resize();
 function resize() {
     let sizeCheck;  
@@ -30,11 +30,11 @@ function resize() {
     });
 
     function resizeHeight() {
-        contentHeight = window.innerHeight;
-        console.log(contentHeight); 
-        //height이 800px 이하일 경우에는 800으로 contentHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
-        if(contentHeight < 800) {
-            contentHeight = 800;
+        vhHeight = window.innerHeight;
+        console.log(vhHeight); 
+        //height이 800px 이하일 경우에는 800으로 vhHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
+        if(vhHeight < 800) {
+            vhHeight = 800;
         }     
     }
 }
@@ -72,7 +72,7 @@ function pcMouseWheel() {
             scrollStyle();
         } else if(e.wheelDelta < 0 && main.style.width === '100%') {
             window.scrollTo({
-                top: contentHeight,
+                top: vhHeight,
                 behavior: 'smooth',
             });
             setTimeout(function() {
@@ -133,12 +133,12 @@ function pcMouseWheel() {
                 }, 1000)
                 portNavBtn[0].style.backgroundColor = '#000';  
                 window.scrollTo({
-                    top: contentHeight,
+                    top: vhHeight,
                     behavior: 'smooth'
                 });
                 console.log(document.body.scrollTop);
                 
-                if(document.body.scrollTop >= contentHeight) {
+                if(document.body.scrollTop >= vhHeight) {
                     setTimeout(function() {
                         portNav.style.opacity = '1';
                         portNav.style.bottom = '-50px';
@@ -156,10 +156,10 @@ function pcMouseWheel() {
         //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
         portNavBtn[i].addEventListener('click', function() {
             window.scrollTo({          
-                top: contentHeight * (i + 1) + (110 * i),
+                top: vhHeight * (i + 1) + (110 * i),
                 behavior: 'smooth',
             });
-            console.log(contentHeight * (i + 1));  
+            console.log(vhHeight * (i + 1));  
             for(let i = 0; i < portNavBtn.length; i++) {
                 portNavBtn[i].style.backgroundColor = 'transparent';
             }
@@ -175,23 +175,23 @@ function pcMouseWheel() {
                 }
             }
             for(let i = 0; i < portNavBtn.length; i++) {  
-                if(scrollValue > (contentHeight * 1)) {
+                if(scrollValue > (vhHeight * 1)) {
                     colorRemove();          
                     portNavBtn[0].style.backgroundColor = '#000';           
                 }  
-                if(scrollValue > (contentHeight * 2)) {
+                if(scrollValue > (vhHeight * 2)) {
                     colorRemove();             
                     portNavBtn[1].style.backgroundColor = '#000';
                 } 
-                if(scrollValue > (contentHeight * 3)) {
+                if(scrollValue > (vhHeight * 3)) {
                     colorRemove();             
                     portNavBtn[2].style.backgroundColor = '#000';
                 }
-                if(scrollValue > (contentHeight * 4)) {
+                if(scrollValue > (vhHeight * 4)) {
                     colorRemove();             
                     portNavBtn[3].style.backgroundColor = '#000';
                 }
-                if(scrollValue > (contentHeight * 5)) {
+                if(scrollValue > (vhHeight * 5)) {
                     colorRemove();             
                     portNavBtn[4].style.backgroundColor = '#000';
                 }
@@ -282,7 +282,7 @@ function pcMouseWheel() {
     //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.  
     window.addEventListener('scroll', function() {
         let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
-        if(scrollValue > (contentHeight * portListBox.length)) {     
+        if(scrollValue > (vhHeight * portListBox.length)) {     
             scrollBtn.style.opacity = '0';
         } else {
             scrollBtn.style.opacity = '1';
@@ -299,14 +299,14 @@ function phoneScript() {
         let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
 
         //.portfolio부분 시작되면 top_btn보이게 함. {
-        if(scrollValue > contentHeight) {
+        if(scrollValue > vhHeight) {
             topBtn.classList.add('show');
         } else {
             topBtn.classList.remove('show');
         }
 
         //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.
-        if(scrollValue > (contentHeight * (portListBox.length - 0.5))) {
+        if(scrollValue > (vhHeight * (portListBox.length - 0.5))) {
             scrollBtn.classList.add('hide');
         } else {
             scrollBtn.classList.remove('hide');
@@ -325,7 +325,7 @@ function phoneScript() {
                 //.portfolio
                 } else if(e.target.classList.contains('portBtn')) {
                     window.scrollTo({
-                        top: contentHeight,
+                        top: vhHeight,
                         behavior: 'smooth'
                     });
                 }                  
