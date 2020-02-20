@@ -109,16 +109,36 @@ function gnbBoxScript() {
 //--------------main--------------
 //intro
 let scrollBtn = document.querySelector('.scrollBtn');  
-let otherMain = document.querySelector('.other_main_contents');;
+let otherMain = document.querySelector('.other_main_contents');
+let intro = document.querySelector('.intro');
+let contentHeight;
 
 scrollBtn.addEventListener('click', function(e) {
     e.preventDefault();
-    let otherMainTop = $(otherMain).offset().top;
+    // let otherMainTop = $(otherMain).offset().top;
     window.scrollTo({
-        top : otherMainTop,
+        top : contentHeight,
         behavior : 'smooth'
     });            
 }); 
+
+//resize될 때마다 intro-height값 구함.
+resize();
+function resize() {
+    let sizeCheck;
+    resizeCheck();
+    window.addEventListener('resize', function() {
+        this.clearTimeout(sizeCheck);
+        sizeCheck = setTimeout(function() {
+            resizeCheck();
+        }, 100);
+    });
+    function resizeCheck() {
+        contentHeight = window.innerHeight;
+        intro.style.height = contentHeight;
+        console.log(contentHeight);           
+    }   
+}
 
 
 

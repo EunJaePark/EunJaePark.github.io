@@ -23,17 +23,15 @@ function resize() {
 
     resizeCheck();
 
-    window.addEventListener('resize', resizeWork);
-
-    function resizeWork() {
-        clearTimeout(sizeCheck);
+    window.addEventListener('resize', function resizeWork() {
+        this.clearTimeout(sizeCheck);
         sizeCheck = setTimeout(function() {
             resizeCheck();
         }, 100);
-    }
+    });
 
     function resizeCheck() {
-        contentHeight = `${window.innerHeight}`;
+        contentHeight = window.innerHeight;
 
         for(let i = 0; i < portListBox.length; i++) {
             portListBox[i].style.height = contentHeight;
