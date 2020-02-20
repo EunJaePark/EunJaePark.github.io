@@ -112,7 +112,7 @@ function phoneScreen() {
 
         function openWork(e) {
             e.preventDefault();
-            header.classList.add('on799', 'show');
+            header.classList.add('on799', 'showNav');
             htmlEl.style.overflow = 'hidden';
             if (innerWidth > 799) {
                 htmlEl.style.overflow = 'scroll';
@@ -125,7 +125,7 @@ function phoneScreen() {
 
         function closeWork(e) {
             e.preventDefault();
-            header.classList.remove('on799', 'show');
+            header.classList.remove('on799', 'showNav');
             htmlEl.style.overflow = 'scroll';
             
             closeBtn799.addEventListener('click', function() {

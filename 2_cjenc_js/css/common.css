@@ -496,14 +496,14 @@ footer > .inner > .footer3 > span:nth-child(7):before{ width:2px; height:11px; c
 
 	/*네비버튼클릭시 서브메뉴 보이게.*/
 	/* html{ overflow:hidden; } */
-	header.show{ background-color:#fff; }
-	header.show > .logo > a > img{ display:none; }
-	header.show > .logo > a > img.logo_b{ display:block; }
-	header.show > nav { display:block; position:fixed; top:52px; bottom:0; overflow:auto; }
-	header.show > .lang{ display:block; }
-	header.show > .nav_btn_open{ display:none; }
-	header.show > .nav_btn_close{ display:block;  }
-	header.show > nav > .gnb > li > .submenu_box{ transform:none;}
+	header.showNav{ background-color:#fff; }
+	header.showNav > .logo > a > img{ display:none; }
+	header.showNav > .logo > a > img.logo_b{ display:block; }
+	header.showNav > nav { display:block; position:fixed; top:52px; bottom:0; overflow:auto; }
+	header.showNav > .lang{ display:block; }
+	header.showNav > .nav_btn_open{ display:none; }
+	header.showNav > .nav_btn_close{ display:block;  }
+	header.showNav > nav > .gnb > li > .submenu_box{ transform:none;}
 
 	header.on799:after{ border-color:#777;  }
 	
