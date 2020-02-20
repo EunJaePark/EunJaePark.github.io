@@ -104,6 +104,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ /*background-color:rgb(252, 216, 161);*/ width:calc(500px + -100px); padding:50px; position:absolute; bottom:0; left:calc(50% + 100px);  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .text_box{ left:calc(50% + -600px); }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2{ line-height:110px; font-size:120px; position:absolute; top:-200px; }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(5)  > .portfolio_content > .text_box > h2{ font-size:100px; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2:after{ content:''; display:inline-block; width:25px; height:25px; margin-left:10px; border-radius:50%; background-color:#1c1b20; }
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span{  line-height:35px; margin-bottom:10px; font-size:20px; font-weight:300; display:block; position:relative; z-index:20; }
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span.page{ font-weight:400; }
@@ -162,6 +163,7 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ width:calc(500px + -100px); left:calc(45% + 100px);  }
 	.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .text_box{ left:calc(45% + -450px); }
 	.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2{ font-size:100px; line-height:100px; }
+	.portfolio > .inner > .portfolio_list > .portListBox:nth-child(5)  > .portfolio_content > .text_box > h2{ font-size:80px;; }
 }
 
 @media screen and (max-width:1010px) {

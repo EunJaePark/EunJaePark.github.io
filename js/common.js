@@ -13,7 +13,7 @@ let footer = document.querySelector('footer');
 let topBtn = document.querySelector('.top_btn');
 
 
-// ******resize될때마다 height값 찾기.******
+// ******(100vh일때)resize될때마다 height값 찾기.******
 let portfolio = document.querySelector('.portfolio');
 let portListBox = document.querySelectorAll('.portListBox');
 let contentHeight;
@@ -191,15 +191,11 @@ function pcMouseWheel() {
                     colorRemove();             
                     portNavBtn[3].style.backgroundColor = '#000';
                 }
+                if(scrollValue > (contentHeight * 5)) {
+                    colorRemove();             
+                    portNavBtn[4].style.backgroundColor = '#000';
+                }
             }
-            // if(scrollValue > (contentHeight * [i + 1])) {
-            //    for(let i = 0; i < portNavBtn.length; i++) {
-            //         for(let i = 0; i < portNavBtn.length; i++) {
-            //             portNavBtn[i].style.backgroundColor = 'transparent';
-            //         }
-            //         portNavBtn[i].style.backgroundColor = '#000';
-            //     }
-            // }
         }); 
     }
 
@@ -286,7 +282,7 @@ function pcMouseWheel() {
     //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.  
     window.addEventListener('scroll', function() {
         let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
-        if(scrollValue > (contentHeight * 4)) {     
+        if(scrollValue > (contentHeight * portListBox.length)) {     
             scrollBtn.style.opacity = '0';
         } else {
             scrollBtn.style.opacity = '1';
@@ -302,8 +298,7 @@ function phoneScript() {
     window.addEventListener('scroll', function() {
         let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
 
-        //.portfolio부분 시작되면 top_btn보이게 함. 
-        // if(currentScroll.y > contentHeight) {
+        //.portfolio부분 시작되면 top_btn보이게 함. {
         if(scrollValue > contentHeight) {
             topBtn.classList.add('show');
         } else {
@@ -311,12 +306,12 @@ function phoneScript() {
         }
 
         //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.
-        // if(currentScroll.y > (contentHeight * 3)) {       
-        if(scrollValue > (contentHeight * 2.8)) {
+        if(scrollValue > (contentHeight * portListBox.length)) {
             scrollBtn.classList.add('hide');
         } else {
             scrollBtn.classList.remove('hide');
-        }
+        }     
+        
 
         //nav .intro, .portfolio클릭시 해당 위치로 스크롤.
         for(let i = 0; i < navBtn.length; i++) {
