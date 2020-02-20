@@ -306,7 +306,7 @@ function phoneScript() {
         }
 
         //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.
-        if(scrollValue > (contentHeight * portListBox.length)) {
+        if(scrollValue > (contentHeight * (portListBox.length - 0.5))) {
             scrollBtn.classList.add('hide');
         } else {
             scrollBtn.classList.remove('hide');
