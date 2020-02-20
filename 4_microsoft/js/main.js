@@ -41,7 +41,6 @@ function menuScript(e) {
 
 
     //-----searchBtn 클릭시 검색창 뜨도록.-----
-    //html,css로 다시 만들기.
     //1. 검색창 태그 생성.
     var search_box = document.querySelector('.search_box');
     var searchClose = document.querySelector('.searchClose');  
@@ -108,7 +107,7 @@ function menuScript(e) {
 //---------1 .intro, 3 .sotre bgImg - width별로 바꿈---------
 bgChange();
 function bgChange() {
-    let slideImg = document.querySelectorAll('.introSlideBox > .slide img');
+    let slideImg = document.querySelectorAll('.introSlideBox .slide img');
     let storeImg = document.querySelector('.store img');
 
     window.addEventListener('resize', function() {
@@ -119,14 +118,17 @@ function bgChange() {
    function resizeImg() {
        for(let i = 0; i < slideImg.length; i++) {
             if(window.innerWidth > 1082) {
+                console.log('1082up!!!!!!');  
                 slideImg[i].src = `images/intro_bg${[i + 1]}.webp`;
                 storeImg.src = 'images/store_bg.webp';
             } 
             if(window.innerWidth < 1082) {
+                console.log('1082down!!!!!!'); 
                 slideImg[i].src = 'images/intro_bg' + [i + 1] + '_1082.webp';
                 storeImg.src = 'images/store_bg_1082.webp';
             } 
             if(window.innerWidth < 767) {
+                console.log('767down!!!!!!');              
                 slideImg[i].src = 'images/intro_bg' + [i + 1] + '_767.webp';
                 storeImg.src = 'images/store_bg_767.webp';
             }
@@ -137,115 +139,136 @@ function bgChange() {
 
 
 
-
-//---------.introSlideBox에 height값을 slide의 height값으로 주기.----------
-let introSlideBox = document.querySelector('.introSlideBox');
-let slide = document.querySelectorAll('.slide');
-window.addEventListener('resize', function() {
+//---------1 intro---------
+introScript();
+function introScript() {
+    //---------.introSlideBox에 height값을 slide의 height값으로 주기.----------
+    let introSlideBox = document.querySelector('.introSlideBox');
+    let slides = document.querySelectorAll('.slide');
+    window.addEventListener('resize', function() {
+        slideHeight();
+    });
     slideHeight();
-});
-slideHeight();
-function slideHeight() {
-    for(let i = 0; i < slide.length; i++) {
-        console.log(slide[i].clientHeight);
-        let slideHeight = slide[i].clientHeight;
-        introSlideBox.style.height = `${slideHeight}px`;
-    }
-}
-
-
-
-
-//----------.intro slider-----------
-let firstSlide = document.querySelector('.slide:first-child');
-let pageNum = document.querySelectorAll('.pageNum');
-let slides = document.querySelectorAll('.slide');
-
-function slideJs() {
-    let currentSlide = document.querySelector('.slide.show');
-    if(currentSlide) {
-        currentSlide.classList.remove('show');
-        let nextSlide = currentSlide.nextElementSibling;
-        if(nextSlide) {
-            nextSlide.classList.add('show');
-        } else {
-            firstSlide.classList.add('show');
+    function slideHeight() {
+        for(let i = 0; i < slides.length; i++) {
+            console.log(slides[i].clientHeight);
+            let slideHeight = slides[i].clientHeight;
+            introSlideBox.style.height = `${slideHeight}px`;
         }
-    } else {
-        firstSlide.classList.add('show');
     }
-    slideCircle();
-}
-slideJs();
-// let set = window.setInterval(slideJs, 2000);
 
-//prev, next버튼 클릭시 슬라이드 넘어가게함.
-let prevBtn = document.querySelector('.prev');
-let nextBtn = document.querySelector('.next');
+    //introSlideBox에 마우스오버시 prevBtn, nextBtn 보이게함.
+    let prevNextBtns = document.querySelectorAll('.prevNextBtn > button');
+    introSlideBox.addEventListener('mouseover', function() {
+        for(let i = 0; i < prevNextBtns.length; i++) {
+            prevNextBtns[i].classList.add('show');
+        }
+    });
+    introSlideBox.addEventListener('mouseout', function() {
+        for(let i = 0; i < prevNextBtns.length; i++) {
+            prevNextBtns[i].classList.remove('show');
+        }
+    });
 
-prevBtn.addEventListener('click', function() {
-    let currentSlide = document.querySelector('.slide.show');
-    let lastSlide = document.querySelector('.slide:last-child');
-    if(currentSlide) {
-        currentSlide.classList.remove('show');
-        let prevSlide = currentSlide.nextElementSibling;
-        if(prevSlide) {
-            prevSlide.classList.add('show');
+
+    //----------.intro slider-----------
+    let SHOW_CLASS = 'show';
+    let firstSlide = document.querySelector('.slide:first-child');
+    let pageNum = document.querySelectorAll('.pageNum');
+
+    function slideJs() {
+        let currentSlide = document.querySelector(`.${SHOW_CLASS}`);
+        if(currentSlide) {
+            currentSlide.classList.remove(SHOW_CLASS);
+            let nextSlide = currentSlide.nextElementSibling;
+            if(nextSlide) {
+                nextSlide.classList.add(SHOW_CLASS);
+            } else {
+                firstSlide.classList.add(SHOW_CLASS);
+            }
+        } else {
+            firstSlide.classList.add(SHOW_CLASS);
+        }
+        slideCircle();
+    }
+    slideJs();
+    let set = window.setInterval(slideJs, 2000);
+
+    //prev, next버튼 클릭시 슬라이드 넘어가게함.
+    let prevBtn = document.querySelector('.prev');
+    let nextBtn = document.querySelector('.next');
+
+    prevBtn.addEventListener('click', function() {
+        let currentSlide = document.querySelector('.slide.show');
+        let lastSlide = document.querySelector('.slide:last-child');
+        if(currentSlide) {
+            currentSlide.classList.remove('show');
+            let prevSlide = currentSlide.nextElementSibling;
+            if(prevSlide) {
+                prevSlide.classList.add('show');
+            } else {
+                lastSlide.classList.add('show');
+            }
         } else {
             lastSlide.classList.add('show');
         }
-    } else {
-        lastSlide.classList.add('show');
-    }
-    slideCircle();
-});
-
-nextBtn.addEventListener('click', function() {
-    slideJs();
-});
-
-
-//슬라이드 하단 페이지표시 원과 slide번호 맞춰 이어줌.
-function slideCircle() {
-    for(let i = 0; i < slides.length; i++) {
-        pageNum[i].classList.remove('on');
-        if(slides[i].classList.contains('show')) {
-            pageNum[i].classList.add('on');
-        }
-    }
-}
-//슬라이드 하단 원 클릭시 해당 슬라이드로 넘어가게함.
-for(let i = 0; i < pageNum.length; i++) {
-    pageNum[i].addEventListener('click', function() {
-        for(let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove('show');
-        }
-        slides[i].classList.add('show');
         slideCircle();
     });
+
+    nextBtn.addEventListener('click', function() {
+        slideJs();
+    });
+
+
+    //슬라이드 하단 페이지표시 원과 slide번호 맞춰 이어줌.
+    function slideCircle() {
+        for(let i = 0; i < slides.length; i++) {
+            pageNum[i].classList.remove('on');
+            if(slides[i].classList.contains('show')) {
+                pageNum[i].classList.add('on');
+            }
+        }
+    }
+    //슬라이드 하단 원 클릭시 해당 슬라이드로 넘어가게함.
+    for(let i = 0; i < pageNum.length; i++) {
+        pageNum[i].addEventListener('click', function() {
+            for(let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('show');
+            }
+            slides[i].classList.add('show');
+            slideCircle();
+        });
+    }
+
+    //play, stop버튼
+    let playBtn = document.querySelector('.play');
+    let stopBtn = document.querySelector('.stop');
+
+    stopBtn.addEventListener('click', function(e) {
+        clearInterval(set);
+        if(e.target.style.display === 'none') {
+            e.target.style.display = 'block'
+        } else {
+            e.target.style.display = 'none';
+            playBtn.style.display = 'block';
+        }
+        console.log(set);  
+        console.log('멈췄다');  
+    });
+
+    playBtn.addEventListener('click', function(e) {
+        set = setInterval(slideJs, 2000);
+        if(e.target.style.display === 'none') {
+            e.target.style.display = 'block'
+        } else {
+            e.target.style.display = 'none';
+            stopBtn.style.display = 'block';
+        }
+        console.log(set);
+        console.log('다시시작');  
+    });
+
+
 }
 
-
-
-
-
-// //---------bx slider---------
-// introSlider();
-// function introSlider() {
-// //     $(document).ready(function() {
-// //         var opt = {
-// //             speed: 100,
-// //             auto: true,
-// //             infiniteLoop: true,
-// //             pause: 3500,
-// //             autoControls: true
-// //         }
-// //         $('.introSlideBox').bxSlider(opt);
-// //     })
-    
-// //     let stopBtn = document.querySelector('a.bx-stop');
-// //     let startBtn = document.querySelector('a.bx-start');
-// //     // console.log(stopBtn);
-    
-// }
 

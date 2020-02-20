@@ -131,36 +131,38 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 /*1 intro*/
 .intro{   }
 /* .intro > .inner > div.bx-wrapper{ border:none; box-shadow:none; } */
-.intro > .inner > .introSlideBox{ outline:1px solid red; width:100%;  position:relative; left:50%; transform:translateX(-50%); overflow:hidden; }
-.intro > .inner  .introSlideBox > .slide { position:absolute; top:0; }
-.intro > .inner  .introSlideBox > .slide.show { z-index:1; opacity:1;  }
-/* .intro > .inner > .introSlideBox > .slide > a{ outline:2px solid blue; } */
-.intro > .inner  .introSlideBox > .slide > a > img{ width:100%; }
+.intro > .inner > .introSlideBox{   background-color:#e7e7e7; width:100%; position:relative; left:50%; transform:translateX(-50%); overflow:hidden; }
+.intro > .inner  .introSlideBox > .slides{ }
+.intro > .inner  .introSlideBox > .slides > .slide { position:absolute; top:0; transition:all .3s ease-out; transform:translateX(20px); }
+.intro > .inner  .introSlideBox > .slides > .slide.show { z-index:1; opacity:1; transform:translateX(0); }
+.intro > .inner  .introSlideBox > .slides > .slide > a > img{ width:100%;  }
 
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > h2,
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ width:195px; }
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button:nth-child(2):after{ right:40px; }
-.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button > span{ display:inline-block; }
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox{ left:50%; transform:translateX(-50%); }
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > h2,
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > span{ text-align:center; }
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > div > button{ width:195px; }
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > div > button:nth-child(2):after{ right:40px; }
+.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > div > button > span{ display:inline-block; }
 /*좌우넘김버튼*/
-.intro > .inner  .introSlideBox > .prevNextBtn{ outline:1px solid red; width:100%; height:42px; position:absolute; top:50%; transform:translateY(-50%); display:none; z-index:20; }
-.intro > .inner  .introSlideBox:hover > .prevNextBtn{ display:block; }
-.intro > .inner  .introSlideBox > .prevNextBtn > button{ border:1px solid #ddd; border-radius:50%; width:42px; height:42px; background-color:rgba(255, 255, 255, .5); font-size:0; }
+.intro > .inner  .introSlideBox > .prevNextBtn{  width:0; height:42px; z-index:20; }
+.intro > .inner  .introSlideBox > .prevNextBtn > button{ border:1px solid #ddd; border-radius:50%; width:42px; height:42px; background-color:rgba(255, 255, 255, .5); font-size:0; position:absolute; top:50%; transform:translateY(-50%); z-index:20; display:none; }
+.intro > .inner  .introSlideBox > .prevNextBtn > button.show{ display:block; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button:hover{ box-shadow:0px 4px 4px rgba(0, 0, 0, .2); }
-.intro > .inner  .introSlideBox > .prevNextBtn > button.prev{ position:absolute; left:0; }
+.intro > .inner  .introSlideBox > .prevNextBtn > button.prev{ left:0; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button.prev:after{ content:''; display:block; width:10px; height:18px;  background:url('../images/arrow_left.png') no-repeat; background-size:10px; position:absolute; top:50%; left:47%; transform:translate(-50%, -50%); }
-.intro > .inner  .introSlideBox > .prevNextBtn > button.next{ position:absolute; right:0; }
+.intro > .inner  .introSlideBox > .prevNextBtn > button.next{ right:0; }
 .intro > .inner  .introSlideBox > .prevNextBtn > button.next:after{ content:''; display:block; width:10px; height:18px;  background:url('../images/arrow_right.png') no-repeat; background-size:10px; position:absolute; top:50%; left:55%; transform:translate(-50%, -50%); }
 /*하단 페이지표시 원*/
-.intro > .inner  .introSlideBox > .pageNumStop{ outline:1px solid blue; position:absolute; bottom:15px; left:50%; transform:translateX(-50%); z-index:20; }
+.intro > .inner  .introSlideBox > .pageNumStop{  position:absolute; bottom:15px; left:50%; transform:translateX(-50%); z-index:20; }
 .intro > .inner  .introSlideBox > .pageNumStop > *{ float:left; cursor:pointer; }
 .intro > .inner  .introSlideBox > .pageNumStop > li.pageNum{ border:1px solid #000; border-radius:50%; width:5px; height:5px; margin:0 5px; transform:translateY(13px); }
 .intro > .inner  .introSlideBox > .pageNumStop > li.pageNum:hover{ background-color:rgba(0, 0, 0, .3); }
 .intro > .inner  .introSlideBox > .pageNumStop > li.pageNum.on{ background-color:#000; }
-.intro > .inner  .introSlideBox > .pageNumStop > li.stop{ outline:1px solid lime; width:36px; height:35px; margin-left:15px; text-align:center; }
+/*하단 paly, stop 버튼*/
+.intro > .inner  .introSlideBox > .pageNumStop > li{  width:36px; height:35px; margin-left:15px; text-align:center; }
+.intro > .inner  .introSlideBox > .pageNumStop > li.stop{ height:28px; margin-left:15px; padding-top:7px;  font-size:10px; }
 .intro > .inner  .introSlideBox > .pageNumStop > li.stop:hover{ background-color:#000; color:#fff; }
-.intro > .inner  .introSlideBox > .pageNumStop > li.play{ outline:1px solid lime; width:36px; height:35px; text-align:center; display:none; }
+.intro > .inner  .introSlideBox > .pageNumStop > li.play{ height:31px; margin-left:15px; padding-top:4px;   display:none; }
 .intro > .inner  .introSlideBox > .pageNumStop > li.play:hover{ background-color:#000; color:#fff; }
 
 
@@ -348,7 +350,7 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	
 	/* ---------------------main--------------------- */
 	/*1 intro*/
-	.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ transform:translateX(30%); display:block; }
+	.intro > .inner  .introSlideBox > .slides >  .slide:nth-child(2) > a > .textBox > div > button{ transform:translateX(30%); display:block; }
 
 	/*3 store*/
 	.store .textBox{ width:335px; }
@@ -366,8 +368,8 @@ header.menuShow > div > .navBtn > nav{ display:block; }
 	
 	/* ---------------------main--------------------- */
 	/*1 intro*/
-	.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox{ transform:translateX(0%); }
-	.intro > .inner  .introSlideBox > .slide:nth-child(2) > a > .textBox > div > button{ display:inline-block; transform:translateX(0);  }
+	.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox{ transform:translateX(0%); }
+	.intro > .inner  .introSlideBox > .slides > .slide:nth-child(2) > a > .textBox > div > button{ display:inline-block; transform:translateX(0);  }
 
 	/*3 store*/
 	.store .textBox{ width:100%; }
