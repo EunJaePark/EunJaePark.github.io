@@ -1,3 +1,24 @@
+//-------------------common--------------------
+//100vh(intro)의 height 구하기.
+let intro = document.querySelector('.intro');
+let contentHeight;
+resize();
+function resize() {
+    let sizeCheck;
+    resizeCheck();
+    window.addEventListener('resize', function resizeWork() {
+        this.clearTimeout(sizeCheck);
+        sizeCheck = setTimeout(function() {
+            resizeCheck();
+        }, 100)
+    });
+
+    function resizeCheck() {
+        contentHeight = window.innerHeight;
+        intro.style.height = contentHeight;
+    }
+}
+
 
 //------------header------------
 var htmlEl = document.querySelector('html');
@@ -16,13 +37,13 @@ function pcScreen() {
         var top = htmlEl.scrollTop;
         console.log(window.innerWidth);
         if (window.innerWidth > 800) {
-            if (top > 1000) {
+            if (top > (contentHeight - 30)) {
                 header.classList.add('bg');
                 gnb.classList.add('black');
                 lang.classList.add('black');
                 gnb.classList.remove('white');
             }
-            if (top < 1000) {
+            if (top < (contentHeight - 30)) {
                 header.classList.remove('bg');
                 gnb.classList.remove('black');
                 lang.classList.remove('black');
@@ -84,8 +105,7 @@ function pcScreen() {
     }
     
 
-
-    function phoneScreen() {
+function phoneScreen() {
         //799px 이하인 폰화면에서 햄버거커튼 클릭시 메뉴창보이게함.
         var navBtn799 = document.querySelector('a.nav_btn_open');    
         navBtn799.addEventListener('click', openWork);
@@ -124,57 +144,198 @@ function pcScreen() {
 
 
 //------------main------------
-//intro
+//1 intro
 introSlider();
-
-function introSlider() {
+function introSlider() { 
+    let SHOW_CLASS = 'show';
+    let slide = document.querySelectorAll('.introSlider > div');
+    let firstSlide = document.querySelector('.introSlider > div:first-child');
+    console.log(firstSlide);
     
-    var introBoxes = document.querySelectorAll('.img_text_box');
-    //intro 4페이지 slider
-    $(document).ready(function() {
-        let introslide = $('.introSlider').bxSlider();
+    let introTextBox = document.querySelectorAll('.img_text_box');
+    let pageCircle = document.querySelectorAll('.btn1 > a');
 
-        sliderSetting(window.innerWidth);
-        window.addEventListener('resize', function() {
-            sliderSetting(window.innerWidth);
-        });
+    slideJs();
+    playStop();
+    circleBtn();
 
-        function sliderSetting(w) {
-            if (window.innerWidth < 799) {
-                introslide.reloadSlider({
-                    mode : 'fade',
-                    speed : 1000,
-                    infiniteLoop : true,
-                    auto : true,
-                    pause : 5000  
-                });
+    function slideJs() {
+        let currentSlide = document.querySelector(`.${SHOW_CLASS}`);
+        if(currentSlide) {
+            currentSlide.classList.remove(SHOW_CLASS);
+            for(let i = 0; i < slide.length; i++) {
+                introTextBox[i].classList.remove(SHOW_CLASS);
+            }
+            let nextSlide = currentSlide.nextElementSibling;
+            if(nextSlide) {
+                nextSlide.classList.add(SHOW_CLASS);
+                for(let i = 0; i < slide.length; i++) {
+                    if(slide[i].classList.contains(SHOW_CLASS)) {
+                        introTextBox[i].classList.add(SHOW_CLASS);
+                    }
+                }
             } else {
-                introslide.reloadSlider({
-                    mode : 'fade',
-                    speed : 1000,
-                    infiniteLoop : true,
-                    auto : true,
-                    pause : 5000,
-                    onSlideAfter : function(){
-                        //video위에 있는 text 나타날때 효과.
-                        var num = this.getCurrentSlide();
-                        console.log(num);
-                        if (num === 4) {
-                            num = 0;
-                        }
-                        for(var i = 0; i < introBoxes.length; i++) {
-                            introBoxes[i].classList.remove('active');
-                        }
-                        introBoxes[num].classList.add('active');  
-                    },
-                    onSliderLoad : function() {
-                        //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
-                        introBoxes[0].classList.add('active');
-                    }    
-                });
+                firstSlide.classList.add(SHOW_CLASS);
+            }
+        } else {
+            firstSlide.classList.add(SHOW_CLASS);
+        }
+        slideCircle();
+    }
+    let set = window.setInterval(slideJs, 2000);
+
+     //play, stop버튼 클릭시 재생, 멈춤 효과.
+     function playStop() {
+        let stopBtn = document.querySelector('.stop');
+        let playBtn = document.querySelector('.play');
+        //stop
+        stopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            clearInterval(set);
+            e.target.classList.add('show');
+            if(playBtn.classList.contains('show')) {
+                playBtn.classList.remove('show');
+            }
+            console.log('stopppppppppp');   
+        });
+        //play
+        playBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if(stopBtn.classList.contains('show')) {
+                set = setInterval(slideJs, 2000);
+                e.target.classList.add('show');
+                if(stopBtn.classList.contains('show')) {
+                    stopBtn.classList.remove('show');
+                }
+                console.log('playyyyyyyyyy');  
+            }                   
+        }); 
+    }
+
+    //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
+    function circleBtn() {
+        for(let i = 0; i < pageCircle.length; i++) {
+        pageCircle[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            for(let i = 0; i < slide.length; i ++) {
+                slide[i].classList.remove('show');
+                introTextBox[i].classList.remove(SHOW_CLASS);
+            }
+            slide[i].classList.add('show');
+            introTextBox[i].classList.add(SHOW_CLASS);
+            slideCircle();
+        });
+    }
+    }
+    
+
+    // window.addEventListener('resize', function() {
+    //     sliderIfElse();
+    // })
+
+    // sliderIfElse();
+    // function sliderIfElse() {
+    //     firstSlide.classList.add('show');
+    //     // if(window.innerWidth < 799) {
+    //         console.log('innerWidth < 799'); 
+    //         //slide작동.
+    //         slideJs();
+    //         //play, stop버튼 클릭시 재생, 멈춤 효과.
+    //         playStop();
+    //         //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
+    //         circleBtn();
+    //     // } else if(window.innerWidth > 799) {  
+    //     //     console.log('799보다 넓다!!!!!!!!!');  
+    //     //     //slide작동.     
+    //     //     slideJs();
+    //     //     //play, stop버튼 클릭시 재생, 멈춤 효과.
+    //     //     playStop();         
+    //     //     //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
+    //     //     circleBtn();
+    //     // }
+    // } // sliderIfElse() 끝.
+    
+
+    //하단 페이지원과 slide번호 맞춰 이어줌.
+    function slideCircle() {      
+        for(let i = 0; i < pageCircle.length; i++) {
+            pageCircle[i].classList.remove('show');
+            if(slide[i].classList.contains(SHOW_CLASS)) {
+                pageCircle[i].classList.add('show')
             }
         }
+    }
+    
+
+
+    //intro 4페이지 slider
+    // $(document).ready(function() {
+    //     let introslide = $('.introSlider').bxSlider();
+
+    //     sliderSetting(window.innerWidth);
+    //     window.addEventListener('resize', function() {
+    //         sliderSetting(window.innerWidth);
+    //     });
+
+    //     function sliderSetting() {
+    //         if (window.innerWidth < 799) {
+    //             introslide.reloadSlider({
+    //                 mode : 'fade',
+    //                 speed : 1000,
+    //                 infiniteLoop : true,
+    //                 auto : true,
+    //                 pause : 5000  
+    //             });
+    //         } else {
+    //             introslide.reloadSlider({
+    //                 mode : 'fade',
+    //                 speed : 1000,
+    //                 infiniteLoop : true,
+    //                 auto : true,
+    //                 pause : 5000,
+    //                 onSlideAfter : function(){
+    //                     //video위에 있는 text 나타날때 효과.
+    //                     var num = this.getCurrentSlide();
+    //                     console.log(num);
+    //                     if (num === 4) {
+    //                         num = 0;
+    //                     }
+    //                     for(var i = 0; i < introTextBox.length; i++) {
+    //                         introTextBox[i].classList.remove('active');
+    //                     }
+    //                     introTextBox[num].classList.add('active');  
+    //                 },
+    //                 onSliderLoad : function() {
+    //                     //사이트 load시 intro1 - video위에 있는 text 나타날때 효과.
+    //                     introTextBox[0].classList.add('active');
+    //                 }    
+    //             });
+    //         }
+    //     }
+    // })
+
+
+    //pc화면에서 intro에서 아래로 스크롤시 2번쨰페이지(business)로 한번에 스크롤되게.
+    window.addEventListener('resize', function() {
+         if(window.innerWidth > 799) {
+            intromouse();
+        }
     })
+    if(window.innerWidth > 799) {
+        intromouse();
+    }
+    function intromouse() {
+        intro.addEventListener('mousewheel', function(e) {
+            console.log(e.wheelDelta);
+            if(e.wheelDelta < 0  && htmlEl.scrollTop === 0) {
+                window.scrollTo({
+                    top: contentHeight,
+                    behavior: 'smooth',
+                });
+            } 
+        });
+    }
+
 
     //2번째페이지가 상단에오면 intro내용 안보이게.
     window.addEventListener('scroll', scrollWork_intro);
@@ -185,14 +346,14 @@ function introSlider() {
         var top = htmlEl.scrollTop;
         console.log(top);
 
-        if (top > 500) {
+        if (/*top > 500*/intromouse) {
             for(var i = 0; i < introInners.length; i++) {
                 introInners[i].style.opacity = '0';
                 introInners[i].style.transition = 'all .5s ease-out';
                 introBtn.style.opacity = '0';
             }
         }
-        if (top < 500) {
+        if (/*top < 500*/htmlEl.scrollTop === 0) {
             for (var i = 0; i < introInners.length; i++) {
                 introInners[i].style.opacity = '1';
                 introInners[i].style.transition = 'all .5s ease-out'
@@ -200,10 +361,36 @@ function introSlider() {
             }
         }
     }
+} // introSlider() 끝.
+
+
+
+//2 business
+//pc화면에서 business에서 위로 스크롤시 1번쨰페이지(intro)로 한번에 스크롤되게.
+let business = document.querySelector('.business');
+window.addEventListener('resize', function() {
+    if(window.innerWidth > 799) {
+       businessmouse();
+   }
+})
+if(window.innerWidth > 799) {
+    businessmouse();
+}
+function businessmouse() {
+   business.addEventListener('mousewheel', function(e) {
+       console.log(e.wheelDelta);
+       if(e.wheelDelta > 1 && business.scrollTop === 0) {
+           window.scrollTo({
+               top: 0,
+               behavior: 'smooth',
+           });
+       } 
+   });
 }
 
 
-//building
+
+//3 building
 window.addEventListener('scroll', scrollWork_bd);
 
 function scrollWork_bd() {
@@ -212,16 +399,15 @@ function scrollWork_bd() {
 
     for(var i = 0; i < buildings.length; i++) {
         console.log(window.innerWidth);
-        if (window.innerWidth < 1281) {
-            if (top > 1500) {
+        if (window.innerWidth < (contentHeight + 281)/*1281*/) {
+            if (top > (contentHeight + 500)/*1500*/) {
                 buildings[i].classList.add('up');
             }
         }
-
-        if (top > 1650) {
+        if (top > (contentHeight + 650)/*1650*/) {
             buildings[i].classList.add('up');
         }
-        if (top < 1350) {
+        if (top < (contentHeight + 350)/*1350*/) {
             buildings[i].classList.remove('up');
         }
     }

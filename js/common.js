@@ -46,29 +46,6 @@ console.log(portfolio.offsetTop);
 // ******resize끝******
 
 
-// // ******현재스크롤위치******
-// function getScrollXY() {
-//     var scrOfX = 0, scrOfY = 0;
-//     if( typeof( window.pageYOffset ) == 'number' ) {
-//     //Netscape compliant
-//     scrOfY = window.pageYOffset;
-//     scrOfX = window.pageXOffset;
-//     } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
-//     //DOM compliant
-//     scrOfY = document.body.scrollTop;
-//     scrOfX = document.body.scrollLeft;
-//     } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
-//     //IE6 standards compliant mode
-//     scrOfY = document.documentElement.scrollTop;
-//     scrOfX = document.documentElement.scrollLeft;
-//     }    
-//     return { x:scrOfX, y:scrOfY };
-// }    
-// var currentScroll = getScrollXY();
-// currentScroll.x // X 좌표
-// currentScroll.y // Y 좌표
-// // ******현재스크롤위치 끝.******
-
 
 //895px 이상에서 적용. //895px 이하에서 적용.
 window.addEventListener('load', function() {
@@ -172,7 +149,6 @@ function pcMouseWheel() {
                         topBtn.style.bottom = '30px';
                     }, 500)
                 }
-                //.portfolio부분에서 포폴Btn클릭해서 스크롤시 topBtn이랑 portBtn에 조건걸어줬는데 안됌...ㅠ..... intro에서 한번 스크롤 한 뒤에 눌럿을떄만 뜨게 하려고 하는 건데 조건걸면 안나옴. 조건 안걸면 처음 로딩창에서 페이지는 스크롤되지도 않는데 버튼만 나타남,.....
             }
                 
         });
