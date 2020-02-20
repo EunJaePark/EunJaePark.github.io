@@ -228,32 +228,6 @@ function introScript() {
         }
     }
     
-
-    // window.addEventListener('resize', function() {
-    //     sliderIfElse();
-    // })
-
-    // sliderIfElse();
-    // function sliderIfElse() {
-    //     firstSlide.classList.add('show');
-    //     // if(window.innerWidth < 799) {
-    //         console.log('innerWidth < 799'); 
-    //         //slide작동.
-    //         slideJs();
-    //         //play, stop버튼 클릭시 재생, 멈춤 효과.
-    //         playStop();
-    //         //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
-    //         circleBtn();
-    //     // } else if(window.innerWidth > 799) {  
-    //     //     console.log('799보다 넓다!!!!!!!!!');  
-    //     //     //slide작동.     
-    //     //     slideJs();
-    //     //     //play, stop버튼 클릭시 재생, 멈춤 효과.
-    //     //     playStop();         
-    //     //     //하단 페이지원 클릭시 해당 슬라이드로 넘어감.
-    //     //     circleBtn();
-    //     // }
-    // } // sliderIfElse() 끝.
     
 
     //하단 페이지원과 slide번호 맞춰 이어줌.

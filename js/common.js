@@ -20,25 +20,22 @@ let contentHeight;
 resize();
 function resize() {
     let sizeCheck;  
-
-    resizeCheck();
+    resizeHeight();
 
     window.addEventListener('resize', function resizeWork() {
         this.clearTimeout(sizeCheck);
         sizeCheck = setTimeout(function() {
-            resizeCheck();
+            resizeHeight();
         }, 100);
     });
 
-    function resizeCheck() {
+    function resizeHeight() {
         contentHeight = window.innerHeight;
-
-        for(let i = 0; i < portListBox.length; i++) {
-            portListBox[i].style.height = contentHeight;
-        }
-
-        console.log(contentHeight);
-        
+        console.log(contentHeight); 
+        //height이 800px 이하일 경우에는 800으로 contentHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
+        if(contentHeight < 800) {
+            contentHeight = 800;
+        }     
     }
 }
 console.log(portfolio.offsetTop);
