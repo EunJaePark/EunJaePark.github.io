@@ -346,19 +346,19 @@
 // } //phoneScript() 끝.
 
 
-// //포폴 img, text에 마웃스오버시 img바뀌게함.
-// let imgTitle = document.querySelectorAll('.imgTitle > a');
-// let portText = document.querySelectorAll('.portfolio .text_box');
-// let portConts = document.querySelectorAll('.portfolio_content');
+//포폴 img, text에 마웃스오버시 img바뀌게함.
+let imgTitle = document.querySelectorAll('.imgTitle > a');
+let portText = document.querySelectorAll('.portfolio .text_box');
+let portConts = document.querySelectorAll('.portfolio_content');
 
-// for(let i = 0; i < imgTitle.length; i++) {
-//     imgTitle[i].addEventListener('mouseenter', function() {
-//         portConts[i].classList.add('on');
-//     });
-//     imgTitle[i].addEventListener('mouseleave', function() {
-//         portConts[i].classList.remove('on');
-//     });
-// }
+for(let i = 0; i < imgTitle.length; i++) {
+    imgTitle[i].addEventListener('mouseenter', function() {
+        portConts[i].classList.add('on');
+    });
+    imgTitle[i].addEventListener('mouseleave', function() {
+        portConts[i].classList.remove('on');
+    });
+}
 
 
 
