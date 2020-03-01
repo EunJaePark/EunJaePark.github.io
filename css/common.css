@@ -49,9 +49,9 @@ footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all
 /* header > *{ background-color:darkcyan; } */
 header > .title{ padding-top:7px; font-weight:700; font-size:25px; color:#4A41AB; float:left; }
 header > .title > a{ color:#4A41AB; }
-header > nav{ outline:1px solid red; float:right;  }
-header > nav > .section_nav > li{ outline:1px solid blue;  float:left; }
-header > nav > .section_nav > li > button{ outline:1px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
+header > nav{ outline:px solid red; float:right;  }
+header > nav > .section_nav > li{ outline:px solid blue;  float:left; }
+header > nav > .section_nav > li > button{ outline:px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
 header > nav > .section_nav > li > button:hover{ text-decoration:underline; }
 header > .port_nav{ position:absolute; bottom:-20px; right:70px; opacity:; transition:all .3s ease-out; }
 header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
@@ -62,14 +62,14 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .intro{ width:100%; height:500px; min-height:800px; background-color:#f8e88f;  }
 .intro > .inner{  width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
 
-.intro > .inner > .title{ outline:1px solid lime; font-size:80px; color:#4A41AB; position:absolute; top:100px; transition:all .8s ease; }
+.intro > .inner > .title{ outline:px solid lime; font-size:80px; color:#4A41AB; position:absolute; top:100px; transition:all .8s ease; }
 .intro > .inner > .title > span{   font-weight:400;  display:block; }
 .intro > .inner > .title > span:last-child:after{ content:''; display:inline-block; border-radius:50%; width:50px; height:50px; margin-left:30px; background-color:#4A41AB; }
 .intro > .inner > .title > span > strong{ font-weight:400; position:relative;}
 .intro > .inner > .title > span > strong:after{ content:''; display:block; width:100%; height:10px; background-color:#4A41AB; position:absolute; bottom:0px; left:0px; transition:all .3s ease-out;  }
 
 
-.intro > .inner > .aboutMe{ outline:1px solid red; width:40%; max-width:600px; position:absolute; right:11.90476190476%; bottom:100px;  }
+.intro > .inner > .aboutMe{ outline:px solid red; width:40%; max-width:600px; position:absolute; right:11.90476190476%; bottom:100px;  }
 .intro > .inner > .aboutMe > li{ margin-bottom:10px; }
 .intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#4A41AB; display:inline-block; }
 .intro > .inner > .aboutMe > li > span{  margin:10px 0; font-size:20px; font-weight:300; display:block;  }
@@ -88,10 +88,10 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 /* ---portfolio--- */
 .portfolio > .inner{ padding:0 11.90476190476% 100px; background-color:#f8f8f8; }
 .portfolio > .inner > .portfolio_list{ }
-.portfolio > .inner > .portfolio_list > h2{ outline:1px solid red; margin-top:200px; font-size:40px; color:#4A41AB; display:inline-block; }
+.portfolio > .inner > .portfolio_list > h2{ outline:px solid red; margin-top:200px; font-size:40px; color:#4A41AB; display:inline-block; }
 .portfolio > .inner > .portfolio_list > h2:after{ content:''; display:block; width:100%; height:10px; background-color:rgba(248, 232, 143, 0.5); transform:translateY(-17px); }
-.portfolio > .inner > .portfolio_list > .portListBox{ outline:1px solid red; padding:70px 55px; }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ outline:1px solid lime; position:relative; }
+.portfolio > .inner > .portfolio_list > .portListBox{ outline:px solid red; padding:70px 55px; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ outline:px solid lime; position:relative; }
 
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > h3{ line-height:50px; font-size:50px; color:#4A41AB; text-align:center; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > h3:after{ content:''; display:inline-block; width:20px; height:20px; margin-left:10px; border-radius:50%; background-color:#4A41AB; }
@@ -99,9 +99,9 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .exp_text > span{  line-height:35px; margin-bottom:10px; font-size:20px; font-weight:400; display:block;  }
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .exp_text > span > strong{ background-color:rgba(248, 232, 143, 0.5); }
 
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:40%; margin:0 5%; outline:1px solid blue; float:left; position:relative; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:40%; margin:0 5%; outline:px solid blue; float:left; position:relative; }
 /* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(odd) > .portfolio_content > .imgTitle{ margin-left:100%; transform:translateX(-100%); } */
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ outline:1px solid red; width:calc(100% + -6%); font-size:40px; font-weight:700; color:#1c1b20; position:absolute; left:0px; top:-70px; z-index:10; transition:all .4s ease-out; opacity:.5; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ outline:px solid red; width:calc(100% + -6%); font-size:40px; font-weight:700; color:#1c1b20; position:absolute; left:0px; top:-70px; z-index:10; transition:all .4s ease-out; opacity:.5; }
 /* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(odd) > .portfolio_content > .imgTitle > a > span{ text-align:right; padding-right:6%; } */
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg{ width:100%; height:100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; display:block; }
@@ -111,15 +111,15 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ width:100%; transition:all .6s ease-out; }
 
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ outline:1px solid rgb(252, 216, 161); width:calc(40% + -100px); margin:0 5%; padding:0 50px; float:left; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ outline:px solid rgb(252, 216, 161); width:calc(40% + -100px); margin:0 5%; padding:0 50px; float:left; }
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span.page{ font-weight:400; position:relative; }
 
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box{ font-weight:400; font-size:20px; position:relative; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li{ margin:5px 0; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span{ font-size:20px; width:100px; text-align:center; display:inline-block; }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.html{ background-color:#FF9D0D; }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.css{ background-color:#1c1b20; color:#a0987df5; }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.js{ background-color:#1c1b2075; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.html{ background-color:#4A41AB; color:#fff; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.css{ border:1px solid #4A41AB; color:#4A41AB; box-sizing:border-box; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.js{ background-color:#f8e88f; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > a{ margin-left:20px; font-size:18px; font-weight:300; text-decoration:underline; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > a:hover{ color:#FF9D0D; }
 
