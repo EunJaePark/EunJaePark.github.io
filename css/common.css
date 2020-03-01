@@ -22,7 +22,7 @@ ul, ol{  list-style:none;  }
 a{  text-decoration:none; color:#000;  }
 img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
 table{ width:100%; border-collapse:collapse; }
-strong, em{ font-style:normal; }
+strong, em{ font-style:normal; font-weight:400; }
 button{ border:none; padding:0; background-color:transparent; cursor:pointer;  }
 button:focus{ outline:none; }
 
@@ -60,13 +60,13 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 /* ---------------------main--------------------- */
 /* ---intro--- */
 .intro{ width:100%; height:500px; min-height:800px; background-color:#f8e88f;  }
-.intro > .inner{ outline:1px solid red; width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
+.intro > .inner{  width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
 
 .intro > .inner > .title{ outline:1px solid lime; font-size:80px; color:#4A41AB; position:absolute; top:100px; transition:all .8s ease; }
-.intro > .inner > .title > span{   font-weight:900;  display:block; }
+.intro > .inner > .title > span{   font-weight:400;  display:block; }
 .intro > .inner > .title > span:last-child:after{ content:''; display:inline-block; border-radius:50%; width:50px; height:50px; margin-left:30px; background-color:#4A41AB; }
-.intro > .inner > .title > span > strong{ position:relative;}
-.intro > .inner > .title > span > strong:after{ content:''; display:block; width:110%; height:25px; background-color:#1c1b208a; position:absolute; bottom:10px; left:-10px; transition:all .3s ease-out;  }
+.intro > .inner > .title > span > strong{ font-weight:400; position:relative;}
+.intro > .inner > .title > span > strong:after{ content:''; display:block; width:100%; height:10px; background-color:#4A41AB; position:absolute; bottom:0px; left:0px; transition:all .3s ease-out;  }
 
 
 .intro > .inner > .aboutMe{ outline:1px solid red; width:40%; max-width:600px; position:absolute; right:11.90476190476%; bottom:100px;  }
@@ -86,14 +86,22 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 
 
 /* ---portfolio--- */
-.portfolio > .inner{ background-color:#f8f8f8; }
+.portfolio > .inner{ padding:0 11.90476190476% 100px; background-color:#f8f8f8; }
 .portfolio > .inner > .portfolio_list{ }
-.portfolio > .inner > .portfolio_list > .portListBox{  height:100vh;  min-height:800px; padding:55px; }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{  position:relative; top:80%; transform:translateY(-80%); }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{  width:50%; position:relative; }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .imgTitle{ margin-left:100%; transform:translateX(-100%); }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{  width:calc(100% + -6%); font-size:40px; font-weight:700; color:#1c1b20; position:absolute; left:0px; top:-70px; z-index:10; transition:all .4s ease-out; opacity:.5; }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .imgTitle > a > span{ text-align:right; padding-right:6%; }
+.portfolio > .inner > .portfolio_list > h2{ outline:1px solid red; margin-top:200px; font-size:40px; color:#4A41AB; display:inline-block; }
+.portfolio > .inner > .portfolio_list > h2:after{ content:''; display:block; width:100%; height:10px; background-color:rgba(248, 232, 143, 0.5); transform:translateY(-17px); }
+.portfolio > .inner > .portfolio_list > .portListBox{ outline:1px solid red; padding:70px 55px; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ outline:1px solid lime; position:relative; }
+
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > h3{ line-height:50px; font-size:50px; color:#4A41AB; text-align:center; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > h3:after{ content:''; display:inline-block; width:20px; height:20px; margin-left:10px; border-radius:50%; background-color:#4A41AB; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .exp_text{ width:500px; margin:30px auto 100px; /*background-color:rgba(248, 232, 143, 0.5);*/ }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .exp_text > span{  line-height:35px; margin-bottom:10px; font-size:20px; font-weight:400; display:block;  }
+
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:40%; margin:0 5%; outline:1px solid blue; float:left; position:relative; }
+/* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(odd) > .portfolio_content > .imgTitle{ margin-left:100%; transform:translateX(-100%); } */
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ outline:1px solid red; width:calc(100% + -6%); font-size:40px; font-weight:700; color:#1c1b20; position:absolute; left:0px; top:-70px; z-index:10; transition:all .4s ease-out; opacity:.5; }
+/* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(odd) > .portfolio_content > .imgTitle > a > span{ text-align:right; padding-right:6%; } */
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg{ width:100%; height:100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; display:block; }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(2) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
@@ -102,16 +110,10 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ width:100%; transition:all .6s ease-out; }
 
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ /*background-color:rgb(252, 216, 161);*/ width:calc(500px + -100px); padding:50px; position:absolute; bottom:0; left:calc(50% + 100px);  }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(even) > .portfolio_content > .text_box{ left:calc(50% + -600px); }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2{ line-height:110px; font-size:120px; position:absolute; top:-200px; }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(5)  > .portfolio_content > .text_box > h2{ font-size:100px; }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > h2:after{ content:''; display:inline-block; width:25px; height:25px; margin-left:10px; border-radius:50%; background-color:#1c1b20; }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span{  line-height:35px; margin-bottom:10px; font-size:20px; font-weight:300; display:block; position:relative; z-index:20; }
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span.page{ font-weight:400; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box{ outline:1px solid rgb(252, 216, 161); width:calc(40% + -100px); margin:0 5%; padding:0 50px; float:left; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span.page{ font-weight:400; position:relative; }
 
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box{  }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > strong{ line-height:35px; font-weight:400; font-size:20px; position:relative; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box{ font-weight:400; font-size:20px; position:relative; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li{ margin:5px 0; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span{ font-size:20px; width:100px; text-align:center; display:inline-block; }
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > li > span.html{ background-color:#FF9D0D; }
@@ -126,9 +128,10 @@ header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23p
 .portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .layout:hover > img{ display:block; }
 
 /*:after*/
-.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span:after{ content:''; display:block; width:30%; height:10px; background-color:rgba(0, 0, 0, .3); position:absolute; top:17px; left:0; }
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box > strong:after,
-.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .layout > span:after{ content:''; display:block; width:110%; height:10px; background-color:rgba(0, 0, 0, .3); position:absolute; top:17px; left:0; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span:after{ content:''; display:block; width:30%; height:5px; background-color:rgba(74, 65, 171, 0.7); position:absolute; top:28px; left:0; }
+.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span.page:after,
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .code_box:after{ content:''; display:block; width:100px; height:5px; background-color:rgba(74, 65, 171, 0.7); position:absolute; top:22px; left:0; }
+.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .text_box > .layout > span:after{ content:''; display:block; width:110%; height:5px; background-color:rgba(74, 65, 171, 0.7); position:absolute; top:22px; left:0; }
 
 
 /* portfolio에 마우스오버시 효과 */
