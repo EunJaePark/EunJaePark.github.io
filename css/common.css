@@ -8,7 +8,7 @@ body {
 	font-weight:400;
 	line-height:1.6;
 	color:#1c1b20;
-	background-color:#1c1b20;
+	background-color:#4A41AB;
 	margin:0;
 	padding:0;
 }
@@ -29,9 +29,10 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20;  }
-header{ background-color:#1c1b20; width:calc(100% + -110px); height:55px; padding:0 55px; position:fixed; left:0; top:0; z-index:200; }
-main{ width:calc(100% + -110px); margin:0 55px; background-color:#f8f8f8; overflow:hidden; position:fixed; left:0; transition:all .5s ease-out; }
-footer{ width:100%; height:55px; background-color:#1c1b20; position:fixed; bottom:0; transition:all .5s ease-out; }
+header{ background-color:#f8e88f; width:calc(100% + -110px); height:55px; padding:0 55px; }
+header.fixed{ position:fixed; top:0; left:0; }
+main{ width:100%; background-color:#f8f8f8; overflow:hidden;  left:0; transition:all .5s ease-out; }
+footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
 
 /* ---------------------common--------------------- */
 .clean:after{ content:''; display:block; clear:both; }
@@ -46,36 +47,36 @@ footer{ width:100%; height:55px; background-color:#1c1b20; position:fixed; botto
 
 /* ---------------------header--------------------- */
 /* header > *{ background-color:darkcyan; } */
-header > .title{ padding-top:15px; font-weight:400; color:#fff; float:left; }
-header > .title > a{ color:#fff; }
-header > nav{ width:25%; float:right;  }
-header > nav > .section_nav > li{  width:50%; float:left; }
-header > nav > .section_nav > li > button{  margin:15px 0 0 30px; font-size:20px; color:#fff; }
-header > .port_nav{ position:absolute; bottom:-20px; right:70px; opacity:0; transition:all .3s ease-out; }
+header > .title{ padding-top:7px; font-weight:700; font-size:25px; color:#4A41AB; float:left; }
+header > .title > a{ color:#4A41AB; }
+header > nav{ outline:1px solid red; float:right;  }
+header > nav > .section_nav > li{ outline:1px solid blue;  float:left; }
+header > nav > .section_nav > li > button{ outline:1px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
+header > nav > .section_nav > li > button:hover{ text-decoration:underline; }
+header > .port_nav{ position:absolute; bottom:-20px; right:70px; opacity:; transition:all .3s ease-out; }
 header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
 
 
 /* ---------------------main--------------------- */
 /* ---intro--- */
-.intro{ width:100%; height:100vh; min-height:800px; background-color:#f8f8f8; overflow:hidden; }
-.intro > .inner{ width:100%; height:100%; position:relative; }
+.intro{ width:100%; height:500px; min-height:800px; background-color:#f8e88f;  }
+.intro > .inner{ outline:1px solid red; width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
 
-.intro > .inner > .title_box{ background-color:#f8f8f8; width:50%; height:100%;  transition:all .5s ease-out; }
-.intro > .inner > .title_box > .title{  font-size:100px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); transition:all .8s ease; }
-.intro > .inner > .title_box > .title > span{   font-weight:900;  display:block; }
-.intro > .inner > .title_box > .title > span:last-child:after{ content:''; display:inline-block; border-radius:50%; width:50px; height:50px; margin-left:30px; background-color:#FF9D0D; }
-.intro > .inner > .title_box > .title > span > strong{ position:relative;}
-.intro > .inner > .title_box > .title > span > strong:after{ content:''; display:block; width:110%; height:25px; background-color:#1c1b208a; position:absolute; bottom:10px; left:-10px; transition:all .3s ease-out; z-index:-1; }
+.intro > .inner > .title{ outline:1px solid lime; font-size:80px; color:#4A41AB; position:absolute; top:100px; transition:all .8s ease; }
+.intro > .inner > .title > span{   font-weight:900;  display:block; }
+.intro > .inner > .title > span:last-child:after{ content:''; display:inline-block; border-radius:50%; width:50px; height:50px; margin-left:30px; background-color:#4A41AB; }
+.intro > .inner > .title > span > strong{ position:relative;}
+.intro > .inner > .title > span > strong:after{ content:''; display:block; width:110%; height:25px; background-color:#1c1b208a; position:absolute; bottom:10px; left:-10px; transition:all .3s ease-out;  }
 
 
-.intro > .inner > .aboutMe{  width:50%; position:absolute; right:-10%; top:50%; transform:translate(-5%, -50%); opacity:0; transition:all .5s ease-out; }
-.intro > .inner > .aboutMe > li{ margin-bottom:10px;  }
-.intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#FF9D0D; display:inline-block; }
+.intro > .inner > .aboutMe{ outline:1px solid red; width:40%; max-width:600px; position:absolute; right:11.90476190476%; bottom:100px;  }
+.intro > .inner > .aboutMe > li{ margin-bottom:10px; }
+.intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#4A41AB; display:inline-block; }
 .intro > .inner > .aboutMe > li > span{  margin:10px 0; font-size:20px; font-weight:300; display:block;  }
-.intro > .inner > .aboutMe > li > span > strong{ font-weight:300; position:relative; }
-.intro > .inner > .aboutMe > li > span > strong:after{ content:''; display:inline-block; width:100%; height:9px; background-color:rgba(0, 0, 0, .3); position:absolute; left:0; bottom:3px; }
+.intro > .inner > .aboutMe > li > span > strong{ font-weight:400; position:relative; }
+/* .intro > .inner > .aboutMe > li > span > strong:after{ content:''; display:inline-block; width:100%; height:9px; background-color:rgba(0, 0, 0, .3); position:absolute; left:0; bottom:3px; } */
 
-.intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:60px; left:calc(50% + -30px); transform:translateX(-50%); transition:all .5s ease; z-index:300;  }
+.intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:-40px; left:calc(50% + -30px); transform:translateX(-50%); transition:all .5s ease; z-index:300;  }
 .intro > .inner > .scrollBtn > button{ cursor:default; }
 .intro > .inner > .scrollBtn > button > span{ font-size:10px; font-weight:900; display:block; transform:rotate(-90deg); }
 .intro > .inner > .scrollBtn > button > span:last-child{ padding-top:15px; font-size:18px; font-weight:300; transform:translateY(-7px);   animation:arrowMove 1s ease infinite; }
