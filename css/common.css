@@ -30,7 +30,7 @@ button:focus{ outline:none; }
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20;  }
 header{ background-color:#f8e88f; width:calc(100% + -110px); height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:relative; z-index:100; }
-header.fixed{ padding:0 55px; position:fixed; top:-55px; left:0; }
+header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596);  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
 main{ width:100%; background-color:#f8f8f8; overflow:hidden;  left:0; transition:all .5s ease-out; }
 footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
@@ -50,13 +50,13 @@ footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all
 /* header > *{ background-color:darkcyan; } */
 header > .title{ padding-top:7px; font-weight:700; font-size:25px; color:#4A41AB; float:left; }
 header > .title > a{ color:#4A41AB; }
-header > nav{ outline:px solid red; float:right;  }
+header > nav{ outline:px solid red; float:right; }
 header > nav > .section_nav > li{ outline:px solid blue;  float:left; }
 header > nav > .section_nav > li > button{ outline:px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
 header > nav > .section_nav > li > button:hover{ text-decoration:underline; }
-header > .port_nav{ position:absolute; bottom:-40px; right:50px; opacity:0; transition:all .3s ease-out; }
-header > .port_nav.fixed{ opacity:1; }
-header > .port_nav > button{ border:3px solid #4A41AB; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
+header > .port_nav{ position:absolute; top:70px; right:-100px; opacity:0; transition:all .5s ease-out; }
+header > .port_nav.fixed{ right:30px; opacity:1; }
+header > .port_nav > button{ border:3px solid #4A41AB; border-radius:50%; width:23px; height:23px; margin:7px; font-size:0; display:block; }
 header > .port_nav > button.show{ background-color:#4A41AB; }
 
 

@@ -96,8 +96,10 @@ window.addEventListener('scroll', function() {
     }
     if(scrollValue > intro.clientHeight) {
         portNav.classList.add('fixed');
-    } else {
-        portNav.classList.remove('fixed');
+    } else if(scrollValue < intro.clientHeight) {
+        this.setTimeout(function() {
+            portNav.classList.remove('fixed');
+        }, 500);
     }
 });
 
@@ -143,19 +145,20 @@ function pcMouseWheel() {
                 setTimeout(function() {
                     topBtn.classList.add('show');
                 }, 1000)
-                portNavBtn[0].style.backgroundColor = '#000';  
+                // portNavBtn[0].style.backgroundColor = '#000';  
                 window.scrollTo({
                     top: vhHeight,
                     behavior: 'smooth'
                 });
+                // portNav.classList.add('fixed');
                 console.log(document.body.scrollTop);
                 
-                if(document.body.scrollTop >= vhHeight) {
-                    header.classList.add('fixed');
-                    setTimeout(function() {
-                        topBtn.classList.add('show');
-                    }, 500)
-                }
+                // if(document.body.scrollTop >= vhHeight) {
+                //     header.classList.add('fixed');
+                //     setTimeout(function() {
+                //         topBtn.classList.add('show');
+                //     }, 500)
+                // }
             }
                 
         });
