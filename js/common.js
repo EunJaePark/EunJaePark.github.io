@@ -9,15 +9,16 @@ let intro = document.querySelector('.intro');
 // let introTitleText = introTitle.querySelector('.title');
 let scrollBtn = intro.querySelector('.scrollBtn');
 // let aboutMe = intro.querySelector('.aboutMe');
+let portfolio = document.querySelector('.portfolio');
+let portListBox = document.querySelectorAll('.portListBox');
 // let portFirst = document.querySelector('.portListBox:first-child');
 // let footer = document.querySelector('footer');
 let topBtn = document.querySelector('.top_btn');
 
 
 // ******(100vh일때)resize될때마다 height값 찾기.******
-let portfolio = document.querySelector('.portfolio');
-let portListBox = document.querySelectorAll('.portListBox');
 let vhHeight;
+let portHeight;
 resize();
 function resize() {
     let sizeCheck;  
@@ -33,15 +34,47 @@ function resize() {
     function resizeHeight() {
         vhHeight = window.innerHeight;
         console.log(vhHeight); 
+        for(let i = 0; i < portListBox.length; i++) {
+            portHeight = portListBox[i].clientHeight;
+        }
+        console.log(portHeight); 
+        
         //height이 800px 이하일 경우에는 800으로 vhHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
-        if(vhHeight < 800) {
-            vhHeight = 800;
-        }     
+        // if(vhHeight < 800) {
+        //     vhHeight = 800;
+        // }     
     }
 }
 console.log(portfolio.offsetTop);
 
 // ******resize끝******
+
+// // ******(portListBox)resize될때마다 height값 찾기.******
+// let portHeight;
+// resize();
+// function resize() {
+//     let sizeCheck;  
+//     resizeHeight();
+
+//     window.addEventListener('resize', function resizeWork() {
+//         this.clearTimeout(sizeCheck);
+//         sizeCheck = setTimeout(function() {
+//             resizeHeight();
+//         }, 100);
+//     });
+
+//     function resizeHeight() {
+//         portHeight = portListBox.innerHeight;
+//         console.log(portHeight); 
+//         //height이 800px 이하일 경우에는 800으로 vhHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
+//         // if(portHeight < 800) {
+//         //     portHeight = 800;
+//         // }     
+//     }
+// }
+// console.log(portfolio.offsetTop);
+
+// // ******resize끝******
 
 
 // .portfolio로 스크롤하면 header 고정되게 함.
@@ -50,18 +83,21 @@ console.log(intro.clientHeight);
 
 window.addEventListener('scroll', function() {
     let scrollValue = document.documentElement.scrollTop ;
-    if(scrollValue > intro.clientHeight) {
+    if(scrollValue > 20/*intro.clientHeight*/) {
         header.classList.add('fixed');
+        header.classList.add('fixed2');
         scrollBtn.classList.add('hide');
-        this.setTimeout(function(){
-            header.classList.add('fixed2');
-        },50);
-    } else if(scrollValue < intro.clientHeight) {
-        header.classList.remove('fixed2');
-        this.setTimeout(function(){
+        topBtn.classList.add('show');
+    } else /*if(scrollValue < intro.clientHeight)*/ {
         header.classList.remove('fixed');
+        header.classList.remove('fixed2');     
         scrollBtn.classList.remove('hide');
-        }, 300);
+        topBtn.classList.remove('show'); 
+    }
+    if(scrollValue > intro.clientHeight) {
+        portNav.classList.add('fixed');
+    } else {
+        portNav.classList.remove('fixed');
     }
 });
 
@@ -94,10 +130,7 @@ function pcMouseWheel() {
     for(let i = 0; i < navBtn.length; i++) {
         navBtn[i].addEventListener('click', function(e) {
             //.intro
-            if(e.target.classList.contains('introBtn')) {
-                console.log('intro');
-                console.log(e.target.num);
-                
+            if(e.target.classList.contains('introBtn')) {                
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -106,11 +139,9 @@ function pcMouseWheel() {
             //.portfolio
             } else if(e.target.classList.contains('portBtn')) {
                 // scrollStyle();
+                header.classList.add('fixed');
                 setTimeout(function() {
-                    portNav.style.opacity = '1';
-                    portNav.style.bottom = '-50px';
-                    topBtn.style.opacity = '1';
-                    topBtn.style.bottom = '30px';
+                    topBtn.classList.add('show');
                 }, 1000)
                 portNavBtn[0].style.backgroundColor = '#000';  
                 window.scrollTo({
@@ -120,11 +151,9 @@ function pcMouseWheel() {
                 console.log(document.body.scrollTop);
                 
                 if(document.body.scrollTop >= vhHeight) {
+                    header.classList.add('fixed');
                     setTimeout(function() {
-                        portNav.style.opacity = '1';
-                        portNav.style.bottom = '-50px';
-                        topBtn.style.opacity = '1';
-                        topBtn.style.bottom = '30px';
+                        topBtn.classList.add('show');
                     }, 500)
                 }
             }
@@ -133,52 +162,56 @@ function pcMouseWheel() {
     }
 
     
-//     for(let i = 0; i < portNavBtn.length; i++) {
-//         //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
-//         portNavBtn[i].addEventListener('click', function() {
-//             window.scrollTo({          
-//                 top: vhHeight * (i + 1) + (110 * i),
-//                 behavior: 'smooth',
-//             });
-//             console.log(vhHeight * (i + 1));  
-//             for(let i = 0; i < portNavBtn.length; i++) {
-//                 portNavBtn[i].style.backgroundColor = 'transparent';
-//             }
-//             portNavBtn[i].style.backgroundColor = '#000';    
-//         });
+    for(let i = 0; i < portNavBtn.length; i++) {
+        //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
+        portNavBtn[i].addEventListener('click', function() {
+            window.scrollTo({          
+                top: portHeight * i + vhHeight + 200/* vhHeight * (i + 1) + (110 * i)*/,
+                behavior: 'smooth',
+            });
+            console.log(portHeight * (i + 1));     
+        });
 
-//         //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
-//         window.addEventListener('scroll', function() {
-//             let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
-//             let colorRemove = function() {
-//                 for(let i = 0; i < portNavBtn.length; i++) {
-//                     portNavBtn[i].style.backgroundColor = 'transparent';
-//                 }
-//             }
-//             for(let i = 0; i < portNavBtn.length; i++) {  
-//                 if(scrollValue > (vhHeight * 1)) {
-//                     colorRemove();          
-//                     portNavBtn[0].style.backgroundColor = '#000';           
-//                 }  
-//                 if(scrollValue > (vhHeight * 2)) {
-//                     colorRemove();             
-//                     portNavBtn[1].style.backgroundColor = '#000';
-//                 } 
-//                 if(scrollValue > (vhHeight * 3)) {
-//                     colorRemove();             
-//                     portNavBtn[2].style.backgroundColor = '#000';
-//                 }
-//                 if(scrollValue > (vhHeight * 4)) {
-//                     colorRemove();             
-//                     portNavBtn[3].style.backgroundColor = '#000';
-//                 }
-//                 if(scrollValue > (vhHeight * 5)) {
-//                     colorRemove();             
-//                     portNavBtn[4].style.backgroundColor = '#000';
-//                 }
-//             }
-//         }); 
-//     }
+        //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
+        window.addEventListener('scroll', function() {
+            for(let i = 0; i < portNavBtn.length; i++) {
+                if(window.scrollY === (portHeight * i)) {
+                    for(let i = 0; i < portNavBtn.length; i++) {
+                        portNavBtn[i].classList.remove('show');
+                    }                  
+                }
+                portNavBtn[i].classList.add('show');
+            }
+            // let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
+            // let colorRemove = function() {
+            //     for(let i = 0; i < portNavBtn.length; i++) {
+            //         portNavBtn[i].style.backgroundColor = 'transparent';
+            //     }
+            // }
+            // for(let i = 0; i < portNavBtn.length; i++) {  
+            //     if(scrollValue > (vhHeight * 1)) {
+            //         colorRemove();          
+            //         portNavBtn[0].style.backgroundColor = '#4A41AB';           
+            //     }  
+            //     if(scrollValue > (vhHeight * 2)) {
+            //         colorRemove();             
+            //         portNavBtn[1].style.backgroundColor = '#4A41AB';
+            //     } 
+            //     if(scrollValue > (vhHeight * 3)) {
+            //         colorRemove();             
+            //         portNavBtn[2].style.backgroundColor = '#4A41AB';
+            //     }
+            //     if(scrollValue > (vhHeight * 4)) {
+            //         colorRemove();             
+            //         portNavBtn[3].style.backgroundColor = '#4A41AB';
+            //     }
+            //     if(scrollValue > (vhHeight * 5)) {
+            //         colorRemove();             
+            //         portNavBtn[4].style.backgroundColor = '#4A41AB';
+            //     }
+            // }
+        }); 
+    }
 
 //     // portfolio중 첫번째에서 스크롤위로 올리면 intro의 title 스타일 원래대로 돌아오게.     
 //     portFirst.addEventListener('mousewheel', function(e) {
@@ -318,7 +351,7 @@ function phoneScript() {
             e.preventDefault();
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth',
+                behavior: 'smooth'
             });
         });
 

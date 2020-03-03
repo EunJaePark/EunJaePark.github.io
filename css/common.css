@@ -29,8 +29,8 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20;  }
-header{ background-color:#f8e88f; width:calc(100% + -110px); height:55px; padding:0 55px; transition:all .3s ease-out; position:relative; z-index:100; }
-header.fixed{ position:fixed; top:-55px; left:0; }
+header{ background-color:#f8e88f; width:calc(100% + -110px); height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:relative; z-index:100; }
+header.fixed{ padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
 main{ width:100%; background-color:#f8f8f8; overflow:hidden;  left:0; transition:all .5s ease-out; }
 footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
@@ -55,8 +55,10 @@ header > nav > .section_nav > li{ outline:px solid blue;  float:left; }
 header > nav > .section_nav > li > button{ outline:px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
 header > nav > .section_nav > li > button:hover{ text-decoration:underline; }
 header > .port_nav{ position:absolute; bottom:-40px; right:50px; opacity:0; transition:all .3s ease-out; }
-header > .port_nav > button{ border:3px solid #000; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
-header.fixed2 > .port_nav{ opacity:1; }
+header > .port_nav.fixed{ opacity:1; }
+header > .port_nav > button{ border:3px solid #4A41AB; border-radius:50%; width:23px; height:23px; margin-left:5px; font-size:0; }
+header > .port_nav > button.show{ background-color:#4A41AB; }
+
 
 
 /* ---------------------main--------------------- */
@@ -148,6 +150,7 @@ header.fixed2 > .port_nav{ opacity:1; }
 
 /* ---------------------footer--------------------- */
 .top_btn{ position:absolute; bottom:0px; right:25px; opacity:0; transition:all .5s ease-out; }
+.top_btn.show{ opacity:1; bottom:30px; }
 .top_btn > span:last-child{ font-size:11px; font-weight:900; transform:rotate(90deg); display:block; }
 .top_btn > span:first-child{ font-size:22px; font-weight:300; transform:translateY(-7px); display:inline-block; animation:arrowMove 1s ease infinite; }
 
