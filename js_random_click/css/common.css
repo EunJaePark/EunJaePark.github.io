@@ -1,0 +1,94 @@
+/* ---------------------reset------------------- */
+body {
+	font:normal 18px 'Source Sans Pro', sans-serif, Arial, Verdana;
+	font-weight:400;
+	line-height:1.6;
+	color:#fff;
+	background-color:#000;
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li{  list-style:none;  }
+ul, ol{  list-style:none;  }
+a{  text-decoration:none; color:#fff; cursor:pointer  }
+img{ vertical-align:top; } /* img가 베이스라인만큼 떠있는 것을 없애줌 */
+table{ width:100%; border-collapse:collapse; }
+strong, em{ font-style:normal; font-weight:400; }
+button{ border:none; padding:0; background-color:transparent; color:#fff; cursor:pointer;  }
+button:focus{ outline:none; }
+
+
+/* ---------------------common------------------- */
+.clear:after{ content:''; display:block; clear:both; }
+.btn{ border-radius:10px; margin:0 auto; padding:15px 30px; font-size:50px; box-shadow:3px 3px 4px rgba(0, 0, 0, .5); display:block; opacity:1; transition:all .2s ease-out; }
+.btn:hover{ transform:scale(1.05, 1.05); }
+
+
+/* ---------------------content------------------- */
+.content{ width:100vw; min-width:350px; height:100vh; min-height:770px; background-color:#000; position:absolute; }
+h1{ margin:50px 0; font-size:30px; text-align:center; }
+.result{ width:100%; text-align:center; font-size:130px; opacity:0; transition:all .5s ease-out; transition-delay:.3s; position:absolute; top:50%; transform:translateY(-50%); }
+.result.hide{ opacity:1; }
+.confirm{  width:100%; height:0; background-color:#000; text-align:center; opacity:0; z-index:100; position:absolute; left:0; top:140px; }
+.confirm.show{ height:calc(100vh + -400px); min-height:400px; opacity:1; }
+.confirm > span{ width:100%; font-size:50px; position:absolute; left:0; top:50%; transform:translateY(-50%); }
+.confirm > span > strong{ font-size:150px; display:block; }
+
+.menuPlus{ width:420px; display:inline-block; position:absolute; left:50%; transform:translateX(-50%); }
+.menuPlus > input{ border:none; border-bottom:2px solid #fff; width:calc(80% + -90px); line-height:45px; margin-right:10px; padding:7px 30px; font-size:20px; color:#fff; background-color:transparent; display:none; }
+.menuPlus > input:focus{ outline:none; }
+.menuPlus > button{ border:2px solid rgba(255, 255, 255, .5); border-radius:5px; margin:0 auto; padding:10px 20px; font-size:20px; color:rgba(255, 255, 255, .5); transform:translateY(7px); display:block; }
+.menuPlus > button:hover{ border-color:#fff; background-color:; color:#fff; }
+.menuPlus > .close{ border:none; padding:0 5px; font-size:20px; color:#fff; position:absolute; top:0; left:-10px; display:none; }
+.menuPlus > .close > span{ font-size:0; }
+
+.menuPlus.show > input{ display:inline-block; }
+.menuPlus.show > button{ display:inline-block; }
+.menuPlus.show > .close{ display:block; }
+
+
+.btnBox{ width:100%; height:100px; position:absolute; bottom:50%; }
+.btnBox.hide2{ bottom:50px; }
+
+.btnBox > button.click{  color:#fff; background-color:#3734e9; }
+.btnBox.hide > button.click{ opacity:0; }
+.btnBox.hide2 > button.click{ display:none; }
+
+.btnBox > .afterBtns{ width:500px; display:none; transition:all .1s ease-out; opacity:0; position:absolute; left:50%; transform:translateX(-50%); }
+.btnBox > .afterBtns > a{ width:180px; margin:0 13px; padding:10px 20px; font-size:30px; text-align:center; display:inline-block; }
+.btnBox > .afterBtns > a.ok{ color:#3734e9; background-color:#fff; }
+.btnBox > .afterBtns > a.replay{  color:#fff; background-color:#3734e9;  }
+.btnBox.hide > .afterBtns{ display:inline-block; }
+.btnBox.hide2 > .afterBtns{ opacity:1; transition-delay:.3s; }
+.btnBox.hide3 > .afterBtns{ width:auto; }
+.btnBox.hide3 > .afterBtns > a.ok{ display:none; }
+
+
+@media screen and (max-width: 600px) {
+	.content{ min-height:750px; }
+
+    h1{ margin:40px 0; font-size:20px; }
+	.result{ font-size:70px; }
+
+	.confirm{ top:110px; }
+	.confirm.show{ min-height:300px; }
+	.confirm > span{ font-size:30px; }
+	.confirm > span > strong{ font-size:70px; }
+
+	.menuPlus > input{ font-size:18px; }
+
+    .btnBox{ height:170px; }
+    .btnBox > .afterBtns{ width:auto; }
+    .btnBox > .afterBtns > a{ width:180px; margin:10px; display:block; }
+}
+
+
+@media screen and (max-width: 450px) {
+	.menuPlus{ width:90%; }
+	.menuPlus > input{ width:calc(80% + -110px); padding:7px 15px; }
+}
