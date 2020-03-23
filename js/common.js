@@ -19,6 +19,7 @@ let topBtn = document.querySelector('.top_btn');
 // ******(100vh일때)resize될때마다 height값 찾기.******
 let vhHeight;
 let portHeight;
+let introHeight;
 resize();
 function resize() {
     let sizeCheck;  
@@ -33,11 +34,14 @@ function resize() {
 
     function resizeHeight() {
         vhHeight = window.innerHeight;
-        console.log(vhHeight); 
+        console.log(`vhHeight(현재창세로높이) : ${vhHeight}`); 
+        introHeight = intro.clientHeight;
+        console.log(`introHeight(intro높이) : ${introHeight}`);
+        
         for(let i = 0; i < portListBox.length; i++) {
-            portHeight = portListBox[i].clientHeight;
+            portHeight = portListBox[i].clientHeight; 
         }
-        console.log(portHeight); 
+        console.log(`portHeight(포폴칸높이) : ${portHeight}`); 
         
         //height이 800px 이하일 경우에는 800으로 vhHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
         // if(vhHeight < 800) {
@@ -147,7 +151,7 @@ function pcMouseWheel() {
                 }, 1000)
                 // portNavBtn[0].style.backgroundColor = '#000';  
                 window.scrollTo({
-                    top: vhHeight,
+                    top: introHeight,
                     behavior: 'smooth'
                 });
                 // portNav.classList.add('fixed');
@@ -164,16 +168,19 @@ function pcMouseWheel() {
         });
     }
 
-    
+    portNum = 1; //portfolio갯수 세기 위함.
     for(let i = 0; i < portNavBtn.length; i++) {
         //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
         portNavBtn[i].addEventListener('click', function() {
             window.scrollTo({          
-                top: portHeight * i + vhHeight + 200/* vhHeight * (i + 1) + (110 * i)*/,
+                top: introHeight + (portHeight * i) + 200/* introHeight * (i + 1) + (110 * i) + h2(274px)*/,
                 behavior: 'smooth',
             });
             console.log(portHeight * (i + 1));     
         });
+        
+        portNum++;
+        
 
         //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
         window.addEventListener('scroll', function() {

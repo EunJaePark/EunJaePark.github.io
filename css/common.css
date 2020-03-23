@@ -2,6 +2,60 @@
 /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,400,500,600&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap');
 
+/* -------IE에서 google폰트가 적용안돼서 따로 font 다운받아서 적용.------- */
+/* source-sans-pro-300 - latin */
+@font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/source-sans-pro-v13-latin-300.eot'); /* IE9 Compat Modes */
+	src: local('Source Sans Pro Light'), local('SourceSansPro-Light'),
+		 url('../fonts/source-sans-pro-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-300.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v13-latin-300.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+  /* source-sans-pro-regular - latin */
+  @font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/source-sans-pro-v13-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
+		 url('../fonts/source-sans-pro-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v13-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+  /* source-sans-pro-600 - latin */
+  @font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/source-sans-pro-v13-latin-600.eot'); /* IE9 Compat Modes */
+	src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'),
+		 url('../fonts/source-sans-pro-v13-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-600.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v13-latin-600.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+  /* source-sans-pro-700 - latin */
+  @font-face {
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/source-sans-pro-v13-latin-700.eot'); /* IE9 Compat Modes */
+	src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+		 url('../fonts/source-sans-pro-v13-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../fonts/source-sans-pro-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-700.woff') format('woff'), /* Modern Browsers */
+		 url('../fonts/source-sans-pro-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../fonts/source-sans-pro-v13-latin-700.svg#SourceSansPro') format('svg'); /* Legacy iOS */
+  }
+
 /* ---------------------reset------------------- */
 body {
 	font:normal 18px 'Source Sans Pro', sans-serif, Arial, Verdana;
