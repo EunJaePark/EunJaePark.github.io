@@ -190,7 +190,7 @@ function pcMouseWheel() {
             }
             if(e.target.classList.contains('jsNav')) {
                 window.scrollTo({          
-                    top: introHeight + (portHeight * i) + 200 + 200,
+                    top: introHeight + (portHeight * i) + 200 + 300,
                     behavior: 'smooth',
                 });
             }
