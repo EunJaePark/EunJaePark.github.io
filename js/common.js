@@ -1,7 +1,7 @@
 
 let htmlEl = document.querySelector('html');
 let portNav = document.querySelector('.port_nav');
-let portNavBtn = document.querySelectorAll('.port_nav > button');
+let portNavBtn = document.querySelectorAll('.port_nav  button');
 let navBtn = document.querySelectorAll('nav button');
 // let main = document.querySelector('main')
 let intro = document.querySelector('.intro');
