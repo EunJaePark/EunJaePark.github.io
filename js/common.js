@@ -18,8 +18,8 @@ let topBtn = document.querySelector('.top_btn');
 
 // ******(100vh일때)resize될때마다 height값 찾기.******
 let vhHeight;
-let portHeight;
 let introHeight;
+let portHeight;
 resize();
 function resize() {
     let sizeCheck;  
@@ -42,7 +42,7 @@ function resize() {
             portHeight = portListBox[i].clientHeight; 
         }
         console.log(`portHeight(포폴칸높이) : ${portHeight}`); 
-        
+
         //height이 800px 이하일 경우에는 800으로 vhHeight 정해줌.(portfolio내용이 뒤죽박죽되기 때문에 정해준것) 
         // if(vhHeight < 800) {
         //     vhHeight = 800;
@@ -168,29 +168,56 @@ function pcMouseWheel() {
         });
     }
 
-    portNum = 1; //portfolio갯수 세기 위함.
+    // //portList들 height을 5박은재포트폴리오홈의 height과 같게 주기.(portnavbtn버튼 클릭시 해당위치로 이동하도록 해야 하는데, 이동 거리를 쉽게 측정하기 위해서 같게함.)
+    // let portListBoxPEJ = portListBox[4].clientHeight;
+    // console.log(portListBoxPEJ);
+    // for(let i = 0; i < portListBox.length; i++) {
+    //     // portListBox[i].style.height = portListBoxPEJ;s
+    //     // console.log(portListBox[i].clientHeight);
+        
+    // }
+    
+
+    // portNum = 1; //portfolio갯수 세기 위함.
     for(let i = 0; i < portNavBtn.length; i++) {
         //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
-        portNavBtn[i].addEventListener('click', function() {
-            window.scrollTo({          
-                top: introHeight + (portHeight * i) + 200/* introHeight * (i + 1) + (110 * i) + h2(274px)*/,
-                behavior: 'smooth',
-            });
+        portNavBtn[i].addEventListener('click', function(e) { 
+            if(e.target.classList.contains('portNav')) {           
+                window.scrollTo({          
+                    top: introHeight + (portHeight * i) + 200/* introHeight * (i + 1) + (110 * i) + h2(274px)*/,
+                    behavior: 'smooth',
+                });
+            }
+            if(e.target.classList.contains('jsNav')) {
+                window.scrollTo({          
+                    top: introHeight + (portHeight * i) + 200 + 200,
+                    behavior: 'smooth',
+                });
+            }
             console.log(portHeight * (i + 1));     
         });
-        
-        portNum++;
+
+        // portNum++;
         
 
         //해당 포폴위치로 스크롤 될 때, port_nav버튼에 배경색 채워줌.
         window.addEventListener('scroll', function() {
             for(let i = 0; i < portNavBtn.length; i++) {
-                if(window.scrollY === (portHeight * i)) {
+                console.log(window.scrollY);
+                
+                if(window.scrollY >= introHeight + (portHeight * i) + 200/*(portHeight * i)*/) {
                     for(let i = 0; i < portNavBtn.length; i++) {
                         portNavBtn[i].classList.remove('show');
-                    }                  
-                }
-                portNavBtn[i].classList.add('show');
+                    }  
+                    portNavBtn[i].classList.add('show');                
+                } 
+
+                // if(window.scrollY >= introHeight + (portHeight * 5) + 200 && window.scrollY === introHeight + (portHeight * i) + 200) {
+                //     for(let i = 0; i < portNavBtn.length; i++) {
+                //         portNavBtn[i].classList.remove('show');
+                //     }  
+                //     portNavBtn[i].classList.add('show');                
+                // }  
             }
             // let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
             // let colorRemove = function() {
