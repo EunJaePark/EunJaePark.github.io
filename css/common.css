@@ -83,7 +83,7 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20; }
-header{ background-color:#f8e88f; width:calc(100% + -110px); height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:relative; z-index:100; }
+header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:240px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:relative; z-index:100; }
 header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596);  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
 main{ width:100%; background-color:#f8f8f8; overflow:hidden;  left:0; transition:all .5s ease-out; }
@@ -176,9 +176,10 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 /* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(odd) > .portfolio_content > .imgTitle > a > span{ text-align:right; padding-right:6%; } */
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg{ width:100%; height:100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; display:block; }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(1) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
-/* .portfolio > .inner > .portfolio_list > .portListBox:nth-child(2) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/site_sk_siltron.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portfolio_list > .portListBox:nth-child(3) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  } */
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(3) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(4) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/site_sk_siltron.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(5) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(6) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/portfolio_pej.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(9) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/randomclick_hover.png') no-repeat 0 0; background-size:cover;  }
 
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > .siteImg > img{ width:100%; transition:all .6s ease-out; }
@@ -246,7 +247,6 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 
 @media screen and (max-width:1040px) {
 	/* ----portfolio--- */
-	.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .num{ top:-15px;  }
 
 	.portfolio > .inner > .portfolio_list > .portListBox{  height:auto; padding:55px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{  padding:10px 50px; }
@@ -272,6 +272,9 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 	.intro > .inner > .aboutMe{ width:calc(100%); position:static; }
 	.intro > .inner > .scrollBtn{ top:80px; left:20px; transform:translateX(0); position:fixed; }
 	/* ----portfolio--- */
+
+	.portfolio > .inner > .portfolio_list > .portListBox  > .portfolio_content > .num{ top:-30px;  }
+
 	/* .portfolio > .inner > .portfolio_list > .portListBox{  height:auto; padding:55px; } */
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content{ border:none; padding:0; }
 	/* .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle > a > span{ text-align:right; } */
@@ -305,6 +308,9 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 }
 
 @media screen and (max-width:570px) {
+	/* ---------------------layout--------------------- */
+	header > .port_nav.fixed { right:10px; }
+
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner > .title{ line-height:45px; font-size:35px; }
