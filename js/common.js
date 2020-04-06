@@ -3,6 +3,7 @@ let htmlEl = document.querySelector('html');
 let portNav = document.querySelector('.port_nav');
 let portNavBtn = document.querySelectorAll('.port_nav  button');
 let navBtn = document.querySelectorAll('nav button');
+let wrap = document.querySelector('.wrap');
 // let main = document.querySelector('main')
 let intro = document.querySelector('.intro');
 // let introTitle = intro.querySelector('.title_box');
@@ -14,6 +15,7 @@ let portListBox = document.querySelectorAll('.portListBox');
 // let portFirst = document.querySelector('.portListBox:first-child');
 // let footer = document.querySelector('footer');
 let topBtn = document.querySelector('.top_btn');
+let loadingView = document.querySelector('.loadingView');
 
 
 // ******(100vh일때)resize될때마다 height값 찾기.******
@@ -413,6 +415,17 @@ for(let i = 0; i < imgTitle.length; i++) {
     imgTitle[i].addEventListener('mouseleave', function() {
         portConts[i].classList.remove('on');
     });
+}
+
+
+//화면 loading이 다 될때까지 보여지는 로딩화면.
+window.onload = function() {
+    this.setTimeout(function() {
+        loadingView.style.opacity = 0;
+        setTimeout(function() {
+            loadingView.style.display = 'none';
+        }, 500)
+    }, 500)
 }
 
 

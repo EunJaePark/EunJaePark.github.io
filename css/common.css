@@ -217,6 +217,59 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 .portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content.on > .imgTitle > .siteImg > img{  opacity:0; }
 
 
+/* loading화면 */
+.loadingView{ width:100vw; min-weight:340px; height:100vh; overflow:hidden; background-color:#4A41AB; position:fixed; top:0; left:0; z-index:1000; transition:all .3s ease-out; }
+.loadingView > *{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); }
+.loadingView > .loadingBar{  }
+.loadingView > .loadingBar > .bar{ width:40px; height:7px; margin-left:-12px; background-color:#f8f8f8; display:inline-block; }
+.loadingView > .loadingBar > .bar:nth-child(n){ 
+	transform:rotate(30deg);
+	-ms-transform:rotate(30deg);
+	-webkit-transform:rotate(30deg);
+	-moz-transform:rotate(30deg);
+	animation:fall 2s infinite;
+	-webkit-animation:fall 2s infinite;
+	-moz-animation:fall 2s infinite;
+ }
+.loadingView > .loadingBar > .bar:nth-child(2n){ 
+	transform:rotate(-30deg);
+	-ms-transform:rotate(-30deg);
+	-webkit-transform:rotate(-30deg);
+	-moz-transform:rotate(-30deg);
+	animation:rise 2s infinite;
+	-webkit-animation:rise 2s infinite;
+	-moz-animation:rise 2s infinite;
+ }
+.loadingView > .loadingText{  color:#f8f8f8; font-size:40px; font-weight:700; transform:translate(-50%, -90px);
+	animation:loadText 1s infinite;
+	-webkit-animation:loadText 1s infinite;
+	-moz-animation:loadText 1s infinite;
+}
+
+@keyframes fall {
+	50%{ transform:rotate(-30deg); 
+		-ms-transform:rotate(-30deg);
+		-webkit-transform:rotate(-30deg);
+		-moz-transform:rotate(-30deg);
+	}
+}
+
+@keyframes rise {
+	50%{ transform:rotate(30deg); 
+		-ms-transform:rotate(30deg);
+		-webkit-transform:rotate(30deg);
+		-moz-transform:rotate(30deg);
+	}
+}
+
+@keyframes loadText {
+	50%{ opacity:.5;
+		-ms-opacity:.5;
+		-webkit-opacity:.5;
+		-moz-opacity:.5;
+	}
+}
+
 
 /* ---------------------footer--------------------- */
 .top_btn{ position:absolute; bottom:0px; right:25px; opacity:0; transition:all .5s ease-out; }
@@ -319,6 +372,10 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 	/* ---intro--- */
 	.intro > .inner > .title{ line-height:45px; font-size:35px; }
 	/* ----portfolio--- */
+
+	/* loading화면 */
+	.loadingView > .loadingBar > .bar{ width:30px; height:5px; margin-left:-10px; }
+	.loadingView > .loadingText{ font-size:30px; font-weight:600; transform:translate(-50%, -65px); }
 }
 
 @media screen and (max-width:540px) {
@@ -343,6 +400,15 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ font-size:60px; line-height:60px; }
 	
 }
+
+
+@media screen and (max-width:420px) {
+	/* ---------------------main--------------------- */
+	/* loading화면 */
+	.loadingView > .loadingBar > .bar{ width:12px; height:4px; margin-left:-7px; }
+	.loadingView > .loadingText{ font-size:15px; font-weight:400; transform:translate(-50%, -35px); }
+}
+
 
 @media screen and (max-width:360px) {
 	/* ----portfolio--- */
