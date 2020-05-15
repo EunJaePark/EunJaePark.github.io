@@ -24,7 +24,7 @@
    
    <h3> 3) Vue   </h3>
    
-   - To do List <a href="https://github.com/EunJaePark/hackernews0401ej">(github)</a>
+   - To do List <a href="https://github.com/EunJaePark/todolist0326ej">(github)</a>
    
    - Hacker News <a href="https://github.com/EunJaePark/hackernews0401ej">(github)</a>
    
