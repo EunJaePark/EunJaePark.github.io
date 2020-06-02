@@ -184,6 +184,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(5) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(6) > .portfolio_content > .imgTitle > .siteImg{ background:url('../images/portfolio_pej.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(8) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/todolist_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portfolio_list > .portListBox:nth-child(9) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/paint_hover_w.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(10) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/randomclick_hover.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(11) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/todolistVue_hover.png') no-repeat 0 0; background-size:cover;  }
 .portfolio > .inner > .portfolio_list > .portListBox:nth-child(12) > .portfolio_content > .imgTitle > .siteImg{  background:url('../images/hackernews_hover.png') no-repeat 0 0; background-size:cover;  }
