@@ -83,10 +83,10 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20; }
-header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:240px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:relative; z-index:100; }
+header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:240px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:fixed; z-index:100; }
 header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596);  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
-main{ width:100%; background-color:#f8f8f8; overflow:hidden;  left:0; transition:all .5s ease-out; }
+main{ width:100%; background-color:#f8f8f8; overflow:hidden; left:0; transition:all .5s ease-out; }
 footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
 
 /* ---------------------common--------------------- */
@@ -121,7 +121,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 
 /* ---------------------main--------------------- */
 /* ---intro--- */
-.intro{ width:100%; height:500px; min-height:800px; /*background-color:#f8e88f;*/ position:relative;  }
+.intro{ width:100%; height:500px; min-height:800px; /*background-color:#f8e88f;*/ position:relative; top:75px; }
 .intro:before{ content:''; display:block; border-radius:250px; width:300px; height:500px; background-color:#f8e88f; position:absolute; top:140px; left:23%; transition:all .8s ease; }
 .intro > .inner{  width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
 
@@ -136,7 +136,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 .intro > .inner > .title > address.contactBox > a > i{ margin-right:5px; }
 
 
-.intro > .inner > .aboutMe{ outline:px solid red; width:50%; padding:20px; /*max-width:600px; / *position:absolute; right:11.90476190476%; bottom:100px;*/ background-color:rgba(74, 65, 171, .1); transform:translateY(220px); float:right; box-sizing:border-box; }
+.intro > .inner > .aboutMe{ outline:px solid red; width:50%; padding:20px 60px; /*max-width:600px; / *position:absolute; right:11.90476190476%; bottom:100px;*/ background-color:rgba(74, 65, 171, .1); transform:translateY(220px); float:right; box-sizing:border-box; }
 .intro > .inner > .aboutMe > li{ margin-bottom:10px; }
 /* .intro > .inner > .aboutMe > li.contactBox{ border:2px solid #4A41AB; padding:5px 20px; } */
 .intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#4A41AB; display:inline-block; }
@@ -294,12 +294,18 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 
 
 
+@media screen and (max-width:1550px) {
+	/* ---------------------main--------------------- */
+	/* ---intro--- */
+	.intro > .inner > .aboutMe{ padding:20px 30px; }
+}
 @media screen and (max-width:1315px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner{  width:76.1904762%; padding:0 11.90476190476%/*200px*/;  }
 	.intro > .inner > .title{  font-size:60px; transform:translateY(200px); }
-	.intro > .inner > .aboutMe{ width:50%; /*width:60%;*/ }
+	.intro > .inner > .aboutMe{ width:50%; /*width:60%;*/ padding:20px; }
+	.intro > .inner > .aboutMe > li > span{ font-size:18px; }
 }
 @media screen and (max-width:1250px) {
 	/* ---------------------main--------------------- */
