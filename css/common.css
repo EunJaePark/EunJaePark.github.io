@@ -115,7 +115,7 @@ header > .port_nav > .port_nav_box > button{ border:3px solid #4A41AB; border-ra
 header > .port_nav > .port_nav_box > button.jsNav{ border-color:#f8e88f; }
 header > .port_nav > .port_nav_box > button.show{ background-color:rgba(248, 232, 145, .7); }
 header > .port_nav > .port_nav_box > span{  width:100%; line-height:15px; font-size:15px; color:#4A41AB; text-align:center; background-color:#f8e88f; display:block; }
-header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:20px; }
+header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-size:13px; }
 
 
 
