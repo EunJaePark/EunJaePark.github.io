@@ -114,13 +114,13 @@ function pcMouseWheel() {
     //port_nav 버튼 클릭시 해당 포폴 위치로 스크롤되게함. + 클릭한 버튼 색채움.
     for(let i = 0; i < portNavBtn.length; i++) {
         portNavBtn[i].addEventListener('click', function(e) { 
-            if(e.target.classList.contains('portNav')) {           
+            if(e.target.classList.contains('jsNav')) {           
                 window.scrollTo({          
                     top: introHeight + (portHeight * i) + 200/* introHeight * (i + 1) + (110 * i) + h2(274px)*/,
                     behavior: 'smooth',
                 });
             }
-            if(e.target.classList.contains('jsNav')) {
+            if(e.target.classList.contains('portNav')) {
                 window.scrollTo({          
                     top: introHeight + (portHeight * i) + 200 + 300,
                     behavior: 'smooth',
