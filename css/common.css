@@ -83,7 +83,7 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:340px; background-color:#1c1b20; }
-header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:240px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:fixed; z-index:100; }
+header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:300px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:fixed; z-index:100; }
 header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596);  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
 main{ width:100%; background-color:#f8f8f8; overflow:hidden; left:0; transition:all .5s ease-out; }
@@ -237,7 +237,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 /* loading화면 */
 .loadingView{ width:100vw; min-weight:340px; height:100vh; overflow:hidden; background-color:#4A41AB; position:fixed; top:0; left:0; z-index:1000; transition:all .3s ease-out; }
 .loadingView > *{ position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); }
-.loadingView > .loadingBar{  }
+/* .loadingView > .loadingBar{  } */
 .loadingView > .loadingBar > .bar{ width:40px; height:7px; margin-left:-12px; background-color:#f8f8f8; display:inline-block; }
 .loadingView > .loadingBar > .bar:nth-child(n){ 
 	transform:rotate(30deg);
@@ -349,13 +349,13 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 @media screen and (max-width:895px) {
 	/* ---------------------header--------------------- */
 	/* header > *{ background-color:darkcyan; } */
-	header > nav > .section_nav{ display:none; }
+	/* header > nav > .section_nav{ display:none; } */
 
 	/* ---------------------main--------------------- */
 	main{ position:static; width:100%; margin:0; }
 	/* ---intro--- */
 	.intro{ height:auto; min-height:auto;  padding:50px 0; }
-	.intro:before{ width:200px; height:300px; top:100px; left:88.0952381%/*40%*/; transform:translateX(-100%); }
+	.intro:before{ width:200px; height:350px; top:200px; left: 91%/*88.0952381%/*40%*/; transform:translateX(-100%); }
 	/* .intro:before{ top:140px; right:100px; } */
 	.intro > .inner > .title{ margin-bottom:50px; font-size:50px; transform:translate(0, 0); position:static; }
 	.intro > .inner >  .title > address.contactBox{ margin-top:10px; }
@@ -383,7 +383,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 @media screen and (max-width:790px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
-	.intro:before{ top:150px/*50px;*/ }
+	.intro:before{ height:300px; top:150px/*50px;*/ }
 	.intro > .inner > .title{ line-height:50px; font-size:40px; }
 	.intro > .inner > .title > span:after{ width:30px; height:30px; margin-left:15px; }
 	.intro > .inner > .title > span > strong:after{ height:7px; }
@@ -403,6 +403,12 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 @media screen and (max-width:570px) {
 	/* ---------------------layout--------------------- */
 	header > .port_nav.fixed { right:10px; }
+
+	/* ---------------------header--------------------- */
+	header{ width: calc(100% + -70px); padding: 20px 35px 0; }
+	header.fixed{ padding: 0 35px; }
+	header > .title{ padding-top: 12px; font-size: 20px; }
+	header > nav > .section_nav > li > button{ margin: 20px 0 0 30px; font-size: 18px; }
 
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
@@ -440,6 +446,11 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 
 
 @media screen and (max-width:420px) {
+	/* ---------------------header--------------------- */
+	header{ width: calc(100% + -40px); padding: 20px 20px 0; }
+	header.fixed{ padding: 0 20px; }
+	header > nav > .section_nav > li > button{ margin: 17px 0 0 13px;  }
+
 	/* ---------------------main--------------------- */
 	/* loading화면 */
 	.loadingView > .loadingBar > .bar{ width:12px; height:4px; margin-left:-7px; }
