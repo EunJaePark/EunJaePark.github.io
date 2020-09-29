@@ -255,6 +255,24 @@ function pcMouseWheel() {
 
 
 
+// aboutMeCover의 [click me!]버튼 클릭 시 aboutMeCont(상세 정보) 보이게 함.
+let aboutMeBtn = document.querySelector('.aboutMeCover > button');
+let aboutMeCover = document.querySelector('.aboutMeCover')
+let aboutMeCont = document.querySelector('.aboutMeCont')
+let aboutMeContClose = document.querySelector('.aboutMeCont > .closeBtn');
+aboutMeBtn.addEventListener('click', function() {
+    aboutMeCover.classList.add('hide');
+    aboutMeCont.classList.remove('hide');
+    aboutMeCont.classList.add('show');
+});
+
+// aboutMeCont의 [closeBtn]버튼 클릭 시 aboutMeCover가 보이도록 함.
+aboutMeContClose.addEventListener('click', function() {
+    aboutMeCover.classList.remove('hide');
+    aboutMeCover.classList.add('show');
+    aboutMeCont.classList.remove('show');
+    aboutMeCont.classList.add('hide');
+});
 
 
 

@@ -86,7 +86,7 @@ button:focus{ outline:none; }
 header{ background-color:#f8e88f; width:calc(100% + -110px); min-width:300px/*350-110*/; height:55px; padding:20px 55px 0; transition:all .3s ease-out; position:fixed; z-index:100; }
 header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596);  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
-main{ width:100%; background-color:#f8f8f8; overflow:hidden; left:0; transition:all .5s ease-out; }
+main{ width:100%; background-color:#f8e88f /*f8f8f8*/; overflow:hidden; left:0; transition:all .5s ease-out; }
 footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
 
 /* ---------------------common--------------------- */
@@ -122,7 +122,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 
 /* ---------------------main--------------------- */
 /* ---intro--- */
-.intro{ width:100%; height:calc(100vh - 75px); /*height:500px;*/ min-height:500px; /*background-color:#f8e88f;*/ position:relative; top:75px; }
+.intro{ width:100%; height:calc(100vh - 75px); /*height:500px;*/ min-height:500px; /*background-color:#f8e88f;*/ background-color: #f8f8f8; position:relative; top:75px; }
 .intro:before{ content:''; display:block; border-radius:250px; width:300px; height:500px; background-color:#f8e88f; position:absolute; top:140px; left:23%; transition:all .8s ease; }
 .intro > .inner{  width:76.1904762%; height:100%; padding:0 11.90476190476%/*200px*/; position:relative; }
 
@@ -137,13 +137,29 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 .intro > .inner > .title > address.contactBox > a > i{ margin-right:5px; }
 
 
-.intro > .inner > .aboutMe{ outline:px solid red; width:50%; padding:20px 60px; /*max-width:600px; / *position:absolute; right:11.90476190476%; bottom:100px;*/ background-color:rgba(74, 65, 171, .1); transform:translateY(220px); float:right; box-sizing:border-box; }
-.intro > .inner > .aboutMe > li{ margin-bottom:10px; }
+.intro > .inner > .aboutMeBox{ width:50%; transform:translateY(220px); float:right; box-sizing:border-box; position: relative; }
+.intro > .inner > .aboutMeBox > .aboutMeCover{ max-width: 534px; background-color: rgba(74, 65, 171, .1); position: relative; }
+.intro > .inner > .aboutMeBox > .aboutMeCover.show{  display: block; }
+.intro > .inner > .aboutMeBox > .aboutMeCover.hide{ display: none; }
+.intro > .inner > .aboutMeBox > .aboutMeCover > ul{  padding: 20px 40px; }
+.intro > .inner > .aboutMeBox > .aboutMeCover > ul > li{ margin: 10px 15px; padding: 7px 20px; font-size: 30px; color: #E6E6F1; background-color: #4A41AB; display: inline-block; }
+.intro > .inner > .aboutMeBox > .aboutMeCover > button{  padding: 3px 7px; font-size: 30px;  color: #4A41AB; position: absolute; bottom: 20px; right: 40px }
+.intro > .inner > .aboutMeBox > .aboutMeCover > button:hover{ color: #f8f8f8; background-color: #4A41AB; }
+.intro > .inner > .aboutMeBox > .aboutMeCover > button:hover:before{ content: 'click!'; display: block; width: 100%; height: 100%; padding-top: 3px; background-color: #f8e88f; position: absolute; bottom: 5px; }
+
+.intro > .inner > .aboutMeBox > .aboutMeCont{  max-height: 550px; background-color: rgba(74, 65, 171, .1); overflow: scroll; position: absolute; top: 0; left: 0; }
+.intro > .inner > .aboutMeBox > .aboutMeCont.show{  top: -70px; display: block; }
+.intro > .inner > .aboutMeBox > .aboutMeCont.hide{ display: none; }
+.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe{ /*width:50%;*/ padding:30px 60px; /*max-width:600px; / *position:absolute; right:11.90476190476%; bottom:100px;*/ /* background-color:rgba(74, 65, 171, .1);*/ /*transform:translateY(220px); float:right; box-sizing:border-box;*/  }
+.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li{ margin-bottom:10px; }
 /* .intro > .inner > .aboutMe > li.contactBox{ border:2px solid #4A41AB; padding:5px 20px; } */
-.intro > .inner > .aboutMe > li > strong{  font-size:20px; font-weight:900; color:#4A41AB; display:inline-block; }
+.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > strong{ margin: 2px 5px; padding: 0 8px; font-size:20px; font-weight:900; color: #E6E6F1; background-color:#4A41AB; display:inline-block; }
 /* .intro > .inner > .aboutMe > li.contactBox > strong{ display:block; } */
-.intro > .inner > .aboutMe > li > span{  margin:10px 0; font-size:20px; font-weight:300; display:block;  }
-.intro > .inner > .aboutMe > li > span > strong{ font-weight:400; position:relative; }
+.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span{  margin:10px 0;  font-size:18px; font-weight:300; background-color: rgba(74, 65, 171, .2); padding: 10px 20px; display:block;  }
+.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span > .strong{ font-weight:400; position:relative; }
+.intro > .inner > .aboutMeBox > .aboutMeCont > button.closeBtn{ padding: 3px 10px; font-size: 20px; font-weight: bold; color: #4A41AB;  position: absolute; top: 20px; right: 50px; }
+.intro > .inner > .aboutMeBox > .aboutMeCont > button.closeBtn:hover{ background-color: #4A41AB;  }
+.intro > .inner > .aboutMeBox > .aboutMeCont > button.closeBtn:hover:before{ content: 'close'; display: block; width: 100%; height: 100%; padding-top: 3px; color: #f8f8f8; background-color: #f8e88f; position: absolute; bottom: 5px; right: 5px; }
 
 
 .intro > .inner > .scrollBtn{  color:#fff; position:absolute; bottom:10px; left:50%; transform:translateX(-50%); opacity:1; transition:all .5s ease; z-index:300;  }
@@ -160,7 +176,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 /* ---portfolio--- */
 .portfolio > .inner{ padding:0 11.90476190476% 100px; background-color:#f8f8f8; }
 .portfolio > .inner > .portfolio_list{ }
-.portfolio > .inner > .portfolio_list > h2{ outline:px solid red; margin-top:200px; font-size:40px; color:#4A41AB; display:inline-block; }
+.portfolio > .inner > .portfolio_list > h2{ outline:px solid red; margin-top: 200px; font-size:40px; color:#4A41AB; display:inline-block; }
 .portfolio > .inner > .portfolio_list > h2:after{ content:''; display:block; width:100%; height:10px; background-color:rgba(248, 232, 143, 0.5); transform:translateY(-17px); }
 .portfolio > .inner > .portfolio_list > h2.script:after{ background-color:rgba(74, 65, 171, .5); }
 .portfolio > .inner > .portfolio_list > .portListBox{ outline:px solid red; height:100vh; min-height:900px; padding:70px 55px; position:relative; }
@@ -302,20 +318,20 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 @media screen and (max-width:1550px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
-	.intro > .inner > .aboutMe{ padding:20px 30px; }
+	/* .intro > .inner > .aboutMeBox > .aboutMe{ padding:20px 30px; } */
 }
 @media screen and (max-width:1315px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner{  width:76.1904762%; padding:0 11.90476190476%/*200px*/;  }
 	.intro > .inner > .title{  font-size:60px; transform:translateY(200px); }
-	.intro > .inner > .aboutMe{ width:50%; /*width:60%;*/ padding:20px; }
-	.intro > .inner > .aboutMe > li > span{ font-size:18px; }
+	/* .intro > .inner > .aboutMeBox > .aboutMe{ width:50%;  padding:20px; } */
+	.intro > .inner > .aboutMeBox  > .aboutMeCont > .aboutMe > li > span{ font-size:18px; }
 }
 @media screen and (max-width:1250px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
-	.intro > .inner > .aboutMe > li > span{ font-size:18px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span{ font-size: 17px; }
 }
 @media screen and (max-width:1110px) {
 	/* ---------------------main--------------------- */
@@ -323,7 +339,10 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 	.intro:before{ left:150px; }
 	.intro > .inner >  .title{  font-size:50px; transform:translateY(230px); }
 	.intro > .inner >  .title > address.contactBox > a{ margin-bottom:2px; }
-	.intro > .inner > .aboutMe > li > span{ font-size:17px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCover > ul{ padding-bottom: 80px }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe{ padding: 30px 30px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span{ font-size: 16px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > button.closeBtn{ right: 30px; }
 	/* ----portfolio--- */
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .exp_text > span{ font-size:18px; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .imgTitle{ width:50%; margin:0; }
@@ -360,7 +379,9 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 	.intro > .inner > .title{ margin-bottom:50px; font-size:50px; transform:translate(0, 0); position:static; }
 	.intro > .inner >  .title > address.contactBox{ margin-top:10px; }
 	.intro > .inner >  .title > address.contactBox > a{ line-height:25px; font-size:15px; }
-	.intro > .inner > .aboutMe{ width:calc(100%); transform:translateY(0); position:static; }
+	.intro > .inner > .aboutMeBox{ width: 100%; height: 550px; transform:translateY(0px); float: left; } 
+	/* .intro > .inner > .aboutMeBox > .aboutMe{ width:calc(100%); transform:translateY(0); position:static; } */
+	.intro > .inner > .aboutMeBox > .aboutMeCont.show{  top: 0px; }
 	.intro > .inner > .scrollBtn{ top:80px; left:20px; transform:translateX(0); position:fixed; }
 	/* ----portfolio--- */
 
@@ -413,6 +434,7 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner > .title{ line-height:45px; font-size:35px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCover > ul{ padding: 20px 110px 20px 40px; }
 	/* ----portfolio--- */
 
 	/* loading화면 */
@@ -424,8 +446,8 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
 	.intro > .inner > .title{ line-height:35px; font-size:25px; }
-	.intro > .inner > .aboutMe > li > strong{ font-size:17px; }
-	.intro > .inner > .aboutMe > li > span{ font-size:17px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > strong{ font-size:17px; }
+	/* .intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span{ font-size:17px; } */
 	/* ----portfolio--- */
 	.portfolio > .inner > .portfolio_list > .portListBox{ padding:50px 0; }
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > h2{ font-size:75px; line-height:75px; }
