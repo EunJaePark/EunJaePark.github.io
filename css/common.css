@@ -445,7 +445,9 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 @media screen and (max-width:540px) {
 	/* ---------------------main--------------------- */
 	/* ---intro--- */
-	.intro > .inner > .title{ line-height:35px; font-size:25px; }
+	/* .intro > .inner > .title{ line-height:35px; font-size:25px; } */
+	.intro > .inner > .title{ line-height:45px; font-size:35px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCover > ul > li{ font-size: 25px; }
 	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > strong{ font-size:17px; }
 	/* .intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > span{ font-size:17px; } */
 	/* ----portfolio--- */
@@ -454,6 +456,12 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 	.portfolio > .inner > .portfolio_list > .portListBox > .portfolio_content > .text_box > span{ line-height:27px; margin-top:30px; font-size:17px;}
 }
 
+@media screen and (max-width:527px) {
+	/* ---------------------main--------------------- */
+	/* ---intro--- */
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > strong{ margin-right: 100px; }
+	.intro > .inner > .aboutMeBox > .aboutMeCont > .aboutMe > li > strong.gitMargin{ margin-right: 150px; }
+}
 
 @media screen and (max-width:500px) {
 	/* ---------------------main--------------------- */
