@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식사메뉴 고르기</title>
+    <link rel="stylesheet" media="all" href="css/common.css" /> 
+</head>
+<body>
+    <div class="content">
+        <h1>오늘의 메뉴는?</h1>
+        <audio>
+            <source src="audio/216089__richerlandtv__magic.mp3" type="audio/mpeg" />
+        </audio>
+        <div class="menuPlus">
+            <input type="text" placeholder="추가 할 메뉴를 입력해주세요" />
+            <button class="menuBtn">메뉴추가</button>
+            <button class="close"><span>닫기</span>&times;</button>
+        </div><!--.menuPlus-->
+        <div class="result"></div> <!--.result-->
+        <div class="confirm"></div><!--.confirm-->
+        <div class="btnBox">
+            <button class="click btn">click !</button>
+            <div class="afterBtns">
+                <a href="#" class="ok btn">메뉴 확정!</a>
+                <a href="" class="replay btn">다시 선택</a>
+            </div><!--.afterBtn-->          
+        </div><!--.btnBox-->
+        
+    </div><!--.content-->
+
+    <script src="js/common.js"></script>
+</body>
+</html>

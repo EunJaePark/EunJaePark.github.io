@@ -1,10 +1,21 @@
+@font-face {
+    font-family: 'BMEULJIRO';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/BMEULJIRO.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ---------------------reset------------------- */
 body {
-	font:normal 18px 'Source Sans Pro', sans-serif, Arial, Verdana;
+	/* font:normal 18px 'Source Sans Pro', sans-serif, Arial, Verdana; */
+	/* font: normal 18px 'BMEULJIRO'; */
+	font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive;
 	font-weight:400;
 	line-height:1.6;
-	color:#fff;
-	background-color:#000;
+	/* width: 100vw; */
+	min-height: 100vh; 
+	color:#171717;
+	background: linear-gradient(355deg,  #628bf9 20%, #02d9a2 0%)/* #02d9a2 /* #628bf9 /* #f2bd56 /*#f8614b*/;
 	margin:0;
 	padding:0;
 }
@@ -21,58 +32,85 @@ table{ width:100%; border-collapse:collapse; }
 strong, em{ font-style:normal; font-weight:400; }
 button{ border:none; padding:0; background-color:transparent; color:#fff; cursor:pointer;  }
 button:focus{ outline:none; }
+input:focus{ outline:none; font-size: 18px; }
 
 
 /* ---------------------common------------------- */
 .clear:after{ content:''; display:block; clear:both; }
+.englishFont{ font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; font-weight: bold; }
+.englishFontLight{ font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; font-weight: 400; }
 .btn{ border-radius:10px; margin:0 auto; padding:15px 30px; font-size:50px; box-shadow:3px 3px 4px rgba(0, 0, 0, .5); display:block; opacity:1; transition:all .2s ease-out; }
 .btn:hover{ transform:scale(1.05, 1.05); }
 
 
 /* ---------------------content------------------- */
-.content{ width:100vw; min-width:350px; height:100vh; min-height:770px; background-color:#000; position:absolute; }
-h1{ margin:50px 0; font-size:30px; text-align:center; }
-.result{ width:100%; text-align:center; font-size:130px; opacity:0; transition:all .5s ease-out; transition-delay:.3s; position:absolute; top:50%; transform:translateY(-50%); }
-.result.hide{ opacity:1; }
-.confirm{  width:100%; height:0; background-color:#000; text-align:center; opacity:0; z-index:100; position:absolute; left:0; top:140px; }
-.confirm.show{ height:calc(100vh + -400px); min-height:400px; opacity:1; }
-.confirm > span{ width:100%; font-size:50px; position:absolute; left:0; top:50%; transform:translateY(-50%); }
+.content{ border-radius: 40px; max-width:600px; min-height:400px; margin: 0 auto; position: relative; }
+.title{ padding: 80px 0 30px; }
+.title > h1{ font-size:60px; font-weight: 400; text-align:center; color: #fff; }
+
+
+/* listBox(메뉴목록 리스트 박스) */
+.listBox{ margin-top: 70px; padding: 30px 40px; position: relative; }
+.listBox:before{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; top: -10px; left: -10px; }
+.listBox:after{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; bottom: -10px; left: -10px; }
+.listBox > li{ border-radius: 4px; margin: 7px 10px; padding: 4px 40px 2px 13px; font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; color: #fff; background-color: #628bf9; box-shadow:1px 1px 2px rgba(0, 0, 0, .5);  display: inline-block; position: relative; }
+.listBox > li > button{  padding: 3px 6px; background-color: rgba(0, 0, 0, .2); position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
+.listBox > li:hover{ transform: scale(1.1, 1.1); transition:all .1s ease-out;  }
+.listBox > li > button:hover{ background-color: rgba(0, 0, 0, .4); }
+
+
+/* menuPlus */
+.menuPlus{ width: 210px; margin: 50px auto 0; display: block; position: relative; }
+.menuPlus:before{ content: ''; display: block; width: 220px; height: 20px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; bottom: -10px; left: -10px; }
+.menuPlus > input{ border: none; width: 160px; padding: 10px 6px;  color: #fff; background-color: transparent; }
+.menuPlus > input::placeholder{ color: #fff; }
+.menuPlus > .plusBtn{ padding: 3px 4px 0; font-size: 20px; color: #000; font-weight: bold; transform: translateY(3px); }
+.menuPlus > .plusBtn:hover{ font-size: 23px; }
+
+
+/* resultBox */
+.resultBox{ /*transform: translateY(30%);*/ }
+.result{ width:100%; margin: 50px 0; text-align:center; font-size:130px; opacity:0; transition:all .5s ease-out; transition-delay:.3s; /*position:absolute; top:50%; transform:translateY(-50%);*/ }
+.listBox.hide,
+.menuPlus.hide,
+.result.hide  /* [메뉴확정],[다시선택],[매장찾기]버튼이 보여야해서 resultBox가 아닌 result에 효과주는 것. */
+{ display: none; }
+.result.show{ opacity:1; }
+.confirm{  width:100%; height:0; text-align:center; opacity:0; z-index:100; /*position:absolute; left:0; top:140px;*/ }
+.confirm.show{ min-height:400px; opacity:1; }
+.confirm > span{ width:100%; font-size:50px; /*position:absolute; left:0; top:50%; transform:translateY(-50%);*/ }
 .confirm > span > strong{ font-size:150px; display:block; }
 
-.menuPlus{ width:420px; display:inline-block; position:absolute; left:50%; transform:translateX(-50%); }
-.menuPlus > input{ border:none; border-bottom:2px solid #fff; width:calc(80% + -90px); line-height:45px; margin-right:10px; padding:7px 30px; font-size:20px; color:#fff; background-color:transparent; display:none; }
-.menuPlus > input:focus{ outline:none; }
-.menuPlus > button{ border:2px solid rgba(255, 255, 255, .5); border-radius:5px; margin:0 auto; padding:10px 20px; font-size:20px; color:rgba(255, 255, 255, .5); transform:translateY(7px); display:block; }
-.menuPlus > button:hover{ border-color:#fff; background-color:; color:#fff; }
-.menuPlus > .close{ border:none; padding:0 5px; font-size:20px; color:#fff; position:absolute; top:0; left:-10px; display:none; }
-.menuPlus > .close > span{ font-size:0; }
 
-.menuPlus.show > input{ display:inline-block; }
-.menuPlus.show > button{ display:inline-block; }
-.menuPlus.show > .close{ display:block; }
-
-
-.btnBox{ width:100%; height:100px; position:absolute; bottom:50%; }
+.btnBox{ width:100%; height:100px; /*position:absolute; bottom:50%;*/ }
 .btnBox.hide2{ bottom:50px; }
 
-.btnBox > button.click{  color:#fff; background-color:#3734e9; }
+.btnBox > button.click{ color:#fff; background-color: #628bf9/*#3734e9*/; }
 .btnBox.hide > button.click{ opacity:0; }
 .btnBox.hide2 > button.click{ display:none; }
 
-.btnBox > .afterBtns{ width:500px; display:none; transition:all .1s ease-out; opacity:0; position:absolute; left:50%; transform:translateX(-50%); }
-.btnBox > .afterBtns > a{ width:180px; margin:0 13px; padding:10px 20px; font-size:30px; text-align:center; display:inline-block; }
-.btnBox > .afterBtns > a.ok{ color:#3734e9; background-color:#fff; }
-.btnBox > .afterBtns > a.replay{  color:#fff; background-color:#3734e9;  }
+.btnBox > .afterBtns{ margin-top: 50px; transition:all .1s ease-out; opacity:0; position:absolute; left:50%; transform:translateX(-50%); display:none; }
+.btnBox > .afterBtns > button.btn{ margin:0 13px; padding:10px 20px; font-size:20px; text-align:center; font-family: 'Gloria Hallelujah', 'BMEULJIRO';  display:inline-block; }
+.btnBox > .afterBtns > button.ok,
+.btnBox > .afterBtns > button.mapBtn{ color:#628bf9; background-color:#fff; }
+.btnBox > .afterBtns > button.mapBtn{ display: none; }
+.btnBox > .afterBtns > button.mapBtn.show{ display: inline-block; }
+.btnBox > .afterBtns > button.replay{  color:#fff; background-color:#628bf9;  }
+
 .btnBox.hide > .afterBtns{ display:inline-block; }
 .btnBox.hide2 > .afterBtns{ opacity:1; transition-delay:.3s; }
 .btnBox.hide3 > .afterBtns{ width:auto; }
-.btnBox.hide3 > .afterBtns > a.ok{ display:none; }
+.btnBox.hide3 > .afterBtns > button.ok{ display:none; }
 
 
 @media screen and (max-width: 600px) {
 	.content{ min-height:750px; }
+	h1{ margin:40px 0; font-size:20px; }
+	
+	/* menuPlus */
+	.menuPlus > input{ font-size:18px; }
 
-    h1{ margin:40px 0; font-size:20px; }
+	/* resultBox */
 	.result{ font-size:70px; }
 
 	.confirm{ top:110px; }
@@ -80,15 +118,14 @@ h1{ margin:50px 0; font-size:30px; text-align:center; }
 	.confirm > span{ font-size:30px; }
 	.confirm > span > strong{ font-size:70px; }
 
-	.menuPlus > input{ font-size:18px; }
-
     .btnBox{ height:170px; }
     .btnBox > .afterBtns{ width:auto; }
-    .btnBox > .afterBtns > a{ width:180px; margin:10px; display:block; }
+    .btnBox > .afterBtns > button.btn{ width:180px; margin:10px; display:block; }
 }
 
 
 @media screen and (max-width: 450px) {
+	/* menuPlus */
 	.menuPlus{ width:90%; }
 	.menuPlus > input{ width:calc(80% + -110px); padding:7px 15px; }
 }
