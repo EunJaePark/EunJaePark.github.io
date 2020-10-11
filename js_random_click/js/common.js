@@ -8,12 +8,12 @@ function randomBtnClick() {
 
 
 // ------ menu 선택 함수. ------
-let btnBox = document.querySelector('.btnBox');
-let listBox = document.querySelector('.listBox');
-let menuPlus = document.querySelector('.menuPlus');
-let number = Math.floor(Math.random() * divideLsMenu().length); 
-let menuList = divideLsMenu(); 
 function menuClick() {
+    let btnBox = document.querySelector('.btnBox');
+    let listBox = document.querySelector('.listBox');
+    let menuPlus = document.querySelector('.menuPlus');
+    let number = Math.floor(Math.random() * divideLsMenu().length); 
+    let menuList = divideLsMenu(); 
     const audio = document.querySelector('audio');
     audio.play();   
 
@@ -139,6 +139,7 @@ function divideLsMenu() {
 
 // ------ local storage에 저장 된 메뉴목록 불러옴. ------
 function getLSmenu() {
+    console.log('getLSmneu', localStorage.getItem('menuList'));
     return localStorage.getItem('menuList');
 }
 
@@ -173,7 +174,7 @@ function init() {
         saveFirstLoadCount();
         // 처음 접속시에만 base menu 추가해줌.
         saveBaseMenu();
-    }
+    } 
     addLoadCount(); // 매번 접속시마다 loadCount를 1씩 늘려줌.
     inputSubmit();
     insertSavedMenu();
