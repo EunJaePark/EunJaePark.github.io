@@ -9,6 +9,7 @@ function randomBtnClick() {
 
 // ------ menu 선택 함수. ------
 function menuClick() {
+    // let 변수들을 함수 바깥에서 선언해줬으나, divideLsMenu()함수로 인해 오류가 발생해 함수 안으로 넣어줌.
     let btnBox = document.querySelector('.btnBox');
     let listBox = document.querySelector('.listBox');
     let menuPlus = document.querySelector('.menuPlus');
@@ -39,6 +40,9 @@ function reselectConfirmMenu() {
     const confirmText = document.querySelector('.confirm');
     const afterBtns = document.querySelectorAll('.afterBtns > .btn');
     const mapBtn = document.querySelector('.mapBtn');
+    let btnBox = document.querySelector('.btnBox');
+    let number = Math.floor(Math.random() * divideLsMenu().length); 
+    let menuList = divideLsMenu(); 
     console.log(afterBtns);
     afterBtns.forEach((ele) => {
         ele.addEventListener('click', (event) => {
@@ -46,8 +50,6 @@ function reselectConfirmMenu() {
             if(ele.classList.contains('ok')) {
                 confirmText.innerHTML = `<span>오늘 메뉴는 <strong>${menuList[number]}</strong>입니다 !<span>`;
 
-                // listBox.classList.add('hide');
-                // menuPlus.classList.add('hide');
                 result.classList.add('hide');
                 confirmText.classList.add('show');
                 btnBox.classList.add('hide3');
