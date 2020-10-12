@@ -17,7 +17,7 @@ body {
 	color:#171717;
 	background: linear-gradient(355deg,  #628bf9 20%, #02d9a2 0%)/* #02d9a2 /* #628bf9 /* #f2bd56 /*#f8614b*/;
 	margin:0;
-	padding:0;
+	padding: 80px 0;
 }
 h1, h2, h3, h4, h5, h6 { font-size:1em; }
 h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
@@ -45,7 +45,7 @@ input:focus{ outline:none; font-size: 18px; }
 
 /* ---------------------content------------------- */
 .content{ border-radius: 40px; max-width:600px; min-height:400px; margin: 0 auto; position: relative; }
-.title{ padding: 80px 0 30px; }
+.title{ padding: 0px 0 30px; }
 .title > h1{ font-size:60px; font-weight: 400; text-align:center; color: #fff; }
 
 
@@ -53,10 +53,11 @@ input:focus{ outline:none; font-size: 18px; }
 .listBox{ margin-top: 70px; padding: 30px 40px; position: relative; }
 .listBox:before{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; top: -10px; left: -10px; }
 .listBox:after{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; bottom: -10px; left: -10px; }
-.listBox > li{ border-radius: 4px; margin: 7px 10px; padding: 4px 40px 2px 13px; font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; color: #fff; background-color: #628bf9; box-shadow:1px 1px 2px rgba(0, 0, 0, .5);  display: inline-block; position: relative; }
-.listBox > li > button{  padding: 3px 6px; background-color: rgba(0, 0, 0, .2); position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
-.listBox > li:hover{ transform: scale(1.1, 1.1); transition:all .1s ease-out;  }
-.listBox > li > button:hover{ background-color: rgba(0, 0, 0, .4); }
+.listBox > li.menu{ border-radius: 4px; margin: 7px 10px; padding: 4px 40px 2px 13px; font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; color: #fff; background-color: #628bf9; box-shadow:1px 1px 2px rgba(0, 0, 0, .5);  display: inline-block; position: relative; }
+.listBox > li.menu > span.id{ display: none; } /* 삭제시 id비교위해 존재. 따라서 안보이게 해둔 것. */
+.listBox > li.menu > button{  padding: 3px 6px; background-color: rgba(0, 0, 0, .2); position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
+.listBox > li.menu:hover{ transform: scale(1.1, 1.1); transition:all .1s ease-out;  }
+.listBox > li.menu > button:hover{ background-color: rgba(0, 0, 0, .4); }
 
 
 /* menuPlus */
@@ -76,10 +77,10 @@ input:focus{ outline:none; font-size: 18px; }
 .result.hide  /* [메뉴확정],[다시선택],[매장찾기]버튼이 보여야해서 resultBox가 아닌 result에 효과주는 것. */
 { display: none; }
 .result.show{ opacity:1; }
-.confirm{  width:100%; height:0; text-align:center; opacity:0; z-index:100; /*position:absolute; left:0; top:140px;*/ }
+.confirm{  width:100%; text-align:center; opacity:0; z-index:100; /*position:absolute; left:0; top:140px;*/ }
 .confirm.show{ min-height:400px; opacity:1; }
-.confirm > span{ width:100%; font-size:50px; /*position:absolute; left:0; top:50%; transform:translateY(-50%);*/ }
-.confirm > span > strong{ font-size:150px; display:block; }
+.confirm > p{ width:100%; font-size:50px; /*position:absolute; left:0; top:50%; transform:translateY(-50%);*/ }
+.confirm > p > strong{ font-size:150px; display:block; }
 
 
 .btnBox{ width:100%; height:100px; /*position:absolute; bottom:50%;*/ }
