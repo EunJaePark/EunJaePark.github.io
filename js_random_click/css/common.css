@@ -54,7 +54,6 @@ input:focus{ outline:none; font-size: 18px; }
 .listBox:before{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; top: -10px; left: -10px; }
 .listBox:after{ content: ''; display: block; width: 100%; height: 30px; background: url('../img/underline1.png') no-repeat; background-size: 100% 100%; position: absolute; bottom: -10px; left: -10px; }
 .listBox > li.menu{ border-radius: 4px; margin: 7px 10px; padding: 4px 40px 2px 13px; font-family: 'Gloria Hallelujah', 'BMEULJIRO', cursive; color: #fff; background-color: #628bf9; box-shadow:1px 1px 2px rgba(0, 0, 0, .5);  display: inline-block; position: relative; }
-.listBox > li.menu > span.id{ display: none; } /* 삭제시 id비교위해 존재. 따라서 안보이게 해둔 것. */
 .listBox > li.menu > button{  padding: 3px 6px; background-color: rgba(0, 0, 0, .2); position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
 .listBox > li.menu:hover{ transform: scale(1.1, 1.1); transition:all .1s ease-out;  }
 .listBox > li.menu > button:hover{ background-color: rgba(0, 0, 0, .4); }
