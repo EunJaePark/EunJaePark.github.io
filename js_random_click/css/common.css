@@ -85,6 +85,11 @@ input:focus{ outline:none; font-size: 18px; }
 .btnBox{ width:100%; height:100px; /*position:absolute; bottom:50%;*/ }
 .btnBox.hide2{ bottom:50px; }
 
+.btnBox >.alertText{ border-radius: 10px; width: 600px; padding: 20px 0; font-size: 50px; text-align: center; box-shadow:3px 3px 4px rgba(0, 0, 0, .5); background-color: #628bf9;  display: none; }
+
+.btnBox > .alertText.show{ display: block ; }
+.btnBox > button.click.hide{ display: none; }
+
 .btnBox > button.click{ color:#fff; background-color: #628bf9/*#3734e9*/; }
 .btnBox.hide > button.click{ opacity:0; }
 .btnBox.hide2 > button.click{ display:none; }
@@ -101,6 +106,10 @@ input:focus{ outline:none; font-size: 18px; }
 .btnBox.hide2 > .afterBtns{ opacity:1; transition-delay:.3s; }
 .btnBox.hide3 > .afterBtns{ width:auto; }
 .btnBox.hide3 > .afterBtns > button.ok{ display:none; }
+
+
+
+/* alert창 */ 
 
 
 @media screen and (max-width: 600px) {
