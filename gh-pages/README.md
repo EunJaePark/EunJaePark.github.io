@@ -1,3 +1,3 @@
-nomad coder
+## nomad coder
 
-JavaScript challenge 졸업작품
+### JavaScript challenge 졸업작품
