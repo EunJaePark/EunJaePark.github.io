@@ -118,7 +118,6 @@ function printToDoList(task) {
 
     li.id = newID;
     span.innerText = task;
-    // doneBtn.innerText = '✓';
     doneBtn.innerText = 'ok';
     delBtn.innerText = '✕';
 
