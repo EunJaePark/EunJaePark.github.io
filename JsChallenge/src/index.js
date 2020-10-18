@@ -4,9 +4,9 @@
     mainBox = document.querySelector('.mainBox'),
     welcomeSpan = document.querySelector('.welcomeZone > span'),   
     toDoForm = document.querySelector('.toDoListZone > form'),
-    toDoInput = toDoForm .querySelector('input'),
-    notDoneUl = document .querySelector('.toDoListZone > ul.notDone'),
-    doneUl = document .querySelector('.toDoListZone > ul.done'),
+    toDoInput = toDoForm.querySelector('input'),
+    notDoneUl = document.querySelector('.toDoListZone  ul.notDone'),
+    doneUl = document .querySelector('.toDoListZone  ul.done'),
     USER_NAME = 'userName',
     TODOLIST = 'toDoList',
     TODO_DONE = 'todoDone',
@@ -83,18 +83,20 @@ function todoDone(e) {
 
 function printDoneList(done) {
     const li = document.createElement('li');
+    const span = document.createElement('span');
     const reBtn = document.createElement('button');
     const delBtn = document.createElement('button');
     reBtn.addEventListener('click', todoReturn);
     delBtn.addEventListener('click', todoDelete);
     const newID = doneArr.length + 1;
 
-    li.innerText = done;
     li.id = newID;
-    reBtn.innerText = '⟳';
-    delBtn.innerText = '✘';
+    span.innerText = done;
+    reBtn.innerText = '⤺';
+    delBtn.innerText = '✕';
 
     doneUl.appendChild(li);
+    li.appendChild(span);
     li.appendChild(reBtn);
     li.appendChild(delBtn);
     const doneInfo = {
@@ -107,18 +109,21 @@ function printDoneList(done) {
 
 function printToDoList(task) {
     const li = document.createElement('li');
+    const span = document.createElement('span');
     const doneBtn = document.createElement('button');
     const delBtn = document.createElement('button');
     doneBtn.addEventListener('click', todoDone);
     delBtn.addEventListener('click', todoDelete);
     const newID = todoArr.length + 1;
 
-    li.innerText = task;
     li.id = newID;
-    doneBtn.innerText = '✔';
-    delBtn.innerText = '✘';
+    span.innerText = task;
+    // doneBtn.innerText = '✓';
+    doneBtn.innerText = 'ok';
+    delBtn.innerText = '✕';
 
     notDoneUl.appendChild(li);
+    li.appendChild(span);
     li.appendChild(doneBtn);
     li.appendChild(delBtn);
 
@@ -133,15 +138,21 @@ function printToDoList(task) {
 function toDoInputFunc(event) {
     event.preventDefault();
     const task = toDoInput.value;
-    printToDoList(task);
-    toDoInput.value = '';
+    console.log(task, task.length);
+    if(task.replace(/\s|  /gi, '').length === 0) {
+        alert('please write what to do');
+        toDoInput.value = '';
+    } else {
+        printToDoList(task);
+        toDoInput.value = '';
+    }
 }
 
 function welcome(name) {
     welcomeSpan.innerText = `Hello, ${name} !`;
     userNameZone.classList.add('hide');
-    mainBox.classList.add('show');
     userNameZone.classList.remove('show');
+    mainBox.classList.add('show');
     mainBox.classList.remove('hide');
 }
 

@@ -22,10 +22,11 @@ function getWeather(lat, lon) {
 }
 
 function saveCoordsObj(coordsObj) {
-    localStorage.setItem(COORDS, coordsObj);
+    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
 function handleGeoSuccess(position) {
+    console.log(position);
     console.log(position.coords.latitude);
     const latitude = position.coords.latitude,
         longitude = position.coords.longitude,

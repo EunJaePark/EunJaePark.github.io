@@ -1,10 +1,270 @@
+/* ------ common ------ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    /* min-width: 1000px;
+    min-height: 400px; */
+    margin: 0;
+    padding: 0;
+}
+body *{
+    box-sizing: border-box;
+}
+.mainBox.show{
+    opacity: 1 !important;
+    transition: all .8s ease;
+    left: 40%;
+}
 .show{
-    display: block !important;
+    opacity: 1 !important;
+    transition: all .8s ease;
 }
 .hide{
-    display: none !important;
+    width: 0;
+    height: 0;
+    opacity: 0 !important;
+}
+.bgImage{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    min-height: 800px;
+    z-index: -1;
+    object-fit: cover;
+    animation: fadeIn .5s linear;
+}
+input{
+    border: none;
+    color: #fff;
+    background-color: transparent;
+}
+input:focus{
+    outline: none;
+}
+input::placeholder{
+    color: rgba(255, 255, 255, .7);
+}
+button{
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(255, 255, 255, .3);
+}
+ul,
+li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.mainBox{
-    display: none;
+
+/* ------ userNameZone ------ */
+.userNameZone{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
 }
+.userNameZone > .contents{
+    /* outline: 1px solid blue; */
+    width: 500px;
+    position: absolute; 
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}
+.userNameZone > .contents > h1{
+    /* outline: 1px solid red; */
+    margin: auto 0;
+    text-align: center;
+    font-size: 50px;
+}
+.userNameZone > .contents > form{
+    /* outline: 1px solid red; */
+    text-align: center;
+}
+.userNameZone > .contents > form > input{
+    border-bottom: 3px solid #fff;
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+.userNameZone > .contents > form > input:focus{
+    outline: none;
+}
+.userNameZone > .contents > form > input::placeholder{
+    color: rgba(255, 255, 255, .7);
+}
+
+
+/* ------ mainBox ------ */
+.mainBox{
+    width: 900px;
+    height: 700px;
+    margin: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 0;
+    position: absolute;
+    left: -100%;
+    top: 30%;
+    transform: translate(-40%, -30%);
+}
+/* .welcomeZone */
+.mainBox > .welcomeZone{
+    border-bottom: 4px solid #fff;
+    margin: 0 0 30px;
+    padding: 0 0 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* .clockZone */
+.mainBox > .clockZone{
+    width: 100%;
+    height: 70px;
+    font-size: 15px;
+    position: absolute; 
+    top: 0;
+    right: 0;
+}
+.mainBox > .clockZone > p{
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+}
+.mainBox > .clockZone > p.dateText{
+    left: 30px;
+}
+.mainBox > .clockZone > p.timeText{
+    right: 30px;
+}
+
+/* .toDoListZone */
+.mainBox > .toDoListZone{
+    position: relative;
+}
+.mainBox > .toDoListZone:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.mainBox > .toDoListZone > form{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mainBox > .toDoListZone > form > input{
+    border-bottom: 2px solid #fff;
+    padding: 5px 40px 5px 20px;
+    font-size: 18px;
+}
+.mainBox > .toDoListZone > form > button{
+    padding: 5px 7px;
+    position: absolute; 
+    right: 0;
+}
+.mainBox > .toDoListZone > div{
+    outline: 3px solid #fff;
+    width: calc(50% - 40px);
+    height: 400px;
+    min-height: calc(500px - 40px);
+    margin: 70px 20px 0;
+    float: left;
+    
+}
+.mainBox > .toDoListZone > div > h3{
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+.mainBox > .toDoListZone > div > h3:after{
+    content: '';
+    display: block;
+    width: 200px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute; 
+    bottom: -10px;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+.mainBox > .toDoListZone > div > ul{
+    height: 350px;
+    padding: 0 40px;
+    overflow-y: scroll;
+}
+.mainBox > .toDoListZone > div > ul > li{
+    padding: 15px 60px 10px 35px;
+    position: relative;
+}
+.mainBox > .toDoListZone > div > ul > li + li{
+    border-top: 2px solid rgba(255, 255, 255, .5);
+}
+.mainBox > .toDoListZone > div > ul > li > button{
+    border: 1px solid #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    position: absolute;
+    bottom: 15px;
+}
+.mainBox > .toDoListZone > div > ul > li > button:nth-child(2) {
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 3px 3px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, .7);
+    left: 0;
+    bottom: 15px;
+}
+.mainBox > .toDoListZone > div > ul > li > button:nth-child(3) {
+    right: 0;
+}
+.mainBox > .toDoListZone > div.doneBox > ul > li > button:nth-child(2) {
+    border: none;
+    padding: 0 4px;
+}
+.mainBox > .toDoListZone > div > ul > li > span{
+    width: 100%;
+    padding: 0 10px;
+    display: inline-block;
+    overflow-x: scroll;
+}
+.mainBox > .toDoListZone > div.doneBox > ul > li > span{
+    
+    
+    position: relative;
+    
+}
+.mainBox > .toDoListZone > div.doneBox > ul > li > span:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 0, 0, .7);
+    position: absolute;
+    top: 10px;
+}
+
+/* .weatherZone */
+.mainBox > .weatherZone{
+    padding: 10px 20px 0;
+    font-size: 15px;
+}
+
+

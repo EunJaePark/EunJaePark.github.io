@@ -9,10 +9,12 @@
 </head>
 <body>
     <div class="userNameZone">
-        <span class="question">What is your name?</span>
-        <form>
-            <input type="text" placeholder="What your name?">
-        </form>      
+        <div class="contents">
+            <h1 class="question">What is your name?</h1>
+            <form>
+                <input type="text" placeholder="Please write your name">
+            </form>      
+        </div>
     </div>
 
     <div class="mainBox">
@@ -25,18 +27,25 @@
         </div>
         <div class="toDoListZone">
             <form action="">
-                <input type="text" placeholder="Add task">
+                <input type="text" placeholder="Please write what to do">
+                <button>✚</button>
             </form>
-            <h3>To Do List</h3>
-            <ul class="notDone"></ul>
-            <h3>Finished List</h3>
-            <ul class="done"></ul>
+            <div class="notDoneBox">
+                <h3>To Do List</h3>
+                <ul class="notDone"></ul>
+            </div>           
+            <div class="doneBox">
+                <h3>Finished List</h3>
+                <ul class="done"></ul>
+            </div>        
         </div>
         <div class="weatherZone"></div>
     </div>
 
+
     <script src="src/index.js"></script>
     <script src="src/clock.js"></script>
     <script src="src/weather.js"></script>
+    <script src="src/background.js"></script>
 </body>
 </html>
