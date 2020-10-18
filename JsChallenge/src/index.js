@@ -203,7 +203,8 @@ function connetionCheck() {
 
 
 function init() {
-    connetionCheck();     
+    connetionCheck();  
+    toDoForm.addEventListener('submit', toDoInputFunc);   
 }
 
 init();
