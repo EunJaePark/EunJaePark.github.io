@@ -55,13 +55,15 @@
         <main>
             <section class="intro clean">
                 <div class="inner">
-                    <div class="title">
-                        <span>안녕하세요 <br/> <strong>박은재</strong>입니다</span>
-                        <address class="contactBox">
-                            <a href="https://github.com/EunJaePark" target="blank"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="tel:01063141371"><i class="fas fa-phone"></i> 010.6314.1371</a>
-                            <a href="mailto:design0728@naver.com"><i class="fas fa-envelope"></i> design0728@naver.com</a>
-                        </address>
+                    <div class="introBG">
+                        <div class="bgColorBox"></div>
+                        <img src="./images/myEmoge.png" alt="" class="emoge">
+                    </div>
+                    <div class="title clear">
+                        <span>HELLO,</span>
+                        <span>I'M</span>  
+                        <span>FRONT-END  DEVELOPER</span>                      
+                        <!-- <span>안녕하세요 <br/> <strong>박은재</strong>입니다</span>                       -->
                     </div>  
                     
                     <div class="aboutMeBox">
@@ -73,29 +75,30 @@
                                 <li>Vue.js</li>
                                 <li>Git</li>
                             </ul>
-                            <button>click!</button>
+                            <button class="blink">click!</button>
                         </div>
 
-                        <div class="aboutMeCont hide">
+                        <div class="aboutMeCont">
                             <ul class="aboutMe">
-                                <li>
+                                <li class="clear">
                                     <strong>HTML5</strong>
-                                    <span><span class="strong">웹표준</span>, <span class="strong">웹접근성</span>, <span class="strong">크로스 브라우징</span>을 이해하고 있습니다. </span>
+                                    <span><span class="strong">웹표준</span>, <span class="strong">웹접근성</span>, <span class="strong">크로스 브라우징</span>을 이해하고 있으며, 효율적인 태그를 작성합니다. </span>
                                     
                                 </li>
-                                <li>
+                                <li class="clear">
                                     <strong>CSS3</strong>
-                                    <span><span class="strong">CSS3</span>, <span class="strong">Media Queries</span>를 사용해 <span class="strong">반응형 웹사이트</span>를 제작합니다.</span>
+                                    <span><span class="strong">CSS3</span>, <span class="strong">Media Queries</span>를 이용해 <span class="strong">반응형 웹사이트</span>를 제작합니다.</span>
                                 </li>
-                                <li>
-                                    <strong>JavaScript</strong> 
-                                    <strong>Vue.js</strong> 
-                                    <strong>jQuery </strong>
-                                    <span><span class="strong">Vanilla JavaScript</span>로 코드를 구성하며, <span class="strong">ES6</span>문법을 이해하고 있습니다. <br/> 자바스크립트 라이브러리인 <span class="strong">jQuery</span>를 사용할 수 있습니다. <br/> 자바스크립트 프레임워크인 <span class="strong">Vue.js</span>를 이해하고 있으며, <span class="strong">SPA</span> 웹사이트를 구현할 수 있습니다.</span>
+                                <li class="clear">
+                                    <strong>
+                                        <span>JavaScript</span>
+                                        <span>Vue.js</span>
+                                        <span>jQuery</span> 
+                                    </strong>
+                                    <span><span class="strong">ES6</span>문법을 이해하고 있으며, <span class="strong">Vanilla JavaScript</span>로 코드를 구성하고, DOM을 제어할 수 있습니다. <br/> 자바스크립트 라이브러리인 <span class="strong">jQuery</span>를 사용할 수 있으며, 자바스크립트 프레임워크인 <span class="strong">Vue.js</span>를 이용해 <span class="strong">SPA</span> 웹사이트를 구현할 수 있습니다.</span>
                                 </li>
-                                <li>
-                                    <strong class="gitMargin">Git</strong>
-                                    <strong>GitHub</strong>
+                                <li class="clear">
+                                    <strong>Git & GitHub</strong>
                                     <span><span class="strong">Git</span>을 이용해 버전관리를 할 수 있으며, 협업을 진행 할 수 있습니다.</span>
                                 </li>
                             </ul>   
@@ -103,10 +106,16 @@
                         </div>
                     </div>
 
+                    <address class="contactBox">
+                        <a href="https://github.com/EunJaePark" target="blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="tel:01063141371"><i class="fas fa-phone"></i> 010.6314.1371</a>
+                        <a href="mailto:design0728@naver.com"><i class="fas fa-envelope"></i> design0728@naver.com</a>
+                    </address>
+
                     <div class="scrollBtn">
                         <button>
                             <span>Scroll</span>
-                            <span>&darr;</span>
+                            <span class="arrow">↓</span>
                         </button>
                     </div>
                 </div><!--.inner-->
@@ -114,16 +123,23 @@
             
             <section class="portfolio">
                 <div class="inner">
-                    <div class="portfolio_list">
+
+                    <!-- <div class="portfolio_list"> -->
                         <h2 class="script">JavaScript / Vue.js</h2>
+                        
+                        <div class="portListBox script moneyboo right clear">
+                            <div class="imgTitle">
+                                <a href="https://elated-albattani-035181.netlify.app" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/moneyboo.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG vue">Vue</span>
+                            </div><!--.imgTitle-->
 
-                        <div class="portListBox script moneyboo">
-
-                            <span class="num">1 <span class="jsvue">Vue.js</span></span>
-
-                            <div class="portfolio_content clean">
-
+                            <div class="text_box">
+                                <span class="num">01 <span class="jsvue">Vue.js</span></span>
                                 <h3>Moneyboo</h3>
+
                                 <div class="exp_text">
                                     <span><strong>Vue.js</strong>로 제작한 가계부 app입니다.</span> 
                                     <span><strong>firebase API</strong>를 이용해 사용자가 기입한 자산, 목표금액, 지출내역 등을 관리할 수 있도록 제작했습니다.</span> 
@@ -131,75 +147,67 @@
                                     <span><strong>PC</strong>와 <strong>Mobile</strong> 접속환경에서 동일하도록 <strong>반응형</strong>으로 제작되었습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="https://elated-albattani-035181.netlify.app" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/moneyboo.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">Vue.js</span>
-                                            <a href="https://github.com/EunJaePark/moneyboo" target="blank"> github link </a>
-                                        </li>                               
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">Vue.js</span> -->
+                                        <a href="https://github.com/EunJaePark/moneyboo" target="blank"> Vue.js </a>
+                                    </li>                               
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox--> 
 
-                        <div class="portListBox script randomclick">
+                        <div class="portListBox script randomclick left clear">                                                      
+                            <div class="imgTitle">
+                                <a href="./js_random_click/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/randomclick.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG js">JS</span>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">2 <span class="jsvue">Java<br/>Script</span></span>
-                            
-                            <div class="portfolio_content clean">
-
-                                <h3>Random <br/> Click</h3>
+                            <div class="text_box">
+                                <span class="num">02 <span class="jsvue">JavaScript</span></span>
+                                <h3>Random Click</h3>
                                 <div class="exp_text">
                                     <span>식사 메뉴를 랜덤으로 선택해주는 random click입니다. 후보 메뉴를 추가/삭제 할 수 있으며, 선정된 메뉴를 판매하는 식당을 구글지도로 찾을 수 있도록 제작했습니다.<br/></span> 
                                     <span><strong>바닐라 JavaScript</strong>로 제작했으며, <strong>local storage</strong>를 활용해 페이지 재접속 시 기존 데이터가 유지되도록 했습니다. 미디어쿼리를 이용해 <strong>PC</strong>와 <strong>Mobile</strong> 접속환경에서 동일하도록 <strong>반응형</strong>으로 제작되었습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./js_random_click/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/randomclick.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/random_click/blob/master/index.html" target="blank">index.html</a>
-                                        </li>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/random_click/blob/master/index.html" target="blank">HTML</a>
+                                    </li>
                                         
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/random_click/blob/master/css/common.css" target="blank">common.css</a>
-                                        </li>
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/random_click/blob/master/css/common.css" target="blank">CSS</a>
+                                    </li>
 
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/random_click/blob/master/js/common.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/random_click/blob/master/js/common.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->
+                           
                         </div><!--.portListBox--> 
 
-                        <div class="portListBox script weatherapp">
+                        <div class="portListBox script weatherapp right clear">
+                            <div class="imgTitle">
+                                <a href="https://friendly-hermann-20d5d4.netlify.app/#/" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/weatherApp.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG vue">Vue</span>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">3 <span class="jsvue">Vue.js</span></span>
+                            <div class="text_box">
+                                <span class="num">03 <span class="jsvue">Vue.js</span></span>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>Weather<br/> App</h3>
+                                <h3>Weather App</h3>
                                 <div class="exp_text">
                                     <span><strong>Vue.js</strong>로 제작한 날씨 app입니다. 입력한 지역의 날씨 정보를 출력하여 보여줍니다.</span> 
                                     <span><strong>local storage</strong>를 활용해 페이지에 재접속시 이전에 검색한 지역의 날씨 정보가 출력되도록 제작했습니다.</span> 
@@ -207,169 +215,144 @@
                                     <span><strong>PC</strong>와 <strong>Mobile</strong> 접속환경에서 동일하도록 <strong>반응형</strong>으로 제작되었습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="https://friendly-hermann-20d5d4.netlify.app/#/" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/weatherApp.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">Vue.js</span>
-                                            <a href="https://github.com/EunJaePark/weatherApp_ej" target="blank"> github link </a>
-                                        </li>                               
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">Vue.js</span> -->
+                                        <a href="https://github.com/EunJaePark/weatherApp_ej" target="blank"> Vue.js </a>
+                                    </li>                               
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox--> 
 
-                        <div class="portListBox script hackernews">
+                        <div class="portListBox script hackernews left clear">
+                            <div class="imgTitle">
+                                <a href="https://lucid-ritchie-53ad20.netlify.app/#/" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/hackernews.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG vue">Vue</span>
+                                </div><!--.imgTitle-->
 
-                            <span class="num">4 <span class="jsvue">Vue.js</span></span>
+                            <div class="text_box">
+                                <span class="num">04 <span class="jsvue">Vue.js</span></span>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>Hacker<br/> News</h3>
+                                <h3>Hacker News</h3>
                                 <div class="exp_text">
                                     <span><strong>Vue.js</strong>로 제작한 Hacker News입니다. hacker news API를 불러와 제작했습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="https://lucid-ritchie-53ad20.netlify.app/#/" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/hackernews.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">Vue.js</span>
-                                            <a href="https://github.com/EunJaePark/hackernews0401ej" target="blank"> github link </a>
-                                        </li>                               
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">Vue.js</span> -->
+                                        <a href="https://github.com/EunJaePark/hackernews0401ej" target="blank"> Vue.js </a>
+                                    </li>                               
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->  
 
-                        <div class="portListBox script todolistVue">
+                        <div class="portListBox script todolistVue right clear">
+                            <div class="imgTitle">
+                                <a href="https://goofy-thompson-0d09b9.netlify.app/#/" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/todolistVue.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG vue">Vue</span>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">5 <span class="jsvue">Vue.js</span></span>
+                            <div class="text_box">
+                                <span class="num">05 <span class="jsvue">Vue.js</span></span>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>To do List <br/> - Vue.js</h3>
+                                <h3>To do List - Vue.js</h3>
                                 <div class="exp_text">
                                     <span><strong>Vue.js</strong>로 제작한 TodoList입니다.</span> 
                                     <span>할일 목록 <strong>생성</strong>, <strong>수정</strong>, <strong>삭제</strong>, <strong>우선순위</strong> 설정, <strong>완료 체크</strong> 기능이 있습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="https://goofy-thompson-0d09b9.netlify.app/#/" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/todolistVue.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">Vue.js</span>
-                                            <a href="https://github.com/EunJaePark/todolist0326ej" target="blank"> github link </a>
-                                        </li>                               
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">Vue.js</span> -->
+                                        <a href="https://github.com/EunJaePark/todolist0326ej" target="blank"> Vue.js </a>
+                                    </li>                               
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->  
 
-                        <div class="portListBox script todolistJS">
+                        <div class="portListBox script todolistJS left clear">
+                            <div class="imgTitle">
+                                <a href="./js_todolist/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/todolist.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG js">JS</span>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">6 <span class="jsvue">Java<br/>Script</span></span>
+                            <div class="text_box">
+                                <span class="num">06 <span class="jsvue">JavaScript</span></span>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>To do List <br/> - JS</h3>
+                                <h3>To do List - JS</h3>
                                 <div class="exp_text">
                                     <span><strong>바닐라 JavaScript</strong>로 제작한 TodoList입니다.</span> 
                                     <span><strong>local storage</strong>를 활용해 페이지에 재접속해도 사용자의 이름과 TodoList가 그대로 남아있도록 제작했습니다. 또한, 기존 TodoList의 닫기 버튼을 누르면 새로운 사용자 이름과 TodoList를 작성할 수 있습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./js_todolist/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/todolist.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/index.html" target="blank">index.html</a>
-                                        </li>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/index.html" target="blank">HTML</a>
+                                    </li>
                                         
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/common.css" target="blank">common.css</a>
-                                        </li>
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/common.css" target="blank">CSS</a>
+                                    </li>
 
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/common.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js_todolist/common.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->                           
                         </div><!--.portListBox-->  
-                        <div class="portListBox script paintbrush">
 
-                            <span class="num">7 <span class="jsvue">Java<br/>Script</span></span>
+                        <div class="portListBox script paintbrush right clear">
+                            <div class="imgTitle">
+                                <a href="./paint/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/paint.png" alt="" class="site"/>
+                                </a>
+                                <span class="jsVueBG js">JS</span>
+                            </div><!--.imgTitle-->
 
-                            <div class="portfolio_content clean">
+                            <div class="text_box">
+                                <span class="num">07 <span class="jsvue">JavaScript</span></span>
 
-                                <h3>그림판 <br/> Paintbrush</h3>
+                                <h3>그림판 Paintbrush</h3>
                                 <div class="exp_text">
                                     <span><strong>바닐라 JavaScript</strong>로 제작한 그림판입니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./paint/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/paint.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/index.html" target="blank">index.html</a>
-                                        </li>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/index.html" target="blank">HTML</a>
+                                    </li>
                                         
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/css/styles.css" target="blank">common.css</a>
-                                        </li>
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/css/styles.css" target="blank">CSS</a>
+                                    </li>
 
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/js/app.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-                                </div><!--.text_box-->
-                            </div>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/paint/js/app.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->  
                         
                         
@@ -381,229 +364,193 @@
                          
 
                         <h2>website 제작</h2>
-                        <div class="portListBox website kakaobank">  
-                            <span class="num">1</span>  
+                        <div class="portListBox website kakaobank left clear">  
+                            <div class="imgTitle">
+                                <a href="./1_kakaobank_js/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/kakao_crop_b.png" alt="" class="site"/>
+                                </a>
+                            </div><!--.imgTitle-->
 
-                            <div class="portfolio_content clean">
-                                <!-- <a href="1_kakaobank_js/index.html" target="blank">Website →</a> -->
+                            <div class="text_box">
+                                <span class="num">01</span>  
+                                <h3>kakaobank</h3>
 
-                                <h3>kakao<br/>bank</h3>
                                 <div class="exp_text">
                                     <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
                                     <strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.
                                     <strong>JavaScript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
                                 </div>
-
-                                <div class="imgTitle">
-                                    <a href="./1_kakaobank_js/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/kakao_crop_b.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-                                
-                                <div class="text_box">
-                                    <span class="page">1 Main page + 1 Sub page</span>
+                              
+                                <span class="page">1 Main page + 1 Sub page</span>
+                                <div class="layout">
+                                    <span class="imgTitle">Layout sketch 보기</span>
+                                    <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
+                                </div> 
                                     
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/index.html" target="blank">index.html</a>
-                                        </li>
-
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/sub_brand.html" target="blank">sub_brand.html</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/css/common.css" target="blank">common.css</a>
-                                        </li>
-
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/sub.js" target="blank">sub.js</a>
-                                        </li>                                  
-                                    </ul>
-
-                                    <div class="layout">
-                                        <span class="imgTitle">Layout sketch 보기</span>
-                                        <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
-                                    </div> 
-                                </div><!--.text_box-->
-
-                                
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/index.html" target="blank">HTML</a>
+                                    </li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/sub_brand.html" target="blank">HTML_SUB</a>
+                                    </li>                                       
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/css/common.css" target="blank">CSS</a>
+                                    </li>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">JS</a>
+                                    </li>                                        
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/sub.js" target="blank">JS_SUB</a>
+                                    </li>                                  
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->
                         
-                        <div class="portListBox website cjenc">
+                        <div class="portListBox website cjenc right clear">
+                            <div class="imgTitle">
+                                <a href="./2_cjenc_js/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/cj_crop_b.png" alt="" class="site"/>
+                                </a>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">2</span>
-
-                            <div class="portfolio_content clean">
-                                <!-- <a href="2_cjenc_js/index.html" target="blank">Website →</a> -->
-
-                                <h3>CJ<br/>enc</h3>
+                            <div class="text_box">
+                                <span class="num">02</span>
+                                <h3>CJenc</h3>
                                 <div class="exp_text">
                                     <span></spans><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
                                     <strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.
                                     <strong>바닐라 JavaScript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./2_cjenc_js/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/cj_crop_b.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-                                    <span class="page">1 Main page</span>
+                                <span class="page">1 Main page</span>
+                                <div class="layout">
+                                    <span class="imgTitle">Layout sketch 보기</span>
+                                    <img src="images/layoutBg_cj.png" alt="" class="layout"/>
+                                </div> 
                                     
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/index.html" target="blank">index.html</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/css/common.css" target="blank">common.css</a>
-                                        </li>
-    
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/js/main.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-
-                                    <div class="layout">
-                                        <span class="imgTitle">Layout sketch 보기</span>
-                                        <img src="images/layoutBg_cj.png" alt="" class="layout"/>
-                                    </div> 
-                                </div><!--.text_box--> 
-
-                                    
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/index.html" target="blank">HTML</a>
+                                    </li>                                        
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/css/common.css" target="blank">CSS</a>
+                                    </li>   
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/2_cjenc_js/js/main.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box--> 
                         </div><!--.portListBox-->
                         
-                        <div class="portListBox website sksiltron">
+                        <div class="portListBox website sksiltron left clear">
+                            <div class="imgTitle">
+                                <a href="./3_sksiltron/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/sk_crop_b.png" alt="" class="site"/>
+                                </a>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">3</span>
+                            <div class="text_box">
+                                <span class="num">03</span>
+                                <h3>SKsiltron</h3>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>SK<br/>siltron</h3>
                                 <div class="exp_text">
                                     <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
                                     <strong>PC</strong>용 브라우저화면에 최적화하여 레이아웃을 구성했습니다.
                                     <strong>바닐라 JavaScript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./3_sksiltron/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/sk_crop_b.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-                                    <span class="page">1 Main page</span>
+                                <span class="page">1 Main page</span>
+                                <div class="layout">
+                                    <span class="imgTitle">Layout sketch 보기</span>
+                                    <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
+                                </div> 
                                     
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/index.html" target="blank">index.html</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/css/common.css" target="blank">common.css</a>
-                                        </li>
-
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/js/main.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-
-                                    <div class="layout">
-                                        <span class="imgTitle">Layout sketch 보기</span>
-                                        <img src="images/layoutBg_SK_siltron.png" alt="" class="layout"/>
-                                    </div> 
-                                </div><!--.text_box-->
-
-
-                                
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/index.html" target="blank">HTML</a>
+                                    </li>                                       
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/css/common.css" target="blank">CSS</a>
+                                    </li>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/3_sksiltron/js/main.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->
                         
-                        <div class="portListBox website microsoft">
+                        <div class="portListBox website microsoft right clear">
+                            <div class="imgTitle">
+                                <a href="./4_microsoft/index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/microsoft_crop_b.png" alt="" class="site"/>
+                                </a>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">4</span>
+                            <div class="text_box">
+                                <span class="num">04</span>
+                                <h3>microsoft</h3>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>micro<br/>soft</h3>
                                 <div class="exp_text">
                                     <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
                                     <strong>미디어쿼리</strong>를 이용해 <strong>PC</strong>, <strong>Tablet</strong>, <strong>Mobile</strong>의 다양한 접속환경에서 불편함 없이 동일한 정보를 볼 수 있는 <strong>반응형</strong>으로 제작했습니다.
                                     <strong>바닐라 JavaScript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./4_microsoft/index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/microsoft_crop_b.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
-
-                                <div class="text_box">
-                                    <span class="page">1 Main page</span>
+                                <span class="page">1 Main page</span>
+                                <div class="layout">
+                                    <span class="imgTitle">Layout sketch 보기</span>
+                                    <img src="images/layoutBg_Microsoft.png" alt="" class="layout"/>
+                                </div> 
                                     
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/index.html" target="blank">index.html</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/css/common.css" target="blank">common.css</a>
-                                        </li>
-
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-
-                                    <div class="layout">
-                                        <span class="imgTitle">Layout sketch 보기</span>
-                                        <img src="images/layoutBg_Microsoft.png" alt="" class="layout"/>
-                                    </div> 
-                                </div><!--.text_box-->
-
-                                
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/index.html" target="blank">HTML</a>
+                                    </li>                                       
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/4_microsoft/css/common.css" target="blank">CSS</a>
+                                    </li>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/1_kakaobank_js/js/main.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox--> 
 
-                        <div class="portListBox website parkeunjae">
+                        <div class="portListBox website parkeunjae left clear">
+                            <div class="imgTitle">
+                                <a href="./index.html" class="siteImg" target="blank">
+                                    <span>Go <sub> &rarr;</sub></span> 
+                                    <img src="images/port_crop_b.png" alt="" class="site"/>
+                                </a>
+                            </div><!--.imgTitle-->
 
-                            <span class="num">5</span>
+                            <div class="text_box">
+                                <span class="num">5</span>
+                                <h3>PARKEUNJAE</h3>
 
-                            <div class="portfolio_content clean">
-
-                                <h3>PARK <br/>EUNJAE</h3>
                                 <div class="exp_text">
                                     <span>저의 포트폴리오 웹사이트입니다.</span>
                                     <span><strong>웹접근성</strong>을 준수하여 마크업한 사이트입니다.
@@ -611,46 +558,31 @@
                                     <strong>바닐라 JavaScript</strong>를 이용해 동적인 기능들을 구현했습니다.</span>
                                 </div>
 
-                                <div class="imgTitle">
-                                    <a href="./index.html" class="siteImg" target="blank">
-                                        <span>Go <sub> &rarr;</sub></span> 
-                                        <img src="images/port_crop_b.png" alt="" class="site"/>
-                                    </a>
-                                </div><!--.imgTitle-->
 
-                                <div class="text_box">
-                                    <span class="page">1 page</span>
+                                <span class="page">1 page</span>
                                     
-                                    <ul class="code_box">
-                                        Source link
-                                        <li>
-                                            <span class="html">HTML</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/index.html" target="blank">index.html</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <span class="css">CSS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/css/common.css" target="blank">common.css</a>
-                                        </li>
-
-                                        <li>
-                                            <span class="js">JS</span>
-                                            <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js/common.js" target="blank">main.js</a>
-                                        </li>                                 
-                                    </ul>
-
-                                </div><!--.text_box-->
-                            </div>
+                                <ul class="code_box">
+                                    <li class="title">Source link</li>
+                                    <li>
+                                        <!-- <span class="html">HTML</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/index.html" target="blank">HTML</a>
+                                    </li>                                      
+                                    <li>
+                                        <!-- <span class="css">CSS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/css/common.css" target="blank">CSS</a>
+                                    </li>
+                                    <li>
+                                        <!-- <span class="js">JS</span> -->
+                                        <a href="https://github.com/EunJaePark/EunJaePark.github.io/blob/master/js/common.js" target="blank">JS</a>
+                                    </li>                                 
+                                </ul>
+                            </div><!--.text_box-->
                         </div><!--.portListBox-->   
-
-                        
-                                        
-                    </div><!--.portfolio_list-->
+                                                             
+                    <!--</div>--><!--.portfolio_list-->
                 </div><!--.inner-->
             </section>
-
-            
-
+           
         </main>
 
         <footer>
