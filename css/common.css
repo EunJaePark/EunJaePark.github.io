@@ -104,9 +104,10 @@ button:focus{ outline:none; }
 
 /* ---------------------layout------------------- */
 .wrap{ width:100%; min-width:370px; background-color:#1c1b20; }
-header{ background-color:#f8f8f8; width: 100%;/*width:calc(100% + -110px);*/ min-width:300px/*350-110*/; height:70px; padding:20px 55px 0; transition:all .5s ease-out; position:fixed; z-index:5000; }
+header{ background-color:#f8f8f8; width: 100%;/*width:calc(100% + -110px);*/ min-width:300px/*350-110*/; height:70px; padding:20px 55px 0; transition:all .5s ease-out; position:fixed; z-index:5000; overflow: hidden; }
 header.fixed{ border-bottom:1px solid rgba(248, 248, 248, 0.596); height:55px;  padding:0 55px; position:fixed; top:-55px; left:0; }
 header.fixed2{ top:0; }
+header.fixedShowPortNav{ height: 70px;  }
 main{ width:100%; background-color:#f8e88f /*f8f8f8*/; overflow:hidden; left:0; transition:all .5s ease-out; }
 footer{ width:100%;  background-color:; position:fixed; bottom:0; transition:all .5s ease-out; }
 
@@ -127,17 +128,19 @@ header > .title{ padding-top:7px; font-weight:700; font-size:25px; color:#4A41AB
 header > .title > a{ color:#4A41AB; }
 header > nav{ outline:px solid red; float:right; }
 header > nav > .section_nav > li{ outline:px solid blue;  float:left; }
-header > nav > .section_nav > li > button{ outline:px solid red; margin:15px 0 0 60px; font-size:20px; font-weight:700; color:#4A41AB; }
+header > nav > .section_nav > li > button{ outline:px solid red; margin:15px 0 0 60px; padding: 0 10px; font-size:20px; font-weight:700; color:#4A41AB; transition: all .3s ease; }
 header > nav > .section_nav > li > button:hover{ text-decoration:underline; }
-header > .port_nav{ position:absolute; top:70px; right:-100px; opacity:0; transition:all .5s ease-out; display: none; }
+header > nav > .section_nav > li > button.select{ background-color: rgba(248, 232, 143, .7); }
+
+header > .port_nav{  margin-top: 35px;  opacity:0;  position: absolute; right: 30px; transition:all .5s ease-out;  }
+header > .port_nav > .port_nav_box{  margin-left: 10px; display: inline; }
+header > .port_nav > .port_nav_box > span{  line-height: 1px; color: rgba(28, 27, 32, .5); font-size: 12px; font-weight: 400; }
+header > .port_nav > .port_nav_box > button{ border: 1px solid rgba(28, 27, 32, .3); border-radius: 50%; width: 15px; height: 15px; font-size: 0; transform: translateY(-3px); }
+header > .port_nav > .port_nav_box > button:hover{ background-color: rgba(192, 191, 191, .5); }
+header > .port_nav > .port_nav_box > button.show{ background-color: #f8e88f; }
+
+
 header > .port_nav.fixed{ right:30px; opacity:1; }
-header > .port_nav > .port_nav_box + .port_nav_box{ margin-top:15px; }
-header > .port_nav > .port_nav_box > button{ border:3px solid #f8e88f; border-radius:50%; width:23px; height:23px; margin:7px; font-size:0; display:block; }
-header > .port_nav > .port_nav_box > button:hover{ background-color: rgba(74, 65, 171, .2); }
-header > .port_nav > .port_nav_box > button.jsNav{ border-color:#4A41AB; }
-header > .port_nav > .port_nav_box > button.show{ background-color:rgba(248, 232, 145, .7); }
-header > .port_nav > .port_nav_box > span{  width:100%; line-height:15px; font-size:13px; color:#4A41AB; text-align:center; background-color:#f8e88f; display:block; }
-header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-size:15px; }
 
 
 
@@ -349,6 +352,14 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 }
 
 @media (max-width: 720px) {
+	/* header */
+	header.fixedShowPortNav{ height: 60px; }
+	header > .title{ font-size: 20px; }
+	header > nav > .section_nav > li > button{ margin-left: 10px; font-size: 15px; }
+	header > .port_nav{ margin-top: 27px; }
+	header > .port_nav > .port_nav_box{ margin-left: 5px; }
+
+
 	/* intro */
 	.intro{ height: auto; min-height: auto; padding-bottom: 50px; }
 	.intro > .inner > .introBG{ width: 20%; top: 170px; left: 60%; }
@@ -408,6 +419,12 @@ header > .port_nav > .port_nav_box:nth-child(2) > span{ line-height:16px; font-s
 }
 
 @media (max-width: 400px) {
+	/* header */
+	header.fixed{ padding: 0 25px; }
+	header.fixedShowPortNav{ height: 90px; }
+	header > .port_nav{ margin-top: 35px; }
+	header > .port_nav > .port_nav_box{ height: 22px; display: block; }
+
 	/* intro */
 	.intro > .inner > .introBG{ width: 13%; top: 155px; left: 65%; }
 	.intro > .inner > .introBG.smallSize{ width: 13%; top: 110px; left: 65%; }

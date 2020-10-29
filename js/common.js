@@ -96,9 +96,15 @@ window.addEventListener("scroll", function () {
   }
   if (scrollValue > intro.clientHeight) {
     portNav.classList.add("fixed");
+    header.classList.add("fixedShowPortNav");
+    navBtn[0].classList.remove("select");
+    navBtn[1].classList.add("select");
   } else if (scrollValue < intro.clientHeight) {
+    navBtn[0].classList.add("select");
+    navBtn[1].classList.remove("select");
     this.setTimeout(function () {
       portNav.classList.remove("fixed");
+      header.classList.remove("fixedShowPortNav");
     }, 500);
   }
 });
