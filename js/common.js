@@ -268,7 +268,9 @@ function pcMouseWheel() {
 
 // } //phoneScript() 끝.
 
-// aboutMeCover의 [click me!]버튼 클릭 시 aboutMeCont(상세 정보) 보이게 함. + contactBox 안보이게 함.
+// aboutMeCover의 [click!]버튼 클릭 시 aboutMeCont(상세 정보) 보이게 함. + contactBox 안보이게 함.
+let introTitle = document.querySelector(".intro > .inner > .title");
+let introBG = document.querySelector(".intro > .inner > .introBG");
 let aboutMeBtn = document.querySelector(".aboutMeCover > button");
 let aboutMeCover = document.querySelector(".aboutMeCover");
 let aboutMeCont = document.querySelector(".aboutMeCont");
@@ -278,6 +280,10 @@ aboutMeBtn.addEventListener("click", function () {
   aboutMeCover.classList.add("hide");
   aboutMeCont.classList.add("show");
   contactBox.classList.add("hide");
+  if (window.innerWidth < 1270) {
+    introTitle.classList.add("smallSize");
+    introBG.classList.add("smallSize");
+  }
 });
 
 // aboutMeCont의 [closeBtn]버튼 클릭 시 aboutMeCover가 보이도록 함.
@@ -285,6 +291,22 @@ aboutMeContClose.addEventListener("click", function () {
   aboutMeCover.classList.remove("hide");
   aboutMeCont.classList.remove("show");
   contactBox.classList.remove("hide");
+  if (
+    introTitle.classList.contains("smallSize") &&
+    introBG.classList.contains("smallSize")
+  ) {
+    introTitle.classList.remove("smallSize");
+    introBG.classList.remove("smallSize");
+  }
+});
+
+// aboutMeCont가 열려있을 때 pc화면에서 1270px로 resize했을 경우.
+window.addEventListener("resize", function () {
+  if (aboutMeCont.classList.contains("show") && window.innerWidth < 1270) {
+    console.log("resize했다 수정하다!!!");
+    introTitle.classList.add("smallSize");
+    introBG.classList.add("smallSize");
+  }
 });
 
 //포폴 img, text에 마웃스오버시 img바뀌게함.
