@@ -292,7 +292,7 @@ header > .port_nav.fixed{ right:30px; opacity:1; }
 .portfolio > .inner > .portListBox > .text_box > .code_box > li{ width: 100px; margin: 5px 0 5px 10px; text-align: center; cursor: pointer; background-color: #1c1b20; display: inline-block; box-shadow: 3px 3px 5px #c5c5c5; }
 .portfolio > .inner > .portListBox.left > .text_box > .code_box > li{ transform: translateX(-10px); }
 .portfolio > .inner > .portListBox > .text_box > .code_box > li:hover{ background-color: #f8e88f; }
-.portfolio > .inner > .portListBox > .text_box > .code_box > li > a { color: #f8f8f8; }
+.portfolio > .inner > .portListBox > .text_box > .code_box > li > a { width: 100%; color: #f8f8f8; display: block; }
 
 
 
