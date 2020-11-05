@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    background-color: #fff;
+    background: linear-gradient(145deg, #253682 50%, #4e8fe8 0);
+  }
+ 
+body > *{
+    box-sizing: border-box;
+}
+input{
+    border: none;
+    border-radius: 10px;
+    width: 60px;
+    height: 60px;
+    margin: 6px 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    background-color: #fff;
+}
+input:focus{
+    outline: none;
+}
+input:active{
+    opacity: .5;
+}
+.calculator{
+    border-radius: 30px;
+    width: 390px;
+    padding: 10px 50px 50px;
+    background: linear-gradient(#fff 170px, #f1f1f1 0);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 80px);
+}
+.calculator > h1{
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.calculator > .resultZone{
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 30px;
+}
+.calculator > .resultZone > *{
+    width: 100%;
+    color: #2e75c2;
+    text-align: right;
+    display: inline-block;
+}
+.calculator > .resultZone > .beforeResult{
+    margin-bottom: 10px;
+    font-size: 15px;
+    opacity: .5;
+}
+.calculator > .resultZone > .resultNum{
+    font-size: 30px; 
+     
+}
+
+.calculator > .topResetZone{
+    /* outline: 1px solid blue; */
+}
+.calculator > .topResetZone > input{
+    background-color: #ac89f6;
+}
+.calculator > .topResetZone > .delete{
+    background-color: #77e9bc;
+}
+.calculator > .operationZone{
+    /* outline: 1px solid gray; */
+    width: 70px; 
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+.calculator > .operationZone > input{
+    color: #ef8080;
+
+}
+
+.calculator > .numberZone{
+    /* outline: 1px solid green; */
+}
+.calculator > .numberZone > input{
+    color: #7b47d5;
+}
+.calculator > .numberZone > .zero{
+    width: 134px;
+}
