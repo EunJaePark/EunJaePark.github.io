@@ -1,7 +1,3 @@
-// <⚠️ DONT DELETE THIS ⚠️>
-// import "./styles.css";
-// <⚠️ /DONT DELETE THIS ⚠️>
-
 const topResetZone = document.querySelector('.topResetZone'),
     operationZone = document.querySelector('.operationZone'),
     numberZone = document.querySelector('.numberZone');
