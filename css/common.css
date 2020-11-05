@@ -209,36 +209,41 @@ header > .port_nav.fixed{ right:30px; opacity:1; }
 .portfolio > .inner > .portListBox > .imgTitle{ width: 50%; cursor: pointer; position: relative; transform: translateY(30px); }
 .portfolio > .inner > .portListBox.left > .imgTitle{ float: left; }
 .portfolio > .inner > .portListBox.right > .imgTitle{ float: right; text-align: right; }
-/* .portfolio > .inner > .portListBox > .imgTitle > .siteImg{ position: relative; } */
+.portfolio > .inner > .portListBox > .imgTitle > .siteImg{ width: 110%; box-shadow: -5px 6px 8px #c5c5c5; display: block; }
+.portfolio > .inner > .portListBox.left > .imgTitle > .siteImg{ width: 100%; box-shadow: 5px 6px 8px #c5c5c5; }
 /* 'GO ->' text */
 .portfolio > .inner > .portListBox > .imgTitle > .siteImg > span{ width: 150px; height: calc(100% + 60px);  font-size: 40px; font-weight: 700; color: rgba(66, 66, 66, .4); position: absolute; top: -60px; z-index: 1000; transition: all .8s ease; }
 .portfolio > .inner > .portListBox.left > .imgTitle > .siteImg > span{ left: 0; }
 .portfolio > .inner > .portListBox.right > .imgTitle > .siteImg > span{ padding-right: 30px; right: -30px; }
-.portfolio > .inner > .portListBox.left > .imgTitle > .siteImg > span.mouseover{ padding-left: 30px; color: rgba(66, 66, 66, .9); }
-.portfolio > .inner > .portListBox.right > .imgTitle > .siteImg > span.mouseover{ padding-right: 0; color: rgba(66, 66, 66, .9); }
 
-.portfolio > .inner > .portListBox > .imgTitle > .siteImg > img{ width: 110%; height: 100%; display: block; box-shadow: -5px 6px 8px #c5c5c5; }
-.portfolio > .inner > .portListBox.left > .imgTitle > .siteImg > img{ width: 100%; height: 100%; display: block; box-shadow: 5px 6px 8px #c5c5c5; }
 /* website 포폴 이미지 */
-.portfolio > .inner > .portListBox.website.kakaobank > .imgTitle > .siteImg > img{ width: 100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; }
-.portfolio > .inner > .portListBox.website.cjenc > .imgTitle > .siteImg > img{  background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.website.sksiltron > .imgTitle > .siteImg > img{ background:url('../images/site_sk_siltron.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.website.microsoft > .imgTitle > .siteImg > img{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.website.parkeunjae > .imgTitle > .siteImg > img{ background:url('../images/portfolio_pej.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.website.kakaobank > .imgTitle > .siteImg{ width: 100%; background:url('../images/kakaobank.png') no-repeat 0 0; background-size:cover; }
+.portfolio > .inner > .portListBox.website.cjenc > .imgTitle > .siteImg{  background:url('../images/cj_pc.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.website.sksiltron > .imgTitle > .siteImg{ background:url('../images/site_sk_siltron.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.website.microsoft > .imgTitle > .siteImg{ background:url('../images/microsoft_entire.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.website.parkeunjae > .imgTitle > .siteImg{ background:url('../images/portfolio_pej.png') no-repeat 0 0; background-size:cover;  }
 /* JS/Vue.js 포폴 이미지 */
-.portfolio > .inner > .portListBox.script.todolistJS > .imgTitle > .siteImg > img{  background:url('../images/todolist_hover.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.paintbrush > .imgTitle > .siteImg > img{  background:url('../images/paint_hover_w.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.randomclick > .imgTitle > .siteImg > img{  background:url('../images/randomclick_hover.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.todolistVue > .imgTitle > .siteImg > img{  background:url('../images/todolistVue_hover.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.hackernews > .imgTitle > .siteImg > img{  background:url('../images/hackernews_hover.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.weatherapp > .imgTitle > .siteImg > img{  background:url('../images/weatherApp_hover.png') no-repeat 0 0; background-size:cover;  }
-.portfolio > .inner > .portListBox.script.moneyboo > .imgTitle > .siteImg > img{  background:url('../images/moneyboo_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.todolistJS > .imgTitle > .siteImg{  background:url('../images/todolist_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.paintbrush > .imgTitle > .siteImg{  background:url('../images/paint_hover_w.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.randomclick > .imgTitle > .siteImg{  background:url('../images/randomclick_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.todolistVue > .imgTitle > .siteImg{  background:url('../images/todolistVue_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.hackernews > .imgTitle > .siteImg{  background:url('../images/hackernews_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.weatherapp > .imgTitle > .siteImg{  background:url('../images/weatherApp_hover.png') no-repeat 0 0; background-size:cover;  }
+.portfolio > .inner > .portListBox.script.moneyboo > .imgTitle > .siteImg{  background:url('../images/moneyboo_hover.png') no-repeat 0 0; background-size:cover;  }
+
+.portfolio > .inner > .portListBox > .imgTitle > .siteImg > img{ width: 100%; height: 100%; transition: all .4s ease-out; }
 
 .portfolio > .inner > .portListBox > .imgTitle > span.jsVueBG{ line-height: 250px; font-size: 350px; font-weight: bold; color: rgba(74, 65, 171, .5); cursor: auto; position: absolute; top: 20px; }
 .portfolio > .inner > .portListBox.left > .imgTitle > span.jsVueBG.vue{ left: -450px; }
 .portfolio > .inner > .portListBox.left > .imgTitle > span.jsVueBG.js{ left: -300px; }
 .portfolio > .inner > .portListBox.right > .imgTitle > span.jsVueBG.vue{ right: -450px; }
 .portfolio > .inner > .portListBox.right > .imgTitle > span.jsVueBG.js{ right: -300px; }
+
+/* portfolio에 마우스오버시 효과 */
+.portfolio > .inner > .portListBox.left > .imgTitle.on > .siteImg > span{ padding-left: 30px; color: rgba(66, 66, 66, .9); }
+.portfolio > .inner > .portListBox.right > .imgTitle.on > .siteImg > span{ padding-right: 0; color: rgba(66, 66, 66, .9); }
+.portfolio > .inner > .portListBox > .imgTitle.on > .siteImg{ background-position-y: bottom !important; transition: all 10s ease-out; transition-delay: .3s;  }
+.portfolio > .inner > .portListBox > .imgTitle.on > .siteImg > img{ opacity:0; }
 
 
 /* -- text_box -- */

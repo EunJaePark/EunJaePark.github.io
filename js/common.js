@@ -223,56 +223,6 @@ function pcMouseWheel() {
   }
 } //pcMouseWheel() 끝.
 
-// // phoneScript();
-// function phoneScript() {
-//     window.addEventListener('scroll', function() {
-//         let scrollValue = document.documentElement.scrollTop || document.body.scrollTop;
-
-//         //.portfolio부분 시작되면 top_btn보이게 함. {
-//         if(scrollValue > vhHeight) {
-//             topBtn.classList.add('show');
-//         } else {
-//             topBtn.classList.remove('show');
-//         }
-
-//         //.portfolio마지막 페이지 가면 .scrollBtn버튼 사라지게함.
-//         if(scrollValue > (vhHeight * (portListBox.length - 0.5))) {
-//             scrollBtn.classList.add('hide');
-//         } else {
-//             scrollBtn.classList.remove('hide');
-//         }
-
-//         //nav .intro, .portfolio클릭시 해당 위치로 스크롤.
-//         for(let i = 0; i < navBtn.length; i++) {
-//             navBtn[i].addEventListener('click', function(e) {
-//                 //.intro
-//                 if(e.target.classList.contains('introBtn')) {
-//                     window.scrollTo({
-//                         top: 0,
-//                         behavior: 'smooth'
-//                     });
-//                 //.portfolio
-//                 } else if(e.target.classList.contains('portBtn')) {
-//                     window.scrollTo({
-//                         top: vhHeight,
-//                         behavior: 'smooth'
-//                     });
-//                 }
-//             });
-//         }
-
-//         //.top_btn 누르면 top으로 스크롤.
-//         topBtn.addEventListener('click', function(e) {
-//             e.preventDefault();
-//             window.scrollTo({
-//                 top: 0,
-//                 behavior: 'smooth'
-//             });
-//         });
-
-//     });
-
-// } //phoneScript() 끝.
 
 // aboutMeCover의 [click!]버튼 클릭 시 aboutMeCont(상세 정보) 보이게 함. + contactBox 안보이게 함.
 let introTitle = document.querySelector(".intro > .inner > .title");
@@ -316,15 +266,16 @@ window.addEventListener("resize", function () {
 });
 
 //포폴 img, text에 마웃스오버시 img바뀌게함.
-let imgTitle = document.querySelectorAll(".imgTitle > a");
-let goText = document.querySelectorAll(".imgTitle > a > span");
-
-for (let i = 0; i < imgTitle.length; i++) {
-  imgTitle[i].addEventListener("mouseenter", function () {
-    goText[i].classList.add("mouseover");
+let imgTitle = document.querySelectorAll(".portListBox > .imgTitle");
+let siteImg = document.querySelectorAll(".siteImg");
+console.log(imgTitle);
+console.log(siteImg);
+for (let i = 0; i < siteImg.length; i++) {
+  siteImg[i].addEventListener("mouseenter", function () {
+    imgTitle[i].classList.add("on");
   });
-  imgTitle[i].addEventListener("mouseleave", function () {
-    goText[i].classList.remove("mouseover");
+  siteImg[i].addEventListener("mouseleave", function () {
+    imgTitle[i].classList.remove("on");
   });
 }
 
