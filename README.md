@@ -21,6 +21,8 @@
    
    - Random Click <a href="https://github.com/EunJaePark/EunJaePark.github.io/tree/master/js_random_click">(github)</a>
    
+   - Calculator <a href="https://github.com/EunJaePark/EunJaePark.github.io/tree/master/calculator">(github)</a>
+   
    
    <h3> 3) Vue   </h3>
    
@@ -29,4 +31,8 @@
    - Hacker News <a href="https://github.com/EunJaePark/hackernews0401ej">(github)</a>
    
    - 날씨 App <a href="https://github.com/EunJaePark/weatherApp_ej">(github)</a>
+   
+   - Movie App <a href="https://github.com/EunJaePark/Movie-App">(github)</a>
+   
+   - moneyboo <a href="https://github.com/EunJaePark/moneyboo">(github)</a>
 
